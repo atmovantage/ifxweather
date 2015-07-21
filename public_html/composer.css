@@ -1,0 +1,109 @@
+/*
+* iFx Weather Composer
+* Copyright 2015, Austin Shackelford
+* www.austinsatmosphere.com
+* Free to use under the MIT license.
+* http://www.opensource.org/licenses/mit-license.php
+* 07/19/2015
+*/
+
+
+#day1precip_label{
+	display: none;
+}
+	#day1snowmax_label{
+	display: none;
+}
+#bg {
+  position: fixed; 
+  top: -10%; 
+  left: -10%; 
+  width: 150%; 
+  height: 150%;
+}
+#bg img {
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  right: 0; 
+  bottom: 0; 
+  margin: auto; 
+  min-width: 50%;
+  min-height: 50%;
+}
+		#header{
+			background: rgb(255, 250, 250); /* The Fallback */
+   background: rgba(255, 250, 250, 0.8); 
+		-moz-border-radius: 6px 6px 6px 6px;
+ border-radius: 6px 6px 6px 6px;
+			padding: 5px;
+		}
+		
+		#metaforms{
+			background: rgb(255, 250, 250); /* The Fallback */
+   background: rgba(255, 250, 250, 0.8); 
+		-moz-border-radius: 6px 6px 6px 6px;
+ border-radius: 6px 6px 6px 6px;
+		}
+		
+#fxvalid{
+			background: rgb(26, 149, 220); /* The Fallback */
+   background: rgba(26, 149, 220, 0.8); 
+		-moz-border-radius: 6px 6px 6px 6px;
+ border-radius: 6px 6px 6px 6px;
+	margin: 5px;
+		}
+
+	#hr0-12{
+    background: rgb(255, 250, 250); /* The Fallback */
+   background: rgba(255, 250, 250, 0.8); 
+		-moz-border-radius: 6px 6px 6px 6px;
+ border-radius: 6px 6px 6px 6px;
+		
+}
+#userpref{
+			background: rgb(255, 250, 250); /* The Fallback */
+   background: rgba(255, 250, 250, 0.8); 
+		-moz-border-radius: 6px 6px 6px 6px;
+ border-radius: 6px 6px 6px 6px;
+		}
+		#day1detail{
+			width: 100%;
+			height: 10em;
+		}
+#day1wx{
+	width: auto;
+}
+		
+		
+form label { 
+    display: inline-block; 
+    float: none;
+    /*width: 125px;*/
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+    text-align: center; 
+	overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+form input {
+    display: inline-block;
+    float: none;
+    padding:5px 5px;
+	text-align: center;
+}
+
+		#submit{
+			background-color: #FFFFFF;
+			-webkit-appearance: none;
+			-moz-appearance: none;
+		} 
+		
+		@media screen and (max-width: 1960px) { /* Specific to this particular image */
+  .bg {
+    left: 50%;
+    margin-left: -512px;   /* 50% */
+  }
+}
+
