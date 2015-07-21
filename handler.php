@@ -221,7 +221,7 @@ elseif ($_POST["day1windmin"] == $_POST["day1windmax"]) {
 	<div class="three columns">
 		<button onclick="goBack()">Make Changes</button></div>
 <div class="three columns">
-<form action="<?php echo "http://ifxweather.austinsatmosphere.com/iFxWx-test.php"; ?>"><input value="Reset Forecast Composer" type="submit"></form></div>
+<form action="<?php echo "/iFxWx.php"; ?>"><input value="Reset Forecast Composer" type="submit"></form></div>
 </div>
 <script>
 function goBack() {

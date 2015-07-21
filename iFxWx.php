@@ -22,12 +22,12 @@
 </head>
 
 <body>
-	<form method="post" action="<?php echo htmlspecialchars('/handler-test.php');?>">
+	<form method="post" action="<?php echo htmlspecialchars('/handler.php');?>">
 		<div class="wrapper">
-			<img src="http://ifxweather.austinsatmosphere.com/wp-content/uploads/2015/07/18879358884_a473307aae_o1.jpg" id="bg" alt="">
+			<img src="/ifxwx_images/background.jpg" id="bg" alt="">
 			<div class="container">
 			<div class="twelve columns" style="font-weight: bold; text-align: center" id="header">
-<p><img style="width: 70px; height: 61px;" alt="" src="http://ifxweather.austinsatmosphere.com/wp-content/uploads/2015/05/logo.png"> Version 1.0.6 pre-alpha<br><big style="font-family: Helvetica,Arial,sans-serif;"><big><big>Forecast Composer</big></big></big>
+<p><img style="width: 70px; height: 61px;" alt="" src="/ifxwx_images/logo.png"> Version 1.0.6 pre-alpha<br><big style="font-family: Helvetica,Arial,sans-serif;"><big><big>Forecast Composer</big></big></big>
 </p>
 			<div class="twelve columns" >
 				Welcome to the forecast composer page. This is the first step towards creating your own weather forecast. Enter the variables for your weather forecast using the forms below and click the 'Submit' button to view your final product.
