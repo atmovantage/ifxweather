@@ -14,7 +14,7 @@
 		
 	<link title="skeleton" rel="stylesheet" href="css/composer.css" type="text/css">
 	
-	<link rel="icon" type="image/png" href="http://ifxweather.austinsatmosphere.com/images/favicon.png">
+	<link rel="icon" type="image/png" href="/images/favicon.png">
 	
 	<style type="text/css">
 	
