@@ -2,7 +2,7 @@
 Project to design and develop a web-based application to enable meteorologists to easily compose and publish a weather forecast.
 
 ----------
-Version 1.0.5 Pre-Alpha (July 19th, 2015):
+Version 0.4.0 Pre-Alpha (July 19th, 2015):
 Please see the list of recent changes and improvements below:
 
     Forecast Composer
@@ -18,12 +18,12 @@ Please see the list of recent changes and improvements below:
         Added code to check and input the user-selected temperature color and assign the correct color for highs and lows
 
 ----------
-Version 1.0.4 Pre-Alpha (July 15th, 2015):
+Version 0.3.1 Pre-Alpha (July 15th, 2015):
 Just as a reminder, while iFx Weather is in the "pre-alpha" stages of development this means that the application is not quite to the point where it is ready to be user-tested. Once all the basic elements are in place and the user can actually get a legitimate final product, then this app will enter the "alpha" phase of testing and development. In the "alpha" phase all the code for the app should be complete and theoretically functional. The purpose of the alpha testing is to weed out bugs and get feedback from users on changes that they would like to see in future versions.
 
 As a preliminary goal, I intend to release the "alpha" version when all 6 forecast periods (12 hours each) are coded and the output from which is nicely displayed in the Forecast Output page. Publishing the forecast in the "alpha" version will likely be via printing only. Later versions will include a greater variety of publishing methods.
 
-Here are a list of the changes and updates made in this latest version 1.0.4 pre-alpha:
+Here are a list of the changes and updates made in this latest version:
 
     Forecast Composer Page
         Reduced size of background image to approximately 300KB in order to improve page load time
@@ -54,7 +54,7 @@ Here are a list of the changes and updates made in this latest version 1.0.4 pre
             
 
 ----------
-Version 1.0.3 Pre-Alpha (July 12th, 2015):
+Version 0.3.0 Pre-Alpha (July 12th, 2015):
 A collection of changes have taken place in the last few days. These changes and updates are listed below:
 
     On the Forecast Composer page:
@@ -80,7 +80,7 @@ A collection of changes have taken place in the last few days. These changes and
             Now PoP is added cleanly to end of weather description (ex. Isolated Showers (10%) )
             
 ----------
-Version 1.0.2 Pre-Alpha (July 2nd, 2015):
+Version 0.2.1 Pre-Alpha (July 2nd, 2015):
 The following fixes and changes have been implemented in this latest version 1.0.2 Pre-Alpha:
 
     Some weather selection names have been abbreviated in order to reduce width of selection menu
@@ -94,7 +94,7 @@ The following fixes and changes have been implemented in this latest version 1.0
     Fixed "Return to Forecast Composer" button so it links to the correct and latest version. Was linking to previous versions accidentally
 
 ----------
-Version 1.0.1 Pre-Alpha (June 30th, 2015):
+Version 0.2.0 Pre-Alpha (June 30th, 2015):
 Steady progress has been made over the past couple weeks in developing the pre-alpha version of iFxWx. The primary focus thus far has been to get the CSS (custom style sheet) working, make sure the forecast composer is fully responsive (adapts to various screen sizes automatically) and develop a complete input panel for a single forecast period.
 The Input Panel
 
@@ -140,7 +140,7 @@ Some further styling may occur as I go along in order to help improve the visual
 
 Well, better get back to coding and designing! Stay tuned for more updates and subscribe to this blog to receive updates automatically via email!
 ----------
-Version 1.0.0 Pre-Alpha (May 15th, 2015):
+Version 0.1.0 Pre-Alpha (May 15th, 2015):
 The Very Early Stages
 
 Initial development work for iFxWx is getting underway. The plan for development is to begin with a simple PHP-based web app that will initially be integrated exclusively with this site. In order to build a weather forecast a user will access the Forecast Composer page, fill out the required information and submit it. After hitting "Submit", the user will be brought to a secondary page where all the previously-entered forecast information will be graphically displayed.
