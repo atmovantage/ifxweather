@@ -11,7 +11,7 @@
 <div class="twelve columns" style="font-weight: bold; text-align: center">
 <p><big style="font-family: Helvetica,Arial,sans-serif;"><big><big><span><img style="width: 70px; height: 61px;" alt="" src="http://ifxweather.austinsatmosphere.com/wp-content/uploads/2015/05/logo.png"><br>iFx
 Weather</span></big></big></big>
-Version 0.4.0 pre-alpha</p>
+Version 0.4.1 pre-alpha</p>
 </div>
 	<div class="twelve columns">
 				<hr>
@@ -24,14 +24,19 @@ Version 0.4.0 pre-alpha</p>
 		<strong>Forecaster: </strong><?php echo $_POST["forecaster"] ?>
 		</p>
 			</div>
-				<div class="three columns offset-by-one">
+				<div class="two columns">
 				<p>
-		<strong>Station: </strong><?php echo $_POST["stationid"] . " " . $_POST["stationname"] ?>
+		<strong>Location: </strong><?php echo $_POST["stationid"] . " " . $_POST["stationname"] ?>
 		</p>
 			</div>
-			<div class="three columns offset-by-one">
+			<div class="three columns">
 				<p>
 		<strong>Published: </strong><?php echo $_POST["date"] . " " . $_POST["time"] ?>
+		</p>
+			</div>
+	<div class="three columns">
+				<p>
+					<strong>Valid From: </strong><?php echo $_POST["fxstarttime"] . " " . $_POST["fxstartmonth"] . "/" . $_POST["fxstartday"] . "/" . $_POST["fxstartyear"] ?>
 		</p>
 			</div>
 			

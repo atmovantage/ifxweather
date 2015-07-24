@@ -27,7 +27,7 @@
 			<img src="/ifxwx_images/background.jpg" id="bg" alt="">
 			<div class="container">
 			<div class="twelve columns" style="font-weight: bold; text-align: center" id="header">
-<p><img style="width: 70px; height: 61px;" alt="" src="/ifxwx_images/logo.png"> Version 0.4.0 pre-alpha<br><big style="font-family: Helvetica,Arial,sans-serif;"><big><big>Forecast Composer</big></big></big>
+<p><img style="width: 70px; height: 61px;" alt="" src="/ifxwx_images/logo.png"> Version 0.4.1 pre-alpha<br><big style="font-family: Helvetica,Arial,sans-serif;"><big><big>Forecast Composer</big></big></big>
 </p>
 			<div class="twelve columns" >
 				Welcome to the forecast composer page. This is the first step towards creating your own weather forecast. Enter the variables for your weather forecast using the forms below and click the 'Submit' button to view your final product.
@@ -175,16 +175,16 @@
 					<select style="width:100%" name="fxstarttime">
 						<option value="">Select Time</option>
 						<optgroup label="Morning">
-						<option value="0500">5am - 5pm</option>
-						<option value="0600">6am - 6pm</option>
-						<option value="0700">7am - 7pm</option>
-						<option value="0800">8am - 8pm</option>
+						<option value="5AM">5am - 5pm</option>
+						<option value="6AM">6am - 6pm</option>
+						<option value="7AM">7am - 7pm</option>
+						<option value="8AM">8am - 8pm</option>
 						</optgroup>
 						<optgroup label="Evening">
-						<option value="1700">5pm - 5am</option>
-						<option value="1800">6pm - 6am</option>
-						<option value="1900">7pm - 7am</option>
-						<option value="2000">8pm - 8am</option>
+						<option value="5PM">5pm - 5am</option>
+						<option value="6PM">6pm - 6am</option>
+						<option value="7PM">7pm - 7am</option>
+						<option value="8PM">8pm - 8am</option>
 						</optgroup>
 					</select>
 					<br>
