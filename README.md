@@ -2,7 +2,27 @@
 Project to design and develop a web-based application to enable meteorologists to easily compose and publish a weather forecast.
 
 ----------
-Version 0.4.0 Pre-Alpha (July 19th, 2015):
+Version 0.7.0 Pre-Alpha (July 24th, 2015):
+The most recent changes and updates are detailed as follows:
+
+    Forecast Composer
+        Added unit selection for wind speed
+        Added unit selection for precipitation accumulation
+        Changed page header from "iFx Weather" to "Forecast Composer" to help identify purpose of the page more easily
+        Changed "Station Name" label to "Location Name" since "Station ID" will suffice for verification purposes later on
+        Added a new field called "Forecast Start (Valid From)" to be separate from the date published
+            This has been added because the date a forecast is published may or may  not correspond to the time/date that the forecast is valid from.
+            By allowing user to enter the start time/date separately from the published time/date we can also clearly state on the Output page when the forecast is valid from.
+            Included a list of eight time ranges for the 12-hour forecast (5AM/6AM/7AM/8AM and 5PM/6PM/7PM/8PM)
+                allows flexibility to account for personal preference and also for changes due to daylight savings time
+        Fixed CSS on the Forecast Start field so that blue background is centered properly and also floats (padded) 5px above bottom of container field.
+    Forecast Output
+        Coded in units for user-selected wind speed
+        Coded in units for user-selected precipitation accumulation
+        Added a field "Valid From:" at the top header in addition to the "Published:"
+        
+----------
+Version 0.6.0 Pre-Alpha (July 19th, 2015):
 Please see the list of recent changes and improvements below:
 
     Forecast Composer
@@ -18,7 +38,7 @@ Please see the list of recent changes and improvements below:
         Added code to check and input the user-selected temperature color and assign the correct color for highs and lows
 
 ----------
-Version 0.3.1 Pre-Alpha (July 15th, 2015):
+Version 0.5.0 Pre-Alpha (July 15th, 2015):
 Just as a reminder, while iFx Weather is in the "pre-alpha" stages of development this means that the application is not quite to the point where it is ready to be user-tested. Once all the basic elements are in place and the user can actually get a legitimate final product, then this app will enter the "alpha" phase of testing and development. In the "alpha" phase all the code for the app should be complete and theoretically functional. The purpose of the alpha testing is to weed out bugs and get feedback from users on changes that they would like to see in future versions.
 
 As a preliminary goal, I intend to release the "alpha" version when all 6 forecast periods (12 hours each) are coded and the output from which is nicely displayed in the Forecast Output page. Publishing the forecast in the "alpha" version will likely be via printing only. Later versions will include a greater variety of publishing methods.
@@ -54,7 +74,7 @@ Here are a list of the changes and updates made in this latest version:
             
 
 ----------
-Version 0.3.0 Pre-Alpha (July 12th, 2015):
+Version 0.4.0 Pre-Alpha (July 12th, 2015):
 A collection of changes have taken place in the last few days. These changes and updates are listed below:
 
     On the Forecast Composer page:
@@ -80,8 +100,8 @@ A collection of changes have taken place in the last few days. These changes and
             Now PoP is added cleanly to end of weather description (ex. Isolated Showers (10%) )
             
 ----------
-Version 0.2.1 Pre-Alpha (July 2nd, 2015):
-The following fixes and changes have been implemented in this latest version 1.0.2 Pre-Alpha:
+Version 0.3.0 Pre-Alpha (July 2nd, 2015):
+The following fixes and changes have been implemented in this latest version 0.3.0 Pre-Alpha:
 
     Some weather selection names have been abbreviated in order to reduce width of selection menu
     Input field widths in 'Day 1' have been reduced in order to better accommodate future columns
