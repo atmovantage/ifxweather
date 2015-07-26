@@ -11,7 +11,7 @@
 <div class="twelve columns" style="font-weight: bold; text-align: center">
 <p><big style="font-family: Helvetica,Arial,sans-serif;"><big><big><span><img style="width: 70px; height: 61px;" alt="" src="http://ifxweather.austinsatmosphere.com/wp-content/uploads/2015/05/logo.png"><br>iFx
 Weather</span></big></big></big>
-Version 0.4.1 pre-alpha</p>
+Version 0.7.0 pre-alpha</p>
 </div>
 	<div class="twelve columns">
 				<hr>
