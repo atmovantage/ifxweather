@@ -1,4 +1,3 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <?php
 // Start the session
 session_start();
@@ -19,6 +18,7 @@ if(isset($_SESSION['timeout'])) {
 // Update the timout field with the current time.
 $_SESSION['timeout'] = time();
 ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html><head>
 <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>iFx Weather Publish</title>
 <meta name="viewport" content="initial-scale=1.0">
@@ -34,7 +34,7 @@ $_SESSION['timeout'] = time();
 <div class="twelve columns" style="font-weight: bold; text-align: center">
 <p><big style="font-family: Helvetica,Arial,sans-serif;"><big><big><span><img style="width: 70px; height: 61px;" alt="" src="http://ifxweather.austinsatmosphere.com/wp-content/uploads/2015/05/logo.png"><br>iFx
 Weather</span></big></big></big>
-Version 0.8.0 pre-alpha</p>
+Version 0.8.1 pre-alpha</p>
 </div>
 	<div class="twelve columns">
 				<hr>
