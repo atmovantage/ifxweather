@@ -2,6 +2,58 @@
 Project to design and develop a web-based application to enable meteorologists to easily compose and publish a weather forecast.
 
 ----------
+Version 0.8.2 Pre-Alpha (August 10th, 2015):
+PHP code that involved the use of header() also needed to be moved to the top of the HTML file, also caused server errors.
+----------
+Version 0.8.1 Pre-Alpha (August 10th, 2015):
+Fixed session_start() functions that needed to be moved to the top of the HTML file, otherwise it conflicted with the server and threw many ugly errors.
+
+----------
+Version 0.8.0 Pre-Alpha (August 10th, 2015):
+Please see the latest changes to the iFx Weather product below:
+
+    Composer Page
+        Submit button color changed to light green, changes to brighter green on hover
+        Added form validation to check if the following fields are empty:
+            Forecaster Name
+            Station Name
+        Added CSS to turn an empty field red after form validation is run
+        Added a "session" to the Composer, Preview, Composer Edit and Publish pages in order to pass variables back and forth
+            Had to create new "session" variables for each and every input field
+        Added a "reset" button on composer page which clears all saved session variables and refreshes the page
+
+    Preview Page (previously called "handler")
+        Renamed to "Preview"
+        Changed page title and header to reflect this name change
+        Added a unique CSS file and linked in the header
+        Changed buttons at the bottom of the page
+            Removed reset button (moved to the Composer page as it is more logical to be positioned there)
+            Added a "publish" button, which will be used in future development
+        Added a "session" to this page and Composer page in order to pass variables back and forth
+            This is important not only for form validation but also so that a user can go from the Preview page to the Composer page in order to change variables. Without a session all changes would be lost if the user tried to go back to previous page.
+    Edit Page (newly created)
+        Was running into problems using "sessions"
+            Variables from the 1st Composer page could be validated and submitted to the Preview page
+                However, if a user tried to go back to make changes all the variables would reset on the Composer page
+            If validation was turned off on the Composer page then user could submit to Preview and go back to make changes
+                So I ran into the conundrum of either being able to make changes (without losing all previously-entered variables) or validating user input to ensure required fields were no left blank
+        Solution was to create a new unique page based on the original Composer template
+            Variables from the Preview page are passed to the Edit page using "sessions"
+            Form validation is removed on the Edit page
+                In theory, all required fields were entered on the original Composer page, otherwise it wouldn't have been sent to the Preview page.
+                On the Edit page, when the user finishes making changes and hits submit the form is not checked for missing info
+                    Technically, a user could go in and delete required input
+                        The plan in the future to avoid this will be to check if the required field is empty and if it is, then set the required variable to the original value when the form was first submitted for edits.
+                            This way the user is still able to change required variables, but is prevented from omitting them altogether
+
+    Publish Page (newly created)
+        Essentially the same as the Preview page
+            Removed the word "Preview" from header
+            Removed the Publish and Edit buttons from the bottom
+        Eventually buttons to publish the final forecast will be added
+        Added a button to return to the Composer page and make a new forecast
+		
+----------
 Version 0.7.0 Pre-Alpha (July 24th, 2015):
 The most recent changes and updates are detailed as follows:
 
