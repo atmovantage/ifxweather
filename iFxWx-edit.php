@@ -40,6 +40,7 @@ function submit_input() {
 	$_SESSION["tempunit"] = $_POST["tempunit"];
 	$_SESSION["colortemp"] = $_POST["colortemp"];
 	$_SESSION["windunit"] = $_POST["windunit"];
+	$_SESSION["highlow"] = $_POST["highlow"];
 	
 	// 0-12hr Forecast Period Variables
 	$_SESSION["day1wx"] = $_POST["day1wx"];
