@@ -1,0 +1,23 @@
+/*
+* iFx Weather Composer
+* Copyright 2015, Austin Shackelford
+* www.austinsatmosphere.com
+* Free to use under the MIT license.
+* http://www.opensource.org/licenses/mit-license.php
+* 07/19/2015
+*/
+
+
+#changes{
+			background-color: #A3C5FF;
+			-webkit-appearance: none;
+			-moz-appearance: none;
+		} 
+#changes:hover{
+	background-color: #327BFA;
+			-webkit-appearance: none;
+			-moz-appearance: none;
+	color: #E6E6E6;
+}
+
+

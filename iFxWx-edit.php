@@ -46,17 +46,9 @@ $_SESSION['timeout'] = time();
 
 // Verification of required variables
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-	if (empty($_POST["forecaster"])) {
-		$fieldErr1 = "#FF6161";
-	}
-	elseif (empty($_POST["stationname"])) {
-		$fieldErr2 = "#FF6161";
-	}
-		else {
 			// If all required variables are filled in then we can submit all variables to the preview page
 			submit_input();
 		}
-}
 //submit all variables to preview page
 function submit_input() {
 	// Meta data variables
@@ -117,7 +109,7 @@ function submit_input() {
 				<p>
 					<label for="forecaster">Your Name</label>
 					<br>
-					<input style="background-color: <?php echo $fieldErr1 ?>" size="15" name="forecaster" id="forecaster" placeholder="Austin" type="text" value="<?php echo (isset($_POST['forecaster']))?$_POST['forecaster']:'';?>">
+					<input style="background-color: <?php echo $fieldErr1 ?>" size="15" name="forecaster" id="forecaster" placeholder="Austin" type="text" value="<?php echo (isset($_SESSION['forecaster']))?$_SESSION['forecaster']:'';?>">
 					<br>
 				</p>
 			</div>
@@ -125,7 +117,7 @@ function submit_input() {
 				<p>
 					<label for="stationid">Station ID</label>
 					<br>
-					<input size="5" name="stationid" id="stationid" placeholder="KDXR" type="text" value="<?php echo (isset($_POST['stationid']))?$_POST['stationid']:'';?>">
+					<input size="5" name="stationid" id="stationid" placeholder="KDXR" type="text" value="<?php echo (isset($_SESSION['stationid']))?$_SESSION['stationid']:'';?>">
 					<br>
 				</p>
 			</div>
@@ -133,7 +125,7 @@ function submit_input() {
 				<p>
 					<label for="stationname">Location Name</label>
 					<br>
-					<input style="background-color: <?php echo $fieldErr2 ?>" size="15" name="stationname" id="stationname" placeholder="Danbury, CT" type="text" value="<?php echo (isset($_POST['stationname']))?$_POST['stationname']:'';?>">
+					<input style="background-color: <?php echo $fieldErr2 ?>" size="15" name="stationname" id="stationname" placeholder="Danbury, CT" type="text" value="<?php echo (isset($_SESSION['stationname']))?$_SESSION['stationname']:'';?>">
 					<br>
 				</p>
 			</div>
@@ -141,7 +133,7 @@ function submit_input() {
 				<p>
 					<label for="date">Publish Date</label>
 					<br>
-					<input size="10" name="date" id="date" placeholder="10/08/2015" type="date">
+					<input size="10" name="date" id="date" placeholder="10/08/2015" type="date" value="<?php echo (isset($_SESSION['date']))?$_SESSION['date']:'';?>">
 					<br>
 				</p>
 				</div>
@@ -149,7 +141,7 @@ function submit_input() {
 				<p>
 					<label for="time">Publish Time</label>
 					<br>
-					<input size="7" name="time" id="time" placeholder="12:00PM" type="time">
+					<input size="7" name="time" id="time" placeholder="12:00PM" type="time" value="<?php echo (isset($_SESSION['time']))?$_SESSION['time']:'';?>">
 					<br>
 				</p>
 			</div>
@@ -160,7 +152,7 @@ function submit_input() {
 					<label for="fxstartmonth">Month</label>
 					<br>
 					<select style="width:100%" name="fxstartmonth">
-						<option value="">Select Month</option>
+						<option value="<?php echo (isset($_SESSION['fxstartmonth']))?$_SESSION['fxstartmonth']:'';?>"><?php echo (isset($_SESSION['fxstartmonth']))?$_SESSION['fxstartmonth']:'';?></option>
 						<option value="01">January</option>
 						<option value="02">February</option>
 						<option value="03">March</option>
@@ -182,7 +174,7 @@ function submit_input() {
 					<label for="fxstartday">Day</label>
 					<br>
 					<select style="width:100%" name="fxstartday">
-						<option value="">Select Day</option>
+						<option value="<?php echo (isset($_SESSION['fxstartday']))?$_SESSION['fxstartday']:'';?>"><?php echo (isset($_SESSION['fxstartday']))?$_SESSION['fxstartday']:'';?></option>
 						<option value="01">1st</option>
 						<option value="02">2nd</option>
 						<option value="03">3rd</option>
@@ -223,7 +215,7 @@ function submit_input() {
 					<label for="fxstartyear">Year</label>
 					<br>
 					<select style="width:100%" name="fxstartyear">
-						<option value="">Select Year</option>
+						<option value="<?php echo (isset($_SESSION['fxstartyear']))?$_SESSION['fxstartyear']:'';?>"><?php echo (isset($_SESSION['fxstartyear']))?$_SESSION['fxstartyear']:'';?></option>
 						<option value="2015">2015</option>
 						<option value="2014">2014</option>
 						<option value="2013">2013</option>
@@ -249,7 +241,7 @@ function submit_input() {
 					<label for="fxstarttime">Local Time</label>
 					<br>
 					<select style="width:100%" name="fxstarttime">
-						<option value="">Select Time</option>
+						<option value="<?php echo (isset($_SESSION['fxstarttime']))?$_SESSION['fxstarttime']:'';?>"><?php echo (isset($_SESSION['fxstarttime']))?$_SESSION['fxstarttime']:'';?></option>
 						<optgroup label="Morning">
 						<option value="5AM">5am - 5pm</option>
 						<option value="6AM">6am - 6pm</option>
@@ -276,12 +268,12 @@ function submit_input() {
 				
 				<p>
 						<label for="day1label">0-12 Hours</label><br>
-					<input style="width:90%" name="day1" id="day1label" placeholder="Monday" type="text">
+					<input style="width:90%" name="day1" id="day1label" placeholder="Monday" type="text"  value="<?php echo (isset($_SESSION['day1']))?$_SESSION['day1']:'';?>">
 					<br>
 				</p>
 				<p>
 					<select style="width:90%" name="day1wx" onchange="document.getElementById('day1desc').value=this.value;">
-						<option value=" ">Weather</option>
+						<option value="<?php echo (isset($_SESSION['day1wx']))?$_SESSION['day1wx']:'';?>"><?php echo (isset($_SESSION['day1wx']))?$_SESSION['day1wx']:'';?></option>
 						<optgroup label="General Day">
 						<option value="Sunny">Sunny</option>
 						<option value="Partly Sunny">Partly Sunny</option>
@@ -337,12 +329,12 @@ function submit_input() {
 				<p>
 					<label for="day1desc">Weather Description</label>
 					<br>
-					<input style="width:90%" name="day1desc" placeholder="Mostly Sunny" id="day1desc" type="text">
+					<input style="width:90%" name="day1desc" placeholder="Mostly Sunny" id="day1desc" type="text" value="<?php echo (isset($_SESSION['day1desc']))?$_SESSION['day1desc']:'';?>">
 				</p><br>
 			<p>
 					<label for="day1temp">Temperature</label>
 					<br>
-					<input style="width:90%" placeholder="High/Low" min="-100" max="134" maxlength="3" name="day1temp" id="day1temp" type="number"><br>
+					<input style="width:90%" placeholder="High/Low" min="-100" max="134" maxlength="3" name="day1temp" id="day1temp" type="number" value="<?php echo (isset($_SESSION['day1temp']))?$_SESSION['day1temp']:'';?>"><br>
 				<form id="highlow">
 							<input type="radio" id="highlow" name="highlow" value="red" checked><small>High</small>
 						<input type="radio" id="highlow" name="highlow" value="blue"><small>Low</small></form>
@@ -351,19 +343,19 @@ function submit_input() {
 			<p>
 					<label for="day1pop">Precipitation</label>
 					<br>
-					<input style="width:90%" min="0" max="100" size="15" maxlength="3" name="day1pop" placeholder="Probability %" id="day1pop" type="number"><label for="day1precip" id="day1precip_label">Precipitation Total</label><input style="width:90%" step=".01" min="0" max="100" name="day1precip" placeholder="Precip Total" id="day1precip" type="number"><br><small><small><strong>Hide Rain Total<input type="checkbox" name="showrain" value="1"></strong></small></small>
+					<input style="width:90%" min="0" max="100" size="15" maxlength="3" name="day1pop" placeholder="Probability %" id="day1pop" type="number" value="<?php echo (isset($_SESSION['day1pop']))?$_SESSION['day1pop']:'';?>"><label for="day1precip" id="day1precip_label">Precipitation Total</label><input style="width:90%" step=".01" min="0" max="100" name="day1precip" placeholder="Precip Total" id="day1precip" type="number" value="<?php echo (isset($_SESSION['day1precip']))?$_SESSION['day1precip']:'';?>"><br><small><small><strong>Hide Rain Total<input type="checkbox" name="showrain" value="<?php echo (isset($_SESSION['showrain']))?$_SESSION['showrain']:'';?>"></strong></small></small>
 					</p>
 			<p>
 					<label for="day1snowmin">Snow</label>
 					<br>
-			<input style="width:90%" step=".5" min="0" max="100" name="day1snowmin" placeholder="Min Accum" id="day1snowmin" type="number"><label for="day1snowmax" id="day1snowmax_label">Day 1 Snow Maximum</label><input style="width:90%" step=".5" min="0" max="100" name="day1snowmax" placeholder="Max Accum" id="day1snowmax" type="number"><br>
+			<input style="width:90%" step=".5" min="0" max="100" name="day1snowmin" placeholder="Min Accum" id="day1snowmin" type="number" value="<?php echo (isset($_SESSION['day1snowmin']))?$_SESSION['day1snowmin']:'';?>"><label for="day1snowmax" id="day1snowmax_label">Day 1 Snow Maximum</label><input style="width:90%" step=".5" min="0" max="100" name="day1snowmax" placeholder="Max Accum" id="day1snowmax" type="number" value="<?php echo (isset($_SESSION['day1snowmax']))?$_SESSION['day1snowmax']:'';?>"><br>
 				</p>
 			<p>
 					<label for="day1wind">Wind</label>
 					<br>
-					<input style="width:90%" maxlength="3" max="240" min="0" name="day1windmin" placeholder="Min Sustained" id="day1windmin" type="number"><input style="width:90%" maxlength="3" max="240" min="0" name="day1windmax" placeholder="Max Sustained" id="day1windmax" type="number"><input style="width:90%" maxlength="3" max="240" min="0" name="day1windgust" placeholder="Max Gust" id="day1windgust" type="number">
+					<input style="width:90%" maxlength="3" max="240" min="0" name="day1windmin" placeholder="Min Sustained" id="day1windmin" type="number" value="<?php echo (isset($_SESSION['day1windmin']))?$_SESSION['day1windmin']:'';?>"><input style="width:90%" maxlength="3" max="240" min="0" name="day1windmax" placeholder="Max Sustained" id="day1windmax" type="number" value="<?php echo (isset($_SESSION['day1windmax']))?$_SESSION['day1windmax']:'';?>"><input style="width:90%" maxlength="3" max="240" min="0" name="day1windgust" placeholder="Max Gust" id="day1windgust" type="number" value="<?php echo (isset($_SESSION['day1windgust']))?$_SESSION['day1windgust']:'';?>">
 					<select style="width:80%" name="day1winddir">
-						<option value=" ">Direction</option>
+						<option value="<?php echo (isset($_SESSION['day1winddir']))?$_SESSION['day1winddir']:'';?>"><?php echo (isset($_SESSION['day1winddir']))?$_SESSION['day1winddir']:'';?></option>
 						<option value="North">North</option>
 						<option value="NNE">North-Northeast</option>
 						<option value="Northeast">Northeast</option>
@@ -387,7 +379,7 @@ function submit_input() {
 				</p>
 				<label for="day1detail">Additional Details</label>
 				<br>
-				<textarea style="width:95%" height="200px" name="day1detail" id="day1detail" placeholder="Timing, intensity, confidence, etc." type="text"></textarea>
+				<textarea style="width:95%" height="200px" name="day1detail" id="day1detail" placeholder="Timing, intensity, confidence, etc." type="text"><?php echo (isset($_SESSION['day1detail']))?$_SESSION['day1detail']:'';?></textarea>
 								<br>
 			</div>
 <div class="twelve columns">

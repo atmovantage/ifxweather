@@ -96,15 +96,35 @@ form input {
 }
 
 		#submit{
-			background-color: #FFFFFF;
+			background-color: #A3FFAF;
 			-webkit-appearance: none;
 			-moz-appearance: none;
 		} 
+#submit:hover{
+	background-color: #32FA4D;
+			-webkit-appearance: none;
+			-moz-appearance: none;
+}
 		
 		@media screen and (max-width: 1960px) { /* Specific to this particular image */
   .bg {
     left: 50%;
     margin-left: -512px;   /* 50% */
   }
+		}
+			
+.error {
+	color: red;
 }
 
+#reset{
+			background-color: #FFA3A3;
+			-webkit-appearance: none;
+			-moz-appearance: none;
+		} 
+#reset:hover{
+	background-color: #FA3232;
+			-webkit-appearance: none;
+			-moz-appearance: none;
+	color: #E6E6E6;
+}
