@@ -2,6 +2,24 @@
 Project to design and develop a web-based application to enable meteorologists to easily compose and publish a weather forecast.
 
 ----------
+Version 0.9.0 Pre-Alpha (August 17th, 2015):
+Latest updates are detailed below:
+
+    Composer Page
+        Reworked the form validation system
+            Previous system was flawed and would allow form to be submitted if the last verified variable was filled in, even if the previous required fields were left blank
+        New system checks each variable one-by-one
+            If any required variable is not filled in 2 things happen
+                A message appears at the top of the page in red informing user that all fields highlighted in red are required
+                The backgrounds of any required fields are highlighted red if the user left them blank
+                    An easier way out would have been to just highlight all required fields at the same time but I wanted it to be more user-friendly by pointing out exactly the fields that were missing.
+            After the form is submitted for validation code was added so that any variables that the user entered before are automatically populated in the respective fields.
+    Preview and Publish Pages
+        Added CSS so that the title of each forecast period (ie. "Monday Night") does not wrap onto more than a single line
+            This is a preventative measure to ensure that when multiple columns are used (grid view) each weather image is vertically aligned
+            When viewed on a mobile device (non-grid view) vertical alignment is not applicable
+			
+----------
 Version 0.8.2 Pre-Alpha (August 10th, 2015):
 PHP code that involved the use of header() also needed to be moved to the top of the HTML file, also caused server errors.
 ----------
