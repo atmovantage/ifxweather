@@ -34,7 +34,7 @@ $_SESSION['timeout'] = time();
 <div class="twelve columns" style="font-weight: bold; text-align: center">
 <p><big style="font-family: Helvetica,Arial,sans-serif;"><big><big><span><img style="width: 70px; height: 61px;" alt="" src="http://ifxweather.austinsatmosphere.com/wp-content/uploads/2015/05/logo.png"><br>iFx
 Weather</span></big></big></big>
-Version 0.8.2 pre-alpha</p>
+Version 0.9.0 pre-alpha</p>
 </div>
 	<div class="twelve columns">
 				<hr>
@@ -182,7 +182,7 @@ default: $day1wximg = "http://ifxweather.austinsatmosphere.com/wp-content/upload
 }
 ?>
 <div style="text-align: center;" class="two columns">
-	<p><strong><big><u><?php echo $_SESSION["day1"]; ?></u></big></strong><br></p>
+	<p id="title"><strong><big><u><?php echo $_SESSION["day1"]; ?></u></big></strong><br></p>
 <img style="width: 70px; height: 70px;" alt="day1wximg" src="<?php echo $day1wximg ; ?>" >
 		<?php if ($_SESSION["day1pop"] > 0) {
 	echo "<p><strong>" . $_SESSION["day1desc"] . "</strong> <small>(" . $_SESSION["day1pop"] . "%)</small></p>" ;

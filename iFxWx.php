@@ -18,21 +18,61 @@ if(isset($_SESSION['timeout'])) {
 // Update the timout field with the current time.
 $_SESSION['timeout'] = time();
 // Set all fields to white background by default
-	$fieldErr1 = $fieldErr2 = "#FFF";
+	$fieldErr1 = $fieldErr3 = $fieldErr4 = $fieldErr5 = $fieldErr6 = $fieldErr7 = $fieldErr8 = $fieldErr9 = $fieldErr10 = "#FFF";
+	$fieldErr2 ="**All fields highlighted in red must be filled in before submitting your forecast**";
+
+	$proceed = false;
 
 // Verification of required variables
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-	if (empty($_POST["forecaster"])) {
-		$fieldErr1 = "#FF6161";
+if ($_SERVER["REQUEST_METHOD"] == "POST" && $proceed == false) {
+	
+	//Check to see if any of the required fields are blank or set at the default values
+	if (empty($_POST["forecaster"]) || empty($_POST["stationname"]) || empty($_POST["date"])|| empty($_POST["time"]) || empty($_POST["fxstartmonth"]) || $_POST["fxstartmonth"] == "Select Month" || empty($_POST["fxstartday"]) || $_POST["fxstartday"] == "Select Day" || empty($_POST["fxstartyear"]) || $_POST["fxstartyear"] == "Select Year" || empty($_POST["fxstarttime"]) || $_POST["fxstarttime"] == "Select Time") {
+		//if any required variables are empty then do not proceed to preview page
+		$proceed = false;
 	}
-	elseif (empty($_POST["stationname"])) {
-		$fieldErr2 = "#FF6161";
+	else {
+		//if all required variables are filled in properly then proceed to preview page
+		$proceed = true;
 	}
-		else {
-			// If all required variables are filled in then we can submit all variables to the preview page
-			submit_input();
-		}
 }
+
+//if proceed has been set to false after hitting submit then turn any empty required fields red
+if ($_SERVER["REQUEST_METHOD"] == "POST" && $proceed == false) {
+	if (empty($_POST["forecaster"])) {
+		$fieldErr3 = "#FF8080";
+	}
+	if (empty($_POST["stationname"])) {
+		$fieldErr4 = "#FF8080";
+	}
+	if (empty($_POST["date"])) {
+		$fieldErr5 = "#FF8080";
+	}
+	if (empty($_POST["time"])) {
+		$fieldErr6 = "#FF8080";
+	}
+	if ($_POST["fxstartmonth"] == "Select Month" || empty($_POST["fxstartmonth"])) {
+		$fieldErr7 = "#FF8080";
+	}
+	if ($_POST["fxstartday"] == "Select Day" || empty($_POST["fxstartday"])) {
+		$fieldErr8 = "#FF8080";
+	}
+	if ($_POST["fxstartyear"] == "Select Year" || empty($_POST["fxstartyear"])) {
+		$fieldErr9 = "#FF8080";
+	}
+	if ($_POST["fxstarttime"] == "Select Time" || empty($_POST["fxstarttime"])) {
+		$fieldErr10 = "#FF8080";
+	}
+	
+	//$fieldErr1 = "#FFF"; <- I think this is leftover code
+}
+
+//if the form has been submitted and the required fields are filled in properly then we can proceed to submit all variables
+if ($_SERVER["REQUEST_METHOD"] == "POST" && $proceed == true) {
+submit_input();	
+}
+
+		
 //submit all variables to preview page
 function submit_input() {
 	// Meta data variables
@@ -102,10 +142,15 @@ function submit_input() {
 			<img src="/ifxwx_images/background.jpg" id="bg" alt="">
 			<div class="container">
 			<div class="twelve columns" style="font-weight: bold; text-align: center" id="header">
-<p><img style="width: 70px; height: 61px;" alt="" src="/ifxwx_images/logo.png"> Version 0.8.2 pre-alpha<br><big style="font-family: Helvetica,Arial,sans-serif;"><big><big>Forecast Composer</big></big></big>
+<p><img style="width: 70px; height: 61px;" alt="" src="/ifxwx_images/logo.png"> Version 0.9.2 pre-alpha<br><big style="font-family: Helvetica,Arial,sans-serif;"><big><big>Forecast Composer</big></big></big>
 </p>
 			<div class="twelve columns" >
 				Welcome to the forecast composer page. This is the first step towards creating your own weather forecast. Enter the variables for your weather forecast using the forms below and click the 'Submit' button to view your final product.
+				<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST" && $proceed == false) {
+	echo "<br>" . "<div style='color:red'>" . $fieldErr2 . "</div>";
+}
+?>
 				</div>
 				</div>
 				<div class="twelve columns">
@@ -116,7 +161,7 @@ function submit_input() {
 				<p>
 					<label for="forecaster">Your Name</label>
 					<br>
-					<input style="background-color: <?php echo $fieldErr1 ?>" size="15" name="forecaster" id="forecaster" placeholder="Austin" type="text" value="<?php echo (isset($_POST['forecaster']))?$_POST['forecaster']:'';?>">
+					<input style="background-color: <?php echo $fieldErr3 ?>" size="15" name="forecaster" id="forecaster" placeholder="Austin" type="text" value="<?php echo (isset($_POST['forecaster']))?$_POST['forecaster']:'';?>">
 					<br>
 				</p>
 			</div>
@@ -132,7 +177,7 @@ function submit_input() {
 				<p>
 					<label for="stationname">Location Name</label>
 					<br>
-					<input style="background-color: <?php echo $fieldErr2 ?>" size="15" name="stationname" id="stationname" placeholder="Danbury, CT" type="text" value="<?php echo (isset($_POST['stationname']))?$_POST['stationname']:'';?>">
+					<input style="background-color: <?php echo $fieldErr4 ?>" size="15" name="stationname" id="stationname" placeholder="Danbury, CT" type="text" value="<?php echo (isset($_POST['stationname']))?$_POST['stationname']:'';?>">
 					<br>
 				</p>
 			</div>
@@ -140,7 +185,7 @@ function submit_input() {
 				<p>
 					<label for="date">Publish Date</label>
 					<br>
-					<input size="10" name="date" id="date" placeholder="10/08/2015" type="date">
+					<input style="background-color: <?php echo $fieldErr5 ?>" size="10" name="date" id="date" placeholder="10/08/2015" type="date" value="<?php echo (isset($_POST['date']))?$_POST['date']:'';?>">
 					<br>
 				</p>
 				</div>
@@ -148,7 +193,7 @@ function submit_input() {
 				<p>
 					<label for="time">Publish Time</label>
 					<br>
-					<input size="7" name="time" id="time" placeholder="12:00PM" type="time">
+					<input style="background-color: <?php echo $fieldErr6 ?>" size="7" name="time" id="time" placeholder="12:00PM" type="time" value="<?php echo (isset($_POST['time']))?$_POST['time']:'';?>">
 					<br>
 				</p>
 			</div>
@@ -158,8 +203,8 @@ function submit_input() {
 				<p>
 					<label for="fxstartmonth">Month</label>
 					<br>
-					<select style="width:100%" name="fxstartmonth">
-						<option value="">Select Month</option>
+					<select style="width:100%; background-color: <?php echo $fieldErr7 ?>" name="fxstartmonth">
+						<option value="<?php echo (isset($_POST['fxstartmonth']))?$_POST['fxstartmonth']:'';?>"><?php echo (isset($_POST['fxstartmonth']))?$_POST['fxstartmonth']:'Select Month';?></option>
 						<option value="01">January</option>
 						<option value="02">February</option>
 						<option value="03">March</option>
@@ -180,8 +225,8 @@ function submit_input() {
 				<p>
 					<label for="fxstartday">Day</label>
 					<br>
-					<select style="width:100%" name="fxstartday">
-						<option value="">Select Day</option>
+					<select style="width:100%; background-color: <?php echo $fieldErr8 ?>" name="fxstartday">
+						<option value="<?php echo (isset($_POST['fxstartday']))?$_POST['fxstartday']:'';?>"><?php echo (isset($_POST['fxstartday']))?$_POST['fxstartday']:'Select Day';?></option>
 						<option value="01">1st</option>
 						<option value="02">2nd</option>
 						<option value="03">3rd</option>
@@ -221,8 +266,8 @@ function submit_input() {
 				<p>
 					<label for="fxstartyear">Year</label>
 					<br>
-					<select style="width:100%" name="fxstartyear">
-						<option value="">Select Year</option>
+					<select style="width:100%; background-color: <?php echo $fieldErr9 ?>" name="fxstartyear">
+						<option value="<?php echo (isset($_POST['fxstartyear']))?$_POST['fxstartyear']:'';?>"><?php echo (isset($_POST['fxstartyear']))?$_POST['fxstartyear']:'Select Year';?></option>
 						<option value="2015">2015</option>
 						<option value="2014">2014</option>
 						<option value="2013">2013</option>
@@ -247,8 +292,8 @@ function submit_input() {
 				<p>
 					<label for="fxstarttime">Local Time</label>
 					<br>
-					<select style="width:100%" name="fxstarttime">
-						<option value="">Select Time</option>
+					<select style="width:100%; background-color: <?php echo $fieldErr10 ?>" name="fxstarttime">
+						<option value="<?php echo (isset($_POST['fxstarttime']))?$_POST['fxstarttime']:'';?>"><?php echo (isset($_POST['fxstarttime']))?$_POST['fxstarttime']:'Select Time';?></option>
 						<optgroup label="Morning">
 						<option value="5AM">5am - 5pm</option>
 						<option value="6AM">6am - 6pm</option>
