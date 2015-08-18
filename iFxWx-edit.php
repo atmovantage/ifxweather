@@ -97,7 +97,8 @@ function submit_input() {
 <p><img style="width: 70px; height: 61px;" alt="" src="/ifxwx_images/logo.png"> Version 0.9.1 pre-alpha<br><big style="font-family: Helvetica,Arial,sans-serif;"><big><big>Forecast Composer</big></big></big>
 </p>
 			<div class="twelve columns" >
-				Welcome to the forecast composer page. This is the first step towards creating your own weather forecast. Enter the variables for your weather forecast using the forms below and click the 'Submit' button to view your final product.
+				Welcome to the forecast composer page. This is the first step towards creating your own weather forecast. Enter the variables for your weather forecast using the forms below and click the 'Submit' button to view your final product.<br>
+				<small>If probability of precipitation is greater than 0% the total precipitation must also be greater than 0. If no measurable precipitation is expected then probability should be 0%. You may explain further using the "details" section. </small>
 				</div>
 				</div>
 				<div class="twelve columns">
@@ -427,7 +428,7 @@ function submit_input() {
 				<br>
 					<input value="Submit" type="submit" id="submit">	
 			</div>
-				<div class="three columns">
+				<div class="three columns offset-by-six">
 					<br>
 <form action="<?php reset_var() ?>"><input id="reset" value="Reset" type="submit"></form></div>
 			</p>

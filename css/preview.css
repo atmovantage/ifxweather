@@ -8,12 +8,12 @@
 */
 
 
-#changes{
+#Edit{
 			background-color: #A3C5FF;
 			-webkit-appearance: none;
 			-moz-appearance: none;
 		} 
-#changes:hover{
+#Edit:hover{
 	background-color: #327BFA;
 			-webkit-appearance: none;
 			-moz-appearance: none;
@@ -35,3 +35,24 @@
     float: none;
 }
 
+#Publish{
+			background-color: #A3FFAF;
+			-webkit-appearance: none;
+			-moz-appearance: none;
+		} 
+#Publish:hover{
+	background-color: #32FA4D;
+			-webkit-appearance: none;
+			-moz-appearance: none;
+}
+
+#New{
+			background-color: #A3FFEE;
+			-webkit-appearance: none;
+			-moz-appearance: none;
+		} 
+#New:hover{
+	background-color: #32FABE;
+			-webkit-appearance: none;
+			-moz-appearance: none;
+}

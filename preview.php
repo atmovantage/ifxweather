@@ -210,6 +210,12 @@ else {
 elseif ($_SESSION["day1snowmin"] == $_SESSION["day1snowmax"] && $_SESSION["day1snowmin"] > 0 && $_SESSION["day1snowmax"] > 0){
 	echo "<p>Snow accumulation up to " . $_SESSION["day1snowmax"] . " " . $precipunit . "</p>" ;
 } 
+elseif ($_SESSION["day1snowmin"] == 0 && $_SESSION["day1snowmax"] == 1){
+	echo "<p>Snow accumulation less than 1 " . $precipunit . "</p>" ;
+} 
+elseif ($_SESSION["day1snowmin"] == 0 && $_SESSION["day1snowmax"] > 0){
+	echo "<p>Snow accumulation up to " . $_SESSION["day1snowmax"] . " " . $precipunit . "</p>" ;
+} 
 ?>
 		
 		<?php if ($_SESSION["day1windmin"] != " " && $_SESSION["day1windmax"] != " " && $_SESSION["day1windmin"] != $_SESSION["day1windmax"] && $_SESSION["day1windmin"] < $_SESSION["day1windmax"] && $_SESSION["day1winddir"] != " ") {
@@ -252,7 +258,7 @@ elseif ($_SESSION["day1windmin"] == $_SESSION["day1windmax"]) {
 		<form action="/iFxWx-edit.php">
 			<input name="Edit" id="Edit" value="Edit" type="submit">
 		</form></div>
-<div class="three columns">
+<div class="three columns offset-by-six">
 <form action="/publish.php">
 	<input name="Publish" id="Publish" value="Publish" type="submit">
 	</form></div>
