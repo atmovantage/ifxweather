@@ -22,11 +22,16 @@
 
 
 #title{
-	display: block;
+	display: inline-block;
     text-align: center; 
-    text-overflow: ellipsis;
+    /*text-overflow: ellipsis;
     white-space: nowrap;
-	overflow: hidden;
+	overflow: hidden;*/
 }
 
+.wximg{
+	display: inline-block;
+    vertical-align: bottom;
+    float: none;
+}
 

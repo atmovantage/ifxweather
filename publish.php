@@ -183,7 +183,9 @@ default: $day1wximg = "http://ifxweather.austinsatmosphere.com/wp-content/upload
 ?>
 <div style="text-align: center;" class="two columns">
 	<p id="title"><strong><big><u><?php echo $_SESSION["day1"]; ?></u></big></strong><br></p>
-<img style="width: 70px; height: 70px;" alt="day1wximg" src="<?php echo $day1wximg ; ?>" >
+<p>
+	<img class="wximg" style="width: 70px; height: 70px;" alt="day1wximg" src="<?php echo $day1wximg ; ?>" >
+	</p>
 		<?php if ($_SESSION["day1pop"] > 0) {
 	echo "<p><strong>" . $_SESSION["day1desc"] . "</strong> <small>(" . $_SESSION["day1pop"] . "%)</small></p>" ;
 }
