@@ -22,11 +22,7 @@
 
 
 #title{
-	position:relative;
-	display: inline-block;
-    transform:translate(-50%,0px);
-    float: none;
-	left: 50%;
+	display: block;
     text-align: center; 
     text-overflow: ellipsis;
     white-space: nowrap;

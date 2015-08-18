@@ -2,6 +2,16 @@
 Project to design and develop a web-based application to enable meteorologists to easily compose and publish a weather forecast.
 
 ----------
+Version 0.9.1 Pre-Alpha (August 17th, 2015):
+Update for bug fix:
+
+    Preview and Publish Pages
+        Changed CSS for displaying forecast period title due to bug
+            inline-block changed to block
+                Was not aligned correctly on display
+                    Not that noticeable on desktop displays but very obvious on mobile (non-grid view)
+					
+----------
 Version 0.9.0 Pre-Alpha (August 17th, 2015):
 Latest updates are detailed below:
 
