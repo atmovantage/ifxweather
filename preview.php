@@ -17,6 +17,50 @@ if(isset($_SESSION['timeout'])) {
  
 // Update the timout field with the current time.
 $_SESSION['timeout'] = time();
+
+function submit_input() {
+	// Meta data variables
+	$_SESSION["forecaster"] = $_SESSION["forecaster"];
+	$_SESSION["stationid"] = $_SESSION["stationid"];
+	$_SESSION["stationname"] = $_SESSION["stationname"];
+	$_SESSION["date"] = $_SESSION["date"];
+	$_SESSION["time"] = $_SESSION["time"];
+	$_SESSION["fxstarttime"] = $_SESSION["fxstarttime"];
+	$_SESSION["fxstartmonth"] = $_SESSION["fxstartmonth"];
+	$_SESSION["fxstartday"] = $_SESSION["fxstartday"];
+	$_SESSION["fxstartyear"] = $_SESSION["fxstartyear"];
+	$_SESSION["tempunit"] = $_SESSION["tempunit"];
+	$_SESSION["colortemp"] = $_SESSION["colortemp"];
+	$_SESSION["windunit"] = $_SESSION["windunit"];
+	$_SESSION["highlow"] = $_SESSION["highlow"];
+	
+	// 0-12hr Forecast Period Variables
+	$_SESSION["day1label"] = $_SESSION["day1label"];
+	$_SESSION["day1wx"] = $_SESSION["day1wx"];
+	$_SESSION["day1"] = $_SESSION["day1"];
+	$_SESSION["precipunit"] = $_SESSION["precipunit"];
+	$_SESSION["day1pop"] = $_SESSION["day1pop"];
+	$_SESSION["day1desc"] = $_SESSION["day1desc"];
+	$_SESSION["day1temp"] = $_SESSION["day1temp"];
+	$_SESSION["day1precip"] = $_SESSION["day1precip"];
+	$_SESSION["showrain"] = $_SESSION["showrain"];
+	$_SESSION["day1snowmin"] = $_SESSION["day1snowmin"];
+	$_SESSION["day1snowmax"] = $_SESSION["day1snowmax"];
+	$_SESSION["day1windmin"] = $_SESSION["day1windmin"];
+	$_SESSION["day1windmax"] = $_SESSION["day1windmax"];
+	$_SESSION["day1winddir"] = $_SESSION["day1winddir"];
+	$_SESSION["day1windgust"] = $_SESSION["day1windgust"];
+	$_SESSION["day1detail"] = $_SESSION["day1detail"];
+	
+	//Submit to the preview page
+	header('Location: /iFxWx.php');
+	//echo "/iFxWx.php";
+	exit();
+}
+
+if (isset($_POST['Edit'])) {
+	submit_input();
+}
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html><head>
@@ -34,7 +78,7 @@ $_SESSION['timeout'] = time();
 <div class="twelve columns" style="font-weight: bold; text-align: center">
 <p><big style="font-family: Helvetica,Arial,sans-serif;"><big><big><span><img style="width: 70px; height: 61px;" alt="" src="http://ifxweather.austinsatmosphere.com/wp-content/uploads/2015/05/logo.png"><br>iFx
 Weather Preview</span></big></big></big>
-Version 0.9.1 pre-alpha</p>
+Version 0.10.0 pre-alpha</p>
 </div>
 	<div class="twelve columns">
 				<hr>
@@ -255,7 +299,7 @@ elseif ($_SESSION["day1windmin"] == $_SESSION["day1windmax"]) {
 				<hr>
 			</div>
 	<div class="three columns">
-		<form action="/iFxWx-edit.php">
+		<form action="/preview.php" method="POST">
 			<input name="Edit" id="Edit" value="Edit" type="submit">
 		</form></div>
 <div class="three columns offset-by-six">

@@ -91,6 +91,7 @@ function submit_input() {
 	$_SESSION["highlow"] = $_POST["highlow"];
 	
 	// 0-12hr Forecast Period Variables
+	$_SESSION["day1label"] = $_POST["day1label"];
 	$_SESSION["day1wx"] = $_POST["day1wx"];
 	$_SESSION["day1"] = $_POST["day1"];
 	$_SESSION["precipunit"] = $_POST["precipunit"];
@@ -257,7 +258,7 @@ switch ($fxvalid) {
 			<img src="/ifxwx_images/background.jpg" id="bg" alt="">
 			<div class="container">
 			<div class="twelve columns" style="font-weight: bold; text-align: center" id="header">
-<p><img style="width: 70px; height: 61px;" alt="" src="/ifxwx_images/logo.png"> Version 0.9.1 pre-alpha<br><big style="font-family: Helvetica,Arial,sans-serif;"><big><big>Forecast Composer</big></big></big>
+<p><img style="width: 70px; height: 61px;" alt="" src="/ifxwx_images/logo.png"> Version 0.10.0 pre-alpha<br><big style="font-family: Helvetica,Arial,sans-serif;"><big><big>Forecast Composer</big></big></big>
 </p>
 			<div class="twelve columns" >
 				Welcome to the forecast composer page. This is the first step towards creating your own weather forecast. Enter the variables for your weather forecast using the forms below and click the 'Submit' button to view your final product.<small><br>Tips:<br>
@@ -277,7 +278,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $proceed == false) {
 				<p>
 					<label for="forecaster">Your Name</label>
 					<br>
-					<input style="background-color: <?php echo $fieldErr3 ?>" size="15" name="forecaster" id="forecaster" placeholder="Austin" type="text" value="<?php echo (isset($_POST['forecaster']))?$_POST['forecaster']:'';?>">
+					<input style="background-color: <?php echo $fieldErr3 ?>" size="15" name="forecaster" id="forecaster" placeholder="Austin" type="text" value="<?php echo (isset($_POST['forecaster']))?$_POST['forecaster']:''; echo (isset($_SESSION['forecaster']))?$_SESSION['forecaster']:'';?>">
 					<br>
 				</p>
 			</div>
@@ -285,7 +286,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $proceed == false) {
 				<p>
 					<label for="stationid">Station ID</label>
 					<br>
-					<input size="5" name="stationid" id="stationid" placeholder="KDXR" type="text" value="<?php echo (isset($_POST['stationid']))?$_POST['stationid']:'';?>">
+					<input size="5" name="stationid" id="stationid" placeholder="KDXR" type="text" value="<?php echo (isset($_POST['stationid']))?$_POST['stationid']:''; echo (isset($_SESSION['stationid']))?$_SESSION['stationid']:'';?>">
 					<br>
 				</p>
 			</div>
@@ -293,7 +294,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $proceed == false) {
 				<p>
 					<label for="stationname">Location Name</label>
 					<br>
-					<input style="background-color: <?php echo $fieldErr4 ?>" size="15" name="stationname" id="stationname" placeholder="Danbury, CT" type="text" value="<?php echo (isset($_POST['stationname']))?$_POST['stationname']:'';?>">
+					<input style="background-color: <?php echo $fieldErr4 ?>" size="15" name="stationname" id="stationname" placeholder="Danbury, CT" type="text" value="<?php echo (isset($_POST['stationname']))?$_POST['stationname']:''; echo (isset($_SESSION['stationname']))?$_SESSION['stationname']:'';?>">
 					<br>
 				</p>
 			</div>
@@ -301,7 +302,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $proceed == false) {
 				<p>
 					<label for="date">Publish Date</label>
 					<br>
-					<input style="background-color: <?php echo $fieldErr5 ?>" size="10" name="date" id="date" placeholder="10/08/2015" type="date" value="<?php echo (isset($_POST['date']))?$_POST['date']:$month . '/' . $day . '/' . $year;?>">
+					<input style="background-color: <?php echo $fieldErr5 ?>" size="10" name="date" id="date" placeholder="10/08/2015" type="date" value="<?php if (isset($_POST['date'])) {echo $_POST['date'];} elseif (isset($_SESSION['date'])) {echo $_SESSION['date'];} else {echo $month . '/' . $day . '/' . $year;};?>">
 					<br>
 				</p>
 				</div>
@@ -309,7 +310,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $proceed == false) {
 				<p>
 					<label for="time">Publish Time</label>
 					<br>
-					<input style="background-color: <?php echo $fieldErr6 ?>" size="7" name="time" id="time" placeholder="12:00PM" type="time" value="<?php echo (isset($_POST['time']))?$_POST['time']:$hour . ':' . $minutes . $am_pm;?>">
+					<input style="background-color: <?php echo $fieldErr6 ?>" size="7" name="time" id="time" placeholder="12:00PM" type="time" value="<?php if (isset($_POST['time'])) {echo $_POST['time'];} elseif (isset($_SESSION['time'])) {echo $_SESSION['time'];} else {echo $hour . ':' . $minutes . $am_pm;;};?>">
 					<br>
 				</p>
 			</div>
@@ -320,7 +321,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $proceed == false) {
 					<label for="fxstartmonth">Month</label>
 					<br>
 					<select style="width:100%; background-color: <?php echo $fieldErr7 ?>" name="fxstartmonth">
-						<option value="<?php echo (isset($_POST['fxstartmonth']))?$_POST['fxstartmonth']:$month;?>"><?php echo (isset($_POST['fxstartmonth']))?$_POST['fxstartmonth']:$monthname;?></option>
+						<option value="<?php if (isset($_POST['fxstartmonth'])) {echo $_POST['fxstartmonth'];} elseif (isset($_SESSION['fxstartmonth'])) {echo $_SESSION['fxstartmonth'];} else {echo $month;};?>"><?php if (isset($_POST['fxstartmonth'])) {echo $_POST['fxstartmonth'];} elseif (isset($_SESSION['fxstartmonth'])) {echo $_SESSION['fxstartmonth'];} else {echo $monthname;};?></option>
 						<option value="01">January</option>
 						<option value="02">February</option>
 						<option value="03">March</option>
@@ -342,7 +343,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $proceed == false) {
 					<label for="fxstartday">Day</label>
 					<br>
 					<select style="width:100%; background-color: <?php echo $fieldErr8 ?>" name="fxstartday">
-						<option value="<?php echo (isset($_POST['fxstartday']))?$_POST['fxstartday']:$day;?>"><?php echo (isset($_POST['fxstartday']))?$_POST['fxstartday']:$day;?></option>
+						<option value="<?php if (isset($_POST['fxstartday'])) {echo $_POST['fxstartday'];} elseif (isset($_SESSION['fxstartday'])) {echo $_SESSION['fxstartday'];} else {echo $day;};?>"><?php if (isset($_POST['fxstartday'])) {echo $_POST['fxstartday'];} elseif (isset($_SESSION['fxstartday'])) {echo $_SESSION['fxstartday'];} else {echo $day;};?></option>
 						<option value="01">01</option>
 						<option value="02">02</option>
 						<option value="03">03</option>
@@ -383,7 +384,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $proceed == false) {
 					<label for="fxstartyear">Year</label>
 					<br>
 					<select style="width:100%; background-color: <?php echo $fieldErr9 ?>" name="fxstartyear">
-						<option value="<?php echo (isset($_POST['fxstartyear']))?$_POST['fxstartyear']:$year;?>"><?php echo (isset($_POST['fxstartyear']))?$_POST['fxstartyear']:$year;?></option>
+						<option value="<?php if (isset($_POST['fxstartyear'])) {echo $_POST['fxstartyear'];} elseif (isset($_SESSION['fxstartyear'])) {echo $_SESSION['fxstartyear'];} else {echo $year;};?>"><?php if (isset($_POST['fxstartyear'])) {echo $_POST['fxstartyear'];} elseif (isset($_SESSION['fxstartyear'])) {echo $_SESSION['fxstartyear'];} else {echo $year;};?></option>
 						<option value="2015">2015</option>
 						<option value="2014">2014</option>
 						<option value="2013">2013</option>
@@ -409,7 +410,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $proceed == false) {
 					<label for="fxstarttime">Local Time</label>
 					<br>
 					<select style="width:100%; background-color: <?php echo $fieldErr10 ?>" name="fxstarttime" onchange="updateTitles(this.value)">
-						<option value="<?php echo (isset($_POST['fxstarttime']))?$_POST['fxstarttime']:$fxvalid;?>"><?php echo (isset($_POST['fxstarttime']))?$_POST['fxstarttime']:$fxvalidname;?></option>
+						<option value="<?php if (isset($_POST['fxstarttime'])) {echo $_POST['fxstarttime'];} elseif (isset($_SESSION['fxstartyear'])) {echo $_SESSION['fxstarttime'];} else {echo $fxvalid;};?>"><?php if (isset($_POST['fxstarttime'])) {echo $_POST['fxstarttime'];} elseif (isset($_SESSION['fxstarttime'])) {echo $_SESSION['fxstarttime'];} else {echo $fxvalidname;};?></option>
 						<optgroup label="Morning">
 						<option value="5am - 5pm">5am - 5pm</option>
 						<option value="6am - 6pm">6am - 6pm</option>
@@ -435,13 +436,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $proceed == false) {
 			<div class="two columns" style="text-align: center;" id="hr0-12">
 				
 				<p>
-						<label id="day1title" for="day1label"><?php echo $fxvalidname ?></label><br>
-					<input style="width:90%" name="day1" id="day1label" placeholder="Monday" type="text" value="<?php echo (isset($_POST['day1']))?$_POST['day1']:$day1string;?>">
+						<label id="day1title" for="day1label"><?php if (isset($_POST['day1'])) {echo $_POST['day1'];} elseif (isset($_SESSION['day1'])) {echo "";} else {echo $fxvalidname;};?></label><br>
+					<input style="width:90%" name="day1" id="day1label" placeholder="Monday" type="text" value="<?php if (isset($_POST['day1'])) {echo $_POST['day1'];} elseif (isset($_SESSION['day1'])) {echo $_SESSION['day1'];} else {echo $day1string;};?>">
 					<br>
 				</p>
 				<p>
 					<select style="width:90%" name="day1wx" onchange="document.getElementById('day1desc').value=this.value;">
-						<option value="<?php echo (isset($_POST['day1wx']))?$_POST['day1wx']:'';?>"><?php echo (isset($_POST['day1wx']))?$_POST['day1wx']:'Weather';?></option>
+						<option value="<?php if (isset($_POST['day1wx'])) {echo $_POST['day1wx'];} elseif (isset($_SESSION['day1wx'])) {echo $_SESSION['day1wx'];} else {echo '';};?>"><?php if (isset($_POST['day1wx'])) {echo $_POST['day1wx'];} elseif (isset($_SESSION['day1wx'])) {echo $_SESSION['day1wx'];} else {echo 'Weather';};?></option>
 						<optgroup label="General Day">
 						<option value="Sunny">Sunny</option>
 						<option value="Partly Sunny">Partly Sunny</option>
@@ -497,12 +498,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $proceed == false) {
 				<p>
 					<label for="day1desc">Weather Description</label>
 					<br>
-					<input style="width:90%" name="day1desc" placeholder="Mostly Sunny" id="day1desc" type="text" value="<?php echo (isset($_POST['day1desc']))?$_POST['day1desc']:'';?>">
+					<input style="width:90%" name="day1desc" placeholder="Mostly Sunny" id="day1desc" type="text" value="<?php if (isset($_POST['day1desc'])) {echo $_POST['day1desc'];} elseif (isset($_SESSION['day1desc'])) {echo $_SESSION['day1desc'];} else {echo '';};?>">
 				</p><br>
 			<p>
 					<label for="day1temp">Temperature</label>
 					<br>
-					<input style="width:90%" placeholder="High/Low" min="-100" max="134" maxlength="3" name="day1temp" id="day1temp" type="number" value="<?php echo (isset($_POST['day1temp']))?$_POST['day1temp']:'';?>"><br>
+					<input style="width:90%" placeholder="High/Low" min="-100" max="134" maxlength="3" name="day1temp" id="day1temp" type="number" value="<?php if (isset($_POST['day1temp'])) {echo $_POST['day1temp'];} elseif (isset($_SESSION['day1temp'])) {echo $_SESSION['day1temp'];} else {echo '';};?>"><br>
 				<form id="highlow">
 							<input type="radio" id="highlow" name="highlow" value="red" checked><small>High</small>
 						<input type="radio" id="highlow" name="highlow" value="blue"><small>Low</small></form>
@@ -511,19 +512,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $proceed == false) {
 			<p>
 					<label for="day1pop">Precipitation</label>
 					<br>
-					<input style="width:90%" min="0" max="100" size="15" maxlength="3" name="day1pop" placeholder="Probability %" id="day1pop" type="number" value="<?php echo (isset($_POST['day1pop']))?$_POST['day1pop']:'';?>"><label for="day1precip" id="day1precip_label">Precipitation Total</label><input style="width:90%" step=".01" min="0" max="100" name="day1precip" placeholder="Precip Total" id="day1precip" type="number" value="<?php echo (isset($_POST['day1precip']))?$_POST['day1precip']:'';?>"><br><small><small><strong>Hide Rain Total<input type="checkbox" name="showrain" value="1"></strong></small></small>
+					<input style="width:90%" min="0" max="100" size="15" maxlength="3" name="day1pop" placeholder="Probability %" id="day1pop" type="number" value="<?php if (isset($_POST['day1pop'])) {echo $_POST['day1pop'];} elseif (isset($_SESSION['day1pop'])) {echo $_SESSION['day1pop'];} else {echo '';};?>"><label for="day1precip" id="day1precip_label">Precipitation Total</label><input style="width:90%" step=".01" min="0" max="100" name="day1precip" placeholder="Precip Total" id="day1precip" type="number" value="<?php if (isset($_POST['day1precip'])) {echo $_POST['day1precip'];} elseif (isset($_SESSION['day1precip'])) {echo $_SESSION['day1precip'];} else {echo '';};?>"><br><small><small><strong>Hide Rain Total<input type="checkbox" name="showrain" value="1"></strong></small></small>
 					</p>
 			<p>
 					<label for="day1snowmin">Snow</label>
 					<br>
-			<input style="width:90%" step=".5" min="0" max="100" name="day1snowmin" placeholder="Min Accum" id="day1snowmin" type="number" value="<?php echo (isset($_POST['day1snowmin']))?$_POST['day1snowmin']:'';?>"><label for="day1snowmax" id="day1snowmax_label">Day 1 Snow Maximum</label><input style="width:90%" step=".5" min="0" max="100" name="day1snowmax" placeholder="Max Accum" id="day1snowmax" type="number" value="<?php echo (isset($_POST['day1snowmax']))?$_POST['day1snowmax']:'';?>"><br>
+			<input style="width:90%" step=".5" min="0" max="100" name="day1snowmin" placeholder="Min Accum" id="day1snowmin" type="number" value="<?php if (isset($_POST['day1snowmin'])) {echo $_POST['day1snowmin'];} elseif (isset($_SESSION['day1snowmin'])) {echo $_SESSION['day1snowmin'];} else {echo '';};?>"><label for="day1snowmax" id="day1snowmax_label">Day 1 Snow Maximum</label><input style="width:90%" step=".5" min="0" max="100" name="day1snowmax" placeholder="Max Accum" id="day1snowmax" type="number" value="<?php if (isset($_POST['day1snowmax'])) {echo $_POST['day1snowmax'];} elseif (isset($_SESSION['day1snowmax'])) {echo $_SESSION['day1snowmax'];} else {echo '';};?>"><br>
 				</p>
 			<p>
 					<label for="day1wind">Wind</label>
 					<br>
-					<input style="width:90%" maxlength="3" max="240" min="0" name="day1windmin" placeholder="Min Sustained" id="day1windmin" type="number" value="<?php echo (isset($_POST['day1windmin']))?$_POST['day1windmin']:'';?>"><input style="width:90%" maxlength="3" max="240" min="0" name="day1windmax" placeholder="Max Sustained" id="day1windmax" type="number" value="<?php echo (isset($_POST['day1windmax']))?$_POST['day1windmax']:'';?>"><input style="width:90%" maxlength="3" max="240" min="0" name="day1windgust" placeholder="Max Gust" id="day1windgust" type="number" value="<?php echo (isset($_POST['day1windgust']))?$_POST['day1windgust']:'';?>">
+					<input style="width:90%" maxlength="3" max="240" min="0" name="day1windmin" placeholder="Min Sustained" id="day1windmin" type="number" value="<?php if (isset($_POST['day1windmin'])) {echo $_POST['day1windmin'];} elseif (isset($_SESSION['day1windmin'])) {echo $_SESSION['day1windmin'];} else {echo '';};?>"><input style="width:90%" maxlength="3" max="240" min="0" name="day1windmax" placeholder="Max Sustained" id="day1windmax" type="number" value="<?php if (isset($_POST['day1windmax'])) {echo $_POST['day1windmax'];} elseif (isset($_SESSION['day1windmax'])) {echo $_SESSION['day1windmax'];} else {echo '';};?>"><input style="width:90%" maxlength="3" max="240" min="0" name="day1windgust" placeholder="Max Gust" id="day1windgust" type="number" value="<?php if (isset($_POST['day1windgust'])) {echo $_POST['day1windgust'];} elseif (isset($_SESSION['day1windgust'])) {echo $_SESSION['day1windgust'];} else {echo '';};?>">
 					<select style="width:80%" name="day1winddir">
-						<option value="<?php echo (isset($_POST['day1winddir']))?$_POST['day1winddir']:'';?>"><?php echo (isset($_POST['day1winddir']))?$_POST['day1winddir']:'Direction';?></option>
+						<option value="<?php if (isset($_POST['day1winddir'])) {echo $_POST['day1winddir'];} elseif (isset($_SESSION['day1winddir'])) {echo $_SESSION['day1winddir'];} else {echo '';};?>"><?php if (isset($_POST['day1winddir'])) {echo $_POST['day1winddir'];} elseif (isset($_SESSION['day1winddir'])) {echo $_SESSION['day1winddir'];} else {echo 'Direction';};?></option>
 						<option value="North">North</option>
 						<option value="NNE">North-Northeast</option>
 						<option value="Northeast">Northeast</option>
@@ -547,7 +548,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $proceed == false) {
 				</p>
 				<label for="day1detail">Additional Details</label>
 				<br>
-				<textarea style="width:95%" height="200px" name="day1detail" id="day1detail" placeholder="Timing, intensity, confidence, etc." type="text"><?php echo (isset($_POST['day1detail']))?$_POST['day1detail']:'';?></textarea>
+				<textarea style="width:95%" height="200px" name="day1detail" id="day1detail" placeholder="Timing, intensity, confidence, etc." type="text"><?php if (isset($_POST['day1detail'])) {echo $_POST['day1detail'];} elseif (isset($_SESSION['day1detail'])) {echo $_SESSION['day1detail'];} else {echo '';};?></textarea>
 								<br>
 			</div>
 <div class="twelve columns">
@@ -568,7 +569,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $proceed == false) {
 				<div class="two columns" id="windunit">
 					<label for="windunit">Wind Units</label>
 					<select style="width:100%" name="windunit">
-						<option value="<?php echo (isset($_POST['windunit']))?$_POST['windunit']:'mph';?>"><?php echo (isset($_POST['windunit']))?$_POST['windunit']:'Miles/Hour (mph)';?></option>
+						<option value="<?php if (isset($_POST['windunit'])) {echo $_POST['windunit'];} elseif (isset($_SESSION['windunit'])) {echo $_SESSION['windunit'];} else {echo 'mph';};?>"><?php if (isset($_POST['windunit'])) {echo $_POST['windunit'];} elseif (isset($_SESSION['windunit'])) {echo $_SESSION['windunit'];} else {echo 'Miles/Hour (mph)';};?></option>
 						<option value="mph">Miles/Hour (mph)</option>
 						<option value="km/h">Kilometers/Hour (km/h)</option>
 						<option value="m/s">Meters/Second (m/s)</option>

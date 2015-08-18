@@ -2,6 +2,53 @@
 Project to design and develop a web-based application to enable meteorologists to easily compose and publish a weather forecast.
 
 ----------
+Version 0.10.0 Pre-Alpha (August 18th, 2015):
+There have been some BIG changes in this version. iFxWx will be ready for the Alpha release very soon! Here are the latest changes:
+
+    Composer Page
+        Spaced the 'submit' and 'reset' buttons so they are on opposite sides of the page, do not overlap on smaller screens
+        Automatic dates and times are set as default values for 'publish date' and 'publish time' and for 'forecast start' selections
+            Numerical months (ie. 08) convert to conventional names (ie. August)
+            Removed the 'th' 'st' 'nd' 'rd' from the end of the days of the month just to be consistent, they're unnecessary
+        The local time selection now automatically selects a time based on the current time (Eastern American time zone for now)
+            If it's after 8PM and before 5AM then the start time sets as 5AM
+            If it's after 5AM then it sets for the next hour (6AM, 7AM, 8AM), whichever comes next
+            If it's after 8AM and before 5PM then the start time sets as 5PM
+            If it's after 5PM then it sets for the next hour (6PM, 7PM, 8PM), whichever comes next
+        0-12hr title is based on the current time
+            If the 'valid from' time is set as a morning forecast
+                0-12hr title automatically sets for today's day of the week (ie. "Tuesday")
+            If the 'valid from' time is set as an evening forecast
+                0-12hr title automatically sets for today's day of the week plus the phrase 'Night' (ie. "Tuesday Night")
+        0-12hr title will automatically change if the user selects a different forecast start time
+            Coded it so that each forecast period will alternate labels based on whatever the user selects for a start time
+                For example: If user selects a start time of 7am - 7pm
+                    The 0-12hr title (label) will automatically change to '7am - 7pm'
+                    The 12-24hr title (label) will automatically change to '7pm - 7am'
+                    So on and so forth for the remainder of the forecast periods
+        All 0-12hr variables are carried over during form validation so they are not lost if user fails to fill in a require field(s)
+        **Made all input fields dual-purpose**
+            Each field will check if the form is being validated for submission (POST) or is being loaded for editing (SESSION)
+                Eliminates the need for a redundant Editor page just for loading/editing session variables
+                Allows the validation of the forecast after editing the forecast
+                All variables entered on the original Composer page will re-populate if user hits 'Edit' from the Preview page
+    Preview Page
+        Testing out a system to bottom-align the wx images without needing to truncate forecast period titles
+            Gave all weather images their own CSS class
+                display: inline-block
+                vertical-align: bottom
+                float: none
+        Spaced the 'edit' and 'publish' buttons so they are on opposite sides of the page, do not overlap on smaller screens
+        Colorized buttons
+    Publish Page
+        Same css changes to wx images on the preview page documented above
+        Colorized button
+        The "Make a New Forecast" button will not reset the session
+            In a future version I will fix this so that the Composer page is automatically reset
+    Editor Page
+        **Deprecated**
+            Replaced by passing all variables back through the original Composer page by making each field check for an active session
+----------
 Version 0.9.1 Pre-Alpha (August 17th, 2015):
 Update for bug fix:
 
