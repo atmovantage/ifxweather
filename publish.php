@@ -27,12 +27,12 @@ $_SESSION['timeout'] = time();
 </style>
 <link title="skeleton" rel="stylesheet" href="css/skeleton.css" type="text/css">
 	<link title="skeleton" rel="stylesheet" href="css/preview.css" type="text/css">
-<link rel="icon" type="image/png" href="http://ifxweather.austinsatmosphere.com/images/favicon.png">
+<link rel="icon" type="image/png" href="/images/favicon.png">
 </head>
 <body>
 <div class="container">
 <div class="twelve columns" style="font-weight: bold; text-align: center">
-<p><big style="font-family: Helvetica,Arial,sans-serif;"><big><big><span><img style="width: 70px; height: 61px;" alt="" src="http://ifxweather.austinsatmosphere.com/wp-content/uploads/2015/05/logo.png"><br>iFx
+<p><big style="font-family: Helvetica,Arial,sans-serif;"><big><big><span><img style="width: 70px; height: 61px;" alt="" src="/ifxwx_images/logo.png"><br>iFx
 Weather</span></big></big></big>
 Version 0.10.0 pre-alpha</p>
 </div>
@@ -104,81 +104,81 @@ Version 0.10.0 pre-alpha</p>
 	}
 
 switch ($_SESSION["day1wx"]) {
-case "Sunny": $day1wximg = "http://ifxweather.austinsatmosphere.com/wp-content/uploads/2015/06/sunny.png";
+case "Sunny": $day1wximg = "/ifxwx_images/sunny.png";
 break;
-case "Partly Sunny": $day1wximg = "http://ifxweather.austinsatmosphere.com/wp-content/uploads/2015/06/partly_cloudy_day.png";
+case "Partly Sunny": $day1wximg = "/ifxwx_images/partly_cloudy_day.png";
 break;
-case "Mostly Cloudy": $day1wximg = "http://ifxweather.austinsatmosphere.com/wp-content/uploads/2015/06/overcast.png";
+case "Mostly Cloudy": $day1wximg = "/ifxwx_images/overcast.png";
 break;
-case "Clear": $day1wximg = "http://ifxweather.austinsatmosphere.com/wp-content/uploads/2015/06/clear_night.png";
+case "Clear": $day1wximg = "/ifxwx_images/clear_night.png";
 break;
-case "Partly Cloudy": $day1wximg = "http://ifxweather.austinsatmosphere.com/wp-content/uploads/2015/06/partly_cloudy_night.png";
+case "Partly Cloudy": $day1wximg = "/ifxwx_images/partly_cloudy_night.png";
 break;
-case "Overcast": $day1wximg = "http://ifxweather.austinsatmosphere.com/wp-content/uploads/2015/06/overcast.png";
+case "Overcast": $day1wximg = "/ifxwx_images/overcast.png";
 break;
-case "Isolated Rain Showers": $day1wximg = "http://ifxweather.austinsatmosphere.com/wp-content/uploads/2015/06/showers_isolated.png";
+case "Isolated Rain Showers": $day1wximg = "/ifxwx_images/showers_isolated.png";
 break;
-case "Scattered Rain Showers": $day1wximg = "http://ifxweather.austinsatmosphere.com/wp-content/uploads/2015/06/showers_scattered.png";
+case "Scattered Rain Showers": $day1wximg = "/ifxwx_images/showers_scattered.png";
 break;
-case "Rain": $day1wximg = "http://ifxweather.austinsatmosphere.com/wp-content/uploads/2015/06/rain.png";
+case "Rain": $day1wximg = "/ifxwx_images/rain.png";
 break;
-case "Heavy Rain": $day1wximg = "http://ifxweather.austinsatmosphere.com/wp-content/uploads/2015/06/rain_heavy.png";
+case "Heavy Rain": $day1wximg = "/ifxwx_images/rain_heavy.png";
 break;
-case "Rain and Fog": $day1wximg = "http://ifxweather.austinsatmosphere.com/wp-content/uploads/2015/06/showers_haze.png";
+case "Rain and Fog": $day1wximg = "/ifxwx_images/showers_haze.png";
 break;
-case "Isolated T-Storms": $day1wximg = "http://ifxweather.austinsatmosphere.com/wp-content/uploads/2015/06/tstorms_isolated.png";
+case "Isolated T-Storms": $day1wximg = "/ifxwx_images/tstorms_isolated.png";
 break;
-case "Scattered T-Storms": $day1wximg = "http://ifxweather.austinsatmosphere.com/wp-content/uploads/2015/06/tstorms_scattered.png";
+case "Scattered T-Storms": $day1wximg = "/ifxwx_images/tstorms_scattered.png";
 break;
-case "Thunderstorms": $day1wximg = "http://ifxweather.austinsatmosphere.com/wp-content/uploads/2015/06/tstorms_rain.png";
+case "Thunderstorms": $day1wximg = "/ifxwx_images/tstorms_rain.png";
 break;
-case "Severe T-Storms": $day1wximg = "http://ifxweather.austinsatmosphere.com/wp-content/uploads/2015/06/tstorms_severe.png";
+case "Severe T-Storms": $day1wximg = "/ifxwx_images/tstorms_severe.png";
 break;
-case "Snow Flurries": $day1wximg = "http://ifxweather.austinsatmosphere.com/wp-content/uploads/2015/06/snow_flurries.png";
+case "Snow Flurries": $day1wximg = "/ifxwx_images/snow_flurries.png";
 break;
-case "Scattered Snow Showers": $day1wximg = "http://ifxweather.austinsatmosphere.com/wp-content/uploads/2015/06/snow_scattered.png";
+case "Scattered Snow Showers": $day1wximg = "/ifxwx_images/snow_scattered.png";
 break;
-case "Snow": $day1wximg = "http://ifxweather.austinsatmosphere.com/wp-content/uploads/2015/06/snow.png";
+case "Snow": $day1wximg = "/ifxwx_images/snow.png";
 break;
-case "Heavy Snow": $day1wximg = "http://ifxweather.austinsatmosphere.com/wp-content/uploads/2015/06/snow_heavy.png";
+case "Heavy Snow": $day1wximg = "/ifxwx_images/snow_heavy.png";
 break;
-case "Blizzard": $day1wximg = "http://ifxweather.austinsatmosphere.com/wp-content/uploads/2015/06/snow_blizzard.png";
+case "Blizzard": $day1wximg = "/ifxwx_images/snow_blizzard.png";
 break;
-case "Blowing Snow": $day1wximg = "http://ifxweather.austinsatmosphere.com/wp-content/uploads/2015/06/blowing_snow.png";
+case "Blowing Snow": $day1wximg = "/ifxwx_images/blowing_snow.png";
 break;
-case "Rain/Snow": $day1wximg = "http://ifxweather.austinsatmosphere.com/wp-content/uploads/2015/06/rain_snow.png";
+case "Rain/Snow": $day1wximg = "/ifxwx_images/rain_snow.png";
 break;
-case "Freezing Rain/Snow": $day1wximg = "http://ifxweather.austinsatmosphere.com/wp-content/uploads/2015/06/freezing_rain_snow.png";
+case "Freezing Rain/Snow": $day1wximg = "/ifxwx_images/freezing_rain_snow.png";
 break;
-case "Freezing Rain/Rain": $day1wximg = "http://ifxweather.austinsatmosphere.com/wp-content/uploads/2015/06/freezing_rain.png";
+case "Freezing Rain/Rain": $day1wximg = "/ifxwx_images/freezing_rain.png";
 break;
-case "Freezing Rain/Sleet": $day1wximg = "http://ifxweather.austinsatmosphere.com/wp-content/uploads/2015/06/freezing_rain_sleet.png";
+case "Freezing Rain/Sleet": $day1wximg = "/ifxwx_images/freezing_rain_sleet.png";
 break;
-case "Rain/Sleet": $day1wximg = "http://ifxweather.austinsatmosphere.com/wp-content/uploads/2015/06/rain_sleet.png";
+case "Rain/Sleet": $day1wximg = "/ifxwx_images/rain_sleet.png";
 break;
-case "Sleet": $day1wximg = "http://ifxweather.austinsatmosphere.com/wp-content/uploads/2015/06/sleet.png";
+case "Sleet": $day1wximg = "/ifxwx_images/sleet.png";
 break;
-case "Overcast/Haze": $day1wximg = "http://ifxweather.austinsatmosphere.com/wp-content/uploads/2015/06/overcast_haze.png";
+case "Overcast/Haze": $day1wximg = "/ifxwx_images/overcast_haze.png";
 break;
-case "Haze": $day1wximg = "http://ifxweather.austinsatmosphere.com/wp-content/uploads/2015/06/haze_day_night.png";
+case "Haze": $day1wximg = "/ifxwx_images/haze_day_night.png";
 break;
-case "Sunny/Fog": $day1wximg = "http://ifxweather.austinsatmosphere.com/wp-content/uploads/2015/06/fog_day.png";
+case "Sunny/Fog": $day1wximg = "/ifxwx_images/fog_day.png";
 break;
-case "Morning Fog": $day1wximg = "http://ifxweather.austinsatmosphere.com/wp-content/uploads/2015/06/fog_morning.png";
+case "Morning Fog": $day1wximg = "/ifxwx_images/fog_morning.png";
 break;
-case "Overnight Fog": $day1wximg = "http://ifxweather.austinsatmosphere.com/wp-content/uploads/2015/06/fog_night.png";
+case "Overnight Fog": $day1wximg = "/ifxwx_images/fog_night.png";
 break;
-case "Cloudy/Fog": $day1wximg = "http://ifxweather.austinsatmosphere.com/wp-content/uploads/2015/06/fog_overcast.png";
+case "Cloudy/Fog": $day1wximg = "/ifxwx_images/fog_overcast.png";
 break;
-case "Dense Fog": $day1wximg = "http://ifxweather.austinsatmosphere.com/wp-content/uploads/2015/06/fog_dense.png";
+case "Dense Fog": $day1wximg = "/ifxwx_images/fog_dense.png";
 break;
-case "Windy": $day1wximg = "http://ifxweather.austinsatmosphere.com/wp-content/uploads/2015/06/windy.png";
+case "Windy": $day1wximg = "/ifxwx_images/windy.png";
 break;
-case "Lunar Eclipse": $day1wximg = "http://ifxweather.austinsatmosphere.com/wp-content/uploads/2015/06/lunar_eclipse.png";
+case "Lunar Eclipse": $day1wximg = "/ifxwx_images/lunar_eclipse.png";
 break;
-case "Solar Eclipse": $day1wximg = "http://ifxweather.austinsatmosphere.com/wp-content/uploads/2015/06/solar_eclipse.png";
+case "Solar Eclipse": $day1wximg = "/ifxwx_images/solar_eclipse.png";
 break;
-default: $day1wximg = "http://ifxweather.austinsatmosphere.com/wp-content/uploads/2015/06/fog_dense.png";
+default: $day1wximg = "/ifxwx_images/fog_dense.png";
 }
 ?>
 <div style="text-align: center;" class="two columns">
