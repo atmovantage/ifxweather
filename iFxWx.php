@@ -15,7 +15,7 @@ if(isset($_SESSION['timeout'])) {
     }
 }
  
-// Update the timout field with the current time.
+// Update the timeout field with the current time.
 $_SESSION['timeout'] = time();
 // Set all fields to white background by default
 	$fieldErr1 = $fieldErr3 = $fieldErr4 = $fieldErr5 = $fieldErr6 = $fieldErr7 = $fieldErr8 = $fieldErr9 = $fieldErr10 = "#FFF";

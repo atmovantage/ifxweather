@@ -15,7 +15,7 @@ if(isset($_SESSION['timeout'])) {
     }
 }
  
-// Update the timout field with the current time.
+// Update the timeout field with the current time.
 $_SESSION['timeout'] = time();
 
 function submit_input() {
