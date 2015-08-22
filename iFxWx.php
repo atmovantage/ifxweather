@@ -235,6 +235,7 @@ switch ($fxvalid) {
 $checked = "checked";
 $unchecked = "";
 
+//Check for pre-existing user selection for High/Low
 if (!empty($_POST["day1highlow"]) && $_POST["day1highlow"] == "red") {
 	$highcheck = "checked";
 	$lowcheck = "";
@@ -269,6 +270,34 @@ elseif (($fxvalid == '6PM' || $fxvalid == '7PM' || $fxvalid == '8PM' || $fxvalid
 else {
 	$lowcheck = "";
 	$highcheck = "checked";
+	 }
+
+//Check for pre-existing user selection for temperature units
+if (!empty($_POST["tempunit"]) && $_POST["tempunit"] == "fahrenheit") {
+	$tempf = "checked";
+	$tempc = "";
+}
+
+elseif (!empty($_SESSION["tempunit"]) && $_SESSION["tempunit"] == "fahrenheit") 
+{
+	$tempf = "checked";
+	$tempc = "";
+} 
+
+elseif (!empty($_POST["tempunit"]) && $_POST["tempunit"] == "celsius") {
+	$tempf = "";
+	$tempc = "checked";
+}
+
+elseif (!empty($_SESSION["tempunit"]) && $_SESSION["tempunit"] == "celsius") {
+
+	$tempf = "";
+	$tempc = "checked";
+} 
+
+else {
+	$tempf = "checked";
+	$tempc = "";
 	 }
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
@@ -587,7 +616,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $proceed == false) {
 						<option value="Variable">Variable</option>
 						<option value="Calm">Calm</option>
 					</select>
-					<br><small><small><strong>Hide Wind Info?<input type="checkbox" name="day1showwind" value="1"></strong></small></small>
+					<br><small><small><strong>Hide Wind Info?<input type="checkbox" name="day1showwind" value="1" <?php echo (isset($_POST['day1showwind']))?$checked:$unchecked; echo (isset($_SESSION['day1showwind']))?$checked:$unchecked;?>></strong></small></small>
 				</p>
 				<label for="day1detail">Additional Details</label>
 				<br>
@@ -601,8 +630,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $proceed == false) {
 					<div class="twelve columns" id="userpref">
 					<div class="two columns" id="tempunit">
 						<label for="tempunit">Temperature Units</label>
-							<input type="radio" name="tempunit" value="fahrenheit" checked><small>Fahrenheit</small><br>
-							<input type="radio" name="tempunit" value="celsius"><small>Celsius</small>
+							<input type="radio" name="tempunit" value="fahrenheit" <?php echo $tempf; ?>><small>Fahrenheit</small><br>
+							<input type="radio" name="tempunit" value="celsius" <?php echo $tempc; ?>><small>Celsius</small>
 						</div>
 				<div class="two columns" id="precipunit">
 					<label for="precipunit">Precipitation Units</label>
