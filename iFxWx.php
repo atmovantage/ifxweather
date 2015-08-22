@@ -88,23 +88,25 @@ function submit_input() {
 	$_SESSION["tempunit"] = $_POST["tempunit"];
 	$_SESSION["colortemp"] = $_POST["colortemp"];
 	$_SESSION["windunit"] = $_POST["windunit"];
-	$_SESSION["highlow"] = $_POST["highlow"];
+	
 	
 	// 0-12hr Forecast Period Variables
 	$_SESSION["day1label"] = $_POST["day1label"];
 	$_SESSION["day1wx"] = $_POST["day1wx"];
 	$_SESSION["day1"] = $_POST["day1"];
+	$_SESSION["day1highlow"] = $_POST["day1highlow"];
 	$_SESSION["precipunit"] = $_POST["precipunit"];
 	$_SESSION["day1pop"] = $_POST["day1pop"];
 	$_SESSION["day1desc"] = $_POST["day1desc"];
 	$_SESSION["day1temp"] = $_POST["day1temp"];
 	$_SESSION["day1precip"] = $_POST["day1precip"];
-	$_SESSION["showrain"] = $_POST["showrain"];
+	$_SESSION["day1showrain"] = $_POST["day1showrain"];
 	$_SESSION["day1snowmin"] = $_POST["day1snowmin"];
 	$_SESSION["day1snowmax"] = $_POST["day1snowmax"];
 	$_SESSION["day1windmin"] = $_POST["day1windmin"];
 	$_SESSION["day1windmax"] = $_POST["day1windmax"];
 	$_SESSION["day1winddir"] = $_POST["day1winddir"];
+	$_SESSION["day1showwind"] = $_POST["day1showwind"];
 	$_SESSION["day1windgust"] = $_POST["day1windgust"];
 	$_SESSION["day1detail"] = $_POST["day1detail"];
 	
@@ -228,6 +230,46 @@ switch ($fxvalid) {
 	$day1label = "0-12hr";
 	break;
 }
+
+//Checkbox values
+$checked = "checked";
+$unchecked = "";
+
+if (!empty($_POST["day1highlow"]) && $_POST["day1highlow"] == "red") {
+	$highcheck = "checked";
+	$lowcheck = "";
+}
+
+elseif (!empty($_SESSION["day1highlow"]) && $_SESSION["day1highlow"] == "red") 
+{
+	$highcheck = "checked";
+	$lowcheck = "";
+} 
+
+elseif (($fxvalid == '6AM' || $fxvalid == '7AM' || $fxvalid == '8AM' || $fxvalid == '9AM') && empty($_SESSION["day1highlow"]) && empty($_POST["day1highlow"])) {
+	$highcheck = "checked";
+	$lowcheck = "";
+}
+
+elseif (!empty($_POST["day1highlow"]) && $_POST["day1highlow"] == "blue") {
+	$lowcheck = "checked";
+	$highcheck = "";
+}
+
+elseif (!empty($_SESSION["day1highlow"]) && $_SESSION["day1highlow"] == "blue") 
+{
+	$lowcheck = "checked";
+	$highcheck = "";
+} 
+
+elseif (($fxvalid == '6PM' || $fxvalid == '7PM' || $fxvalid == '8PM' || $fxvalid == '9PM') && empty($_SESSION["day1highlow"]) && empty($_POST["day1highlow"])) {
+	$lowcheck = "checked";
+	$highcheck = "";
+						   }
+else {
+	$lowcheck = "";
+	$highcheck = "checked";
+	 }
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
@@ -258,7 +300,7 @@ switch ($fxvalid) {
 			<img src="/ifxwx_images/background.jpg" id="bg" alt="">
 			<div class="container">
 			<div class="twelve columns" style="font-weight: bold; text-align: center" id="header">
-<p><img style="width: 70px; height: 61px;" alt="" src="/ifxwx_images/logo.png"> Version 0.10.0 pre-alpha<br><big style="font-family: Helvetica,Arial,sans-serif;"><big><big>Forecast Composer</big></big></big>
+<p><img style="width: 70px; height: 61px;" alt="" src="/ifxwx_images/logo.png"> Version 0.11.0 pre-alpha<br><big style="font-family: Helvetica,Arial,sans-serif;"><big><big>Forecast Composer</big></big></big>
 </p>
 			<div class="twelve columns" >
 				Welcome to the forecast composer page. This is the first step towards creating your own weather forecast. Enter the variables for your weather forecast using the forms below and click the 'Submit' button to view your final product.<small><br>Tips:<br>
@@ -436,13 +478,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $proceed == false) {
 			<div class="two columns" style="text-align: center;" id="hr0-12">
 				
 				<p>
-						<label id="day1title" for="day1label"><?php if (isset($_POST['day1'])) {echo $_POST['day1'];} elseif (isset($_SESSION['day1'])) {echo "";} else {echo $fxvalidname;};?></label><br>
+						<label id="day1title" for="day1label"><?php if (isset($_POST['day1'])) {echo $fxvalidname;} elseif (isset($_SESSION['day1'])) {echo "";} else {echo $fxvalidname;};?></label><br>
 					<input style="width:90%" name="day1" id="day1label" placeholder="Monday" type="text" value="<?php if (isset($_POST['day1'])) {echo $_POST['day1'];} elseif (isset($_SESSION['day1'])) {echo $_SESSION['day1'];} else {echo $day1string;};?>">
 					<br>
 				</p>
 				<p>
 					<select style="width:90%" name="day1wx" onchange="document.getElementById('day1desc').value=this.value;">
-						<option value="<?php if (isset($_POST['day1wx'])) {echo $_POST['day1wx'];} elseif (isset($_SESSION['day1wx'])) {echo $_SESSION['day1wx'];} else {echo '';};?>"><?php if (isset($_POST['day1wx'])) {echo $_POST['day1wx'];} elseif (isset($_SESSION['day1wx'])) {echo $_SESSION['day1wx'];} else {echo 'Weather';};?></option>
+						<option value="<?php if (isset($_POST['day1wx'])) {echo $_POST['day1wx'];} elseif (isset($_SESSION['day1wx'])) {echo $_SESSION['day1wx'];} else {echo 'Weather';};?>"><?php if (isset($_POST['day1wx'])) {echo $_POST['day1wx'];} elseif (isset($_SESSION['day1wx'])) {echo $_SESSION['day1wx'];} else {echo 'Weather';};?></option>
 						<optgroup label="General Day">
 						<option value="Sunny">Sunny</option>
 						<option value="Partly Sunny">Partly Sunny</option>
@@ -504,15 +546,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $proceed == false) {
 					<label for="day1temp">Temperature</label>
 					<br>
 					<input style="width:90%" placeholder="High/Low" min="-100" max="134" maxlength="3" name="day1temp" id="day1temp" type="number" value="<?php if (isset($_POST['day1temp'])) {echo $_POST['day1temp'];} elseif (isset($_SESSION['day1temp'])) {echo $_SESSION['day1temp'];} else {echo '';};?>"><br>
-				<form id="highlow">
-							<input type="radio" id="highlow" name="highlow" value="red" checked><small>High</small>
-						<input type="radio" id="highlow" name="highlow" value="blue"><small>Low</small></form>
+				<form id="setday1highlow">
+					<input type="radio" id="day1high" name="day1highlow" value="red" <?php echo $highcheck; ?>><small>High</small>
+					<input type="radio" id="day1low" name="day1highlow" value="blue" <?php echo $lowcheck; ?>><small>Low</small></form>
 				</p>
 				<br>
 			<p>
 					<label for="day1pop">Precipitation</label>
 					<br>
-					<input style="width:90%" min="0" max="100" size="15" maxlength="3" name="day1pop" placeholder="Probability %" id="day1pop" type="number" value="<?php if (isset($_POST['day1pop'])) {echo $_POST['day1pop'];} elseif (isset($_SESSION['day1pop'])) {echo $_SESSION['day1pop'];} else {echo '';};?>"><label for="day1precip" id="day1precip_label">Precipitation Total</label><input style="width:90%" step=".01" min="0" max="100" name="day1precip" placeholder="Precip Total" id="day1precip" type="number" value="<?php if (isset($_POST['day1precip'])) {echo $_POST['day1precip'];} elseif (isset($_SESSION['day1precip'])) {echo $_SESSION['day1precip'];} else {echo '';};?>"><br><small><small><strong>Hide Rain Total<input type="checkbox" name="showrain" value="1"></strong></small></small>
+					<input style="width:90%" min="0" max="100" size="15" maxlength="3" name="day1pop" placeholder="Probability %" id="day1pop" type="number" value="<?php if (isset($_POST['day1pop'])) {echo $_POST['day1pop'];} elseif (isset($_SESSION['day1pop'])) {echo $_SESSION['day1pop'];} else {echo '';};?>"><label for="day1precip" id="day1precip_label">Precipitation Total</label><input style="width:90%" step=".01" min="0" max="100" name="day1precip" placeholder="Precip Total" id="day1precip" type="number" value="<?php if (isset($_POST['day1precip'])) {echo $_POST['day1precip'];} elseif (isset($_SESSION['day1precip'])) {echo $_SESSION['day1precip'];} else {echo '';};?>"><br><small><small><strong>Hide Rain Total<input type="checkbox" name="day1showrain" value="1" <?php echo (isset($_POST['day1showrain']))?$checked:$unchecked; echo (isset($_SESSION['day1showrain']))?$checked:$unchecked;?>></strong></small></small>
 					</p>
 			<p>
 					<label for="day1snowmin">Snow</label>
@@ -520,11 +562,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $proceed == false) {
 			<input style="width:90%" step=".5" min="0" max="100" name="day1snowmin" placeholder="Min Accum" id="day1snowmin" type="number" value="<?php if (isset($_POST['day1snowmin'])) {echo $_POST['day1snowmin'];} elseif (isset($_SESSION['day1snowmin'])) {echo $_SESSION['day1snowmin'];} else {echo '';};?>"><label for="day1snowmax" id="day1snowmax_label">Day 1 Snow Maximum</label><input style="width:90%" step=".5" min="0" max="100" name="day1snowmax" placeholder="Max Accum" id="day1snowmax" type="number" value="<?php if (isset($_POST['day1snowmax'])) {echo $_POST['day1snowmax'];} elseif (isset($_SESSION['day1snowmax'])) {echo $_SESSION['day1snowmax'];} else {echo '';};?>"><br>
 				</p>
 			<p>
+				<!-- Wind Input For Day 1-->
 					<label for="day1wind">Wind</label>
 					<br>
 					<input style="width:90%" maxlength="3" max="240" min="0" name="day1windmin" placeholder="Min Sustained" id="day1windmin" type="number" value="<?php if (isset($_POST['day1windmin'])) {echo $_POST['day1windmin'];} elseif (isset($_SESSION['day1windmin'])) {echo $_SESSION['day1windmin'];} else {echo '';};?>"><input style="width:90%" maxlength="3" max="240" min="0" name="day1windmax" placeholder="Max Sustained" id="day1windmax" type="number" value="<?php if (isset($_POST['day1windmax'])) {echo $_POST['day1windmax'];} elseif (isset($_SESSION['day1windmax'])) {echo $_SESSION['day1windmax'];} else {echo '';};?>"><input style="width:90%" maxlength="3" max="240" min="0" name="day1windgust" placeholder="Max Gust" id="day1windgust" type="number" value="<?php if (isset($_POST['day1windgust'])) {echo $_POST['day1windgust'];} elseif (isset($_SESSION['day1windgust'])) {echo $_SESSION['day1windgust'];} else {echo '';};?>">
 					<select style="width:80%" name="day1winddir">
-						<option value="<?php if (isset($_POST['day1winddir'])) {echo $_POST['day1winddir'];} elseif (isset($_SESSION['day1winddir'])) {echo $_SESSION['day1winddir'];} else {echo '';};?>"><?php if (isset($_POST['day1winddir'])) {echo $_POST['day1winddir'];} elseif (isset($_SESSION['day1winddir'])) {echo $_SESSION['day1winddir'];} else {echo 'Direction';};?></option>
+						<option value="<?php if (isset($_POST['day1winddir'])) {echo $_POST['day1winddir'];} elseif (isset($_SESSION['day1winddir'])) {echo $_SESSION['day1winddir'];} else {echo 'Direction';};?>"><?php if (isset($_POST['day1winddir'])) {echo $_POST['day1winddir'];} elseif (isset($_SESSION['day1winddir'])) {echo $_SESSION['day1winddir'];} else {echo 'Direction';};?></option>
 						<option value="North">North</option>
 						<option value="NNE">North-Northeast</option>
 						<option value="Northeast">Northeast</option>
@@ -544,7 +587,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $proceed == false) {
 						<option value="Variable">Variable</option>
 						<option value="Calm">Calm</option>
 					</select>
-					<br>
+					<br><small><small><strong>Hide Wind Info?<input type="checkbox" name="day1showwind" value="1"></strong></small></small>
 				</p>
 				<label for="day1detail">Additional Details</label>
 				<br>
@@ -615,36 +658,54 @@ function reset_var() {
 		// This script sets the titles for each forecast period to alternate day/night depending on user selection of forecast start time
 	function updateTitles(val) {
 		if (val == "5pm - 5am"){
+			document.getElementById("day1high").checked = false;
+			document.getElementById("day1low").checked = true;
 			document.getElementById("day1title").innerHTML=val;
 			document.getElementById("day2title").innerHTML="5am - 5pm";
 		}
 		else if (val == "6pm - 6am"){
+			document.getElementById("day1high").checked = false;
+			document.getElementById("day1low").checked = true;
 			document.getElementById("day1title").innerHTML=val;
 			document.getElementById("day2title").innerHTML="6am - 6pm";
 		}
 		else if (val == "7pm - 7am"){
+			document.getElementById("day1high").checked = false;
+			document.getElementById("day1low").checked = true;
 			document.getElementById("day1title").innerHTML=val;
 			document.getElementById("day2title").innerHTML="7am - 7pm";
 		}
 		else if (val == "8pm - 8am"){
+			document.getElementById("day1high").checked = false;
+			document.getElementById("day1low").checked = true;
 			document.getElementById("day1title").innerHTML=val;
 			document.getElementById("day2title").innerHTML="8am - 8pm";
 		}
 		else if (val == "5am - 5pm"){
+			document.getElementById("day1low").checked = false;
+			document.getElementById("day1high").checked = true;
 			document.getElementById("day1title").innerHTML=val;
 			document.getElementById("day2title").innerHTML="5pm - 5am";
 		}
 		else if (val == "6am - 6pm"){
+			document.getElementById("day1low").checked = false;
+			document.getElementById("day1high").checked = true;
 			document.getElementById("day1title").innerHTML=val;
 			document.getElementById("day2title").innerHTML="6pm - 6am";
+
 		}
 		else if (val == "7am - 7pm"){
+			document.getElementById("day1low").checked = false;
+			document.getElementById("day1high").checked = true;
 			document.getElementById("day1title").innerHTML=val;
 			document.getElementById("day2title").innerHTML="7pm - 7am";
 		}
 		else if (val == "8am - 8pm"){
+			document.getElementById("day1low").checked = false;
+			document.getElementById("day1high").checked = true;
 			document.getElementById("day1title").innerHTML=val;
 			document.getElementById("day2title").innerHTML="8pm - 8am";
+
 		}
 		else {
 			document.getElementById("day1title").innerHTML="";

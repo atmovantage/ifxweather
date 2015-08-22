@@ -32,18 +32,19 @@ function submit_input() {
 	$_SESSION["tempunit"] = $_SESSION["tempunit"];
 	$_SESSION["colortemp"] = $_SESSION["colortemp"];
 	$_SESSION["windunit"] = $_SESSION["windunit"];
-	$_SESSION["highlow"] = $_SESSION["highlow"];
+
 	
 	// 0-12hr Forecast Period Variables
 	$_SESSION["day1label"] = $_SESSION["day1label"];
 	$_SESSION["day1wx"] = $_SESSION["day1wx"];
 	$_SESSION["day1"] = $_SESSION["day1"];
+	$_SESSION["day1highlow"] = $_SESSION["day1highlow"];
 	$_SESSION["precipunit"] = $_SESSION["precipunit"];
 	$_SESSION["day1pop"] = $_SESSION["day1pop"];
 	$_SESSION["day1desc"] = $_SESSION["day1desc"];
 	$_SESSION["day1temp"] = $_SESSION["day1temp"];
 	$_SESSION["day1precip"] = $_SESSION["day1precip"];
-	$_SESSION["showrain"] = $_SESSION["showrain"];
+	$_SESSION["day1showrain"] = $_SESSION["day1showrain"];
 	$_SESSION["day1snowmin"] = $_SESSION["day1snowmin"];
 	$_SESSION["day1snowmax"] = $_SESSION["day1snowmax"];
 	$_SESSION["day1windmin"] = $_SESSION["day1windmin"];
@@ -121,7 +122,7 @@ Version 0.10.0 pre-alpha</p>
 }
 
     if ($_SESSION["colortemp"] == "yes") {
-      $tempcolor = $_SESSION["highlow"];
+      $tempcolor = $_SESSION["day1highlow"];
 	  }
       else {
 		  $tempcolor = "black";
@@ -240,7 +241,7 @@ default: $day1wximg = "/ifxwx_images/fog_dense.png";
 		<strong><big><big><?php echo "<p style='color:" . $tempcolor . "'>" . $_SESSION["day1temp"] . $tempunit . " </p>" 
 ?>  </big></big></strong>
 	
-		<small><?php if ($_SESSION["day1precip"] > 0 && empty($_SESSION["showrain"])) {
+		<small><?php if ($_SESSION["day1precip"] > 0 && empty($_SESSION["day1showrain"])) {
 	echo "<p>Rain total " . $_SESSION["day1precip"] . " " . $precipunit . "</p>" ;
 }
 else {
@@ -262,29 +263,30 @@ elseif ($_SESSION["day1snowmin"] == 0 && $_SESSION["day1snowmax"] > 0){
 } 
 ?>
 		
-		<?php if ($_SESSION["day1windmin"] != " " && $_SESSION["day1windmax"] != " " && $_SESSION["day1windmin"] != $_SESSION["day1windmax"] && $_SESSION["day1windmin"] < $_SESSION["day1windmax"] && $_SESSION["day1winddir"] != " ") {
+		<?php if ($_SESSION["day1windmin"] != " " && $_SESSION["day1windmax"] != " " && $_SESSION["day1windmin"] != $_SESSION["day1windmax"] && $_SESSION["day1windmin"] < $_SESSION["day1windmax"] && $_SESSION["day1winddir"] != " " && empty($_SESSION["day1showwind"])) {
 	echo "<p>Winds " . $_SESSION["day1winddir"] . " " . $_SESSION["day1windmin"] . "-" . $_SESSION["day1windmax"] . " " . $windunit . "<br>" ;
 }
-elseif ($_SESSION["day1windmin"] == 0 && $_SESSION["day1windmax"] == 0 && $_SESSION["day1winddir"] == " "){
+elseif ($_SESSION["day1windmin"] == 0 && $_SESSION["day1windmax"] == 0 && $_SESSION["day1winddir"] == " " && empty($_SESSION["day1showwind"])){
 	echo "<p>Winds Calm<br>" ;
 }
-elseif ($_SESSION["day1winddir"] == "Calm"){
+elseif ($_SESSION["day1winddir"] == "Calm" && empty($_SESSION["day1showwind"])){
 	echo "<p>Winds Calm<br>" ;
 }
-elseif ($_SESSION["day1winddir"] == "Variable" && $_SESSION["day1windmin"] == 0 && $_SESSION["day1windmax"] == 0){
+elseif ($_SESSION["day1winddir"] == "Variable" && $_SESSION["day1windmin"] == 0 && $_SESSION["day1windmax"] == 0 && empty($_SESSION["day1showwind"])){
 	echo "<p>Winds Light and Variable<br>" ;
 }
-elseif ($_SESSION["day1windmin"] == "" && $_SESSION["day1windmax"] == ""){
+elseif ($_SESSION["day1windmin"] == "" && $_SESSION["day1windmax"] == "" && empty($_SESSION["day1showwind"])){
 	echo "<p>Winds Light and Variable<br>" ;
 }
-elseif ($_SESSION["day1windmin"] == $_SESSION["day1windmax"]) {
+elseif ($_SESSION["day1windmin"] == $_SESSION["day1windmax"] && empty($_SESSION["day1showwind"])) {
 	echo "<p>Winds " . $_SESSION["day1winddir"] . " around " . $_SESSION["day1windmin"] . " " . $windunit . "<br>" ;
 }
-	else 
-		echo "<br>" ;
+	else {
+	echo "<p>";}
+		
 			?>
 		
-		<?php if ($_SESSION["day1windgust"] > 0 && $_SESSION["day1windgust"] > $_SESSION["day1windmax"]){
+		<?php if ($_SESSION["day1windgust"] > 0 && $_SESSION["day1windgust"] > $_SESSION["day1windmax"] && empty($_SESSION["day1showwind"])){
 	echo "Gusts up to " . $_SESSION["day1windgust"] . " " . $windunit . "</p>" ;
 			}
 				else 
