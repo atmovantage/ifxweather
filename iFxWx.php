@@ -327,6 +327,34 @@ else {
 	$precipin = "checked";
 	$precipmm = "";
 	 }
+
+//Check for pre-existing user selection for colorization of temperature 
+if (!empty($_POST["colortemp"]) && $_POST["colortemp"] == "no") {
+	$colorno = "checked";
+	$coloryes = "";
+}
+
+elseif (!empty($_SESSION["colortemp"]) && $_SESSION["colortemp"] == "no") 
+{
+	$colorno = "checked";
+	$coloryes = "";
+} 
+
+elseif (!empty($_POST["colortemp"]) && $_POST["colortemp"] == "yes") {
+	$colorno = "";
+	$coloryes = "checked";
+}
+
+elseif (!empty($_SESSION["colortemp"]) && $_SESSION["colortemp"] == "yes") {
+
+	$colorno = "";
+	$coloryes = "checked";
+} 
+
+else {
+	$colorno = "checked";
+	$coloryes = "";
+	 }
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
@@ -678,18 +706,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $proceed == false) {
 				</div>
 						<div class="two columns" id="colorize">
 							<label for="colortemp1">Colorize Temperature</label>
-							<input type="radio" id="colortemp" name="colortemp" value="no" checked><small>No</small><br>
-						<input type="radio" id="colortemp" name="colortemp" value="yes"><small>Yes</small>
+							<input type="radio" id="colortempno" name="colortemp" value="no" <?php echo $colorno; ?>><small>No</small><br>
+						<input type="radio" id="colortempyes" name="colortemp" value="yes" <?php echo $coloryes; ?>><small>Yes</small>
 						</div>
 						<div class="two columns" id="test">
 							<label for="addopt1">Additional Options 1</label>
-							<input type="radio" id="addopt1" name="addopt1" value="no" checked><small>No</small><br>
-						<input type="radio" id="addopt1" name="addopt1" value="yes"><small>Yes</small>
+							<input type="radio" id="addopt1-1" name="addopt1" value="no" checked><small>No</small><br>
+						<input type="radio" id="addopt1-2" name="addopt1" value="yes"><small>Yes</small>
 						</div>
 						<div class="two columns" id="test">
 							<label for="addopt2">Additional Options 2</label>
-							<input type="radio" id="addopt2" name="addopt2" value="no" checked><small>No</small><br>
-						<input type="radio" id="addopt2" name="addopt2" value="yes"><small>Yes</small>
+							<input type="radio" id="addopt2-1" name="addopt2" value="no" checked><small>No</small><br>
+						<input type="radio" id="addopt2-2" name="addopt2" value="yes"><small>Yes</small>
 						</div>
 				</div>
 				
