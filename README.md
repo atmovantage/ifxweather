@@ -2,6 +2,28 @@
 Project to design and develop a web-based application to enable meteorologists to easily compose and publish a weather forecast.
 
 ----------
+Version 0.11.0 Pre-Alpha (August 21st, 2015):
+Please see the latest changes below:
+
+    Composer/Editor Page
+        Changed 'showrain' variable to 'day1showrain' so that each forecast period can have this option independently
+        Added a 'Hide wind info?' option so that wind information can be excluded if desired
+        The "Show rain" user-selection now persists both upon page validation and when editing
+        The "High/Low" user-selection now persists both upon page validation and when editing
+        The "Show wind" user-selection now persists both upon page validation and when editing
+        The "Fahrenheit/Celsius" user-selection now persists both upon page validation and when editing
+        The "Precipitation Units" user-selection now persists both upon page validation and when editing
+        The "Colorize Temperature" user-selection now persists both upon page validation and when editing
+        When the page first loads the "High/Low" selection will automatically select based on the present time which also in turn affects the automatic selection of the forecast "valid from" time
+        Added Javascript so that "High/Low" automatically changes when the user selects a different forecast start time
+            I.e. User selects 8am - 8pm then the "high" radio button will automatically be selected for the first forecast period
+        Fixed bug where the "weather" and "wind direction" selection menus would be blank during form validation
+    Preview Page
+        Changed 'showrain' variable to match from Composer page
+        Wind info hidden if user selects "Hide Wind Info?" on the Composer page
+    Publish Page
+        Hidden wind variable has not yet been translated over to the Publish page
+----------
 Version 0.10.0 Pre-Alpha (August 18th, 2015):
 There have been some BIG changes in this version. iFxWx will be ready for the Alpha release very soon! Here are the latest changes:
 
