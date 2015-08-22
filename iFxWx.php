@@ -299,6 +299,34 @@ else {
 	$tempf = "checked";
 	$tempc = "";
 	 }
+
+//Check for pre-existing user selection for precipitation units
+if (!empty($_POST["precipunit"]) && $_POST["precipunit"] == "in.") {
+	$precipin = "checked";
+	$precipmm = "";
+}
+
+elseif (!empty($_SESSION["precipunit"]) && $_SESSION["precipunit"] == "in.") 
+{
+	$precipin = "checked";
+	$precipmm = "";
+} 
+
+elseif (!empty($_POST["precipunit"]) && $_POST["precipunit"] == "mm") {
+	$precipin = "";
+	$precipmm = "checked";
+}
+
+elseif (!empty($_SESSION["precipunit"]) && $_SESSION["precipunit"] == "mm") {
+
+	$precipin = "";
+	$precipmm = "checked";
+} 
+
+else {
+	$precipin = "checked";
+	$precipmm = "";
+	 }
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
@@ -635,8 +663,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $proceed == false) {
 						</div>
 				<div class="two columns" id="precipunit">
 					<label for="precipunit">Precipitation Units</label>
-							<input type="radio" name="precipunit" value="in." checked><small>Inches (in.)</small><br>
-							<input type="radio" name="precipunit" value="mm"><small>Millimeters (mm)</small>
+							<input type="radio" name="precipunit" value="in." <?php echo $precipin; ?>><small>Inches (in.)</small><br>
+							<input type="radio" name="precipunit" value="mm" <?php echo $precipmm; ?>><small>Millimeters (mm)</small>
 				</div>
 				<div class="two columns" id="windunit">
 					<label for="windunit">Wind Units</label>
