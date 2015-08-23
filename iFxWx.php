@@ -18,7 +18,7 @@ if(isset($_SESSION['timeout'])) {
 // Update the timeout field with the current time.
 $_SESSION['timeout'] = time();
 // Set all fields to white background by default
-	$fieldErr1 = $fieldErr3 = $fieldErr4 = $fieldErr5 = $fieldErr6 = $fieldErr7 = $fieldErr8 = $fieldErr9 = $fieldErr10 = "#FFF";
+	$fieldErr1 = $fieldErr3 = $fieldErr4 = $fieldErr5 = $fieldErr6 = $fieldErr7 = $fieldErr8 = $fieldErr9 = $fieldErr10 = $fieldErr11 = $fieldErr12 = $fieldErr13 = $fieldErr14 = "#FFF";
 	$fieldErr2 ="**All fields highlighted in red must be filled in before submitting your forecast**";
 
 	$proceed = false;
@@ -27,7 +27,7 @@ $_SESSION['timeout'] = time();
 if ($_SERVER["REQUEST_METHOD"] == "POST" && $proceed == false) {
 	
 	//Check to see if any of the required fields are blank or set at the default values
-	if (empty($_POST["forecaster"]) || empty($_POST["stationname"]) || empty($_POST["date"])|| empty($_POST["time"]) || empty($_POST["fxstartmonth"]) || $_POST["fxstartmonth"] == "Select Month" || empty($_POST["fxstartday"]) || $_POST["fxstartday"] == "Select Day" || empty($_POST["fxstartyear"]) || $_POST["fxstartyear"] == "Select Year" || empty($_POST["fxstarttime"]) || $_POST["fxstarttime"] == "Select Time") {
+	if (empty($_POST["forecaster"]) || empty($_POST["stationname"]) || empty($_POST["date"])|| empty($_POST["time"]) || empty($_POST["fxstartmonth"]) || $_POST["fxstartmonth"] == "Select Month" || empty($_POST["fxstartday"]) || $_POST["fxstartday"] == "Select Day" || empty($_POST["fxstartyear"]) || $_POST["fxstartyear"] == "Select Year" || empty($_POST["fxstarttime"]) || $_POST["fxstarttime"] == "Select Time" || empty($_POST["day1"]) || $_POST["day1wx"] == "Weather" || empty($_POST["day1desc"]) || empty($_POST["day1temp"])) {
 		//if any required variables are empty then do not proceed to preview page
 		$proceed = false;
 	}
@@ -62,6 +62,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $proceed == false) {
 	}
 	if ($_POST["fxstarttime"] == "Select Time" || empty($_POST["fxstarttime"])) {
 		$fieldErr10 = "#FF8080";
+	}
+	if (empty($_POST["day1"])) {
+		$fieldErr11 = "#FF8080";
+	}
+	if ($_POST["day1wx"] == "Weather") {
+		$fieldErr12 = "#FF8080";
+	}
+	if (empty($_POST["day1desc"])) {
+		$fieldErr13 = "#FF8080";
+	}
+	if (empty($_POST["day1temp"])) {
+		$fieldErr14 = "#FF8080";
 	}
 	
 	//$fieldErr1 = "#FFF"; <- I think this is leftover code
@@ -385,11 +397,10 @@ else {
 			<img src="/ifxwx_images/background.jpg" id="bg" alt="">
 			<div class="container">
 			<div class="twelve columns" style="font-weight: bold; text-align: center" id="header">
-<p><img style="width: 70px; height: 61px;" alt="" src="/ifxwx_images/logo.png"> Version 0.11.0 pre-alpha<br><big style="font-family: Helvetica,Arial,sans-serif;"><big><big>Forecast Composer</big></big></big>
+<p><img style="width: 70px; height: 61px;" alt="" src="/ifxwx_images/logo.png"> Version 0.12.0 pre-alpha<br><big style="font-family: Helvetica,Arial,sans-serif;"><big><big>Forecast Composer</big></big></big>
 </p>
 			<div class="twelve columns" >
-				Welcome to the forecast composer page. This is the first step towards creating your own weather forecast. Enter the variables for your weather forecast using the forms below and click the 'Submit' button to view your final product.<small><br>Tips:<br>
-				If probability of precipitation is greater than 0% the total precipitation must also be greater than 0. If no measurable precipitation is expected then probability should be 0%. You may explain further using the "details" section.</small>
+				Welcome to the forecast composer page. This is the first step towards creating your own weather forecast. Enter the variables for your weather forecast using the forms below and click the 'Submit' button to view your final product.<small><br>Labels denoted with an asterisk (*) indicate required variables.</small>
 				<?php
 if ($_SERVER["REQUEST_METHOD"] == "POST" && $proceed == false) {
 	echo "<br>" . "<div style='color:red'>" . $fieldErr2 . "</div>";
@@ -403,7 +414,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $proceed == false) {
 			<div class= "twelve columns" id="metaforms">
 			<div style="text-align: center;" class="three columns offset-by-one">
 				<p>
-					<label for="forecaster">Your Name</label>
+					<label for="forecaster">Your Name*</label>
 					<br>
 					<input style="background-color: <?php echo $fieldErr3 ?>" size="15" name="forecaster" id="forecaster" placeholder="Austin" type="text" value="<?php echo (isset($_POST['forecaster']))?$_POST['forecaster']:''; echo (isset($_SESSION['forecaster']))?$_SESSION['forecaster']:'';?>">
 					<br>
@@ -419,7 +430,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $proceed == false) {
 			</div>
 			<div style="text-align: center;" class="three columns offset-by-one">
 				<p>
-					<label for="stationname">Location Name</label>
+					<label for="stationname">Location Name*</label>
 					<br>
 					<input style="background-color: <?php echo $fieldErr4 ?>" size="15" name="stationname" id="stationname" placeholder="Danbury, CT" type="text" value="<?php echo (isset($_POST['stationname']))?$_POST['stationname']:''; echo (isset($_SESSION['stationname']))?$_SESSION['stationname']:'';?>">
 					<br>
@@ -427,7 +438,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $proceed == false) {
 			</div>
 			<div style="text-align: center;" class="two columns">
 				<p>
-					<label for="date">Publish Date</label>
+					<label for="date">Publish Date*</label>
 					<br>
 					<input style="background-color: <?php echo $fieldErr5 ?>" size="10" name="date" id="date" placeholder="10/08/2015" type="date" value="<?php if (isset($_POST['date'])) {echo $_POST['date'];} elseif (isset($_SESSION['date'])) {echo $_SESSION['date'];} else {echo $month . '/' . $day . '/' . $year;};?>">
 					<br>
@@ -435,7 +446,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $proceed == false) {
 				</div>
 				<div style="text-align: center;" class="two columns">
 				<p>
-					<label for="time">Publish Time</label>
+					<label for="time">Publish Time*</label>
 					<br>
 					<input style="background-color: <?php echo $fieldErr6 ?>" size="7" name="time" id="time" placeholder="12:00PM" type="time" value="<?php if (isset($_POST['time'])) {echo $_POST['time'];} elseif (isset($_SESSION['time'])) {echo $_SESSION['time'];} else {echo $hour . ':' . $minutes . $am_pm;;};?>">
 					<br>
@@ -445,7 +456,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $proceed == false) {
 					<big><strong>Forecast Start (Valid From)</strong></big><br>
 				<div style="text-align: center;" class="three columns">
 				<p>
-					<label for="fxstartmonth">Month</label>
+					<label for="fxstartmonth">Month*</label>
 					<br>
 					<select style="width:100%; background-color: <?php echo $fieldErr7 ?>" name="fxstartmonth">
 						<option value="<?php if (isset($_POST['fxstartmonth'])) {echo $_POST['fxstartmonth'];} elseif (isset($_SESSION['fxstartmonth'])) {echo $_SESSION['fxstartmonth'];} else {echo $month;};?>"><?php if (isset($_POST['fxstartmonth'])) {echo $_POST['fxstartmonth'];} elseif (isset($_SESSION['fxstartmonth'])) {echo $_SESSION['fxstartmonth'];} else {echo $monthname;};?></option>
@@ -467,7 +478,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $proceed == false) {
 			</div>
 					<div style="text-align: center;" class="three columns">
 				<p>
-					<label for="fxstartday">Day</label>
+					<label for="fxstartday">Day*</label>
 					<br>
 					<select style="width:100%; background-color: <?php echo $fieldErr8 ?>" name="fxstartday">
 						<option value="<?php if (isset($_POST['fxstartday'])) {echo $_POST['fxstartday'];} elseif (isset($_SESSION['fxstartday'])) {echo $_SESSION['fxstartday'];} else {echo $day;};?>"><?php if (isset($_POST['fxstartday'])) {echo $_POST['fxstartday'];} elseif (isset($_SESSION['fxstartday'])) {echo $_SESSION['fxstartday'];} else {echo $day;};?></option>
@@ -508,7 +519,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $proceed == false) {
 			</div>
 					<div style="text-align: center;" class="two columns">
 				<p>
-					<label for="fxstartyear">Year</label>
+					<label for="fxstartyear">Year*</label>
 					<br>
 					<select style="width:100%; background-color: <?php echo $fieldErr9 ?>" name="fxstartyear">
 						<option value="<?php if (isset($_POST['fxstartyear'])) {echo $_POST['fxstartyear'];} elseif (isset($_SESSION['fxstartyear'])) {echo $_SESSION['fxstartyear'];} else {echo $year;};?>"><?php if (isset($_POST['fxstartyear'])) {echo $_POST['fxstartyear'];} elseif (isset($_SESSION['fxstartyear'])) {echo $_SESSION['fxstartyear'];} else {echo $year;};?></option>
@@ -534,7 +545,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $proceed == false) {
 			</div>
 					<div style="text-align: center;" class="three columns">
 				<p>
-					<label for="fxstarttime">Local Time</label>
+					<label for="fxstarttime">Local Time*</label>
 					<br>
 					<select style="width:100%; background-color: <?php echo $fieldErr10 ?>" name="fxstarttime" onchange="updateTitles(this.value)">
 						<option value="<?php if (isset($_POST['fxstarttime'])) {echo $_POST['fxstarttime'];} elseif (isset($_SESSION['fxstartyear'])) {echo $_SESSION['fxstarttime'];} else {echo $fxvalid;};?>"><?php if (isset($_POST['fxstarttime'])) {echo $_POST['fxstarttime'];} elseif (isset($_SESSION['fxstarttime'])) {echo $_SESSION['fxstarttime'];} else {echo $fxvalidname;};?></option>
@@ -564,11 +575,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $proceed == false) {
 				
 				<p>
 						<label id="day1title" for="day1label"><?php if (isset($_POST['day1'])) {echo $fxvalidname;} elseif (isset($_SESSION['day1'])) {echo "";} else {echo $fxvalidname;};?></label><br>
-					<input style="width:90%" name="day1" id="day1label" placeholder="Monday" type="text" value="<?php if (isset($_POST['day1'])) {echo $_POST['day1'];} elseif (isset($_SESSION['day1'])) {echo $_SESSION['day1'];} else {echo $day1string;};?>">
+					<input style="width:90%; background-color: <?php echo $fieldErr11 ?>" name="day1" id="day1label" placeholder="Monday" type="text" value="<?php if (isset($_POST['day1'])) {echo $_POST['day1'];} elseif (isset($_SESSION['day1'])) {echo $_SESSION['day1'];} else {echo $day1string;};?>">*
 					<br>
 				</p>
 				<p>
-					<select style="width:90%" name="day1wx" onchange="document.getElementById('day1desc').value=this.value;">
+					<select style="width:90%; background-color: <?php echo $fieldErr12 ?>" name="day1wx" onchange="document.getElementById('day1desc').value=this.value;">
 						<option value="<?php if (isset($_POST['day1wx'])) {echo $_POST['day1wx'];} elseif (isset($_SESSION['day1wx'])) {echo $_SESSION['day1wx'];} else {echo 'Weather';};?>"><?php if (isset($_POST['day1wx'])) {echo $_POST['day1wx'];} elseif (isset($_SESSION['day1wx'])) {echo $_SESSION['day1wx'];} else {echo 'Weather';};?></option>
 						<optgroup label="General Day">
 						<option value="Sunny">Sunny</option>
@@ -619,18 +630,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $proceed == false) {
 							<option value="Lunar Eclipse">Lunar Eclipse</option>
 							<option value="Solar Eclipse">Solar Eclipse</option>
 							</optgroup>
-					</select>
+					</select>*
 					<br>
 				</p>
 				<p>
-					<label for="day1desc">Weather Description</label>
+					<label for="day1desc">Weather Description*</label>
 					<br>
-					<input style="width:90%" name="day1desc" placeholder="Mostly Sunny" id="day1desc" type="text" value="<?php if (isset($_POST['day1desc'])) {echo $_POST['day1desc'];} elseif (isset($_SESSION['day1desc'])) {echo $_SESSION['day1desc'];} else {echo '';};?>">
+					<input style="width:90%; background-color: <?php echo $fieldErr13 ?>" name="day1desc" placeholder="Mostly Sunny" id="day1desc" type="text" value="<?php if (isset($_POST['day1desc'])) {echo $_POST['day1desc'];} elseif (isset($_SESSION['day1desc'])) {echo $_SESSION['day1desc'];} else {echo '';};?>">
 				</p><br>
 			<p>
-					<label for="day1temp">Temperature</label>
+					<label for="day1temp">Temperature*</label>
 					<br>
-					<input style="width:90%" placeholder="High/Low" min="-100" max="134" maxlength="3" name="day1temp" id="day1temp" type="number" value="<?php if (isset($_POST['day1temp'])) {echo $_POST['day1temp'];} elseif (isset($_SESSION['day1temp'])) {echo $_SESSION['day1temp'];} else {echo '';};?>"><br>
+					<input style="width:90%; background-color: <?php echo $fieldErr14 ?>" placeholder="High/Low" min="-100" max="134" maxlength="3" name="day1temp" id="day1temp" type="number" value="<?php if (isset($_POST['day1temp'])) {echo $_POST['day1temp'];} elseif (isset($_SESSION['day1temp'])) {echo $_SESSION['day1temp'];} else {echo '';};?>"><br>
 				<form id="setday1highlow">
 					<input type="radio" id="day1high" name="day1highlow" value="red" <?php echo $highcheck; ?>><small>High</small>
 					<input type="radio" id="day1low" name="day1highlow" value="blue" <?php echo $lowcheck; ?>><small>Low</small></form>

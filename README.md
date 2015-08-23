@@ -2,6 +2,20 @@
 Project to design and develop a web-based application to enable meteorologists to easily compose and publish a weather forecast.
 
 ----------
+Version 0.12.0 Pre-Alpha (August 23rd, 2015):
+Please see the latest changes below:
+
+    Composer Page:
+        Validation added for the following inputs to check if fields were left empty:
+            Forecast Period Title (i.e. "Monday Night")
+            Weather Image Selection
+            Weather Description
+            Temperature
+        Added instructions at top of page regarding required fields being denoted by an asterisk (*)
+            Asterisk (*) added to labels to help users easily ID required fields
+                Also, making field backgrounds red looks nice but colorblind users may have difficulty distinguishing which fields were left blank and/or are required
+
+----------
 Version 0.11.0 Pre-Alpha (August 21st, 2015):
 Please see the latest changes below:
 
