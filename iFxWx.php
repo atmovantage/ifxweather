@@ -103,7 +103,7 @@ function submit_input() {
 	
 	
 	// 0-12hr Forecast Period Variables
-	$_SESSION["day1label"] = $_POST["day1label"];
+	$_SESSION["fxvalidname"] = $_POST["fxvalidname"];
 	$_SESSION["day1wx"] = $_POST["day1wx"];
 	$_SESSION["day1"] = $_POST["day1"];
 	$_SESSION["day1highlow"] = $_POST["day1highlow"];
@@ -397,7 +397,7 @@ else {
 			<img src="/ifxwx_images/background.jpg" id="bg" alt="">
 			<div class="container">
 			<div class="twelve columns" style="font-weight: bold; text-align: center" id="header">
-<p><img style="width: 70px; height: 61px;" alt="" src="/ifxwx_images/logo.png"> Version 0.12.0 pre-alpha<br><big style="font-family: Helvetica,Arial,sans-serif;"><big><big>Forecast Composer</big></big></big>
+<p><img style="width: 70px; height: 61px;" alt="" src="/ifxwx_images/logo.png"> Version 0.12.1 pre-alpha<br><big style="font-family: Helvetica,Arial,sans-serif;"><big><big>Forecast Composer</big></big></big>
 </p>
 			<div class="twelve columns" >
 				Welcome to the forecast composer page. This is the first step towards creating your own weather forecast. Enter the variables for your weather forecast using the forms below and click the 'Submit' button to view your final product.<small><br>Labels denoted with an asterisk (*) indicate required variables.</small>
@@ -548,7 +548,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $proceed == false) {
 					<label for="fxstarttime">Local Time*</label>
 					<br>
 					<select style="width:100%; background-color: <?php echo $fieldErr10 ?>" name="fxstarttime" onchange="updateTitles(this.value)">
-						<option value="<?php if (isset($_POST['fxstarttime'])) {echo $_POST['fxstarttime'];} elseif (isset($_SESSION['fxstartyear'])) {echo $_SESSION['fxstarttime'];} else {echo $fxvalid;};?>"><?php if (isset($_POST['fxstarttime'])) {echo $_POST['fxstarttime'];} elseif (isset($_SESSION['fxstarttime'])) {echo $_SESSION['fxstarttime'];} else {echo $fxvalidname;};?></option>
+						<option value="<?php if (isset($_POST['fxstarttime'])) {echo $_POST['fxstarttime'];} elseif (isset($_SESSION['fxstarttime'])) {echo $_SESSION['fxstarttime'];} else {echo $fxvalidname;};?>"><?php if (isset($_POST['fxstarttime'])) {echo $_POST['fxstarttime'];} elseif (isset($_SESSION['fxstarttime'])) {echo $_SESSION['fxstarttime'];} else {echo $fxvalidname;};?></option>
 						<optgroup label="Morning">
 						<option value="5am - 5pm">5am - 5pm</option>
 						<option value="6am - 6pm">6am - 6pm</option>
@@ -574,7 +574,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $proceed == false) {
 			<div class="two columns" style="text-align: center;" id="hr0-12">
 				
 				<p>
-						<label id="day1title" for="day1label"><?php if (isset($_POST['day1'])) {echo $fxvalidname;} elseif (isset($_SESSION['day1'])) {echo "";} else {echo $fxvalidname;};?></label><br>
+					<label id="day1title" for="day1label"><?php if (isset($_POST['fxstarttime'])) {echo $_POST['fxstarttime'];} elseif (isset($_SESSION['fxstarttime'])) {echo $_SESSION['fxstarttime'];} else {echo $fxvalidname;};?></label><br>
 					<input style="width:90%; background-color: <?php echo $fieldErr11 ?>" name="day1" id="day1label" placeholder="Monday" type="text" value="<?php if (isset($_POST['day1'])) {echo $_POST['day1'];} elseif (isset($_SESSION['day1'])) {echo $_SESSION['day1'];} else {echo $day1string;};?>">*
 					<br>
 				</p>

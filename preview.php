@@ -79,7 +79,7 @@ if (isset($_POST['Edit'])) {
 <div class="twelve columns" style="font-weight: bold; text-align: center">
 <p><big style="font-family: Helvetica,Arial,sans-serif;"><big><big><span><img style="width: 70px; height: 61px;" alt="" src="/ifxwx_images/logo.png"><br>iFx
 Weather Preview</span></big></big></big>
-Version 0.12.0 pre-alpha</p>
+Version 0.12.1 pre-alpha</p>
 </div>
 	<div class="twelve columns">
 				<hr>
