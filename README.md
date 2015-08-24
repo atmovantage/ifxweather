@@ -2,6 +2,11 @@
 Project to design and develop a web-based application to enable meteorologists to easily compose and publish a weather forecast.
 
 ----------
+Version 0.12.1 Pre-Alpha (August 23rd, 2015):
+Please see the latest changes below:
+
+Bug Fix: Column 1 title will remain consistent during editing and validation if user changes the default "Local Time"
+----------
 Version 0.12.0 Pre-Alpha (August 23rd, 2015):
 Please see the latest changes below:
 
