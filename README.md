@@ -2,6 +2,13 @@
 Project to design and develop a web-based application to enable meteorologists to easily compose and publish a weather forecast.
 
 ----------
+Version 0.12.2 Pre-Alpha (August 24th, 2015):
+Please see the latest changes below:
+
+Bug Fix: When page loaded if the first valid forecast period was 5PM the temperature would automatically select "high" instead of "low"
+	Found error in code which accidently checked values for 6PM - 9PM instead of 5PM - 8PM// fixed that error
+
+----------
 Version 0.12.1 Pre-Alpha (August 23rd, 2015):
 Please see the latest changes below:
 

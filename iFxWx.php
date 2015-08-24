@@ -259,7 +259,7 @@ elseif (!empty($_SESSION["day1highlow"]) && $_SESSION["day1highlow"] == "red")
 	$lowcheck = "";
 } 
 
-elseif (($fxvalid == '6AM' || $fxvalid == '7AM' || $fxvalid == '8AM' || $fxvalid == '9AM') && empty($_SESSION["day1highlow"]) && empty($_POST["day1highlow"])) {
+elseif (($fxvalid == '5AM' || $fxvalid == '6AM' || $fxvalid == '7AM' || $fxvalid == '8AM') && empty($_SESSION["day1highlow"]) && empty($_POST["day1highlow"])) {
 	$highcheck = "checked";
 	$lowcheck = "";
 }
@@ -275,7 +275,7 @@ elseif (!empty($_SESSION["day1highlow"]) && $_SESSION["day1highlow"] == "blue")
 	$highcheck = "";
 } 
 
-elseif (($fxvalid == '6PM' || $fxvalid == '7PM' || $fxvalid == '8PM' || $fxvalid == '9PM') && empty($_SESSION["day1highlow"]) && empty($_POST["day1highlow"])) {
+elseif (($fxvalid == '5PM' || $fxvalid == '6PM' || $fxvalid == '7PM' || $fxvalid == '8PM') && empty($_SESSION["day1highlow"]) && empty($_POST["day1highlow"])) {
 	$lowcheck = "checked";
 	$highcheck = "";
 						   }
@@ -397,7 +397,7 @@ else {
 			<img src="/ifxwx_images/background.jpg" id="bg" alt="">
 			<div class="container">
 			<div class="twelve columns" style="font-weight: bold; text-align: center" id="header">
-<p><img style="width: 70px; height: 61px;" alt="" src="/ifxwx_images/logo.png"> Version 0.12.1 pre-alpha<br><big style="font-family: Helvetica,Arial,sans-serif;"><big><big>Forecast Composer</big></big></big>
+<p><img style="width: 70px; height: 61px;" alt="" src="/ifxwx_images/logo.png"> Version 0.12.2 pre-alpha<br><big style="font-family: Helvetica,Arial,sans-serif;"><big><big>Forecast Composer</big></big></big>
 </p>
 			<div class="twelve columns" >
 				Welcome to the forecast composer page. This is the first step towards creating your own weather forecast. Enter the variables for your weather forecast using the forms below and click the 'Submit' button to view your final product.<small><br>Labels denoted with an asterisk (*) indicate required variables.</small>
