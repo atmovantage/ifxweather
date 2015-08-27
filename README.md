@@ -2,6 +2,16 @@
 Project to design and develop a web-based application to enable meteorologists to easily compose and publish a weather forecast.
 
 ----------
+Version 0.13.0 Pre-Alpha (August 26th, 2015):
+Only one major change in this latest update, however it did require significant changes to the code so it warranted its own version update:
+
+    Composer Page
+        Weather icon preview added just below the "Weather" selection menu
+            Added a default icon that shows a question mark cloud with the word "Select" underneath
+            JavaScript to change the icon instantly when the user makes a selection from the "Weather" menu
+            The weather icon that the user selects will persist during form validation and when returning to Composer to make edits
+			
+----------
 Version 0.12.2 Pre-Alpha (August 24th, 2015):
 Please see the latest changes below:
 
