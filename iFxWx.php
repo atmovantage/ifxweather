@@ -367,6 +367,169 @@ else {
 	$colorno = "checked";
 	$coloryes = "";
 	 }
+
+if (isset($_POST['day1wx'])) {
+	switch ($_POST["day1wx"]) {
+case "Sunny": $day1wximg= "/ifxwx_images/sunny.png";
+break;
+case "Partly Sunny": $day1wximg= "/ifxwx_images/partly_cloudy_day.png";
+break;
+case "Mostly Cloudy": $day1wximg= "/ifxwx_images/overcast.png";
+break;
+case "Clear": $day1wximg= "/ifxwx_images/clear_night.png";
+break;
+case "Partly Cloudy": $day1wximg= "/ifxwx_images/partly_cloudy_night.png";
+break;
+case "Overcast": $day1wximg= "/ifxwx_images/overcast.png";
+break;
+case "Isolated Rain Showers": $day1wximg= "/ifxwx_images/showers_isolated.png";
+break;
+case "Scattered Rain Showers": $day1wximg= "/ifxwx_images/showers_scattered.png";
+break;
+case "Rain": $day1wximg= "/ifxwx_images/rain.png";
+break;
+case "Heavy Rain": $day1wximg= "/ifxwx_images/rain_heavy.png";
+break;
+case "Rain and Fog": $day1wximg= "/ifxwx_images/showers_haze.png";
+break;
+case "Isolated T-Storms": $day1wximg= "/ifxwx_images/tstorms_isolated.png";
+break;
+case "Scattered T-Storms": $day1wximg= "/ifxwx_images/tstorms_scattered.png";
+break;
+case "Thunderstorms": $day1wximg= "/ifxwx_images/tstorms_rain.png";
+break;
+case "Severe T-Storms": $day1wximg= "/ifxwx_images/tstorms_severe.png";
+break;
+case "Snow Flurries": $day1wximg= "/ifxwx_images/snow_flurries.png";
+break;
+case "Scattered Snow Showers": $day1wximg= "/ifxwx_images/snow_scattered.png";
+break;
+case "Snow": $day1wximg= "/ifxwx_images/snow.png";
+break;
+case "Heavy Snow": $day1wximg= "/ifxwx_images/snow_heavy.png";
+break;
+case "Blizzard": $day1wximg= "/ifxwx_images/snow_blizzard.png";
+break;
+case "Blowing Snow": $day1wximg= "/ifxwx_images/blowing_snow.png";
+break;
+case "Rain/Snow": $day1wximg= "/ifxwx_images/rain_snow.png";
+break;
+case "Freezing Rain/Snow": $day1wximg= "/ifxwx_images/freezing_rain_snow.png";
+break;
+case "Freezing Rain/Rain": $day1wximg= "/ifxwx_images/freezing_rain.png";
+break;
+case "Freezing Rain/Sleet": $day1wximg= "/ifxwx_images/freezing_rain_sleet.png";
+break;
+case "Rain/Sleet": $day1wximg= "/ifxwx_images/rain_sleet.png";
+break;
+case "Sleet": $day1wximg= "/ifxwx_images/sleet.png";
+break;
+case "Overcast/Haze": $day1wximg= "/ifxwx_images/overcast_haze.png";
+break;
+case "Haze": $day1wximg= "/ifxwx_images/haze_day_night.png";
+break;
+case "Sunny/Fog": $day1wximg= "/ifxwx_images/fog_day.png";
+break;
+case "Morning Fog": $day1wximg= "/ifxwx_images/fog_morning.png";
+break;
+case "Overnight Fog": $day1wximg= "/ifxwx_images/fog_night.png";
+break;
+case "Cloudy/Fog": $day1wximg= "/ifxwx_images/fog_overcast.png";
+break;
+case "Dense Fog": $day1wximg= "/ifxwx_images/fog_dense.png";
+break;
+case "Windy": $day1wximg= "/ifxwx_images/windy.png";
+break;
+case "Lunar Eclipse": $day1wximg= "/ifxwx_images/lunar_eclipse.png";
+break;
+case "Solar Eclipse": $day1wximg= "/ifxwx_images/solar_eclipse.png";
+break;
+default: $day1wximg= "/ifxwx_images/select.png";
+}
+} 
+elseif (isset($_SESSION['day1wx'])) {
+	switch ($_SESSION["day1wx"]) {
+case "Sunny": $day1wximg= "/ifxwx_images/sunny.png";
+break;
+case "Partly Sunny": $day1wximg= "/ifxwx_images/partly_cloudy_day.png";
+break;
+case "Mostly Cloudy": $day1wximg= "/ifxwx_images/overcast.png";
+break;
+case "Clear": $day1wximg= "/ifxwx_images/clear_night.png";
+break;
+case "Partly Cloudy": $day1wximg= "/ifxwx_images/partly_cloudy_night.png";
+break;
+case "Overcast": $day1wximg= "/ifxwx_images/overcast.png";
+break;
+case "Isolated Rain Showers": $day1wximg= "/ifxwx_images/showers_isolated.png";
+break;
+case "Scattered Rain Showers": $day1wximg= "/ifxwx_images/showers_scattered.png";
+break;
+case "Rain": $day1wximg= "/ifxwx_images/rain.png";
+break;
+case "Heavy Rain": $day1wximg= "/ifxwx_images/rain_heavy.png";
+break;
+case "Rain and Fog": $day1wximg= "/ifxwx_images/showers_haze.png";
+break;
+case "Isolated T-Storms": $day1wximg= "/ifxwx_images/tstorms_isolated.png";
+break;
+case "Scattered T-Storms": $day1wximg= "/ifxwx_images/tstorms_scattered.png";
+break;
+case "Thunderstorms": $day1wximg= "/ifxwx_images/tstorms_rain.png";
+break;
+case "Severe T-Storms": $day1wximg= "/ifxwx_images/tstorms_severe.png";
+break;
+case "Snow Flurries": $day1wximg= "/ifxwx_images/snow_flurries.png";
+break;
+case "Scattered Snow Showers": $day1wximg= "/ifxwx_images/snow_scattered.png";
+break;
+case "Snow": $day1wximg= "/ifxwx_images/snow.png";
+break;
+case "Heavy Snow": $day1wximg= "/ifxwx_images/snow_heavy.png";
+break;
+case "Blizzard": $day1wximg= "/ifxwx_images/snow_blizzard.png";
+break;
+case "Blowing Snow": $day1wximg= "/ifxwx_images/blowing_snow.png";
+break;
+case "Rain/Snow": $day1wximg= "/ifxwx_images/rain_snow.png";
+break;
+case "Freezing Rain/Snow": $day1wximg= "/ifxwx_images/freezing_rain_snow.png";
+break;
+case "Freezing Rain/Rain": $day1wximg= "/ifxwx_images/freezing_rain.png";
+break;
+case "Freezing Rain/Sleet": $day1wximg= "/ifxwx_images/freezing_rain_sleet.png";
+break;
+case "Rain/Sleet": $day1wximg= "/ifxwx_images/rain_sleet.png";
+break;
+case "Sleet": $day1wximg= "/ifxwx_images/sleet.png";
+break;
+case "Overcast/Haze": $day1wximg= "/ifxwx_images/overcast_haze.png";
+break;
+case "Haze": $day1wximg= "/ifxwx_images/haze_day_night.png";
+break;
+case "Sunny/Fog": $day1wximg= "/ifxwx_images/fog_day.png";
+break;
+case "Morning Fog": $day1wximg= "/ifxwx_images/fog_morning.png";
+break;
+case "Overnight Fog": $day1wximg= "/ifxwx_images/fog_night.png";
+break;
+case "Cloudy/Fog": $day1wximg= "/ifxwx_images/fog_overcast.png";
+break;
+case "Dense Fog": $day1wximg= "/ifxwx_images/fog_dense.png";
+break;
+case "Windy": $day1wximg= "/ifxwx_images/windy.png";
+break;
+case "Lunar Eclipse": $day1wximg= "/ifxwx_images/lunar_eclipse.png";
+break;
+case "Solar Eclipse": $day1wximg= "/ifxwx_images/solar_eclipse.png";
+break;
+default: $day1wximg= "/ifxwx_images/select.png";
+}
+}
+
+
+
+
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
@@ -397,7 +560,7 @@ else {
 			<img src="/ifxwx_images/background.jpg" id="bg" alt="">
 			<div class="container">
 			<div class="twelve columns" style="font-weight: bold; text-align: center" id="header">
-<p><img style="width: 70px; height: 61px;" alt="" src="/ifxwx_images/logo.png"> Version 0.12.2 pre-alpha<br><big style="font-family: Helvetica,Arial,sans-serif;"><big><big>Forecast Composer</big></big></big>
+<p><img style="width: 70px; height: 61px;" alt="" src="/ifxwx_images/logo.png"> Version 0.13.0 pre-alpha<br><big style="font-family: Helvetica,Arial,sans-serif;"><big><big>Forecast Composer</big></big></big>
 </p>
 			<div class="twelve columns" >
 				Welcome to the forecast composer page. This is the first step towards creating your own weather forecast. Enter the variables for your weather forecast using the forms below and click the 'Submit' button to view your final product.<small><br>Labels denoted with an asterisk (*) indicate required variables.</small>
@@ -579,7 +742,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $proceed == false) {
 					<br>
 				</p>
 				<p>
-					<select style="width:90%; background-color: <?php echo $fieldErr12 ?>" name="day1wx" onchange="document.getElementById('day1desc').value=this.value;">
+					<select style="width:90%; background-color: <?php echo $fieldErr12 ?>" name="day1wx" onchange="document.getElementById('day1desc').value=this.value; updateday1wximg(this.value)">
 						<option value="<?php if (isset($_POST['day1wx'])) {echo $_POST['day1wx'];} elseif (isset($_SESSION['day1wx'])) {echo $_SESSION['day1wx'];} else {echo 'Weather';};?>"><?php if (isset($_POST['day1wx'])) {echo $_POST['day1wx'];} elseif (isset($_SESSION['day1wx'])) {echo $_SESSION['day1wx'];} else {echo 'Weather';};?></option>
 						<optgroup label="General Day">
 						<option value="Sunny">Sunny</option>
@@ -632,12 +795,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $proceed == false) {
 							</optgroup>
 					</select>*
 					<br>
+					<?php
+if (isset($_POST['day1wx'])) {
+	echo '<img src="' . $day1wximg . '" alt="Weather Icon Preview" style="width:70px;height:70px;" id="day1wximg" name="day1wximg">';
+} 
+elseif (isset($_SESSION['day1wx'])) {
+	echo '<img src="' . $day1wximg . '" alt="Weather Icon Preview" style="width:70px;height:70px;" id="day1wximg" name="day1wximg">';
+} 
+else {
+	echo '<img src="/ifxwx_images/select.png" alt="Weather Icon Preview" style="width:70px;height:70px;" id="day1wximg" name="day1wximg">';
+	 }
+?>
 				</p>
 				<p>
 					<label for="day1desc">Weather Description*</label>
 					<br>
 					<input style="width:90%; background-color: <?php echo $fieldErr13 ?>" name="day1desc" placeholder="Mostly Sunny" id="day1desc" type="text" value="<?php if (isset($_POST['day1desc'])) {echo $_POST['day1desc'];} elseif (isset($_SESSION['day1desc'])) {echo $_SESSION['day1desc'];} else {echo '';};?>">
-				</p><br>
+				
+					</p>
 			<p>
 					<label for="day1temp">Temperature*</label>
 					<br>
@@ -750,6 +925,8 @@ function reset_var() {
 	echo "/iFxWx.php";
 }
 ?>
+	
+
 	<script>
 		// This script sets the titles for each forecast period to alternate day/night depending on user selection of forecast start time
 	function updateTitles(val) {
@@ -809,6 +986,87 @@ function reset_var() {
 		}
 		
 	}
+		
+		function updateday1wximg(val) {
+switch (val) {
+case "Sunny": day1wximg = "/ifxwx_images/sunny.png";
+break;
+case "Partly Sunny": day1wximg = "/ifxwx_images/partly_cloudy_day.png";
+break;
+case "Mostly Cloudy": day1wximg = "/ifxwx_images/overcast.png";
+break;
+case "Clear": day1wximg = "/ifxwx_images/clear_night.png";
+break;
+case "Partly Cloudy": day1wximg = "/ifxwx_images/partly_cloudy_night.png";
+break;
+case "Overcast": day1wximg = "/ifxwx_images/overcast.png";
+break;
+case "Isolated Rain Showers": day1wximg = "/ifxwx_images/showers_isolated.png";
+break;
+case "Scattered Rain Showers": day1wximg = "/ifxwx_images/showers_scattered.png";
+break;
+case "Rain": day1wximg = "/ifxwx_images/rain.png";
+break;
+case "Heavy Rain": day1wximg = "/ifxwx_images/rain_heavy.png";
+break;
+case "Rain and Fog": day1wximg = "/ifxwx_images/showers_haze.png";
+break;
+case "Isolated T-Storms": day1wximg = "/ifxwx_images/tstorms_isolated.png";
+break;
+case "Scattered T-Storms": day1wximg = "/ifxwx_images/tstorms_scattered.png";
+break;
+case "Thunderstorms": day1wximg = "/ifxwx_images/tstorms_rain.png";
+break;
+case "Severe T-Storms": day1wximg = "/ifxwx_images/tstorms_severe.png";
+break;
+case "Snow Flurries": day1wximg = "/ifxwx_images/snow_flurries.png";
+break;
+case "Scattered Snow Showers": day1wximg = "/ifxwx_images/snow_scattered.png";
+break;
+case "Snow": day1wximg = "/ifxwx_images/snow.png";
+break;
+case "Heavy Snow": day1wximg = "/ifxwx_images/snow_heavy.png";
+break;
+case "Blizzard": day1wximg = "/ifxwx_images/snow_blizzard.png";
+break;
+case "Blowing Snow": day1wximg = "/ifxwx_images/blowing_snow.png";
+break;
+case "Rain/Snow": day1wximg = "/ifxwx_images/rain_snow.png";
+break;
+case "Freezing Rain/Snow": day1wximg = "/ifxwx_images/freezing_rain_snow.png";
+break;
+case "Freezing Rain/Rain": day1wximg = "/ifxwx_images/freezing_rain.png";
+break;
+case "Freezing Rain/Sleet": day1wximg = "/ifxwx_images/freezing_rain_sleet.png";
+break;
+case "Rain/Sleet": day1wximg = "/ifxwx_images/rain_sleet.png";
+break;
+case "Sleet": day1wximg = "/ifxwx_images/sleet.png";
+break;
+case "Overcast/Haze": day1wximg = "/ifxwx_images/overcast_haze.png";
+break;
+case "Haze": day1wximg = "/ifxwx_images/haze_day_night.png";
+break;
+case "Sunny/Fog": day1wximg = "/ifxwx_images/fog_day.png";
+break;
+case "Morning Fog": day1wximg = "/ifxwx_images/fog_morning.png";
+break;
+case "Overnight Fog": day1wximg = "/ifxwx_images/fog_night.png";
+break;
+case "Cloudy/Fog": day1wximg = "/ifxwx_images/fog_overcast.png";
+break;
+case "Dense Fog": day1wximg = "/ifxwx_images/fog_dense.png";
+break;
+case "Windy": day1wximg = "/ifxwx_images/windy.png";
+break;
+case "Lunar Eclipse": day1wximg = "/ifxwx_images/lunar_eclipse.png";
+break;
+case "Solar Eclipse": day1wximg = "/ifxwx_images/solar_eclipse.png";
+break;
+default: day1wximg = "/ifxwx_images/select.png";
+}
+			document.getElementById("day1wximg").src = day1wximg;
+		}
 	</script>
 </body>
 
