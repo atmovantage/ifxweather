@@ -33,11 +33,21 @@ $logicnotice = "" ;
 	// Logic Error variables are set to white as default but will turn blue if the specified fields do not pass the logic check
 	$logicErr1 = $logicErr2 = $logicErr3 = "FFF" ;
 
+// Column 2 variables
+
+	// Field Error variables are set white as default but will turn red if the specified field is left blank after user submits the form
+	$col2fieldErr1 = $col2fieldErr3 = $col2fieldErr4 = $col2fieldErr5 = $col2fieldErr6 = $col2fieldErr7 = $col2fieldErr8 = $col2fieldErr9 = $col2fieldErr10 = $col2fieldErr11 = $col2fieldErr12 = $col2fieldErr13 = $col2fieldErr14 = "#FFF";
+	
+	// Logic Error variables are set to white as default but will turn blue if the specified fields do not pass the logic check
+	$col2logicErr1 = $col2logicErr2 = $col2logicErr3 = "FFF" ;
+
+//
+//
 // Validation of required variables
 if ($_SERVER["REQUEST_METHOD"] == "POST" && $proceed == false) {
 	
 	//Check to see if any of the required fields are blank or set at the default values
-	if (empty($_POST["forecaster"]) || empty($_POST["stationname"]) || empty($_POST["date"])|| empty($_POST["time"]) || empty($_POST["fxstartmonth"]) || $_POST["fxstartmonth"] == "Select Month" || empty($_POST["fxstartday"]) || $_POST["fxstartday"] == "Select Day" || empty($_POST["fxstartyear"]) || $_POST["fxstartyear"] == "Select Year" || empty($_POST["fxstarttime"]) || $_POST["fxstarttime"] == "Select Time" || empty($_POST["col1"]) || $_POST["col1wx"] == "Weather" || empty($_POST["col1desc"]) || empty($_POST["col1temp"])) {
+	if (empty($_POST["forecaster"]) || empty($_POST["stationname"]) || empty($_POST["date"])|| empty($_POST["time"]) || empty($_POST["fxstartmonth"]) || $_POST["fxstartmonth"] == "Select Month" || empty($_POST["fxstartday"]) || $_POST["fxstartday"] == "Select Day" || empty($_POST["fxstartyear"]) || $_POST["fxstartyear"] == "Select Year" || empty($_POST["fxstarttime"]) || $_POST["fxstarttime"] == "Select Time" || empty($_POST["col1"]) || $_POST["col1wx"] == "Weather" || empty($_POST["col1desc"]) || empty($_POST["col1temp"]) || empty($_POST["col2"]) || $_POST["col2wx"] == "Weather" || empty($_POST["col2desc"]) || empty($_POST["col2temp"])) {
 		//if any required variables are empty then do not proceed to preview page
 		$proceed = false;
 	}
