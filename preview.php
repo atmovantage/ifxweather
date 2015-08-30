@@ -32,26 +32,29 @@ function submit_input() {
 	$_SESSION["tempunit"] = $_SESSION["tempunit"];
 	$_SESSION["colortemp"] = $_SESSION["colortemp"];
 	$_SESSION["windunit"] = $_SESSION["windunit"];
-
 	
-	// 0-12hr Forecast Period Variables
-	$_SESSION["day1label"] = $_SESSION["day1label"];
-	$_SESSION["day1wx"] = $_SESSION["day1wx"];
-	$_SESSION["day1"] = $_SESSION["day1"];
-	$_SESSION["day1highlow"] = $_SESSION["day1highlow"];
+	$_SESSION["fxvalidname"] = $_SESSION["fxvalidname"];
+	
+	
+	// Column 1 Forecast Period Variables
+	$_SESSION["col1label"] = $_SESSION["col1label"];
+	$_SESSION["col1wx"] = $_SESSION["col1wx"];
+	$_SESSION["col1"] = $_SESSION["col1"];
+	$_SESSION["col1highlow"] = $_SESSION["col1highlow"];
 	$_SESSION["precipunit"] = $_SESSION["precipunit"];
-	$_SESSION["day1pop"] = $_SESSION["day1pop"];
-	$_SESSION["day1desc"] = $_SESSION["day1desc"];
-	$_SESSION["day1temp"] = $_SESSION["day1temp"];
-	$_SESSION["day1precip"] = $_SESSION["day1precip"];
-	$_SESSION["day1showrain"] = $_SESSION["day1showrain"];
-	$_SESSION["day1snowmin"] = $_SESSION["day1snowmin"];
-	$_SESSION["day1snowmax"] = $_SESSION["day1snowmax"];
-	$_SESSION["day1windmin"] = $_SESSION["day1windmin"];
-	$_SESSION["day1windmax"] = $_SESSION["day1windmax"];
-	$_SESSION["day1winddir"] = $_SESSION["day1winddir"];
-	$_SESSION["day1windgust"] = $_SESSION["day1windgust"];
-	$_SESSION["day1detail"] = $_SESSION["day1detail"];
+	$_SESSION["col1pop"] = $_SESSION["col1pop"];
+	$_SESSION["col1desc"] = $_SESSION["col1desc"];
+	$_SESSION["col1temp"] = $_SESSION["col1temp"];
+	$_SESSION["col1precip"] = $_SESSION["col1precip"];
+	$_SESSION["col1showrain"] = $_SESSION["col1showrain"];
+	$_SESSION["col1snowmin"] = $_SESSION["col1snowmin"];
+	$_SESSION["col1snowmax"] = $_SESSION["col1snowmax"];
+	$_SESSION["col1windmin"] = $_SESSION["col1windmin"];
+	$_SESSION["col1windmax"] = $_SESSION["col1windmax"];
+	$_SESSION["col1winddir"] = $_SESSION["col1winddir"];
+	$_SESSION["col1showwind"] = $_SESSION["col1showwind"];
+	$_SESSION["col1windgust"] = $_SESSION["col1windgust"];
+	$_SESSION["col1detail"] = $_SESSION["col1detail"];
 	
 	//Submit to the preview page
 	header('Location: /iFxWx.php');
@@ -122,7 +125,7 @@ Version 0.14.0 pre-alpha</p>
 }
 
     if ($_SESSION["colortemp"] == "yes") {
-      $tempcolor = $_SESSION["day1highlow"];
+      $tempcolor = $_SESSION["col1highlow"];
 	  }
       else {
 		  $tempcolor = "black";
@@ -148,151 +151,151 @@ Version 0.14.0 pre-alpha</p>
 		default: $windunit = "mph";
 	}
 
-switch ($_SESSION["day1wx"]) {
-case "Sunny": $day1wximg = "/ifxwx_images/sunny.png";
+switch ($_SESSION["col1wx"]) {
+case "Sunny": $col1wximg = "/ifxwx_images/sunny.png";
 break;
-case "Partly Sunny": $day1wximg = "/ifxwx_images/partly_cloudy_day.png";
+case "Partly Sunny": $col1wximg = "/ifxwx_images/partly_cloudy_day.png";
 break;
-case "Mostly Cloudy": $day1wximg = "/ifxwx_images/overcast.png";
+case "Mostly Cloudy": $col1wximg = "/ifxwx_images/overcast.png";
 break;
-case "Clear": $day1wximg = "/ifxwx_images/clear_night.png";
+case "Clear": $col1wximg = "/ifxwx_images/clear_night.png";
 break;
-case "Partly Cloudy": $day1wximg = "/ifxwx_images/partly_cloudy_night.png";
+case "Partly Cloudy": $col1wximg = "/ifxwx_images/partly_cloudy_night.png";
 break;
-case "Overcast": $day1wximg = "/ifxwx_images/overcast.png";
+case "Overcast": $col1wximg = "/ifxwx_images/overcast.png";
 break;
-case "Isolated Rain Showers": $day1wximg = "/ifxwx_images/showers_isolated.png";
+case "Isolated Rain Showers": $col1wximg = "/ifxwx_images/showers_isolated.png";
 break;
-case "Scattered Rain Showers": $day1wximg = "/ifxwx_images/showers_scattered.png";
+case "Scattered Rain Showers": $col1wximg = "/ifxwx_images/showers_scattered.png";
 break;
-case "Rain": $day1wximg = "/ifxwx_images/rain.png";
+case "Rain": $col1wximg = "/ifxwx_images/rain.png";
 break;
-case "Heavy Rain": $day1wximg = "/ifxwx_images/rain_heavy.png";
+case "Heavy Rain": $col1wximg = "/ifxwx_images/rain_heavy.png";
 break;
-case "Rain and Fog": $day1wximg = "/ifxwx_images/showers_haze.png";
+case "Rain and Fog": $col1wximg = "/ifxwx_images/showers_haze.png";
 break;
-case "Isolated T-Storms": $day1wximg = "/ifxwx_images/tstorms_isolated.png";
+case "Isolated T-Storms": $col1wximg = "/ifxwx_images/tstorms_isolated.png";
 break;
-case "Scattered T-Storms": $day1wximg = "/ifxwx_images/tstorms_scattered.png";
+case "Scattered T-Storms": $col1wximg = "/ifxwx_images/tstorms_scattered.png";
 break;
-case "Thunderstorms": $day1wximg = "/ifxwx_images/tstorms_rain.png";
+case "Thunderstorms": $col1wximg = "/ifxwx_images/tstorms_rain.png";
 break;
-case "Severe T-Storms": $day1wximg = "/ifxwx_images/tstorms_severe.png";
+case "Severe T-Storms": $col1wximg = "/ifxwx_images/tstorms_severe.png";
 break;
-case "Snow Flurries": $day1wximg = "/ifxwx_images/snow_flurries.png";
+case "Snow Flurries": $col1wximg = "/ifxwx_images/snow_flurries.png";
 break;
-case "Scattered Snow Showers": $day1wximg = "/ifxwx_images/snow_scattered.png";
+case "Scattered Snow Showers": $col1wximg = "/ifxwx_images/snow_scattered.png";
 break;
-case "Snow": $day1wximg = "/ifxwx_images/snow.png";
+case "Snow": $col1wximg = "/ifxwx_images/snow.png";
 break;
-case "Heavy Snow": $day1wximg = "/ifxwx_images/snow_heavy.png";
+case "Heavy Snow": $col1wximg = "/ifxwx_images/snow_heavy.png";
 break;
-case "Blizzard": $day1wximg = "/ifxwx_images/snow_blizzard.png";
+case "Blizzard": $col1wximg = "/ifxwx_images/snow_blizzard.png";
 break;
-case "Blowing Snow": $day1wximg = "/ifxwx_images/blowing_snow.png";
+case "Blowing Snow": $col1wximg = "/ifxwx_images/blowing_snow.png";
 break;
-case "Rain/Snow": $day1wximg = "/ifxwx_images/rain_snow.png";
+case "Rain/Snow": $col1wximg = "/ifxwx_images/rain_snow.png";
 break;
-case "Freezing Rain/Snow": $day1wximg = "/ifxwx_images/freezing_rain_snow.png";
+case "Freezing Rain/Snow": $col1wximg = "/ifxwx_images/freezing_rain_snow.png";
 break;
-case "Freezing Rain/Rain": $day1wximg = "/ifxwx_images/freezing_rain.png";
+case "Freezing Rain/Rain": $col1wximg = "/ifxwx_images/freezing_rain.png";
 break;
-case "Freezing Rain/Sleet": $day1wximg = "/ifxwx_images/freezing_rain_sleet.png";
+case "Freezing Rain/Sleet": $col1wximg = "/ifxwx_images/freezing_rain_sleet.png";
 break;
-case "Rain/Sleet": $day1wximg = "/ifxwx_images/rain_sleet.png";
+case "Rain/Sleet": $col1wximg = "/ifxwx_images/rain_sleet.png";
 break;
-case "Sleet": $day1wximg = "/ifxwx_images/sleet.png";
+case "Sleet": $col1wximg = "/ifxwx_images/sleet.png";
 break;
-case "Overcast/Haze": $day1wximg = "/ifxwx_images/overcast_haze.png";
+case "Overcast/Haze": $col1wximg = "/ifxwx_images/overcast_haze.png";
 break;
-case "Haze": $day1wximg = "/ifxwx_images/haze_day_night.png";
+case "Haze": $col1wximg = "/ifxwx_images/haze_day_night.png";
 break;
-case "Sunny/Fog": $day1wximg = "/ifxwx_images/fog_day.png";
+case "Sunny/Fog": $col1wximg = "/ifxwx_images/fog_day.png";
 break;
-case "Morning Fog": $day1wximg = "/ifxwx_images/fog_morning.png";
+case "Morning Fog": $col1wximg = "/ifxwx_images/fog_morning.png";
 break;
-case "Overnight Fog": $day1wximg = "/ifxwx_images/fog_night.png";
+case "Overnight Fog": $col1wximg = "/ifxwx_images/fog_night.png";
 break;
-case "Cloudy/Fog": $day1wximg = "/ifxwx_images/fog_overcast.png";
+case "Cloudy/Fog": $col1wximg = "/ifxwx_images/fog_overcast.png";
 break;
-case "Dense Fog": $day1wximg = "/ifxwx_images/fog_dense.png";
+case "Dense Fog": $col1wximg = "/ifxwx_images/fog_dense.png";
 break;
-case "Windy": $day1wximg = "/ifxwx_images/windy.png";
+case "Windy": $col1wximg = "/ifxwx_images/windy.png";
 break;
-case "Lunar Eclipse": $day1wximg = "/ifxwx_images/lunar_eclipse.png";
+case "Lunar Eclipse": $col1wximg = "/ifxwx_images/lunar_eclipse.png";
 break;
-case "Solar Eclipse": $day1wximg = "/ifxwx_images/solar_eclipse.png";
+case "Solar Eclipse": $col1wximg = "/ifxwx_images/solar_eclipse.png";
 break;
-default: $day1wximg = "/ifxwx_images/fog_dense.png";
+default: $col1wximg = "/ifxwx_images/fog_dense.png";
 }
 ?>
 <div style="text-align: center;" class="two columns">
-	<p id="title"><strong><big><u><?php echo $_SESSION["day1"]; ?></u></big></strong><br></p>
+	<p id="title"><strong><big><u><?php echo $_SESSION["col1"]; ?></u></big></strong><br></p>
 <p>
-	<img class="wximg" style="width: 70px; height: 70px;" alt="day1wximg" src="<?php echo $day1wximg ; ?>" >
+	<img class="wximg" style="width: 70px; height: 70px;" alt="col1wximg" src="<?php echo $col1wximg ; ?>" >
 	</p>
-		<?php if ($_SESSION["day1pop"] > 0) {
-	echo "<p><strong>" . $_SESSION["day1desc"] . "</strong> <small>(" . $_SESSION["day1pop"] . "%)</small></p>" ;
+		<?php if ($_SESSION["col1pop"] > 0) {
+	echo "<p><strong>" . $_SESSION["col1desc"] . "</strong> <small>(" . $_SESSION["col1pop"] . "%)</small></p>" ;
 }
 	else {
-		echo "<p><strong>" . $_SESSION["day1desc"] . "</strong></p>" ;
+		echo "<p><strong>" . $_SESSION["col1desc"] . "</strong></p>" ;
 }
 ?>
-		<strong><big><big><?php echo "<p style='color:" . $tempcolor . "'>" . $_SESSION["day1temp"] . $tempunit . " </p>" 
+		<strong><big><big><?php echo "<p style='color:" . $tempcolor . "'>" . $_SESSION["col1temp"] . $tempunit . " </p>" 
 ?>  </big></big></strong>
 	
-		<small><?php if ($_SESSION["day1precip"] > 0 && empty($_SESSION["day1showrain"])) {
-	echo "<p>Rain total " . $_SESSION["day1precip"] . " " . $precipunit . "</p>" ;
+		<small><?php if ($_SESSION["col1precip"] > 0 && empty($_SESSION["col1showrain"])) {
+	echo "<p>Rain total " . $_SESSION["col1precip"] . " " . $precipunit . "</p>" ;
 }
 else {
 	echo "<p></p>" ;
 }
 
 ?>
-		<?php if ($_SESSION["day1snowmin"] > 0 && $_SESSION["day1snowmax"] > 0 && $_SESSION["day1snowmin"] < $_SESSION["day1snowmax"]){
-	echo "<p>Snow accumulation " . $_SESSION["day1snowmin"] . "-" . $_SESSION["day1snowmax"] . " " . $precipunit . "</p>" ;
+		<?php if ($_SESSION["col1snowmin"] > 0 && $_SESSION["col1snowmax"] > 0 && $_SESSION["col1snowmin"] < $_SESSION["col1snowmax"]){
+	echo "<p>Snow accumulation " . $_SESSION["col1snowmin"] . "-" . $_SESSION["col1snowmax"] . " " . $precipunit . "</p>" ;
 }
-elseif ($_SESSION["day1snowmin"] == $_SESSION["day1snowmax"] && $_SESSION["day1snowmin"] > 0 && $_SESSION["day1snowmax"] > 0){
-	echo "<p>Snow accumulation up to " . $_SESSION["day1snowmax"] . " " . $precipunit . "</p>" ;
+elseif ($_SESSION["col1snowmin"] == $_SESSION["col1snowmax"] && $_SESSION["col1snowmin"] > 0 && $_SESSION["col1snowmax"] > 0){
+	echo "<p>Snow accumulation up to " . $_SESSION["col1snowmax"] . " " . $precipunit . "</p>" ;
 } 
-elseif ($_SESSION["day1snowmin"] == 0 && $_SESSION["day1snowmax"] == 1){
+elseif ($_SESSION["col1snowmin"] == 0 && $_SESSION["col1snowmax"] == 1){
 	echo "<p>Snow accumulation less than 1 " . $precipunit . "</p>" ;
 } 
-elseif ($_SESSION["day1snowmin"] == 0 && $_SESSION["day1snowmax"] > 0){
-	echo "<p>Snow accumulation up to " . $_SESSION["day1snowmax"] . " " . $precipunit . "</p>" ;
+elseif ($_SESSION["col1snowmin"] == 0 && $_SESSION["col1snowmax"] > 0){
+	echo "<p>Snow accumulation up to " . $_SESSION["col1snowmax"] . " " . $precipunit . "</p>" ;
 } 
 ?>
 		
-		<?php if ($_SESSION["day1windmin"] != " " && $_SESSION["day1windmax"] != " " && $_SESSION["day1windmin"] != $_SESSION["day1windmax"] && $_SESSION["day1windmin"] < $_SESSION["day1windmax"] && $_SESSION["day1winddir"] != " " && empty($_SESSION["day1showwind"])) {
-	echo "<p>Winds " . $_SESSION["day1winddir"] . " " . $_SESSION["day1windmin"] . "-" . $_SESSION["day1windmax"] . " " . $windunit . "<br>" ;
+		<?php if ($_SESSION["col1windmin"] != " " && $_SESSION["col1windmax"] != " " && $_SESSION["col1windmin"] != $_SESSION["col1windmax"] && $_SESSION["col1windmin"] < $_SESSION["col1windmax"] && $_SESSION["col1winddir"] != " " && empty($_SESSION["col1showwind"])) {
+	echo "<p>Winds " . $_SESSION["col1winddir"] . " " . $_SESSION["col1windmin"] . "-" . $_SESSION["col1windmax"] . " " . $windunit . "<br>" ;
 }
-elseif ($_SESSION["day1windmin"] == 0 && $_SESSION["day1windmax"] == 0 && $_SESSION["day1winddir"] == " " && empty($_SESSION["day1showwind"])){
+elseif ($_SESSION["col1windmin"] == 0 && $_SESSION["col1windmax"] == 0 && $_SESSION["col1winddir"] == " " && empty($_SESSION["col1showwind"])){
 	echo "<p>Winds Calm<br>" ;
 }
-elseif ($_SESSION["day1winddir"] == "Calm" && empty($_SESSION["day1showwind"])){
+elseif ($_SESSION["col1winddir"] == "Calm" && empty($_SESSION["col1showwind"])){
 	echo "<p>Winds Calm<br>" ;
 }
-elseif ($_SESSION["day1winddir"] == "Variable" && $_SESSION["day1windmin"] == 0 && $_SESSION["day1windmax"] == 0 && empty($_SESSION["day1showwind"])){
+elseif ($_SESSION["col1winddir"] == "Variable" && $_SESSION["col1windmin"] == 0 && $_SESSION["col1windmax"] == 0 && empty($_SESSION["col1showwind"])){
 	echo "<p>Winds Light and Variable<br>" ;
 }
-elseif ($_SESSION["day1windmin"] == "" && $_SESSION["day1windmax"] == "" && empty($_SESSION["day1showwind"])){
+elseif ($_SESSION["col1windmin"] == "" && $_SESSION["col1windmax"] == "" && empty($_SESSION["col1showwind"])){
 	echo "<p>Winds Light and Variable<br>" ;
 }
-elseif ($_SESSION["day1windmin"] == $_SESSION["day1windmax"] && empty($_SESSION["day1showwind"])) {
-	echo "<p>Winds " . $_SESSION["day1winddir"] . " around " . $_SESSION["day1windmin"] . " " . $windunit . "<br>" ;
+elseif ($_SESSION["col1windmin"] == $_SESSION["col1windmax"] && empty($_SESSION["col1showwind"])) {
+	echo "<p>Winds " . $_SESSION["col1winddir"] . " around " . $_SESSION["col1windmin"] . " " . $windunit . "<br>" ;
 }
 	else {
 	echo "<p>";}
 		
 			?>
 		
-		<?php if ($_SESSION["day1windgust"] > 0 && $_SESSION["day1windgust"] > $_SESSION["day1windmax"] && empty($_SESSION["day1showwind"])){
-	echo "Gusts up to " . $_SESSION["day1windgust"] . " " . $windunit . "</p>" ;
+		<?php if ($_SESSION["col1windgust"] > 0 && $_SESSION["col1windgust"] > $_SESSION["col1windmax"] && empty($_SESSION["col1showwind"])){
+	echo "Gusts up to " . $_SESSION["col1windgust"] . " " . $windunit . "</p>" ;
 			}
 				else 
 		echo "</p>" ;
 ?></small>
-<small><?php echo $_SESSION["day1detail"] . "<br>"; ?>
+<small><?php echo $_SESSION["col1detail"] . "<br>"; ?>
 </small>
 	<hr>
 </div>

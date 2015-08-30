@@ -33,11 +33,12 @@ $logicnotice = "" ;
 	// Logic Error variables are set to white as default but will turn blue if the specified fields do not pass the logic check
 	$logicErr1 = $logicErr2 = $logicErr3 = "FFF" ;
 
+
 // Validation of required variables
 if ($_SERVER["REQUEST_METHOD"] == "POST" && $proceed == false) {
 	
 	//Check to see if any of the required fields are blank or set at the default values
-	if (empty($_POST["forecaster"]) || empty($_POST["stationname"]) || empty($_POST["date"])|| empty($_POST["time"]) || empty($_POST["fxstartmonth"]) || $_POST["fxstartmonth"] == "Select Month" || empty($_POST["fxstartday"]) || $_POST["fxstartday"] == "Select Day" || empty($_POST["fxstartyear"]) || $_POST["fxstartyear"] == "Select Year" || empty($_POST["fxstarttime"]) || $_POST["fxstarttime"] == "Select Time" || empty($_POST["col1"]) || $_POST["col1wx"] == "Weather" || empty($_POST["col1desc"]) || empty($_POST["col1temp"])) {
+	if (empty($_POST["forecaster"]) || empty($_POST["stationname"]) || empty($_POST["date"])|| empty($_POST["time"]) || empty($_POST["fxstartmonth"]) || $_POST["fxstartmonth"] == "Select Month" || empty($_POST["fxstartday"]) || $_POST["fxstartday"] == "Select Day" || empty($_POST["fxstartyear"]) || $_POST["fxstartyear"] == "Select Year" || empty($_POST["fxstarttime"]) || $_POST["fxstarttime"] == "Select Time" || empty($_POST["day1"]) || $_POST["day1wx"] == "Weather" || empty($_POST["day1desc"]) || empty($_POST["day1temp"])) {
 		//if any required variables are empty then do not proceed to preview page
 		$proceed = false;
 	}
@@ -49,7 +50,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $proceed == false) {
 
 		//if proceed has been set to false after hitting submit then turn any empty required fields red
 if ($_SERVER["REQUEST_METHOD"] == "POST" && $proceed == false) {
-	// Global variables
 	if (empty($_POST["forecaster"])) {
 		$fieldErr3 = "#FF8080";
 	}
@@ -74,17 +74,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $proceed == false) {
 	if ($_POST["fxstarttime"] == "Select Time" || empty($_POST["fxstarttime"])) {
 		$fieldErr10 = "#FF8080";
 	}
-	// Column 1 variables
-	if (empty($_POST["col1"])) {
+	if (empty($_POST["day1"])) {
 		$fieldErr11 = "#FF8080";
 	}
-	if ($_POST["col1wx"] == "Weather") {
+	if ($_POST["day1wx"] == "Weather") {
 		$fieldErr12 = "#FF8080";
 	}
-	if (empty($_POST["col1desc"])) {
+	if (empty($_POST["day1desc"])) {
 		$fieldErr13 = "#FF8080";
 	}
-	if (empty($_POST["col1temp"])) {
+	if (empty($_POST["day1temp"])) {
 		$fieldErr14 = "#FF8080";
 	}
 }
@@ -93,44 +92,42 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $proceed == false) {
 if ($_SERVER["REQUEST_METHOD"] == "POST" && $logic == false) {
 	
 	// Column 1 logic check
-	if ($_POST["col1snowmin"] > $_POST["col1snowmax"]) {
+	if ($_POST["day1snowmin"] > $_POST["day1snowmax"]) {
 		$snowlogic = "Minimum snow accumulation cannot be larger than maximum snow accumulation. <br>";
 		$logic = false;
 		$logicErr1 = "#2681FF";
 	}
 
-	if ($_POST["col1windmin"] > $_POST["col1windmax"]) {
+	if ($_POST["day1windmin"] > $_POST["day1windmax"]) {
 		$windlogic = "Minimum sustained wind cannot be larger than maximum sustained wind. <br>";
 		$logic = false;
 		$logicErr2 = "#2681FF";
 	}
 
-	if ($_POST["col1windmax"] >= $_POST["col1windgust"] && $_POST["col1windgust"] != "") {
+	if ($_POST["day1windmax"] >= $_POST["day1windgust"] && $_POST["day1windgust"] != "") {
 		$gustlogic = "Maximum sustained wind cannot be larger than or equal to wind gusts. <br>";
 		$logic = false;
 		$logicErr3 = "#2681FF";
 	}
 }
 
-	// After completing the logic check for all columns test to see if the form passes the logic check
 if ($_SERVER["REQUEST_METHOD"] == "POST" && $snowlogic == "" && $windlogic == "" && $gustlogic == ""){
 	// If all the variables pass the logic check then we can proceed to preview page
 	$logicnotice = "";
 	$logic = true;
 }
 else {
-	// If any of the variables in any column fails the logic test then the following notice is displayed at the top of the page
 		$logicnotice = "<big><strong>The following items failed the logic check (highlighted in blue):</strong></big><br>";
 }
 
-//
-//
+
+
 //if the form has been submitted and the required fields are filled in properly then we can proceed to submit all variables
 if ($_SERVER["REQUEST_METHOD"] == "POST" && $proceed == true && $logic == true) {
 submit_input();	
 }
-//
-//
+
+		
 //submit all variables to preview page
 function submit_input() {
 	// Meta data variables
@@ -147,28 +144,26 @@ function submit_input() {
 	$_SESSION["colortemp"] = $_POST["colortemp"];
 	$_SESSION["windunit"] = $_POST["windunit"];
 	
+	
+	// 0-12hr Forecast Period Variables
 	$_SESSION["fxvalidname"] = $_POST["fxvalidname"];
-	
-	
-	// Column 1 Forecast Period Variables
-	$_SESSION["col1label"] = $_POST["col1label"];
-	$_SESSION["col1wx"] = $_POST["col1wx"];
-	$_SESSION["col1"] = $_POST["col1"];
-	$_SESSION["col1highlow"] = $_POST["col1highlow"];
+	$_SESSION["day1wx"] = $_POST["day1wx"];
+	$_SESSION["day1"] = $_POST["day1"];
+	$_SESSION["day1highlow"] = $_POST["day1highlow"];
 	$_SESSION["precipunit"] = $_POST["precipunit"];
-	$_SESSION["col1pop"] = $_POST["col1pop"];
-	$_SESSION["col1desc"] = $_POST["col1desc"];
-	$_SESSION["col1temp"] = $_POST["col1temp"];
-	$_SESSION["col1precip"] = $_POST["col1precip"];
-	$_SESSION["col1showrain"] = $_POST["col1showrain"];
-	$_SESSION["col1snowmin"] = $_POST["col1snowmin"];
-	$_SESSION["col1snowmax"] = $_POST["col1snowmax"];
-	$_SESSION["col1windmin"] = $_POST["col1windmin"];
-	$_SESSION["col1windmax"] = $_POST["col1windmax"];
-	$_SESSION["col1winddir"] = $_POST["col1winddir"];
-	$_SESSION["col1showwind"] = $_POST["col1showwind"];
-	$_SESSION["col1windgust"] = $_POST["col1windgust"];
-	$_SESSION["col1detail"] = $_POST["col1detail"];
+	$_SESSION["day1pop"] = $_POST["day1pop"];
+	$_SESSION["day1desc"] = $_POST["day1desc"];
+	$_SESSION["day1temp"] = $_POST["day1temp"];
+	$_SESSION["day1precip"] = $_POST["day1precip"];
+	$_SESSION["day1showrain"] = $_POST["day1showrain"];
+	$_SESSION["day1snowmin"] = $_POST["day1snowmin"];
+	$_SESSION["day1snowmax"] = $_POST["day1snowmax"];
+	$_SESSION["day1windmin"] = $_POST["day1windmin"];
+	$_SESSION["day1windmax"] = $_POST["day1windmax"];
+	$_SESSION["day1winddir"] = $_POST["day1winddir"];
+	$_SESSION["day1showwind"] = $_POST["day1showwind"];
+	$_SESSION["day1windgust"] = $_POST["day1windgust"];
+	$_SESSION["day1detail"] = $_POST["day1detail"];
 	
 	//Submit to the preview page
 	header('Location: /preview.php');
@@ -217,77 +212,77 @@ switch ($month) {
 // Determine the present time and when the first forecast period would be valid from
 if ($hour < "05" && $am_pm == "am") {
 	$fxvalid = "5AM";
-	$col1string = date('l');
+	$day1string = date('l');
 }
 elseif ($hour < "06" && $am_pm == "am") {
 	$fxvalid = "6AM";
-	$col1string = date('l');
+	$day1string = date('l');
 }
 elseif ($hour < "07" && $am_pm == "am") {
 	$fxvalid = "7AM";
-	$col1string = date('l');
+	$day1string = date('l');
 }
 elseif ($hour < "08" && $am_pm == "am") {
 	$fxvalid = "8AM";
-	$col1string = date('l');
+	$day1string = date('l');
 }
 elseif ($hour >= "08" && $hour < "12" && $am_pm == "am") {
 	$fxvalid = "5PM";
-	$col1string = date('l') . " Night";
-	//$col1string = date('l', strtotime("+1 day")) . " Night";
+	$day1string = date('l') . " Night";
+	//$day1string = date('l', strtotime("+1 day")) . " Night";
 }
 elseif ($hour == "12" && $am_pm == "am") {
 	$fxvalid = "5AM";
-	$col1string = date('l');
+	$day1string = date('l');
 }
 elseif ($hour < "05" && $am_pm == "pm") {
 	$fxvalid = "5PM";
-	$col1string = date('l') . " Night";
+	$day1string = date('l') . " Night";
 }
 elseif ($hour < "06" && $am_pm == "pm") {
 	$fxvalid = "6PM";
-	$col1string = date('l') . " Night";
+	$day1string = date('l') . " Night";
 }
 elseif ($hour < "07" && $am_pm == "pm") {
 	$fxvalid = "7PM";
-	$col1string = date('l') . " Night";
+	$day1string = date('l') . " Night";
 }
 elseif ($hour < "08" && $am_pm == "pm") {
 	$fxvalid = "8PM";
-	$col1string = date('l') . " Night";
+	$day1string = date('l') . " Night";
 }
 elseif ($hour >= "08" && $hour < "12" && $am_pm == "pm") {
 	$fxvalid = "5AM";
-	$col1string = date('l');
+	$day1string = date('l');
 }
 elseif ($hour == "12" && $am_pm == "pm") {
 	$fxvalid = "5PM";
-	$col1string = date('l') . " Night";
+	$day1string = date('l') . " Night";
 }
 else {
 	$fxvalid = "Select Time";
-	$col1string = date('l');
+	$day1string = date('l');
 }
-// Convert the start time from the numerical value into a logical string for user to understand the duration of the forecast period
+// Convert the start time from the value into a logical string for user to understand the duration of the forecast period
 switch ($fxvalid) {
-	case "5AM": $fxvalidname = $col1label = "5am - 5pm";
+	case "5AM": $fxvalidname = $day1label = "5am - 5pm";
 	break;
-	case "6AM": $fxvalidname = $col1label = "6am - 6pm";
+	case "6AM": $fxvalidname = $day1label = "6am - 6pm";
 	break;
-	case "7AM": $fxvalidname = $col1label = "7am - 7pm";
+	case "7AM": $fxvalidname = $day1label = "7am - 7pm";
 	break;
-	case "8AM": $fxvalidname = $col1label = "8am - 8pm";
+	case "8AM": $fxvalidname = $day1label = "8am - 8pm";
 	break;
-	case "5PM": $fxvalidname = $col1label = "5pm - 5am";
+	case "5PM": $fxvalidname = $day1label = "5pm - 5am";
 	break;
-	case "6PM": $fxvalidname = $col1label = "6pm - 6am";
+	case "6PM": $fxvalidname = $day1label = "6pm - 6am";
 	break;
-	case "7PM": $fxvalidname = $col1label = "7pm - 7am";
+	case "7PM": $fxvalidname = $day1label = "7pm - 7am";
 	break;
-	case "8PM": $fxvalidname = $col1label = "8pm - 8am";
+	case "8PM": $fxvalidname = $day1label = "8pm - 8am";
 	break;
 	default: $fxvalidname = "Select Time";
-	$col1label = "0-12hr";
+	$day1label = "0-12hr";
 	break;
 }
 
@@ -296,34 +291,34 @@ $checked = "checked";
 $unchecked = "";
 
 //Check for pre-existing user selection for High/Low
-if (!empty($_POST["col1highlow"]) && $_POST["col1highlow"] == "red") {
+if (!empty($_POST["day1highlow"]) && $_POST["day1highlow"] == "red") {
 	$highcheck = "checked";
 	$lowcheck = "";
 }
 
-elseif (!empty($_SESSION["col1highlow"]) && $_SESSION["col1highlow"] == "red") 
+elseif (!empty($_SESSION["day1highlow"]) && $_SESSION["day1highlow"] == "red") 
 {
 	$highcheck = "checked";
 	$lowcheck = "";
 } 
 
-elseif (($fxvalid == '5AM' || $fxvalid == '6AM' || $fxvalid == '7AM' || $fxvalid == '8AM') && empty($_SESSION["col1highlow"]) && empty($_POST["col1highlow"])) {
+elseif (($fxvalid == '5AM' || $fxvalid == '6AM' || $fxvalid == '7AM' || $fxvalid == '8AM') && empty($_SESSION["day1highlow"]) && empty($_POST["day1highlow"])) {
 	$highcheck = "checked";
 	$lowcheck = "";
 }
 
-elseif (!empty($_POST["col1highlow"]) && $_POST["col1highlow"] == "blue") {
+elseif (!empty($_POST["day1highlow"]) && $_POST["day1highlow"] == "blue") {
 	$lowcheck = "checked";
 	$highcheck = "";
 }
 
-elseif (!empty($_SESSION["col1highlow"]) && $_SESSION["col1highlow"] == "blue") 
+elseif (!empty($_SESSION["day1highlow"]) && $_SESSION["day1highlow"] == "blue") 
 {
 	$lowcheck = "checked";
 	$highcheck = "";
 } 
 
-elseif (($fxvalid == '5PM' || $fxvalid == '6PM' || $fxvalid == '7PM' || $fxvalid == '8PM') && empty($_SESSION["col1highlow"]) && empty($_POST["col1highlow"])) {
+elseif (($fxvalid == '5PM' || $fxvalid == '6PM' || $fxvalid == '7PM' || $fxvalid == '8PM') && empty($_SESSION["day1highlow"]) && empty($_POST["day1highlow"])) {
 	$lowcheck = "checked";
 	$highcheck = "";
 						   }
@@ -416,174 +411,168 @@ else {
 	$coloryes = "";
 	 }
 
-// Column 1 weather icons
-	// For POST (form validation) check for pre-selected weather in column 1 and set the icon to match, otherwise default icon will show
-if (isset($_POST['col1wx'])) {
-	switch ($_POST["col1wx"]) {
-case "Sunny": $col1wximg= "/ifxwx_images/sunny.png";
+if (isset($_POST['day1wx'])) {
+	switch ($_POST["day1wx"]) {
+case "Sunny": $day1wximg= "/ifxwx_images/sunny.png";
 break;
-case "Partly Sunny": $col1wximg= "/ifxwx_images/partly_cloudy_day.png";
+case "Partly Sunny": $day1wximg= "/ifxwx_images/partly_cloudy_day.png";
 break;
-case "Mostly Cloudy": $col1wximg= "/ifxwx_images/overcast.png";
+case "Mostly Cloudy": $day1wximg= "/ifxwx_images/overcast.png";
 break;
-case "Clear": $col1wximg= "/ifxwx_images/clear_night.png";
+case "Clear": $day1wximg= "/ifxwx_images/clear_night.png";
 break;
-case "Partly Cloudy": $col1wximg= "/ifxwx_images/partly_cloudy_night.png";
+case "Partly Cloudy": $day1wximg= "/ifxwx_images/partly_cloudy_night.png";
 break;
-case "Overcast": $col1wximg= "/ifxwx_images/overcast.png";
+case "Overcast": $day1wximg= "/ifxwx_images/overcast.png";
 break;
-case "Isolated Rain Showers": $col1wximg= "/ifxwx_images/showers_isolated.png";
+case "Isolated Rain Showers": $day1wximg= "/ifxwx_images/showers_isolated.png";
 break;
-case "Scattered Rain Showers": $col1wximg= "/ifxwx_images/showers_scattered.png";
+case "Scattered Rain Showers": $day1wximg= "/ifxwx_images/showers_scattered.png";
 break;
-case "Rain": $col1wximg= "/ifxwx_images/rain.png";
+case "Rain": $day1wximg= "/ifxwx_images/rain.png";
 break;
-case "Heavy Rain": $col1wximg= "/ifxwx_images/rain_heavy.png";
+case "Heavy Rain": $day1wximg= "/ifxwx_images/rain_heavy.png";
 break;
-case "Rain and Fog": $col1wximg= "/ifxwx_images/showers_haze.png";
+case "Rain and Fog": $day1wximg= "/ifxwx_images/showers_haze.png";
 break;
-case "Isolated T-Storms": $col1wximg= "/ifxwx_images/tstorms_isolated.png";
+case "Isolated T-Storms": $day1wximg= "/ifxwx_images/tstorms_isolated.png";
 break;
-case "Scattered T-Storms": $col1wximg= "/ifxwx_images/tstorms_scattered.png";
+case "Scattered T-Storms": $day1wximg= "/ifxwx_images/tstorms_scattered.png";
 break;
-case "Thunderstorms": $col1wximg= "/ifxwx_images/tstorms_rain.png";
+case "Thunderstorms": $day1wximg= "/ifxwx_images/tstorms_rain.png";
 break;
-case "Severe T-Storms": $col1wximg= "/ifxwx_images/tstorms_severe.png";
+case "Severe T-Storms": $day1wximg= "/ifxwx_images/tstorms_severe.png";
 break;
-case "Snow Flurries": $col1wximg= "/ifxwx_images/snow_flurries.png";
+case "Snow Flurries": $day1wximg= "/ifxwx_images/snow_flurries.png";
 break;
-case "Scattered Snow Showers": $col1wximg= "/ifxwx_images/snow_scattered.png";
+case "Scattered Snow Showers": $day1wximg= "/ifxwx_images/snow_scattered.png";
 break;
-case "Snow": $col1wximg= "/ifxwx_images/snow.png";
+case "Snow": $day1wximg= "/ifxwx_images/snow.png";
 break;
-case "Heavy Snow": $col1wximg= "/ifxwx_images/snow_heavy.png";
+case "Heavy Snow": $day1wximg= "/ifxwx_images/snow_heavy.png";
 break;
-case "Blizzard": $col1wximg= "/ifxwx_images/snow_blizzard.png";
+case "Blizzard": $day1wximg= "/ifxwx_images/snow_blizzard.png";
 break;
-case "Blowing Snow": $col1wximg= "/ifxwx_images/blowing_snow.png";
+case "Blowing Snow": $day1wximg= "/ifxwx_images/blowing_snow.png";
 break;
-case "Rain/Snow": $col1wximg= "/ifxwx_images/rain_snow.png";
+case "Rain/Snow": $day1wximg= "/ifxwx_images/rain_snow.png";
 break;
-case "Freezing Rain/Snow": $col1wximg= "/ifxwx_images/freezing_rain_snow.png";
+case "Freezing Rain/Snow": $day1wximg= "/ifxwx_images/freezing_rain_snow.png";
 break;
-case "Freezing Rain/Rain": $col1wximg= "/ifxwx_images/freezing_rain.png";
+case "Freezing Rain/Rain": $day1wximg= "/ifxwx_images/freezing_rain.png";
 break;
-case "Freezing Rain/Sleet": $col1wximg= "/ifxwx_images/freezing_rain_sleet.png";
+case "Freezing Rain/Sleet": $day1wximg= "/ifxwx_images/freezing_rain_sleet.png";
 break;
-case "Rain/Sleet": $col1wximg= "/ifxwx_images/rain_sleet.png";
+case "Rain/Sleet": $day1wximg= "/ifxwx_images/rain_sleet.png";
 break;
-case "Sleet": $col1wximg= "/ifxwx_images/sleet.png";
+case "Sleet": $day1wximg= "/ifxwx_images/sleet.png";
 break;
-case "Overcast/Haze": $col1wximg= "/ifxwx_images/overcast_haze.png";
+case "Overcast/Haze": $day1wximg= "/ifxwx_images/overcast_haze.png";
 break;
-case "Haze": $col1wximg= "/ifxwx_images/haze_day_night.png";
+case "Haze": $day1wximg= "/ifxwx_images/haze_day_night.png";
 break;
-case "Sunny/Fog": $col1wximg= "/ifxwx_images/fog_day.png";
+case "Sunny/Fog": $day1wximg= "/ifxwx_images/fog_day.png";
 break;
-case "Morning Fog": $col1wximg= "/ifxwx_images/fog_morning.png";
+case "Morning Fog": $day1wximg= "/ifxwx_images/fog_morning.png";
 break;
-case "Overnight Fog": $col1wximg= "/ifxwx_images/fog_night.png";
+case "Overnight Fog": $day1wximg= "/ifxwx_images/fog_night.png";
 break;
-case "Cloudy/Fog": $col1wximg= "/ifxwx_images/fog_overcast.png";
+case "Cloudy/Fog": $day1wximg= "/ifxwx_images/fog_overcast.png";
 break;
-case "Dense Fog": $col1wximg= "/ifxwx_images/fog_dense.png";
+case "Dense Fog": $day1wximg= "/ifxwx_images/fog_dense.png";
 break;
-case "Windy": $col1wximg= "/ifxwx_images/windy.png";
+case "Windy": $day1wximg= "/ifxwx_images/windy.png";
 break;
-case "Lunar Eclipse": $col1wximg= "/ifxwx_images/lunar_eclipse.png";
+case "Lunar Eclipse": $day1wximg= "/ifxwx_images/lunar_eclipse.png";
 break;
-case "Solar Eclipse": $col1wximg= "/ifxwx_images/solar_eclipse.png";
+case "Solar Eclipse": $day1wximg= "/ifxwx_images/solar_eclipse.png";
 break;
-default: $col1wximg= "/ifxwx_images/select.png";
+default: $day1wximg= "/ifxwx_images/select.png";
 }
-	// For SESSION (form editing) check for pre-selected weather in column 1 and set the icon to match, otherwise default icon will show
 } 
-elseif (isset($_SESSION['col1wx'])) {
-	switch ($_SESSION["col1wx"]) {
-case "Sunny": $col1wximg= "/ifxwx_images/sunny.png";
+elseif (isset($_SESSION['day1wx'])) {
+	switch ($_SESSION["day1wx"]) {
+case "Sunny": $day1wximg= "/ifxwx_images/sunny.png";
 break;
-case "Partly Sunny": $col1wximg= "/ifxwx_images/partly_cloudy_day.png";
+case "Partly Sunny": $day1wximg= "/ifxwx_images/partly_cloudy_day.png";
 break;
-case "Mostly Cloudy": $col1wximg= "/ifxwx_images/overcast.png";
+case "Mostly Cloudy": $day1wximg= "/ifxwx_images/overcast.png";
 break;
-case "Clear": $col1wximg= "/ifxwx_images/clear_night.png";
+case "Clear": $day1wximg= "/ifxwx_images/clear_night.png";
 break;
-case "Partly Cloudy": $col1wximg= "/ifxwx_images/partly_cloudy_night.png";
+case "Partly Cloudy": $day1wximg= "/ifxwx_images/partly_cloudy_night.png";
 break;
-case "Overcast": $col1wximg= "/ifxwx_images/overcast.png";
+case "Overcast": $day1wximg= "/ifxwx_images/overcast.png";
 break;
-case "Isolated Rain Showers": $col1wximg= "/ifxwx_images/showers_isolated.png";
+case "Isolated Rain Showers": $day1wximg= "/ifxwx_images/showers_isolated.png";
 break;
-case "Scattered Rain Showers": $col1wximg= "/ifxwx_images/showers_scattered.png";
+case "Scattered Rain Showers": $day1wximg= "/ifxwx_images/showers_scattered.png";
 break;
-case "Rain": $col1wximg= "/ifxwx_images/rain.png";
+case "Rain": $day1wximg= "/ifxwx_images/rain.png";
 break;
-case "Heavy Rain": $col1wximg= "/ifxwx_images/rain_heavy.png";
+case "Heavy Rain": $day1wximg= "/ifxwx_images/rain_heavy.png";
 break;
-case "Rain and Fog": $col1wximg= "/ifxwx_images/showers_haze.png";
+case "Rain and Fog": $day1wximg= "/ifxwx_images/showers_haze.png";
 break;
-case "Isolated T-Storms": $col1wximg= "/ifxwx_images/tstorms_isolated.png";
+case "Isolated T-Storms": $day1wximg= "/ifxwx_images/tstorms_isolated.png";
 break;
-case "Scattered T-Storms": $col1wximg= "/ifxwx_images/tstorms_scattered.png";
+case "Scattered T-Storms": $day1wximg= "/ifxwx_images/tstorms_scattered.png";
 break;
-case "Thunderstorms": $col1wximg= "/ifxwx_images/tstorms_rain.png";
+case "Thunderstorms": $day1wximg= "/ifxwx_images/tstorms_rain.png";
 break;
-case "Severe T-Storms": $col1wximg= "/ifxwx_images/tstorms_severe.png";
+case "Severe T-Storms": $day1wximg= "/ifxwx_images/tstorms_severe.png";
 break;
-case "Snow Flurries": $col1wximg= "/ifxwx_images/snow_flurries.png";
+case "Snow Flurries": $day1wximg= "/ifxwx_images/snow_flurries.png";
 break;
-case "Scattered Snow Showers": $col1wximg= "/ifxwx_images/snow_scattered.png";
+case "Scattered Snow Showers": $day1wximg= "/ifxwx_images/snow_scattered.png";
 break;
-case "Snow": $col1wximg= "/ifxwx_images/snow.png";
+case "Snow": $day1wximg= "/ifxwx_images/snow.png";
 break;
-case "Heavy Snow": $col1wximg= "/ifxwx_images/snow_heavy.png";
+case "Heavy Snow": $day1wximg= "/ifxwx_images/snow_heavy.png";
 break;
-case "Blizzard": $col1wximg= "/ifxwx_images/snow_blizzard.png";
+case "Blizzard": $day1wximg= "/ifxwx_images/snow_blizzard.png";
 break;
-case "Blowing Snow": $col1wximg= "/ifxwx_images/blowing_snow.png";
+case "Blowing Snow": $day1wximg= "/ifxwx_images/blowing_snow.png";
 break;
-case "Rain/Snow": $col1wximg= "/ifxwx_images/rain_snow.png";
+case "Rain/Snow": $day1wximg= "/ifxwx_images/rain_snow.png";
 break;
-case "Freezing Rain/Snow": $col1wximg= "/ifxwx_images/freezing_rain_snow.png";
+case "Freezing Rain/Snow": $day1wximg= "/ifxwx_images/freezing_rain_snow.png";
 break;
-case "Freezing Rain/Rain": $col1wximg= "/ifxwx_images/freezing_rain.png";
+case "Freezing Rain/Rain": $day1wximg= "/ifxwx_images/freezing_rain.png";
 break;
-case "Freezing Rain/Sleet": $col1wximg= "/ifxwx_images/freezing_rain_sleet.png";
+case "Freezing Rain/Sleet": $day1wximg= "/ifxwx_images/freezing_rain_sleet.png";
 break;
-case "Rain/Sleet": $col1wximg= "/ifxwx_images/rain_sleet.png";
+case "Rain/Sleet": $day1wximg= "/ifxwx_images/rain_sleet.png";
 break;
-case "Sleet": $col1wximg= "/ifxwx_images/sleet.png";
+case "Sleet": $day1wximg= "/ifxwx_images/sleet.png";
 break;
-case "Overcast/Haze": $col1wximg= "/ifxwx_images/overcast_haze.png";
+case "Overcast/Haze": $day1wximg= "/ifxwx_images/overcast_haze.png";
 break;
-case "Haze": $col1wximg= "/ifxwx_images/haze_day_night.png";
+case "Haze": $day1wximg= "/ifxwx_images/haze_day_night.png";
 break;
-case "Sunny/Fog": $col1wximg= "/ifxwx_images/fog_day.png";
+case "Sunny/Fog": $day1wximg= "/ifxwx_images/fog_day.png";
 break;
-case "Morning Fog": $col1wximg= "/ifxwx_images/fog_morning.png";
+case "Morning Fog": $day1wximg= "/ifxwx_images/fog_morning.png";
 break;
-case "Overnight Fog": $col1wximg= "/ifxwx_images/fog_night.png";
+case "Overnight Fog": $day1wximg= "/ifxwx_images/fog_night.png";
 break;
-case "Cloudy/Fog": $col1wximg= "/ifxwx_images/fog_overcast.png";
+case "Cloudy/Fog": $day1wximg= "/ifxwx_images/fog_overcast.png";
 break;
-case "Dense Fog": $col1wximg= "/ifxwx_images/fog_dense.png";
+case "Dense Fog": $day1wximg= "/ifxwx_images/fog_dense.png";
 break;
-case "Windy": $col1wximg= "/ifxwx_images/windy.png";
+case "Windy": $day1wximg= "/ifxwx_images/windy.png";
 break;
-case "Lunar Eclipse": $col1wximg= "/ifxwx_images/lunar_eclipse.png";
+case "Lunar Eclipse": $day1wximg= "/ifxwx_images/lunar_eclipse.png";
 break;
-case "Solar Eclipse": $col1wximg= "/ifxwx_images/solar_eclipse.png";
+case "Solar Eclipse": $day1wximg= "/ifxwx_images/solar_eclipse.png";
 break;
-default: $col1wximg= "/ifxwx_images/select.png";
+default: $day1wximg= "/ifxwx_images/select.png";
 }
 }
-//
-//
-// That concludes the PHP code that must precede the HTML code
-// Now below is the HTML markup (with inline PHP code and scripts, of course!)
-// Begin HTML markup
-//
-//
+
+
+
+
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
@@ -608,7 +597,6 @@ default: $col1wximg= "/ifxwx_images/select.png";
 </style>
 </head>
 <body>
-	<!-- When form is submitted via POST we pass all variables back through this same page in order to perform validation and verification -->
 	<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 		
 		<div class="wrapper">
@@ -619,14 +607,11 @@ default: $col1wximg= "/ifxwx_images/select.png";
 </p>
 			<div class="twelve columns" >
 				Welcome to the forecast composer page. This is the first step towards creating your own weather forecast. Enter the variables for your weather forecast using the forms below and click the 'Submit' button to view your final product.<small><br>Labels denoted with an asterisk (*) indicate required variables.</small>
-				<!-- If the form was submitted but proceed is set to false then display the error notice at top of the page.-->
 				<?php
 if ($_SERVER["REQUEST_METHOD"] == "POST" && $proceed == false) {
 	echo "<br>" . "<div style='color:red'>" . $fieldErr2 . "</div>";
 }
-?>
-				<!-- If the form was submitted but the logic check is set to false then display the error notice at top of the page -->
-				<br><div style='color:blue'>
+?><br><div style='color:blue'>
 		<?php
 if ($_SERVER["REQUEST_METHOD"] == "POST" && $logic == false) {
 	echo $logicnotice ;
@@ -642,7 +627,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $logic == false) {
 				<div class="twelve columns">
 				<hr>
 			</div>
-				<!-- The Meta Forms section is for global variables that apply to the entire forecast -->
 			<div class= "twelve columns" id="metaforms">
 			<div style="text-align: center;" class="three columns offset-by-one">
 				<p>
@@ -802,19 +786,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $logic == false) {
 			<div style="text-align: center;" class="twelve columns">
 				<hr>
 			</div>
-				<!-- Here starts the individual columns for each forecast period-->
 			<div >
-				<!-- Column 1 variables -->
 			<div class="two columns" style="text-align: center;" id="hr0-12">
 				
 				<p>
-					<label id="col1title" for="col1label"><?php if (isset($_POST['fxstarttime'])) {echo $_POST['fxstarttime'];} elseif (isset($_SESSION['fxstarttime'])) {echo $_SESSION['fxstarttime'];} else {echo $fxvalidname;};?></label><br>
-					<input style="width:90%; background-color: <?php echo $fieldErr11 ?>" name="col1" id="col1label" placeholder="Monday" type="text" value="<?php if (isset($_POST['col1'])) {echo $_POST['col1'];} elseif (isset($_SESSION['col1'])) {echo $_SESSION['col1'];} else {echo $col1string;};?>">*
+					<label id="day1title" for="day1label"><?php if (isset($_POST['fxstarttime'])) {echo $_POST['fxstarttime'];} elseif (isset($_SESSION['fxstarttime'])) {echo $_SESSION['fxstarttime'];} else {echo $fxvalidname;};?></label><br>
+					<input style="width:90%; background-color: <?php echo $fieldErr11 ?>" name="day1" id="day1label" placeholder="Monday" type="text" value="<?php if (isset($_POST['day1'])) {echo $_POST['day1'];} elseif (isset($_SESSION['day1'])) {echo $_SESSION['day1'];} else {echo $day1string;};?>">*
 					<br>
 				</p>
 				<p>
-					<select style="width:90%; background-color: <?php echo $fieldErr12 ?>" name="col1wx" onchange="document.getElementById('col1desc').value=this.value; updatecol1wximg(this.value)">
-						<option value="<?php if (isset($_POST['col1wx'])) {echo $_POST['col1wx'];} elseif (isset($_SESSION['col1wx'])) {echo $_SESSION['col1wx'];} else {echo 'Weather';};?>"><?php if (isset($_POST['col1wx'])) {echo $_POST['col1wx'];} elseif (isset($_SESSION['col1wx'])) {echo $_SESSION['col1wx'];} else {echo 'Weather';};?></option>
+					<select style="width:90%; background-color: <?php echo $fieldErr12 ?>" name="day1wx" onchange="document.getElementById('day1desc').value=this.value; updateday1wximg(this.value)">
+						<option value="<?php if (isset($_POST['day1wx'])) {echo $_POST['day1wx'];} elseif (isset($_SESSION['day1wx'])) {echo $_SESSION['day1wx'];} else {echo 'Weather';};?>"><?php if (isset($_POST['day1wx'])) {echo $_POST['day1wx'];} elseif (isset($_SESSION['day1wx'])) {echo $_SESSION['day1wx'];} else {echo 'Weather';};?></option>
 						<optgroup label="General Day">
 						<option value="Sunny">Sunny</option>
 						<option value="Partly Sunny">Partly Sunny</option>
@@ -867,49 +849,49 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $logic == false) {
 					</select>*
 					<br>
 					<?php
-if (isset($_POST['col1wx'])) {
-	echo '<img src="' . $col1wximg . '" alt="Weather Icon Preview" style="width:70px;height:70px;" id="col1wximg" name="col1wximg">';
+if (isset($_POST['day1wx'])) {
+	echo '<img src="' . $day1wximg . '" alt="Weather Icon Preview" style="width:70px;height:70px;" id="day1wximg" name="day1wximg">';
 } 
-elseif (isset($_SESSION['col1wx'])) {
-	echo '<img src="' . $col1wximg . '" alt="Weather Icon Preview" style="width:70px;height:70px;" id="col1wximg" name="col1wximg">';
+elseif (isset($_SESSION['day1wx'])) {
+	echo '<img src="' . $day1wximg . '" alt="Weather Icon Preview" style="width:70px;height:70px;" id="day1wximg" name="day1wximg">';
 } 
 else {
-	echo '<img src="/ifxwx_images/select.png" alt="Weather Icon Preview" style="width:70px;height:70px;" id="col1wximg" name="col1wximg">';
+	echo '<img src="/ifxwx_images/select.png" alt="Weather Icon Preview" style="width:70px;height:70px;" id="day1wximg" name="day1wximg">';
 	 }
 ?>
 				</p>
 				<p>
-					<label for="col1desc">Weather Description*</label>
+					<label for="day1desc">Weather Description*</label>
 					<br>
-					<input style="width:90%; background-color: <?php echo $fieldErr13 ?>" name="col1desc" placeholder="Mostly Sunny" id="col1desc" type="text" value="<?php if (isset($_POST['col1desc'])) {echo $_POST['col1desc'];} elseif (isset($_SESSION['col1desc'])) {echo $_SESSION['col1desc'];} else {echo '';};?>">
+					<input style="width:90%; background-color: <?php echo $fieldErr13 ?>" name="day1desc" placeholder="Mostly Sunny" id="day1desc" type="text" value="<?php if (isset($_POST['day1desc'])) {echo $_POST['day1desc'];} elseif (isset($_SESSION['day1desc'])) {echo $_SESSION['day1desc'];} else {echo '';};?>">
 				
 					</p>
 			<p>
-					<label for="col1temp">Temperature*</label>
+					<label for="day1temp">Temperature*</label>
 					<br>
-					<input style="width:90%; background-color: <?php echo $fieldErr14 ?>" placeholder="High/Low" min="-100" max="134" maxlength="3" name="col1temp" id="col1temp" type="number" value="<?php if (isset($_POST['col1temp'])) {echo $_POST['col1temp'];} elseif (isset($_SESSION['col1temp'])) {echo $_SESSION['col1temp'];} else {echo '';};?>"><br>
-				<form id="setcol1highlow">
-					<input type="radio" id="col1high" name="col1highlow" value="red" <?php echo $highcheck; ?>><small>High</small>
-					<input type="radio" id="col1low" name="col1highlow" value="blue" <?php echo $lowcheck; ?>><small>Low</small></form>
+					<input style="width:90%; background-color: <?php echo $fieldErr14 ?>" placeholder="High/Low" min="-100" max="134" maxlength="3" name="day1temp" id="day1temp" type="number" value="<?php if (isset($_POST['day1temp'])) {echo $_POST['day1temp'];} elseif (isset($_SESSION['day1temp'])) {echo $_SESSION['day1temp'];} else {echo '';};?>"><br>
+				<form id="setday1highlow">
+					<input type="radio" id="day1high" name="day1highlow" value="red" <?php echo $highcheck; ?>><small>High</small>
+					<input type="radio" id="day1low" name="day1highlow" value="blue" <?php echo $lowcheck; ?>><small>Low</small></form>
 				</p>
 				<br>
 			<p>
-					<label for="col1pop">Precipitation</label>
+					<label for="day1pop">Precipitation</label>
 					<br>
-					<input style="width:90%" min="0" max="100" size="15" maxlength="3" name="col1pop" placeholder="Probability %" id="col1pop" type="number" value="<?php if (isset($_POST['col1pop'])) {echo $_POST['col1pop'];} elseif (isset($_SESSION['col1pop'])) {echo $_SESSION['col1pop'];} else {echo '';};?>"><label style="display: none;" for="col1precip" id="col1precip_label">Precipitation Total</label><input style="width:90%" step=".01" min="0" max="100" name="col1precip" placeholder="Precip Total" id="col1precip" type="number" value="<?php if (isset($_POST['col1precip'])) {echo $_POST['col1precip'];} elseif (isset($_SESSION['col1precip'])) {echo $_SESSION['col1precip'];} else {echo '';};?>"><br><small><small><strong>Hide Rain Total<input type="checkbox" name="col1showrain" value="1" <?php echo (isset($_POST['col1showrain']))?$checked:$unchecked; echo (isset($_SESSION['col1showrain']))?$checked:$unchecked;?>></strong></small></small>
+					<input style="width:90%" min="0" max="100" size="15" maxlength="3" name="day1pop" placeholder="Probability %" id="day1pop" type="number" value="<?php if (isset($_POST['day1pop'])) {echo $_POST['day1pop'];} elseif (isset($_SESSION['day1pop'])) {echo $_SESSION['day1pop'];} else {echo '';};?>"><label for="day1precip" id="day1precip_label">Precipitation Total</label><input style="width:90%" step=".01" min="0" max="100" name="day1precip" placeholder="Precip Total" id="day1precip" type="number" value="<?php if (isset($_POST['day1precip'])) {echo $_POST['day1precip'];} elseif (isset($_SESSION['day1precip'])) {echo $_SESSION['day1precip'];} else {echo '';};?>"><br><small><small><strong>Hide Rain Total<input type="checkbox" name="day1showrain" value="1" <?php echo (isset($_POST['day1showrain']))?$checked:$unchecked; echo (isset($_SESSION['day1showrain']))?$checked:$unchecked;?>></strong></small></small>
 					</p>
 			<p>
-					<label for="col1snowmin">Snow</label>
+					<label for="day1snowmin">Snow</label>
 					<br>
-			<input style="width:90%; background-color: <?php echo $logicErr1; ?>" step=".5" min="0" max="100" name="col1snowmin" placeholder="Min Accum" id="col1snowmin" type="number" value="<?php if (isset($_POST['col1snowmin'])) {echo $_POST['col1snowmin'];} elseif (isset($_SESSION['col1snowmin'])) {echo $_SESSION['col1snowmin'];} else {echo '';};?>"><label style="display: none;" for="col1snowmax" id="col1snowmax_label">Day 1 Snow Maximum</label><input style="width:90%; background-color: <?php echo $logicErr1; ?>" step=".5" min="0" max="100" name="col1snowmax" placeholder="Max Accum" id="col1snowmax" type="number" value="<?php if (isset($_POST['col1snowmax'])) {echo $_POST['col1snowmax'];} elseif (isset($_SESSION['col1snowmax'])) {echo $_SESSION['col1snowmax'];} else {echo '';};?>"><br>
+			<input style="width:90%; background-color: <?php echo $logicErr1; ?>" step=".5" min="0" max="100" name="day1snowmin" placeholder="Min Accum" id="day1snowmin" type="number" value="<?php if (isset($_POST['day1snowmin'])) {echo $_POST['day1snowmin'];} elseif (isset($_SESSION['day1snowmin'])) {echo $_SESSION['day1snowmin'];} else {echo '';};?>"><label for="day1snowmax" id="day1snowmax_label">Day 1 Snow Maximum</label><input style="width:90%; background-color: <?php echo $logicErr1; ?>" step=".5" min="0" max="100" name="day1snowmax" placeholder="Max Accum" id="day1snowmax" type="number" value="<?php if (isset($_POST['day1snowmax'])) {echo $_POST['day1snowmax'];} elseif (isset($_SESSION['day1snowmax'])) {echo $_SESSION['day1snowmax'];} else {echo '';};?>"><br>
 				</p>
 			<p>
-		
-					<label for="col1wind">Wind</label>
+				<!-- Wind Input For Day 1-->
+					<label for="day1wind">Wind</label>
 					<br>
-					<input style="width:90%; background-color: <?php echo $logicErr2; ?>" maxlength="3" max="240" min="0" name="col1windmin" placeholder="Min Sustained" id="col1windmin" type="number" value="<?php if (isset($_POST['col1windmin'])) {echo $_POST['col1windmin'];} elseif (isset($_SESSION['col1windmin'])) {echo $_SESSION['col1windmin'];} else {echo '';};?>"><input style="width:90%; background-color: <?php echo $logicErr2; ?>" maxlength="3" max="240" min="0" name="col1windmax" placeholder="Max Sustained" id="col1windmax" type="number" value="<?php if (isset($_POST['col1windmax'])) {echo $_POST['col1windmax'];} elseif (isset($_SESSION['col1windmax'])) {echo $_SESSION['col1windmax'];} else {echo '';};?>"><input style="width:90%; background-color: <?php echo $logicErr3; ?>" maxlength="3" max="240" min="0" name="col1windgust" placeholder="Max Gust" id="col1windgust" type="number" value="<?php if (isset($_POST['col1windgust'])) {echo $_POST['col1windgust'];} elseif (isset($_SESSION['col1windgust'])) {echo $_SESSION['col1windgust'];} else {echo '';};?>">
-					<select style="width:80%" name="col1winddir">
-						<option value="<?php if (isset($_POST['col1winddir'])) {echo $_POST['col1winddir'];} elseif (isset($_SESSION['col1winddir'])) {echo $_SESSION['col1winddir'];} else {echo '';};?>"><?php if (isset($_POST['col1winddir'])) {echo $_POST['col1winddir'];} elseif (isset($_SESSION['col1winddir'])) {echo $_SESSION['col1winddir'];} else {echo 'Direction';};?></option>
+					<input style="width:90%; background-color: <?php echo $logicErr2; ?>" maxlength="3" max="240" min="0" name="day1windmin" placeholder="Min Sustained" id="day1windmin" type="number" value="<?php if (isset($_POST['day1windmin'])) {echo $_POST['day1windmin'];} elseif (isset($_SESSION['day1windmin'])) {echo $_SESSION['day1windmin'];} else {echo '';};?>"><input style="width:90%; background-color: <?php echo $logicErr2; ?>" maxlength="3" max="240" min="0" name="day1windmax" placeholder="Max Sustained" id="day1windmax" type="number" value="<?php if (isset($_POST['day1windmax'])) {echo $_POST['day1windmax'];} elseif (isset($_SESSION['day1windmax'])) {echo $_SESSION['day1windmax'];} else {echo '';};?>"><input style="width:90%; background-color: <?php echo $logicErr3; ?>" maxlength="3" max="240" min="0" name="day1windgust" placeholder="Max Gust" id="day1windgust" type="number" value="<?php if (isset($_POST['day1windgust'])) {echo $_POST['day1windgust'];} elseif (isset($_SESSION['day1windgust'])) {echo $_SESSION['day1windgust'];} else {echo '';};?>">
+					<select style="width:80%" name="day1winddir">
+						<option value="<?php if (isset($_POST['day1winddir'])) {echo $_POST['day1winddir'];} elseif (isset($_SESSION['day1winddir'])) {echo $_SESSION['day1winddir'];} else {echo '';};?>"><?php if (isset($_POST['day1winddir'])) {echo $_POST['day1winddir'];} elseif (isset($_SESSION['day1winddir'])) {echo $_SESSION['day1winddir'];} else {echo 'Direction';};?></option>
 						<option value="North">North</option>
 						<option value="NNE">North-Northeast</option>
 						<option value="Northeast">Northeast</option>
@@ -929,19 +911,17 @@ else {
 						<option value="Variable">Variable</option>
 						<option value="Calm">Calm</option>
 					</select>
-					<br><small><small><strong>Hide Wind Info?<input type="checkbox" name="col1showwind" value="1" <?php echo (isset($_POST['col1showwind']))?$checked:$unchecked; echo (isset($_SESSION['col1showwind']))?$checked:$unchecked;?>></strong></small></small>
+					<br><small><small><strong>Hide Wind Info?<input type="checkbox" name="day1showwind" value="1" <?php echo (isset($_POST['day1showwind']))?$checked:$unchecked; echo (isset($_SESSION['day1showwind']))?$checked:$unchecked;?>></strong></small></small>
 				</p>
-				<label for="col1detail">Additional Details</label>
+				<label for="day1detail">Additional Details</label>
 				<br>
-				<textarea style="width:95%" height="200px" name="col1detail" id="col1detail" placeholder="Timing, intensity, confidence, etc." type="text"><?php if (isset($_POST['col1detail'])) {echo $_POST['col1detail'];} elseif (isset($_SESSION['col1detail'])) {echo $_SESSION['col1detail'];} else {echo '';};?></textarea>
+				<textarea style="width:95%" height="200px" name="day1detail" id="day1detail" placeholder="Timing, intensity, confidence, etc." type="text"><?php if (isset($_POST['day1detail'])) {echo $_POST['day1detail'];} elseif (isset($_SESSION['day1detail'])) {echo $_SESSION['day1detail'];} else {echo '';};?></textarea>
 								<br>
 			</div>
-				<!-- End Column 1 Input-->
-				
 <div class="twelve columns">
 	<hr>
 				</div>
-				<!-- At the bottom of the page is the section for user prefernces to be selected-->
+
 					<div class="twelve columns" id="userpref">
 					<div class="two columns" id="tempunit">
 						<label for="tempunit">Temperature Units</label>
@@ -979,7 +959,7 @@ else {
 						<input type="radio" id="addopt2-2" name="addopt2" value="yes"><small>Yes</small>
 						</div>
 				</div>
-				<!-- Action buttons at the bottom of the page-->
+				
 			<p>
 			<div class="three columns">
 				<br>
@@ -999,149 +979,148 @@ function reset_var() {
 }
 ?>
 	
-<!-- All scripts are located at the end of the HTML markup so they are last to be executed -->
+
 	<script>
 		// This script sets the titles for each forecast period to alternate day/night depending on user selection of forecast start time
 	function updateTitles(val) {
 		if (val == "5pm - 5am"){
-			document.getElementById("col1high").checked = false;
-			document.getElementById("col1low").checked = true;
-			document.getElementById("col1title").innerHTML=val;
+			document.getElementById("day1high").checked = false;
+			document.getElementById("day1low").checked = true;
+			document.getElementById("day1title").innerHTML=val;
 			document.getElementById("day2title").innerHTML="5am - 5pm";
 		}
 		else if (val == "6pm - 6am"){
-			document.getElementById("col1high").checked = false;
-			document.getElementById("col1low").checked = true;
-			document.getElementById("col1title").innerHTML=val;
+			document.getElementById("day1high").checked = false;
+			document.getElementById("day1low").checked = true;
+			document.getElementById("day1title").innerHTML=val;
 			document.getElementById("day2title").innerHTML="6am - 6pm";
 		}
 		else if (val == "7pm - 7am"){
-			document.getElementById("col1high").checked = false;
-			document.getElementById("col1low").checked = true;
-			document.getElementById("col1title").innerHTML=val;
+			document.getElementById("day1high").checked = false;
+			document.getElementById("day1low").checked = true;
+			document.getElementById("day1title").innerHTML=val;
 			document.getElementById("day2title").innerHTML="7am - 7pm";
 		}
 		else if (val == "8pm - 8am"){
-			document.getElementById("col1high").checked = false;
-			document.getElementById("col1low").checked = true;
-			document.getElementById("col1title").innerHTML=val;
+			document.getElementById("day1high").checked = false;
+			document.getElementById("day1low").checked = true;
+			document.getElementById("day1title").innerHTML=val;
 			document.getElementById("day2title").innerHTML="8am - 8pm";
 		}
 		else if (val == "5am - 5pm"){
-			document.getElementById("col1low").checked = false;
-			document.getElementById("col1high").checked = true;
-			document.getElementById("col1title").innerHTML=val;
+			document.getElementById("day1low").checked = false;
+			document.getElementById("day1high").checked = true;
+			document.getElementById("day1title").innerHTML=val;
 			document.getElementById("day2title").innerHTML="5pm - 5am";
 		}
 		else if (val == "6am - 6pm"){
-			document.getElementById("col1low").checked = false;
-			document.getElementById("col1high").checked = true;
-			document.getElementById("col1title").innerHTML=val;
+			document.getElementById("day1low").checked = false;
+			document.getElementById("day1high").checked = true;
+			document.getElementById("day1title").innerHTML=val;
 			document.getElementById("day2title").innerHTML="6pm - 6am";
 
 		}
 		else if (val == "7am - 7pm"){
-			document.getElementById("col1low").checked = false;
-			document.getElementById("col1high").checked = true;
-			document.getElementById("col1title").innerHTML=val;
+			document.getElementById("day1low").checked = false;
+			document.getElementById("day1high").checked = true;
+			document.getElementById("day1title").innerHTML=val;
 			document.getElementById("day2title").innerHTML="7pm - 7am";
 		}
 		else if (val == "8am - 8pm"){
-			document.getElementById("col1low").checked = false;
-			document.getElementById("col1high").checked = true;
-			document.getElementById("col1title").innerHTML=val;
+			document.getElementById("day1low").checked = false;
+			document.getElementById("day1high").checked = true;
+			document.getElementById("day1title").innerHTML=val;
 			document.getElementById("day2title").innerHTML="8pm - 8am";
 
 		}
 		else {
-			document.getElementById("col1title").innerHTML="";
+			document.getElementById("day1title").innerHTML="";
 			document.getElementById("day2title").innerHTML="";
 		}
 		
 	}
-		// Column 1 weather icon preview script
-		// This script is to instantly change the weather icon preview in column 1 to whatever the user selects from the drop down menu
-		function updatecol1wximg(val) {
+		
+		function updateday1wximg(val) {
 switch (val) {
-case "Sunny": col1wximg = "/ifxwx_images/sunny.png";
+case "Sunny": day1wximg = "/ifxwx_images/sunny.png";
 break;
-case "Partly Sunny": col1wximg = "/ifxwx_images/partly_cloudy_day.png";
+case "Partly Sunny": day1wximg = "/ifxwx_images/partly_cloudy_day.png";
 break;
-case "Mostly Cloudy": col1wximg = "/ifxwx_images/overcast.png";
+case "Mostly Cloudy": day1wximg = "/ifxwx_images/overcast.png";
 break;
-case "Clear": col1wximg = "/ifxwx_images/clear_night.png";
+case "Clear": day1wximg = "/ifxwx_images/clear_night.png";
 break;
-case "Partly Cloudy": col1wximg = "/ifxwx_images/partly_cloudy_night.png";
+case "Partly Cloudy": day1wximg = "/ifxwx_images/partly_cloudy_night.png";
 break;
-case "Overcast": col1wximg = "/ifxwx_images/overcast.png";
+case "Overcast": day1wximg = "/ifxwx_images/overcast.png";
 break;
-case "Isolated Rain Showers": col1wximg = "/ifxwx_images/showers_isolated.png";
+case "Isolated Rain Showers": day1wximg = "/ifxwx_images/showers_isolated.png";
 break;
-case "Scattered Rain Showers": col1wximg = "/ifxwx_images/showers_scattered.png";
+case "Scattered Rain Showers": day1wximg = "/ifxwx_images/showers_scattered.png";
 break;
-case "Rain": col1wximg = "/ifxwx_images/rain.png";
+case "Rain": day1wximg = "/ifxwx_images/rain.png";
 break;
-case "Heavy Rain": col1wximg = "/ifxwx_images/rain_heavy.png";
+case "Heavy Rain": day1wximg = "/ifxwx_images/rain_heavy.png";
 break;
-case "Rain and Fog": col1wximg = "/ifxwx_images/showers_haze.png";
+case "Rain and Fog": day1wximg = "/ifxwx_images/showers_haze.png";
 break;
-case "Isolated T-Storms": col1wximg = "/ifxwx_images/tstorms_isolated.png";
+case "Isolated T-Storms": day1wximg = "/ifxwx_images/tstorms_isolated.png";
 break;
-case "Scattered T-Storms": col1wximg = "/ifxwx_images/tstorms_scattered.png";
+case "Scattered T-Storms": day1wximg = "/ifxwx_images/tstorms_scattered.png";
 break;
-case "Thunderstorms": col1wximg = "/ifxwx_images/tstorms_rain.png";
+case "Thunderstorms": day1wximg = "/ifxwx_images/tstorms_rain.png";
 break;
-case "Severe T-Storms": col1wximg = "/ifxwx_images/tstorms_severe.png";
+case "Severe T-Storms": day1wximg = "/ifxwx_images/tstorms_severe.png";
 break;
-case "Snow Flurries": col1wximg = "/ifxwx_images/snow_flurries.png";
+case "Snow Flurries": day1wximg = "/ifxwx_images/snow_flurries.png";
 break;
-case "Scattered Snow Showers": col1wximg = "/ifxwx_images/snow_scattered.png";
+case "Scattered Snow Showers": day1wximg = "/ifxwx_images/snow_scattered.png";
 break;
-case "Snow": col1wximg = "/ifxwx_images/snow.png";
+case "Snow": day1wximg = "/ifxwx_images/snow.png";
 break;
-case "Heavy Snow": col1wximg = "/ifxwx_images/snow_heavy.png";
+case "Heavy Snow": day1wximg = "/ifxwx_images/snow_heavy.png";
 break;
-case "Blizzard": col1wximg = "/ifxwx_images/snow_blizzard.png";
+case "Blizzard": day1wximg = "/ifxwx_images/snow_blizzard.png";
 break;
-case "Blowing Snow": col1wximg = "/ifxwx_images/blowing_snow.png";
+case "Blowing Snow": day1wximg = "/ifxwx_images/blowing_snow.png";
 break;
-case "Rain/Snow": col1wximg = "/ifxwx_images/rain_snow.png";
+case "Rain/Snow": day1wximg = "/ifxwx_images/rain_snow.png";
 break;
-case "Freezing Rain/Snow": col1wximg = "/ifxwx_images/freezing_rain_snow.png";
+case "Freezing Rain/Snow": day1wximg = "/ifxwx_images/freezing_rain_snow.png";
 break;
-case "Freezing Rain/Rain": col1wximg = "/ifxwx_images/freezing_rain.png";
+case "Freezing Rain/Rain": day1wximg = "/ifxwx_images/freezing_rain.png";
 break;
-case "Freezing Rain/Sleet": col1wximg = "/ifxwx_images/freezing_rain_sleet.png";
+case "Freezing Rain/Sleet": day1wximg = "/ifxwx_images/freezing_rain_sleet.png";
 break;
-case "Rain/Sleet": col1wximg = "/ifxwx_images/rain_sleet.png";
+case "Rain/Sleet": day1wximg = "/ifxwx_images/rain_sleet.png";
 break;
-case "Sleet": col1wximg = "/ifxwx_images/sleet.png";
+case "Sleet": day1wximg = "/ifxwx_images/sleet.png";
 break;
-case "Overcast/Haze": col1wximg = "/ifxwx_images/overcast_haze.png";
+case "Overcast/Haze": day1wximg = "/ifxwx_images/overcast_haze.png";
 break;
-case "Haze": col1wximg = "/ifxwx_images/haze_day_night.png";
+case "Haze": day1wximg = "/ifxwx_images/haze_day_night.png";
 break;
-case "Sunny/Fog": col1wximg = "/ifxwx_images/fog_day.png";
+case "Sunny/Fog": day1wximg = "/ifxwx_images/fog_day.png";
 break;
-case "Morning Fog": col1wximg = "/ifxwx_images/fog_morning.png";
+case "Morning Fog": day1wximg = "/ifxwx_images/fog_morning.png";
 break;
-case "Overnight Fog": col1wximg = "/ifxwx_images/fog_night.png";
+case "Overnight Fog": day1wximg = "/ifxwx_images/fog_night.png";
 break;
-case "Cloudy/Fog": col1wximg = "/ifxwx_images/fog_overcast.png";
+case "Cloudy/Fog": day1wximg = "/ifxwx_images/fog_overcast.png";
 break;
-case "Dense Fog": col1wximg = "/ifxwx_images/fog_dense.png";
+case "Dense Fog": day1wximg = "/ifxwx_images/fog_dense.png";
 break;
-case "Windy": col1wximg = "/ifxwx_images/windy.png";
+case "Windy": day1wximg = "/ifxwx_images/windy.png";
 break;
-case "Lunar Eclipse": col1wximg = "/ifxwx_images/lunar_eclipse.png";
+case "Lunar Eclipse": day1wximg = "/ifxwx_images/lunar_eclipse.png";
 break;
-case "Solar Eclipse": col1wximg = "/ifxwx_images/solar_eclipse.png";
+case "Solar Eclipse": day1wximg = "/ifxwx_images/solar_eclipse.png";
 break;
-default: col1wximg = "/ifxwx_images/select.png";
+default: day1wximg = "/ifxwx_images/select.png";
 }
-			document.getElementById("col1wximg").src = col1wximg;
+			document.getElementById("day1wximg").src = day1wximg;
 		}
 	</script>
 </body>
-<!-- That's all she wrote folks!-->
+
 </html>

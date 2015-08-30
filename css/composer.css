@@ -8,10 +8,10 @@
 */
 
 
-#day1precip_label{
+#col1precip_label{
 	display: none;
 }
-	#day1snowmax_label{
+	#col1snowmax_label{
 	display: none;
 }
 #bg {
@@ -68,11 +68,11 @@
 		-moz-border-radius: 6px 6px 6px 6px;
  border-radius: 6px 6px 6px 6px;
 		}
-		#day1detail{
+		#col1detail{
 			width: 100%;
 			height: 10em;
 		}
-#day1wx{
+#col1wx{
 	width: auto;
 }
 		
