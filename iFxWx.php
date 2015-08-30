@@ -346,23 +346,32 @@ else {
 // Convert the start time from the numerical value into a logical string for user to understand the duration of the forecast period
 switch ($fxvalid) {
 	case "5AM": $fxvalidname = $col1label = "5am - 5pm";
+	$col2label = "5pm - 5am";
 	break;
 	case "6AM": $fxvalidname = $col1label = "6am - 6pm";
+	$col2label = "6pm - 6am";
 	break;
 	case "7AM": $fxvalidname = $col1label = "7am - 7pm";
+	$col2label = "7pm - 7am";
 	break;
 	case "8AM": $fxvalidname = $col1label = "8am - 8pm";
+	$col2label = "8pm - 8am";
 	break;
 	case "5PM": $fxvalidname = $col1label = "5pm - 5am";
+	$col2label = "5am - 5pm";
 	break;
 	case "6PM": $fxvalidname = $col1label = "6pm - 6am";
+	$col2label = "6am - 6pm";
 	break;
 	case "7PM": $fxvalidname = $col1label = "7pm - 7am";
+	$col2label = "7am - 7pm";
 	break;
 	case "8PM": $fxvalidname = $col1label = "8pm - 8am";
+	$col2label = "8am - 8pm";
 	break;
 	default: $fxvalidname = "Select Time";
 	$col1label = "0-12hr";
+	$col2label = "12-24hr";
 	break;
 }
 
