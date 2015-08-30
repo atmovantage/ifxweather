@@ -133,6 +133,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $logic == false) {
 		$logic = false;
 		$logicErr3 = "#2681FF";
 	}
+	
+	// Column 2 logic check
+	if ($_POST["col2snowmin"] > $_POST["col2snowmax"]) {
+		$snowlogic = "Minimum snow accumulation cannot be larger than maximum snow accumulation. <br>";
+		$logic = false;
+		$logicErr1 = "#2681FF";
+	}
+
+	if ($_POST["col2windmin"] > $_POST["col2windmax"]) {
+		$windlogic = "Minimum sustained wind cannot be larger than maximum sustained wind. <br>";
+		$logic = false;
+		$logicErr2 = "#2681FF";
+	}
+
+	if ($_POST["col2windmax"] >= $_POST["col2windgust"] && $_POST["col2windgust"] != "") {
+		$gustlogic = "Maximum sustained wind cannot be larger than or equal to wind gusts. <br>";
+		$logic = false;
+		$logicErr3 = "#2681FF";
+	}
 }
 
 	// After completing the logic check for all columns test to see if the form passes the logic check
