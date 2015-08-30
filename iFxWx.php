@@ -379,7 +379,7 @@ switch ($fxvalid) {
 $checked = "checked";
 $unchecked = "";
 
-//Check for pre-existing user selection for High/Low
+//Column 1 check for pre-existing user selection for High/Low
 if (!empty($_POST["col1highlow"]) && $_POST["col1highlow"] == "red") {
 	$highcheck = "checked";
 	$lowcheck = "";
@@ -416,6 +416,43 @@ else {
 	$highcheck = "checked";
 	 }
 
+// Column 2 check for pre-existing user selection for High/Low
+if (!empty($_POST["col2highlow"]) && $_POST["col2highlow"] == "red") {
+	$col2highcheck = "checked";
+	$col2lowcheck = "";
+}
+
+elseif (!empty($_SESSION["col2highlow"]) && $_SESSION["col2highlow"] == "red") 
+{
+	$col2highcheck = "checked";
+	$col2lowcheck = "";
+} 
+
+elseif (($fxvalid == '5AM' || $fxvalid == '6AM' || $fxvalid == '7AM' || $fxvalid == '8AM') && empty($_SESSION["col2highlow"]) && empty($_POST["col2highlow"])) {
+	$col2highcheck = "checked";
+	$col2lowcheck = "";
+}
+
+elseif (!empty($_POST["col2highlow"]) && $_POST["col2highlow"] == "blue") {
+	$col2lowcheck = "checked";
+	$col2highcheck = "";
+}
+
+elseif (!empty($_SESSION["col2highlow"]) && $_SESSION["col2highlow"] == "blue") 
+{
+	$col2lowcheck = "checked";
+	$col2highcheck = "";
+} 
+
+elseif (($fxvalid == '5PM' || $fxvalid == '6PM' || $fxvalid == '7PM' || $fxvalid == '8PM') && empty($_SESSION["col2highlow"]) && empty($_POST["col2highlow"])) {
+	$col2lowcheck = "checked";
+	$col2highcheck = "";
+						   }
+else {
+	$col2lowcheck = "";
+	$col2highcheck = "checked";
+	 }
+//
 //Check for pre-existing user selection for temperature units
 if (!empty($_POST["tempunit"]) && $_POST["tempunit"] == "fahrenheit") {
 	$tempf = "checked";
