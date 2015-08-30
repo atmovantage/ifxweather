@@ -1422,55 +1422,55 @@ function reset_var() {
 			document.getElementById("col1high").checked = false;
 			document.getElementById("col1low").checked = true;
 			document.getElementById("col1title").innerHTML=val;
-			document.getElementById("day2title").innerHTML="5am - 5pm";
+			document.getElementById("col2title").innerHTML="5am - 5pm";
 		}
 		else if (val == "6pm - 6am"){
 			document.getElementById("col1high").checked = false;
 			document.getElementById("col1low").checked = true;
 			document.getElementById("col1title").innerHTML=val;
-			document.getElementById("day2title").innerHTML="6am - 6pm";
+			document.getElementById("col2title").innerHTML="6am - 6pm";
 		}
 		else if (val == "7pm - 7am"){
 			document.getElementById("col1high").checked = false;
 			document.getElementById("col1low").checked = true;
 			document.getElementById("col1title").innerHTML=val;
-			document.getElementById("day2title").innerHTML="7am - 7pm";
+			document.getElementById("col2title").innerHTML="7am - 7pm";
 		}
 		else if (val == "8pm - 8am"){
 			document.getElementById("col1high").checked = false;
 			document.getElementById("col1low").checked = true;
 			document.getElementById("col1title").innerHTML=val;
-			document.getElementById("day2title").innerHTML="8am - 8pm";
+			document.getElementById("col2title").innerHTML="8am - 8pm";
 		}
 		else if (val == "5am - 5pm"){
 			document.getElementById("col1low").checked = false;
 			document.getElementById("col1high").checked = true;
 			document.getElementById("col1title").innerHTML=val;
-			document.getElementById("day2title").innerHTML="5pm - 5am";
+			document.getElementById("col2title").innerHTML="5pm - 5am";
 		}
 		else if (val == "6am - 6pm"){
 			document.getElementById("col1low").checked = false;
 			document.getElementById("col1high").checked = true;
 			document.getElementById("col1title").innerHTML=val;
-			document.getElementById("day2title").innerHTML="6pm - 6am";
+			document.getElementById("col2title").innerHTML="6pm - 6am";
 
 		}
 		else if (val == "7am - 7pm"){
 			document.getElementById("col1low").checked = false;
 			document.getElementById("col1high").checked = true;
 			document.getElementById("col1title").innerHTML=val;
-			document.getElementById("day2title").innerHTML="7pm - 7am";
+			document.getElementById("col2title").innerHTML="7pm - 7am";
 		}
 		else if (val == "8am - 8pm"){
 			document.getElementById("col1low").checked = false;
 			document.getElementById("col1high").checked = true;
 			document.getElementById("col1title").innerHTML=val;
-			document.getElementById("day2title").innerHTML="8pm - 8am";
+			document.getElementById("col2title").innerHTML="8pm - 8am";
 
 		}
 		else {
 			document.getElementById("col1title").innerHTML="";
-			document.getElementById("day2title").innerHTML="";
+			document.getElementById("col2title").innerHTML="";
 		}
 		
 	}
@@ -1555,6 +1555,89 @@ break;
 default: col1wximg = "/ifxwx_images/select.png";
 }
 			document.getElementById("col1wximg").src = col1wximg;
+		}
+		
+		// Column 2 weather icon preview script
+		// This script is to instantly change the weather icon preview in column 2 to whatever the user selects from the drop down menu
+		function updatecol2wximg(val) {
+switch (val) {
+case "Sunny": col2wximg = "/ifxwx_images/sunny.png";
+break;
+case "Partly Sunny": col2wximg = "/ifxwx_images/partly_cloudy_day.png";
+break;
+case "Mostly Cloudy": col2wximg = "/ifxwx_images/overcast.png";
+break;
+case "Clear": col2wximg = "/ifxwx_images/clear_night.png";
+break;
+case "Partly Cloudy": col2wximg = "/ifxwx_images/partly_cloudy_night.png";
+break;
+case "Overcast": col2wximg = "/ifxwx_images/overcast.png";
+break;
+case "Isolated Rain Showers": col2wximg = "/ifxwx_images/showers_isolated.png";
+break;
+case "Scattered Rain Showers": col2wximg = "/ifxwx_images/showers_scattered.png";
+break;
+case "Rain": col2wximg = "/ifxwx_images/rain.png";
+break;
+case "Heavy Rain": col2wximg = "/ifxwx_images/rain_heavy.png";
+break;
+case "Rain and Fog": col2wximg = "/ifxwx_images/showers_haze.png";
+break;
+case "Isolated T-Storms": col2wximg = "/ifxwx_images/tstorms_isolated.png";
+break;
+case "Scattered T-Storms": col2wximg = "/ifxwx_images/tstorms_scattered.png";
+break;
+case "Thunderstorms": col2wximg = "/ifxwx_images/tstorms_rain.png";
+break;
+case "Severe T-Storms": col2wximg = "/ifxwx_images/tstorms_severe.png";
+break;
+case "Snow Flurries": col2wximg = "/ifxwx_images/snow_flurries.png";
+break;
+case "Scattered Snow Showers": col2wximg = "/ifxwx_images/snow_scattered.png";
+break;
+case "Snow": col2wximg = "/ifxwx_images/snow.png";
+break;
+case "Heavy Snow": col2wximg = "/ifxwx_images/snow_heavy.png";
+break;
+case "Blizzard": col2wximg = "/ifxwx_images/snow_blizzard.png";
+break;
+case "Blowing Snow": col2wximg = "/ifxwx_images/blowing_snow.png";
+break;
+case "Rain/Snow": col2wximg = "/ifxwx_images/rain_snow.png";
+break;
+case "Freezing Rain/Snow": col2wximg = "/ifxwx_images/freezing_rain_snow.png";
+break;
+case "Freezing Rain/Rain": col2wximg = "/ifxwx_images/freezing_rain.png";
+break;
+case "Freezing Rain/Sleet": col2wximg = "/ifxwx_images/freezing_rain_sleet.png";
+break;
+case "Rain/Sleet": col2wximg = "/ifxwx_images/rain_sleet.png";
+break;
+case "Sleet": col2wximg = "/ifxwx_images/sleet.png";
+break;
+case "Overcast/Haze": col2wximg = "/ifxwx_images/overcast_haze.png";
+break;
+case "Haze": col2wximg = "/ifxwx_images/haze_day_night.png";
+break;
+case "Sunny/Fog": col2wximg = "/ifxwx_images/fog_day.png";
+break;
+case "Morning Fog": col2wximg = "/ifxwx_images/fog_morning.png";
+break;
+case "Overnight Fog": col2wximg = "/ifxwx_images/fog_night.png";
+break;
+case "Cloudy/Fog": col2wximg = "/ifxwx_images/fog_overcast.png";
+break;
+case "Dense Fog": col2wximg = "/ifxwx_images/fog_dense.png";
+break;
+case "Windy": col2wximg = "/ifxwx_images/windy.png";
+break;
+case "Lunar Eclipse": col2wximg = "/ifxwx_images/lunar_eclipse.png";
+break;
+case "Solar Eclipse": col2wximg = "/ifxwx_images/solar_eclipse.png";
+break;
+default: col2wximg = "/ifxwx_images/select.png";
+}
+			document.getElementById("col2wximg").src = col2wximg;
 		}
 	</script>
 </body>
