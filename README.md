@@ -2,6 +2,20 @@
 Project to design and develop a web-based application to enable meteorologists to easily compose and publish a weather forecast.
 
 ----------
+Version 0.14.0 Pre-Alpha (August 29th, 2015):
+Please see the latest changes below:
+
+    Composer Page:
+        Added logical verification for the following sections in column 1:
+            Min/Max Snow Accumulation
+                Throws an error if min snow > max snow
+            Min/Max Sustained Wind
+                Throws an error if min wind > max wind
+            Wind Gusts
+                Throws an error if gusts <= max wind
+        Any field that fails the logic check is highlighted in blue
+
+----------
 Version 0.13.0 Pre-Alpha (August 26th, 2015):
 Only one major change in this latest update, however it did require significant changes to the code so it warranted its own version update:
 

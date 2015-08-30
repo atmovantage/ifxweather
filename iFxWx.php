@@ -20,8 +20,16 @@ $_SESSION['timeout'] = time();
 // Set all fields to white background by default
 	$fieldErr1 = $fieldErr3 = $fieldErr4 = $fieldErr5 = $fieldErr6 = $fieldErr7 = $fieldErr8 = $fieldErr9 = $fieldErr10 = $fieldErr11 = $fieldErr12 = $fieldErr13 = $fieldErr14 = "#FFF";
 	$fieldErr2 ="**All fields highlighted in red must be filled in before submitting your forecast**";
-
+	
 	$proceed = false;
+
+	$logic = false;
+
+	$day1snowlogic = $day1windlogic = $day1gustlogic= "";
+
+	$logicErr1 = $logicErr2 = $logicErr3 = "FFF" ;
+
+	$logicnotice = "" ;
 
 // Verification of required variables
 if ($_SERVER["REQUEST_METHOD"] == "POST" && $proceed == false) {
@@ -79,8 +87,41 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $proceed == false) {
 	//$fieldErr1 = "#FFF"; <- I think this is leftover code
 }
 
+// Logic check - test certain variables to make sure they make logical sense before proceeding
+if ($_SERVER["REQUEST_METHOD"] == "POST" && $logic == false) {
+	
+	if ($_POST["day1snowmin"] > $_POST["day1snowmax"]) {
+		$day1snowlogic = "Minimum snow accumulation cannot be larger than maximum snow accumulation. <br>";
+		$logic = false;
+		$logicErr1 = "#2681FF";
+	}
+
+	if ($_POST["day1windmin"] > $_POST["day1windmax"]) {
+		$day1windlogic = "Minimum sustained wind cannot be larger than maximum sustained wind. <br>";
+		$logic = false;
+		$logicErr2 = "#2681FF";
+	}
+
+	if ($_POST["day1windmax"] >= $_POST["day1windgust"] && $_POST["day1windgust"] != "") {
+		$day1gustlogic = "Maximum sustained wind cannot be larger than or equal to wind gusts. <br>";
+		$logic = false;
+		$logicErr3 = "#2681FF";
+	}
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "POST" && $day1snowlogic == "" && $day1windlogic == "" && $day1gustlogic == ""){
+	// If all the variables pass the logic check then we can proceed to preview page
+	$logicnotice = "";
+	$logic = true;
+}
+else {
+		$logicnotice = "<big><strong>The following items failed the logic check (highlighted in blue):</strong></big><br>";
+}
+
+
+
 //if the form has been submitted and the required fields are filled in properly then we can proceed to submit all variables
-if ($_SERVER["REQUEST_METHOD"] == "POST" && $proceed == true) {
+if ($_SERVER["REQUEST_METHOD"] == "POST" && $proceed == true && $logic == true) {
 submit_input();	
 }
 
@@ -560,7 +601,7 @@ default: $day1wximg= "/ifxwx_images/select.png";
 			<img src="/ifxwx_images/background.jpg" id="bg" alt="">
 			<div class="container">
 			<div class="twelve columns" style="font-weight: bold; text-align: center" id="header">
-<p><img style="width: 70px; height: 61px;" alt="" src="/ifxwx_images/logo.png"> Version 0.13.0 pre-alpha<br><big style="font-family: Helvetica,Arial,sans-serif;"><big><big>Forecast Composer</big></big></big>
+<p><img style="width: 70px; height: 61px;" alt="" src="/ifxwx_images/logo.png"> Version 0.14.0 pre-alpha<br><big style="font-family: Helvetica,Arial,sans-serif;"><big><big>Forecast Composer</big></big></big>
 </p>
 			<div class="twelve columns" >
 				Welcome to the forecast composer page. This is the first step towards creating your own weather forecast. Enter the variables for your weather forecast using the forms below and click the 'Submit' button to view your final product.<small><br>Labels denoted with an asterisk (*) indicate required variables.</small>
@@ -568,7 +609,17 @@ default: $day1wximg= "/ifxwx_images/select.png";
 if ($_SERVER["REQUEST_METHOD"] == "POST" && $proceed == false) {
 	echo "<br>" . "<div style='color:red'>" . $fieldErr2 . "</div>";
 }
-?>
+?><br><div style='color:blue'>
+		<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST" && $logic == false) {
+	echo $logicnotice ;
+	echo $day1snowlogic ;
+	echo $day1windlogic ;
+	echo $day1gustlogic ;
+	
+}
+?>		
+				</div>
 				</div>
 				</div>
 				<div class="twelve columns">
@@ -830,15 +881,15 @@ else {
 			<p>
 					<label for="day1snowmin">Snow</label>
 					<br>
-			<input style="width:90%" step=".5" min="0" max="100" name="day1snowmin" placeholder="Min Accum" id="day1snowmin" type="number" value="<?php if (isset($_POST['day1snowmin'])) {echo $_POST['day1snowmin'];} elseif (isset($_SESSION['day1snowmin'])) {echo $_SESSION['day1snowmin'];} else {echo '';};?>"><label for="day1snowmax" id="day1snowmax_label">Day 1 Snow Maximum</label><input style="width:90%" step=".5" min="0" max="100" name="day1snowmax" placeholder="Max Accum" id="day1snowmax" type="number" value="<?php if (isset($_POST['day1snowmax'])) {echo $_POST['day1snowmax'];} elseif (isset($_SESSION['day1snowmax'])) {echo $_SESSION['day1snowmax'];} else {echo '';};?>"><br>
+			<input style="width:90%; background-color: <?php echo $logicErr1; ?>" step=".5" min="0" max="100" name="day1snowmin" placeholder="Min Accum" id="day1snowmin" type="number" value="<?php if (isset($_POST['day1snowmin'])) {echo $_POST['day1snowmin'];} elseif (isset($_SESSION['day1snowmin'])) {echo $_SESSION['day1snowmin'];} else {echo '';};?>"><label for="day1snowmax" id="day1snowmax_label">Day 1 Snow Maximum</label><input style="width:90%; background-color: <?php echo $logicErr1; ?>" step=".5" min="0" max="100" name="day1snowmax" placeholder="Max Accum" id="day1snowmax" type="number" value="<?php if (isset($_POST['day1snowmax'])) {echo $_POST['day1snowmax'];} elseif (isset($_SESSION['day1snowmax'])) {echo $_SESSION['day1snowmax'];} else {echo '';};?>"><br>
 				</p>
 			<p>
 				<!-- Wind Input For Day 1-->
 					<label for="day1wind">Wind</label>
 					<br>
-					<input style="width:90%" maxlength="3" max="240" min="0" name="day1windmin" placeholder="Min Sustained" id="day1windmin" type="number" value="<?php if (isset($_POST['day1windmin'])) {echo $_POST['day1windmin'];} elseif (isset($_SESSION['day1windmin'])) {echo $_SESSION['day1windmin'];} else {echo '';};?>"><input style="width:90%" maxlength="3" max="240" min="0" name="day1windmax" placeholder="Max Sustained" id="day1windmax" type="number" value="<?php if (isset($_POST['day1windmax'])) {echo $_POST['day1windmax'];} elseif (isset($_SESSION['day1windmax'])) {echo $_SESSION['day1windmax'];} else {echo '';};?>"><input style="width:90%" maxlength="3" max="240" min="0" name="day1windgust" placeholder="Max Gust" id="day1windgust" type="number" value="<?php if (isset($_POST['day1windgust'])) {echo $_POST['day1windgust'];} elseif (isset($_SESSION['day1windgust'])) {echo $_SESSION['day1windgust'];} else {echo '';};?>">
+					<input style="width:90%; background-color: <?php echo $logicErr2; ?>" maxlength="3" max="240" min="0" name="day1windmin" placeholder="Min Sustained" id="day1windmin" type="number" value="<?php if (isset($_POST['day1windmin'])) {echo $_POST['day1windmin'];} elseif (isset($_SESSION['day1windmin'])) {echo $_SESSION['day1windmin'];} else {echo '';};?>"><input style="width:90%; background-color: <?php echo $logicErr2; ?>" maxlength="3" max="240" min="0" name="day1windmax" placeholder="Max Sustained" id="day1windmax" type="number" value="<?php if (isset($_POST['day1windmax'])) {echo $_POST['day1windmax'];} elseif (isset($_SESSION['day1windmax'])) {echo $_SESSION['day1windmax'];} else {echo '';};?>"><input style="width:90%; background-color: <?php echo $logicErr3; ?>" maxlength="3" max="240" min="0" name="day1windgust" placeholder="Max Gust" id="day1windgust" type="number" value="<?php if (isset($_POST['day1windgust'])) {echo $_POST['day1windgust'];} elseif (isset($_SESSION['day1windgust'])) {echo $_SESSION['day1windgust'];} else {echo '';};?>">
 					<select style="width:80%" name="day1winddir">
-						<option value="<?php if (isset($_POST['day1winddir'])) {echo $_POST['day1winddir'];} elseif (isset($_SESSION['day1winddir'])) {echo $_SESSION['day1winddir'];} else {echo 'Direction';};?>"><?php if (isset($_POST['day1winddir'])) {echo $_POST['day1winddir'];} elseif (isset($_SESSION['day1winddir'])) {echo $_SESSION['day1winddir'];} else {echo 'Direction';};?></option>
+						<option value="<?php if (isset($_POST['day1winddir'])) {echo $_POST['day1winddir'];} elseif (isset($_SESSION['day1winddir'])) {echo $_SESSION['day1winddir'];} else {echo '';};?>"><?php if (isset($_POST['day1winddir'])) {echo $_POST['day1winddir'];} elseif (isset($_SESSION['day1winddir'])) {echo $_SESSION['day1winddir'];} else {echo 'Direction';};?></option>
 						<option value="North">North</option>
 						<option value="NNE">North-Northeast</option>
 						<option value="Northeast">Northeast</option>
