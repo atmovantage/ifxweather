@@ -55,7 +55,7 @@
 	margin-bottom: 5px;
 		}
 
-	#hr0-12, #hr12-24 , #hr24-36, #hr36-48 {
+	#hr0-12, #hr12-24 , #hr24-36, #hr36-48, #hr48-60 {
     background: rgb(255, 250, 250); /* The Fallback */
    background: rgba(255, 250, 250, 0.8); 
 		-moz-border-radius: 6px 6px 6px 6px;
@@ -69,11 +69,11 @@
 		-moz-border-radius: 6px 6px 6px 6px;
  border-radius: 6px 6px 6px 6px;
 		}
-		#col1detail, #col2detail, #col3detail, #col4detail{
+		#col1detail, #col2detail, #col3detail, #col4detail, #col5detail{
 			width: 100%;
 			height: 10em;
 		}
-#col1wx, #col2wx, #col3wx, #col4wx {
+#col1wx, #col2wx, #col3wx, #col4wx, #col5wx {
 	width: auto;
 }
 		
