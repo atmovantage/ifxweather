@@ -95,6 +95,25 @@ function submit_input() {
 	$_SESSION["col3windgust"] = $_SESSION["col3windgust"];
 	$_SESSION["col3detail"] = $_SESSION["col3detail"];
 	
+	// Column 4 Forecast Period Variables
+	$_SESSION["col4wx"] = $_SESSION["col4wx"];
+	$_SESSION["col4"] = $_SESSION["col4"];
+	$_SESSION["col4highlow"] = $_SESSION["col4highlow"];
+	$_SESSION["precipunit"] = $_SESSION["precipunit"];
+	$_SESSION["col4pop"] = $_SESSION["col4pop"];
+	$_SESSION["col4desc"] = $_SESSION["col4desc"];
+	$_SESSION["col4temp"] = $_SESSION["col4temp"];
+	$_SESSION["col4precip"] = $_SESSION["col4precip"];
+	$_SESSION["col4showrain"] = $_SESSION["col4showrain"];
+	$_SESSION["col4snowmin"] = $_SESSION["col4snowmin"];
+	$_SESSION["col4snowmax"] = $_SESSION["col4snowmax"];
+	$_SESSION["col4windmin"] = $_SESSION["col4windmin"];
+	$_SESSION["col4windmax"] = $_SESSION["col4windmax"];
+	$_SESSION["col4winddir"] = $_SESSION["col4winddir"];
+	$_SESSION["col4showwind"] = $_SESSION["col4showwind"];
+	$_SESSION["col4windgust"] = $_SESSION["col4windgust"];
+	$_SESSION["col4detail"] = $_SESSION["col4detail"];
+	
 	//Submit to the preview page
 	header('Location: /iFxWx.php');
 	//echo "/iFxWx.php";
@@ -375,6 +394,84 @@ case "Solar Eclipse": $col3wximg = "/ifxwx_images/solar_eclipse.png";
 break;
 default: $col3wximg = "/ifxwx_images/fog_dense.png";
 }
+// Column 4 Weather Icon
+switch ($_SESSION["col4wx"]) {
+case "Sunny": $col4wximg = "/ifxwx_images/sunny.png";
+break;
+case "Partly Sunny": $col4wximg = "/ifxwx_images/partly_cloudy_day.png";
+break;
+case "Mostly Cloudy": $col4wximg = "/ifxwx_images/overcast.png";
+break;
+case "Clear": $col4wximg = "/ifxwx_images/clear_night.png";
+break;
+case "Partly Cloudy": $col4wximg = "/ifxwx_images/partly_cloudy_night.png";
+break;
+case "Overcast": $col4wximg = "/ifxwx_images/overcast.png";
+break;
+case "Isolated Rain Showers": $col4wximg = "/ifxwx_images/showers_isolated.png";
+break;
+case "Scattered Rain Showers": $col4wximg = "/ifxwx_images/showers_scattered.png";
+break;
+case "Rain": $col4wximg = "/ifxwx_images/rain.png";
+break;
+case "Heavy Rain": $col4wximg = "/ifxwx_images/rain_heavy.png";
+break;
+case "Rain and Fog": $col4wximg = "/ifxwx_images/showers_haze.png";
+break;
+case "Isolated T-Storms": $col4wximg = "/ifxwx_images/tstorms_isolated.png";
+break;
+case "Scattered T-Storms": $col4wximg = "/ifxwx_images/tstorms_scattered.png";
+break;
+case "Thunderstorms": $col4wximg = "/ifxwx_images/tstorms_rain.png";
+break;
+case "Severe T-Storms": $col4wximg = "/ifxwx_images/tstorms_severe.png";
+break;
+case "Snow Flurries": $col4wximg = "/ifxwx_images/snow_flurries.png";
+break;
+case "Scattered Snow Showers": $col4wximg = "/ifxwx_images/snow_scattered.png";
+break;
+case "Snow": $col4wximg = "/ifxwx_images/snow.png";
+break;
+case "Heavy Snow": $col4wximg = "/ifxwx_images/snow_heavy.png";
+break;
+case "Blizzard": $col4wximg = "/ifxwx_images/snow_blizzard.png";
+break;
+case "Blowing Snow": $col4wximg = "/ifxwx_images/blowing_snow.png";
+break;
+case "Rain/Snow": $col4wximg = "/ifxwx_images/rain_snow.png";
+break;
+case "Freezing Rain/Snow": $col4wximg = "/ifxwx_images/freezing_rain_snow.png";
+break;
+case "Freezing Rain/Rain": $col4wximg = "/ifxwx_images/freezing_rain.png";
+break;
+case "Freezing Rain/Sleet": $col4wximg = "/ifxwx_images/freezing_rain_sleet.png";
+break;
+case "Rain/Sleet": $col4wximg = "/ifxwx_images/rain_sleet.png";
+break;
+case "Sleet": $col4wximg = "/ifxwx_images/sleet.png";
+break;
+case "Overcast/Haze": $col4wximg = "/ifxwx_images/overcast_haze.png";
+break;
+case "Haze": $col4wximg = "/ifxwx_images/haze_day_night.png";
+break;
+case "Sunny/Fog": $col4wximg = "/ifxwx_images/fog_day.png";
+break;
+case "Morning Fog": $col4wximg = "/ifxwx_images/fog_morning.png";
+break;
+case "Overnight Fog": $col4wximg = "/ifxwx_images/fog_night.png";
+break;
+case "Cloudy/Fog": $col4wximg = "/ifxwx_images/fog_overcast.png";
+break;
+case "Dense Fog": $col4wximg = "/ifxwx_images/fog_dense.png";
+break;
+case "Windy": $col4wximg = "/ifxwx_images/windy.png";
+break;
+case "Lunar Eclipse": $col4wximg = "/ifxwx_images/lunar_eclipse.png";
+break;
+case "Solar Eclipse": $col4wximg = "/ifxwx_images/solar_eclipse.png";
+break;
+default: $col4wximg = "/ifxwx_images/fog_dense.png";
+}
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
@@ -643,6 +740,79 @@ elseif ($_SESSION["col3windmin"] == $_SESSION["col3windmax"] && empty($_SESSION[
 </div>
 <br>
 	<!-- End Column 3 -->
+	<!-- Begin Column 4-->
+<div style="text-align: center;" class="two columns">
+	<p id="title"><strong><big><u><?php echo $_SESSION["col4"]; ?></u></big></strong><br></p>
+<p>
+	<img class="wximg" style="width: 70px; height: 70px;" alt="col4wximg" src="<?php echo $col4wximg ; ?>" >
+	</p>
+		<?php if ($_SESSION["col4pop"] > 0) {
+	echo "<p><strong>" . $_SESSION["col4desc"] . "</strong> <small>(" . $_SESSION["col4pop"] . "%)</small></p>" ;
+}
+	else {
+		echo "<p><strong>" . $_SESSION["col4desc"] . "</strong></p>" ;
+}
+?>
+		<strong><big><big><?php echo "<p style='color:" . $tempcolor . "'>" . $_SESSION["col4temp"] . $tempunit . " </p>" 
+?>  </big></big></strong>
+	
+		<small><?php if ($_SESSION["col4precip"] > 0 && empty($_SESSION["col4showrain"])) {
+	echo "<p>Rain total " . $_SESSION["col4precip"] . " " . $precipunit . "</p>" ;
+}
+else {
+	echo "<p></p>" ;
+}
+
+?>
+		<?php if ($_SESSION["col4snowmin"] > 0 && $_SESSION["col4snowmax"] > 0 && $_SESSION["col4snowmin"] < $_SESSION["col4snowmax"]){
+	echo "<p>Snow accumulation " . $_SESSION["col4snowmin"] . "-" . $_SESSION["col4snowmax"] . " " . $precipunit . "</p>" ;
+}
+elseif ($_SESSION["col4snowmin"] == $_SESSION["col4snowmax"] && $_SESSION["col4snowmin"] > 0 && $_SESSION["col4snowmax"] > 0){
+	echo "<p>Snow accumulation up to " . $_SESSION["col4snowmax"] . " " . $precipunit . "</p>" ;
+} 
+elseif ($_SESSION["col4snowmin"] == 0 && $_SESSION["col4snowmax"] == 1){
+	echo "<p>Snow accumulation less than 1 " . $precipunit . "</p>" ;
+} 
+elseif ($_SESSION["col4snowmin"] == 0 && $_SESSION["col4snowmax"] > 0){
+	echo "<p>Snow accumulation up to " . $_SESSION["col4snowmax"] . " " . $precipunit . "</p>" ;
+} 
+?>
+		
+		<?php if ($_SESSION["col4windmin"] != " " && $_SESSION["col4windmax"] != " " && $_SESSION["col4windmin"] != $_SESSION["col4windmax"] && $_SESSION["col4windmin"] < $_SESSION["col4windmax"] && $_SESSION["col4winddir"] != " " && empty($_SESSION["col4showwind"])) {
+	echo "<p>Winds " . $_SESSION["col4winddir"] . " " . $_SESSION["col4windmin"] . "-" . $_SESSION["col4windmax"] . " " . $windunit . "<br>" ;
+}
+elseif ($_SESSION["col4windmin"] == 0 && $_SESSION["col4windmax"] == 0 && $_SESSION["col4winddir"] == " " && empty($_SESSION["col4showwind"])){
+	echo "<p>Winds Calm<br>" ;
+}
+elseif ($_SESSION["col4winddir"] == "Calm" && empty($_SESSION["col4showwind"])){
+	echo "<p>Winds Calm<br>" ;
+}
+elseif ($_SESSION["col4winddir"] == "Variable" && $_SESSION["col4windmin"] == 0 && $_SESSION["col4windmax"] == 0 && empty($_SESSION["col4showwind"])){
+	echo "<p>Winds Light and Variable<br>" ;
+}
+elseif ($_SESSION["col4windmin"] == "" && $_SESSION["col4windmax"] == "" && empty($_SESSION["col4showwind"])){
+	echo "<p>Winds Light and Variable<br>" ;
+}
+elseif ($_SESSION["col4windmin"] == $_SESSION["col4windmax"] && empty($_SESSION["col4showwind"])) {
+	echo "<p>Winds " . $_SESSION["col4winddir"] . " around " . $_SESSION["col4windmin"] . " " . $windunit . "<br>" ;
+}
+	else {
+	echo "<p>";}
+		
+			?>
+		
+		<?php if ($_SESSION["col4windgust"] > 0 && $_SESSION["col4windgust"] > $_SESSION["col4windmax"] && empty($_SESSION["col4showwind"])){
+	echo "Gusts up to " . $_SESSION["col4windgust"] . " " . $windunit . "</p>" ;
+			}
+				else 
+		echo "</p>" ;
+?></small>
+<small><?php echo $_SESSION["col4detail"] . "<br>"; ?>
+</small>
+	<hr>
+</div>
+<br>
+	<!-- End Column 4 -->
 		<div class="twelve columns">
 				<hr>
 			</div>
