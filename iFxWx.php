@@ -121,6 +121,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $proceed == false) {
 	if (empty($_POST["col2temp"])) {
 		$col2fieldErr14 = "#FF8080";
 	}
+	// Column 3 variables
+	if (empty($_POST["col3"])) {
+		$col3fieldErr11 = "#FF8080";
+	}
+	if ($_POST["col3wx"] == "Weather") {
+		$col3fieldErr12 = "#FF8080";
+	}
+	if (empty($_POST["col3desc"])) {
+		$col3fieldErr13 = "#FF8080";
+	}
+	if (empty($_POST["col3temp"])) {
+		$col3fieldErr14 = "#FF8080";
+	}
 }
 
 // Logic check - test certain variables to make sure they make logical sense before proceeding
