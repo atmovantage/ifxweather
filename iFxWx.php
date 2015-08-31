@@ -573,7 +573,7 @@ else {
 	$col2highcheck = "";
 	 }
 
-// Column 3 check for pre-existing user selection for High/Low
+//Column 3 check for pre-existing user selection for High/Low
 if (!empty($_POST["col3highlow"]) && $_POST["col3highlow"] == "red") {
 	$col3highcheck = "checked";
 	$col3lowcheck = "";
@@ -586,8 +586,8 @@ elseif (!empty($_SESSION["col3highlow"]) && $_SESSION["col3highlow"] == "red")
 } 
 
 elseif (($fxvalid == '5AM' || $fxvalid == '6AM' || $fxvalid == '7AM' || $fxvalid == '8AM') && empty($_SESSION["col3highlow"]) && empty($_POST["col3highlow"])) {
-	$col3highcheck = "";
-	$col3lowcheck = "checked";
+	$col3highcheck = "checked";
+	$col3lowcheck = "";
 }
 
 elseif (!empty($_POST["col3highlow"]) && $_POST["col3highlow"] == "blue") {
@@ -602,12 +602,12 @@ elseif (!empty($_SESSION["col3highlow"]) && $_SESSION["col3highlow"] == "blue")
 } 
 
 elseif (($fxvalid == '5PM' || $fxvalid == '6PM' || $fxvalid == '7PM' || $fxvalid == '8PM') && empty($_SESSION["col3highlow"]) && empty($_POST["col3highlow"])) {
-	$col3lowcheck = "";
-	$col3highcheck = "checked";
-						   }
-else {
 	$col3lowcheck = "checked";
 	$col3highcheck = "";
+						   }
+else {
+	$col3lowcheck = "";
+	$col3highcheck = "checked";
 	 }
 
 //
