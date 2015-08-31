@@ -1018,6 +1018,167 @@ break;
 default: $col2wximg= "/ifxwx_images/select.png";
 }
 }
+// Column 3 weather icons
+	// For POST (form validation) check for pre-selected weather in column 3 and set the icon to match, otherwise default icon will show
+if (isset($_POST['col3wx'])) {
+	switch ($_POST["col3wx"]) {
+case "Sunny": $col3wximg= "/ifxwx_images/sunny.png";
+break;
+case "Partly Sunny": $col3wximg= "/ifxwx_images/partly_cloudy_day.png";
+break;
+case "Mostly Cloudy": $col3wximg= "/ifxwx_images/overcast.png";
+break;
+case "Clear": $col3wximg= "/ifxwx_images/clear_night.png";
+break;
+case "Partly Cloudy": $col3wximg= "/ifxwx_images/partly_cloudy_night.png";
+break;
+case "Overcast": $col3wximg= "/ifxwx_images/overcast.png";
+break;
+case "Isolated Rain Showers": $col3wximg= "/ifxwx_images/showers_isolated.png";
+break;
+case "Scattered Rain Showers": $col3wximg= "/ifxwx_images/showers_scattered.png";
+break;
+case "Rain": $col3wximg= "/ifxwx_images/rain.png";
+break;
+case "Heavy Rain": $col3wximg= "/ifxwx_images/rain_heavy.png";
+break;
+case "Rain and Fog": $col3wximg= "/ifxwx_images/showers_haze.png";
+break;
+case "Isolated T-Storms": $col3wximg= "/ifxwx_images/tstorms_isolated.png";
+break;
+case "Scattered T-Storms": $col3wximg= "/ifxwx_images/tstorms_scattered.png";
+break;
+case "Thunderstorms": $col3wximg= "/ifxwx_images/tstorms_rain.png";
+break;
+case "Severe T-Storms": $col3wximg= "/ifxwx_images/tstorms_severe.png";
+break;
+case "Snow Flurries": $col3wximg= "/ifxwx_images/snow_flurries.png";
+break;
+case "Scattered Snow Showers": $col3wximg= "/ifxwx_images/snow_scattered.png";
+break;
+case "Snow": $col3wximg= "/ifxwx_images/snow.png";
+break;
+case "Heavy Snow": $col3wximg= "/ifxwx_images/snow_heavy.png";
+break;
+case "Blizzard": $col3wximg= "/ifxwx_images/snow_blizzard.png";
+break;
+case "Blowing Snow": $col3wximg= "/ifxwx_images/blowing_snow.png";
+break;
+case "Rain/Snow": $col3wximg= "/ifxwx_images/rain_snow.png";
+break;
+case "Freezing Rain/Snow": $col3wximg= "/ifxwx_images/freezing_rain_snow.png";
+break;
+case "Freezing Rain/Rain": $col3wximg= "/ifxwx_images/freezing_rain.png";
+break;
+case "Freezing Rain/Sleet": $col3wximg= "/ifxwx_images/freezing_rain_sleet.png";
+break;
+case "Rain/Sleet": $col3wximg= "/ifxwx_images/rain_sleet.png";
+break;
+case "Sleet": $col3wximg= "/ifxwx_images/sleet.png";
+break;
+case "Overcast/Haze": $col3wximg= "/ifxwx_images/overcast_haze.png";
+break;
+case "Haze": $col3wximg= "/ifxwx_images/haze_day_night.png";
+break;
+case "Sunny/Fog": $col3wximg= "/ifxwx_images/fog_day.png";
+break;
+case "Morning Fog": $col3wximg= "/ifxwx_images/fog_morning.png";
+break;
+case "Overnight Fog": $col3wximg= "/ifxwx_images/fog_night.png";
+break;
+case "Cloudy/Fog": $col3wximg= "/ifxwx_images/fog_overcast.png";
+break;
+case "Dense Fog": $col3wximg= "/ifxwx_images/fog_dense.png";
+break;
+case "Windy": $col3wximg= "/ifxwx_images/windy.png";
+break;
+case "Lunar Eclipse": $col3wximg= "/ifxwx_images/lunar_eclipse.png";
+break;
+case "Solar Eclipse": $col3wximg= "/ifxwx_images/solar_eclipse.png";
+break;
+default: $col3wximg= "/ifxwx_images/select.png";
+}
+	// For SESSION (form editing) check for pre-selected weather in column 3 and set the icon to match, otherwise default icon will show
+} 
+elseif (isset($_SESSION['col3wx'])) {
+	switch ($_SESSION["col3wx"]) {
+case "Sunny": $col3wximg= "/ifxwx_images/sunny.png";
+break;
+case "Partly Sunny": $col3wximg= "/ifxwx_images/partly_cloudy_day.png";
+break;
+case "Mostly Cloudy": $col3wximg= "/ifxwx_images/overcast.png";
+break;
+case "Clear": $col3wximg= "/ifxwx_images/clear_night.png";
+break;
+case "Partly Cloudy": $col3wximg= "/ifxwx_images/partly_cloudy_night.png";
+break;
+case "Overcast": $col3wximg= "/ifxwx_images/overcast.png";
+break;
+case "Isolated Rain Showers": $col3wximg= "/ifxwx_images/showers_isolated.png";
+break;
+case "Scattered Rain Showers": $col3wximg= "/ifxwx_images/showers_scattered.png";
+break;
+case "Rain": $col3wximg= "/ifxwx_images/rain.png";
+break;
+case "Heavy Rain": $col3wximg= "/ifxwx_images/rain_heavy.png";
+break;
+case "Rain and Fog": $col3wximg= "/ifxwx_images/showers_haze.png";
+break;
+case "Isolated T-Storms": $col3wximg= "/ifxwx_images/tstorms_isolated.png";
+break;
+case "Scattered T-Storms": $col3wximg= "/ifxwx_images/tstorms_scattered.png";
+break;
+case "Thunderstorms": $col3wximg= "/ifxwx_images/tstorms_rain.png";
+break;
+case "Severe T-Storms": $col3wximg= "/ifxwx_images/tstorms_severe.png";
+break;
+case "Snow Flurries": $col3wximg= "/ifxwx_images/snow_flurries.png";
+break;
+case "Scattered Snow Showers": $col3wximg= "/ifxwx_images/snow_scattered.png";
+break;
+case "Snow": $col3wximg= "/ifxwx_images/snow.png";
+break;
+case "Heavy Snow": $col3wximg= "/ifxwx_images/snow_heavy.png";
+break;
+case "Blizzard": $col3wximg= "/ifxwx_images/snow_blizzard.png";
+break;
+case "Blowing Snow": $col3wximg= "/ifxwx_images/blowing_snow.png";
+break;
+case "Rain/Snow": $col3wximg= "/ifxwx_images/rain_snow.png";
+break;
+case "Freezing Rain/Snow": $col3wximg= "/ifxwx_images/freezing_rain_snow.png";
+break;
+case "Freezing Rain/Rain": $col3wximg= "/ifxwx_images/freezing_rain.png";
+break;
+case "Freezing Rain/Sleet": $col3wximg= "/ifxwx_images/freezing_rain_sleet.png";
+break;
+case "Rain/Sleet": $col3wximg= "/ifxwx_images/rain_sleet.png";
+break;
+case "Sleet": $col3wximg= "/ifxwx_images/sleet.png";
+break;
+case "Overcast/Haze": $col3wximg= "/ifxwx_images/overcast_haze.png";
+break;
+case "Haze": $col3wximg= "/ifxwx_images/haze_day_night.png";
+break;
+case "Sunny/Fog": $col3wximg= "/ifxwx_images/fog_day.png";
+break;
+case "Morning Fog": $col3wximg= "/ifxwx_images/fog_morning.png";
+break;
+case "Overnight Fog": $col3wximg= "/ifxwx_images/fog_night.png";
+break;
+case "Cloudy/Fog": $col3wximg= "/ifxwx_images/fog_overcast.png";
+break;
+case "Dense Fog": $col3wximg= "/ifxwx_images/fog_dense.png";
+break;
+case "Windy": $col3wximg= "/ifxwx_images/windy.png";
+break;
+case "Lunar Eclipse": $col3wximg= "/ifxwx_images/lunar_eclipse.png";
+break;
+case "Solar Eclipse": $col3wximg= "/ifxwx_images/solar_eclipse.png";
+break;
+default: $col3wximg= "/ifxwx_images/select.png";
+}
+}
 //
 //
 // That concludes the PHP code that must precede the HTML code
