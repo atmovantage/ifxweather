@@ -1,6 +1,35 @@
 # ifxweather
 Project to design and develop a web-based application to enable meteorologists to easily compose and publish a weather forecast.
 
+Version 0.15.1 Pre-Alpha (August 31st, 2015):
+Bug Fix in version 0.15.1 pre-alpha:
+
+    Composer page
+        Fixed issue where between the hours of 8PM and midnight the first column would still be labeled as the present day
+            Ex. Loading page at 9PM on Sunday, the first column would automatically read as "Sunday" when it should read "Monday"
+        Fixed issue where column 2 label would not remain set as whatever the user changed it to during validation and editing
+            It would revert to the default label during validation and editing
+            Added a new switch case to the code to check to see if the forecast start time has been set and to update labels accordingly
+			
+----------
+Version 0.15.0 Pre-Alpha (August 30th, 2015):
+Big news! Column 2 has been successfully added! See the latest changes below:
+
+    Composer Page
+        Added comment code to help make coding more developer-friendly
+        Changed names of snow/wind/gust logic variables to remove "day1" since these variables are global and not column-specific
+        Changed all variables names to replace "day1" with "col1" since each column is not a individual day
+        **Column 2 input added**
+            Added variables for column 2
+            Column 2 label sets automatically based on forecast valid time (i.e. "6am - 6pm")
+            Column 2 day sets automatically based on forecast valid time (i.e. "Monday Night")
+            Column 2 high/low sets automatically based on forecast valid time (i.e. Monday Night = "Low")
+    Preview Page
+        Added comment code to help make coding more developer-friendly
+        Updated all "day1" variables to now be "col1"
+        **Column 2 output added**
+            Added variables for column 2
+			
 ----------
 Version 0.14.0 Pre-Alpha (August 29th, 2015):
 Please see the latest changes below:
