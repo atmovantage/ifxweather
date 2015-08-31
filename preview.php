@@ -297,7 +297,7 @@ case "Solar Eclipse": $col2wximg = "/ifxwx_images/solar_eclipse.png";
 break;
 default: $col2wximg = "/ifxwx_images/fog_dense.png";
 }
-// Column 2 Weather Icon
+// Column 3 Weather Icon
 switch ($_SESSION["col3wx"]) {
 case "Sunny": $col3wximg = "/ifxwx_images/sunny.png";
 break;
@@ -570,6 +570,79 @@ elseif ($_SESSION["col2windmin"] == $_SESSION["col2windmax"] && empty($_SESSION[
 </div>
 <br>
 	<!-- End Column 2 -->
+	<!-- Begin Column 3-->
+<div style="text-align: center;" class="two columns">
+	<p id="title"><strong><big><u><?php echo $_SESSION["col3"]; ?></u></big></strong><br></p>
+<p>
+	<img class="wximg" style="width: 70px; height: 70px;" alt="col3wximg" src="<?php echo $col3wximg ; ?>" >
+	</p>
+		<?php if ($_SESSION["col3pop"] > 0) {
+	echo "<p><strong>" . $_SESSION["col3desc"] . "</strong> <small>(" . $_SESSION["col3pop"] . "%)</small></p>" ;
+}
+	else {
+		echo "<p><strong>" . $_SESSION["col3desc"] . "</strong></p>" ;
+}
+?>
+		<strong><big><big><?php echo "<p style='color:" . $tempcolor . "'>" . $_SESSION["col3temp"] . $tempunit . " </p>" 
+?>  </big></big></strong>
+	
+		<small><?php if ($_SESSION["col3precip"] > 0 && empty($_SESSION["col3showrain"])) {
+	echo "<p>Rain total " . $_SESSION["col3precip"] . " " . $precipunit . "</p>" ;
+}
+else {
+	echo "<p></p>" ;
+}
+
+?>
+		<?php if ($_SESSION["col3snowmin"] > 0 && $_SESSION["col3snowmax"] > 0 && $_SESSION["col3snowmin"] < $_SESSION["col3snowmax"]){
+	echo "<p>Snow accumulation " . $_SESSION["col3snowmin"] . "-" . $_SESSION["col3snowmax"] . " " . $precipunit . "</p>" ;
+}
+elseif ($_SESSION["col3snowmin"] == $_SESSION["col3snowmax"] && $_SESSION["col3snowmin"] > 0 && $_SESSION["col3snowmax"] > 0){
+	echo "<p>Snow accumulation up to " . $_SESSION["col3snowmax"] . " " . $precipunit . "</p>" ;
+} 
+elseif ($_SESSION["col3snowmin"] == 0 && $_SESSION["col3snowmax"] == 1){
+	echo "<p>Snow accumulation less than 1 " . $precipunit . "</p>" ;
+} 
+elseif ($_SESSION["col3snowmin"] == 0 && $_SESSION["col3snowmax"] > 0){
+	echo "<p>Snow accumulation up to " . $_SESSION["col3snowmax"] . " " . $precipunit . "</p>" ;
+} 
+?>
+		
+		<?php if ($_SESSION["col3windmin"] != " " && $_SESSION["col3windmax"] != " " && $_SESSION["col3windmin"] != $_SESSION["col3windmax"] && $_SESSION["col3windmin"] < $_SESSION["col3windmax"] && $_SESSION["col3winddir"] != " " && empty($_SESSION["col3showwind"])) {
+	echo "<p>Winds " . $_SESSION["col3winddir"] . " " . $_SESSION["col3windmin"] . "-" . $_SESSION["col3windmax"] . " " . $windunit . "<br>" ;
+}
+elseif ($_SESSION["col3windmin"] == 0 && $_SESSION["col3windmax"] == 0 && $_SESSION["col3winddir"] == " " && empty($_SESSION["col3showwind"])){
+	echo "<p>Winds Calm<br>" ;
+}
+elseif ($_SESSION["col3winddir"] == "Calm" && empty($_SESSION["col3showwind"])){
+	echo "<p>Winds Calm<br>" ;
+}
+elseif ($_SESSION["col3winddir"] == "Variable" && $_SESSION["col3windmin"] == 0 && $_SESSION["col3windmax"] == 0 && empty($_SESSION["col3showwind"])){
+	echo "<p>Winds Light and Variable<br>" ;
+}
+elseif ($_SESSION["col3windmin"] == "" && $_SESSION["col3windmax"] == "" && empty($_SESSION["col3showwind"])){
+	echo "<p>Winds Light and Variable<br>" ;
+}
+elseif ($_SESSION["col3windmin"] == $_SESSION["col3windmax"] && empty($_SESSION["col3showwind"])) {
+	echo "<p>Winds " . $_SESSION["col3winddir"] . " around " . $_SESSION["col3windmin"] . " " . $windunit . "<br>" ;
+}
+	else {
+	echo "<p>";}
+		
+			?>
+		
+		<?php if ($_SESSION["col3windgust"] > 0 && $_SESSION["col3windgust"] > $_SESSION["col3windmax"] && empty($_SESSION["col3showwind"])){
+	echo "Gusts up to " . $_SESSION["col3windgust"] . " " . $windunit . "</p>" ;
+			}
+				else 
+		echo "</p>" ;
+?></small>
+<small><?php echo $_SESSION["col3detail"] . "<br>"; ?>
+</small>
+	<hr>
+</div>
+<br>
+	<!-- End Column 3 -->
 		<div class="twelve columns">
 				<hr>
 			</div>
