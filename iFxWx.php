@@ -1672,6 +1672,139 @@ else {
 								<br>
 			</div>
 				<!-- End Column 2 Input-->
+				<!-- Column 3 variables -->
+			<div class="two columns" style="text-align: center;" id="hr24-36">
+				
+				<p>
+					<label id="col3title" for="col3label"><?php if (isset($_POST['fxstarttime'])) {echo $_POST['fxstarttime'];} elseif (isset($_SESSION['fxstarttime'])) {echo $_SESSION['fxstarttime'];} else {echo $fxvalidname;};?></label><br>
+					<input style="width:90%; background-color: <?php echo $col3fieldErr11 ?>" name="col3" id="col3label" placeholder="Monday" type="text" value="<?php if (isset($_POST['col3'])) {echo $_POST['col3'];} elseif (isset($_SESSION['col3'])) {echo $_SESSION['col3'];} else {echo $col3string;};?>">*
+					<br>
+				</p>
+				<p>
+					<select style="width:90%; background-color: <?php echo $col3fieldErr12 ?>" name="col3wx" onchange="document.getElementById('col3desc').value=this.value; updatecol3wximg(this.value)">
+						<option value="<?php if (isset($_POST['col3wx'])) {echo $_POST['col3wx'];} elseif (isset($_SESSION['col3wx'])) {echo $_SESSION['col3wx'];} else {echo 'Weather';};?>"><?php if (isset($_POST['col3wx'])) {echo $_POST['col3wx'];} elseif (isset($_SESSION['col3wx'])) {echo $_SESSION['col3wx'];} else {echo 'Weather';};?></option>
+						<optgroup label="General Day">
+						<option value="Sunny">Sunny</option>
+						<option value="Partly Sunny">Partly Sunny</option>
+						<option value="Mostly Cloudy">Mostly Cloudy</option>
+							</optgroup>
+						<optgroup label="General Night">
+							<option value="Clear">Clear (Night)</option>
+							<option value="Partly Cloudy">Partly Cloudy (Night)</option>
+							<option value="Overcast">Overcast (Night)</option>
+							</optgroup>
+						<optgroup label="Rain"> 
+							<option value="Isolated Rain Showers">Isolated Rain Showers</option>
+							<option value="Scattered Rain Showers">Scattered Rain Showers</option>
+							<option value="Rain">Rain</option>
+							<option value="Heavy Rain">Heavy Rain</option>
+							<option value="Rain and Fog">Rain and Fog</option>
+							<option value="Isolated T-Storms">Isolated T-Storms</option>
+							<option value="Scattered T-Storms">Scattered T-Storms</option>
+							<option value="Thunderstorms">T-Storms</option>
+							<option value="Severe T-Storms">Severe T-Storms</option>
+							</optgroup>
+						<optgroup label="Snow"> 
+							<option value="Snow Flurries">Flurries</option>
+							<option value="Scattered Snow Showers">Scattered Snow Showers</option>
+							<option value="Snow">Snow</option>
+							<option value="Heavy Snow">Heavy Snow</option>
+							<option value="Blizzard">Blizzard</option>
+							<option value="Blowing Snow">Blowing Snow</option>
+							</optgroup>
+						<optgroup label="Mixed Precip"> 
+							<option value="Rain/Snow">Rain/Snow</option>
+							<option value="Freezing Rain/Snow">Freezing Rain/Snow</option>
+							<option value="Freezing Rain/Rain">Freezing Rain/Rain</option>
+							<option value="Freezing Rain/Sleet">Freezing Rain/Sleet</option>
+							<option value="Rain/Sleet">Rain/Sleet</option>
+							<option value="Sleet">Sleet</option>
+							</optgroup>
+						<optgroup label="Miscellaneous"> 
+							<option value="Haze">Haze</option>
+							<option value="Overcast/Haze">Overcast/Haze</option>
+							<option value="Sunny/Fog">Sunny w/ Fog</option>
+							<option value="Cloudy/Fog">Cloudy w/ Fog</option>
+							<option value="Morning Fog">Fog Early AM</option>
+							<option value="Overnight Fog">Fog Overnight</option>
+							<option value="Dense Fog">Dense Fog</option>
+							<option value="Windy">Windy/Breezy</option>
+							<option value="Lunar Eclipse">Lunar Eclipse</option>
+							<option value="Solar Eclipse">Solar Eclipse</option>
+							</optgroup>
+					</select>*
+					<br>
+					<?php
+if (isset($_POST['col3wx'])) {
+	echo '<img src="' . $col3wximg . '" alt="Weather Icon Preview" style="width:70px;height:70px;" id="col3wximg" name="col3wximg">';
+} 
+elseif (isset($_SESSION['col3wx'])) {
+	echo '<img src="' . $col3wximg . '" alt="Weather Icon Preview" style="width:70px;height:70px;" id="col3wximg" name="col3wximg">';
+} 
+else {
+	echo '<img src="/ifxwx_images/select.png" alt="Weather Icon Preview" style="width:70px;height:70px;" id="col3wximg" name="col3wximg">';
+	 }
+?>
+				</p>
+				<p>
+					<label for="col3desc">Weather Description*</label>
+					<br>
+					<input style="width:90%; background-color: <?php echo $col3fieldErr13 ?>" name="col3desc" placeholder="Mostly Sunny" id="col3desc" type="text" value="<?php if (isset($_POST['col3desc'])) {echo $_POST['col3desc'];} elseif (isset($_SESSION['col3desc'])) {echo $_SESSION['col3desc'];} else {echo '';};?>">
+				
+					</p>
+			
+					<label for="col3temp">Temperature*</label>
+					<br>
+					<input style="width:90%; background-color: <?php echo $col3fieldErr14 ?>" placeholder="High/Low" min="-100" max="134" maxlength="3" name="col3temp" id="col3temp" type="number" value="<?php if (isset($_POST['col3temp'])) {echo $_POST['col3temp'];} elseif (isset($_SESSION['col3temp'])) {echo $_SESSION['col3temp'];} else {echo '';};?>"><br>
+				<form id="setcol3highlow">
+					<input type="radio" id="col3high" name="col3highlow" value="red" <?php echo $col3highcheck; ?>><small>High</small>
+					<input type="radio" id="col3low" name="col3highlow" value="blue" <?php echo $col3lowcheck; ?>><small>Low</small></form>
+				
+				<br>
+			<p>
+					<label for="col3pop">Precipitation</label>
+					<br>
+					<input style="width:90%" min="0" max="100" size="15" maxlength="3" name="col3pop" placeholder="Probability %" id="col3pop" type="number" value="<?php if (isset($_POST['col3pop'])) {echo $_POST['col3pop'];} elseif (isset($_SESSION['col3pop'])) {echo $_SESSION['col3pop'];} else {echo '';};?>"><label style="display: none;" for="col3precip" id="col3precip_label">Precipitation Total</label><input style="width:90%" step=".01" min="0" max="100" name="col3precip" placeholder="Precip Total" id="col3precip" type="number" value="<?php if (isset($_POST['col3precip'])) {echo $_POST['col3precip'];} elseif (isset($_SESSION['col3precip'])) {echo $_SESSION['col3precip'];} else {echo '';};?>"><br><small><small><strong>Hide Rain Total<input type="checkbox" name="col3showrain" value="1" <?php echo (isset($_POST['col3showrain']))?$checked:$unchecked; echo (isset($_SESSION['col3showrain']))?$checked:$unchecked;?>></strong></small></small>
+					</p>
+			<p>
+					<label for="col3snowmin">Snow</label>
+					<br>
+			<input style="width:90%; background-color: <?php echo $col3logicErr1; ?>" step=".5" min="0" max="100" name="col3snowmin" placeholder="Min Accum" id="col3snowmin" type="number" value="<?php if (isset($_POST['col3snowmin'])) {echo $_POST['col3snowmin'];} elseif (isset($_SESSION['col3snowmin'])) {echo $_SESSION['col3snowmin'];} else {echo '';};?>"><label style="display: none;" for="col3snowmax" id="col3snowmax_label">Day 1 Snow Maximum</label><input style="width:90%; background-color: <?php echo $col3logicErr1; ?>" step=".5" min="0" max="100" name="col3snowmax" placeholder="Max Accum" id="col3snowmax" type="number" value="<?php if (isset($_POST['col3snowmax'])) {echo $_POST['col3snowmax'];} elseif (isset($_SESSION['col3snowmax'])) {echo $_SESSION['col3snowmax'];} else {echo '';};?>"><br>
+				</p>
+			<p>
+		
+					<label for="col3wind">Wind</label>
+					<br>
+					<input style="width:90%; background-color: <?php echo $col3logicErr2; ?>" maxlength="3" max="240" min="0" name="col3windmin" placeholder="Min Sustained" id="col3windmin" type="number" value="<?php if (isset($_POST['col3windmin'])) {echo $_POST['col3windmin'];} elseif (isset($_SESSION['col3windmin'])) {echo $_SESSION['col3windmin'];} else {echo '';};?>"><input style="width:90%; background-color: <?php echo $col3logicErr2; ?>" maxlength="3" max="240" min="0" name="col3windmax" placeholder="Max Sustained" id="col3windmax" type="number" value="<?php if (isset($_POST['col3windmax'])) {echo $_POST['col3windmax'];} elseif (isset($_SESSION['col3windmax'])) {echo $_SESSION['col3windmax'];} else {echo '';};?>"><input style="width:90%; background-color: <?php echo $col3logicErr3; ?>" maxlength="3" max="240" min="0" name="col3windgust" placeholder="Max Gust" id="col3windgust" type="number" value="<?php if (isset($_POST['col3windgust'])) {echo $_POST['col3windgust'];} elseif (isset($_SESSION['col3windgust'])) {echo $_SESSION['col3windgust'];} else {echo '';};?>">
+					<select style="width:80%" name="col3winddir">
+						<option value="<?php if (isset($_POST['col3winddir'])) {echo $_POST['col3winddir'];} elseif (isset($_SESSION['col3winddir'])) {echo $_SESSION['col3winddir'];} else {echo '';};?>"><?php if (isset($_POST['col3winddir'])) {echo $_POST['col3winddir'];} elseif (isset($_SESSION['col3winddir'])) {echo $_SESSION['col3winddir'];} else {echo 'Direction';};?></option>
+						<option value="North">North</option>
+						<option value="NNE">North-Northeast</option>
+						<option value="Northeast">Northeast</option>
+						<option value="ENE">East-Northeast</option>
+						<option value="East">East</option>
+						<option value="ESE">East-Southeast</option>
+						<option value="Southeast">Southeast</option>
+						<option value="SSE<">South-Southeast</option>
+						<option value="South">South</option>
+						<option value="SSW">South-Southwest</option>
+						<option value="Southwest">Southwest</option>
+						<option value="WSW">West-Southwest</option>
+						<option value="West">West</option>
+						<option value="WNW">West-Northwest</option>
+						<option value="Northwest">Northwest</option>
+						<option value="NNW">North-Northwest</option>
+						<option value="Variable">Variable</option>
+						<option value="Calm">Calm</option>
+					</select>
+					<br><small><small><strong>Hide Wind Info?<input type="checkbox" name="col3showwind" value="1" <?php echo (isset($_POST['col3showwind']))?$checked:$unchecked; echo (isset($_SESSION['col3showwind']))?$checked:$unchecked;?>></strong></small></small>
+				</p>
+				<label for="col3detail">Additional Details</label>
+				<br>
+				<textarea style="width:95%" height="200px" name="col3detail" id="col3detail" placeholder="Timing, intensity, confidence, etc." type="text"><?php if (isset($_POST['col3detail'])) {echo $_POST['col3detail'];} elseif (isset($_SESSION['col3detail'])) {echo $_SESSION['col3detail'];} else {echo '';};?></textarea>
+								<br>
+			</div>
+				<!-- End Column 3 Input-->
 <div class="twelve columns">
 	<hr>
 				</div>
@@ -1957,6 +2090,88 @@ break;
 default: col2wximg = "/ifxwx_images/select.png";
 }
 			document.getElementById("col2wximg").src = col2wximg;
+		}
+		// Column 3 weather icon preview script
+		// This script is to instantly change the weather icon preview in column 3 to whatever the user selects from the drop down menu
+		function updatecol3wximg(val) {
+switch (val) {
+case "Sunny": col3wximg = "/ifxwx_images/sunny.png";
+break;
+case "Partly Sunny": col3wximg = "/ifxwx_images/partly_cloudy_day.png";
+break;
+case "Mostly Cloudy": col3wximg = "/ifxwx_images/overcast.png";
+break;
+case "Clear": col3wximg = "/ifxwx_images/clear_night.png";
+break;
+case "Partly Cloudy": col3wximg = "/ifxwx_images/partly_cloudy_night.png";
+break;
+case "Overcast": col3wximg = "/ifxwx_images/overcast.png";
+break;
+case "Isolated Rain Showers": col3wximg = "/ifxwx_images/showers_isolated.png";
+break;
+case "Scattered Rain Showers": col3wximg = "/ifxwx_images/showers_scattered.png";
+break;
+case "Rain": col3wximg = "/ifxwx_images/rain.png";
+break;
+case "Heavy Rain": col3wximg = "/ifxwx_images/rain_heavy.png";
+break;
+case "Rain and Fog": col3wximg = "/ifxwx_images/showers_haze.png";
+break;
+case "Isolated T-Storms": col3wximg = "/ifxwx_images/tstorms_isolated.png";
+break;
+case "Scattered T-Storms": col3wximg = "/ifxwx_images/tstorms_scattered.png";
+break;
+case "Thunderstorms": col3wximg = "/ifxwx_images/tstorms_rain.png";
+break;
+case "Severe T-Storms": col3wximg = "/ifxwx_images/tstorms_severe.png";
+break;
+case "Snow Flurries": col3wximg = "/ifxwx_images/snow_flurries.png";
+break;
+case "Scattered Snow Showers": col3wximg = "/ifxwx_images/snow_scattered.png";
+break;
+case "Snow": col3wximg = "/ifxwx_images/snow.png";
+break;
+case "Heavy Snow": col3wximg = "/ifxwx_images/snow_heavy.png";
+break;
+case "Blizzard": col3wximg = "/ifxwx_images/snow_blizzard.png";
+break;
+case "Blowing Snow": col3wximg = "/ifxwx_images/blowing_snow.png";
+break;
+case "Rain/Snow": col3wximg = "/ifxwx_images/rain_snow.png";
+break;
+case "Freezing Rain/Snow": col3wximg = "/ifxwx_images/freezing_rain_snow.png";
+break;
+case "Freezing Rain/Rain": col3wximg = "/ifxwx_images/freezing_rain.png";
+break;
+case "Freezing Rain/Sleet": col3wximg = "/ifxwx_images/freezing_rain_sleet.png";
+break;
+case "Rain/Sleet": col3wximg = "/ifxwx_images/rain_sleet.png";
+break;
+case "Sleet": col3wximg = "/ifxwx_images/sleet.png";
+break;
+case "Overcast/Haze": col3wximg = "/ifxwx_images/overcast_haze.png";
+break;
+case "Haze": col3wximg = "/ifxwx_images/haze_day_night.png";
+break;
+case "Sunny/Fog": col3wximg = "/ifxwx_images/fog_day.png";
+break;
+case "Morning Fog": col3wximg = "/ifxwx_images/fog_morning.png";
+break;
+case "Overnight Fog": col3wximg = "/ifxwx_images/fog_night.png";
+break;
+case "Cloudy/Fog": col3wximg = "/ifxwx_images/fog_overcast.png";
+break;
+case "Dense Fog": col3wximg = "/ifxwx_images/fog_dense.png";
+break;
+case "Windy": col3wximg = "/ifxwx_images/windy.png";
+break;
+case "Lunar Eclipse": col3wximg = "/ifxwx_images/lunar_eclipse.png";
+break;
+case "Solar Eclipse": col3wximg = "/ifxwx_images/solar_eclipse.png";
+break;
+default: col3wximg = "/ifxwx_images/select.png";
+}
+			document.getElementById("col3wximg").src = col3wximg;
 		}
 	</script>
 </body>
