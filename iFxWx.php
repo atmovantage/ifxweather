@@ -44,6 +44,14 @@ $fieldErr1 = $fieldErr3 = $fieldErr4 = $fieldErr5 = $fieldErr6 = $fieldErr7 = $f
 	// Logic Error variables are set to white as default but will turn blue if the specified fields do not pass the logic check
 	$col2logicErr1 = $col2logicErr2 = $col2logicErr3 = "FFF" ;
 
+// Column 3 variables
+
+	// Field Error variables are set white as default but will turn red if the specified field is left blank after user submits the form
+	$col3fieldErr1 = $col3fieldErr3 = $col3fieldErr4 = $col3fieldErr5 = $col3fieldErr6 = $col3fieldErr7 = $col3fieldErr8 = $col3fieldErr9 = $col3fieldErr10 = $col3fieldErr11 = $col3fieldErr12 = $col3fieldErr13 = $col3fieldErr14 = "#FFF";
+	
+	// Logic Error variables are set to white as default but will turn blue if the specified fields do not pass the logic check
+	$col3logicErr1 = $col3logicErr2 = $col3logicErr3 = "FFF" ;
+
 //
 //
 // Validation of required variables
