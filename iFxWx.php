@@ -443,8 +443,8 @@ switch ($fxvalid) {
 	$col2label = "8am - 8pm";
 	break;
 	default: $fxvalidname = "Select Time";
-	$col1label = "0-12hr";
-	$col2label = "12-24hr";
+	$col1label = "12 Hour Period";
+	$col2label = "12 Hour Period";
 	break;
 }
 // Set Column 2 label to alternate with whatever forecast start time is set as
@@ -467,7 +467,7 @@ switch ($_POST["fxstarttime"]) {
 	case "8pm - 8am": $col2label = "8am - 8pm";
 	break;
 	default:
-	$col2label = "12-24hr";
+	$col2label = "12 Hour Period";
 	break;
 }
 }
@@ -490,7 +490,7 @@ switch ($_SESSION["fxstarttime"]) {
 	case "8pm - 8am": $col2label = "8am - 8pm";
 	break;
 	default:
-	$col2label = "12-24hr";
+	$col2label = "12 Hour Period";
 	break;
 }
 }
@@ -572,6 +572,44 @@ else {
 	$col2lowcheck = "checked";
 	$col2highcheck = "";
 	 }
+
+// Column 3 check for pre-existing user selection for High/Low
+if (!empty($_POST["col3highlow"]) && $_POST["col3highlow"] == "red") {
+	$col3highcheck = "checked";
+	$col3lowcheck = "";
+}
+
+elseif (!empty($_SESSION["col3highlow"]) && $_SESSION["col3highlow"] == "red") 
+{
+	$col3highcheck = "checked";
+	$col3lowcheck = "";
+} 
+
+elseif (($fxvalid == '5AM' || $fxvalid == '6AM' || $fxvalid == '7AM' || $fxvalid == '8AM') && empty($_SESSION["col3highlow"]) && empty($_POST["col3highlow"])) {
+	$col3highcheck = "";
+	$col3lowcheck = "checked";
+}
+
+elseif (!empty($_POST["col3highlow"]) && $_POST["col3highlow"] == "blue") {
+	$col3lowcheck = "checked";
+	$col3highcheck = "";
+}
+
+elseif (!empty($_SESSION["col3highlow"]) && $_SESSION["col3highlow"] == "blue") 
+{
+	$col3lowcheck = "checked";
+	$col3highcheck = "";
+} 
+
+elseif (($fxvalid == '5PM' || $fxvalid == '6PM' || $fxvalid == '7PM' || $fxvalid == '8PM') && empty($_SESSION["col3highlow"]) && empty($_POST["col3highlow"])) {
+	$col3lowcheck = "";
+	$col3highcheck = "checked";
+						   }
+else {
+	$col3lowcheck = "checked";
+	$col3highcheck = "";
+	 }
+
 //
 //Check for pre-existing user selection for temperature units
 if (!empty($_POST["tempunit"]) && $_POST["tempunit"] == "fahrenheit") {
