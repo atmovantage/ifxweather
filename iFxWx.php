@@ -52,13 +52,21 @@ $fieldErr1 = $fieldErr3 = $fieldErr4 = $fieldErr5 = $fieldErr6 = $fieldErr7 = $f
 	// Logic Error variables are set to white as default but will turn blue if the specified fields do not pass the logic check
 	$col3logicErr1 = $col3logicErr2 = $col3logicErr3 = "FFF" ;
 
+// Column 4 variables
+
+	// Field Error variables are set white as default but will turn red if the specified field is left blank after user submits the form
+	$col4fieldErr1 = $col4fieldErr3 = $col4fieldErr4 = $col4fieldErr5 = $col4fieldErr6 = $col4fieldErr7 = $col4fieldErr8 = $col4fieldErr9 = $col4fieldErr10 = $col4fieldErr11 = $col4fieldErr12 = $col4fieldErr13 = $col4fieldErr14 = "#FFF";
+	
+	// Logic Error variables are set to white as default but will turn blue if the specified fields do not pass the logic check
+	$col4logicErr1 = $col4logicErr2 = $col4logicErr3 = "FFF" ;
+
 //
 //
 // Validation of required variables
 if ($_SERVER["REQUEST_METHOD"] == "POST" && $proceed == false) {
 	
 	//Check to see if any of the required fields are blank or set at the default values
-	if (empty($_POST["forecaster"]) || empty($_POST["stationname"]) || empty($_POST["date"])|| empty($_POST["time"]) || empty($_POST["fxstartmonth"]) || $_POST["fxstartmonth"] == "Select Month" || empty($_POST["fxstartday"]) || $_POST["fxstartday"] == "Select Day" || empty($_POST["fxstartyear"]) || $_POST["fxstartyear"] == "Select Year" || empty($_POST["fxstarttime"]) || $_POST["fxstarttime"] == "Select Time" || empty($_POST["col1"]) || $_POST["col1wx"] == "Weather" || empty($_POST["col1desc"]) || empty($_POST["col1temp"]) || empty($_POST["col2"]) || $_POST["col2wx"] == "Weather" || empty($_POST["col2desc"]) || empty($_POST["col2temp"]) || empty($_POST["col3"]) || $_POST["col3wx"] == "Weather" || empty($_POST["col3desc"]) || empty($_POST["col3temp"])) {
+	if (empty($_POST["forecaster"]) || empty($_POST["stationname"]) || empty($_POST["date"])|| empty($_POST["time"]) || empty($_POST["fxstartmonth"]) || $_POST["fxstartmonth"] == "Select Month" || empty($_POST["fxstartday"]) || $_POST["fxstartday"] == "Select Day" || empty($_POST["fxstartyear"]) || $_POST["fxstartyear"] == "Select Year" || empty($_POST["fxstarttime"]) || $_POST["fxstarttime"] == "Select Time" || empty($_POST["col1"]) || $_POST["col1wx"] == "Weather" || empty($_POST["col1desc"]) || empty($_POST["col1temp"]) || empty($_POST["col2"]) || $_POST["col2wx"] == "Weather" || empty($_POST["col2desc"]) || empty($_POST["col2temp"]) || empty($_POST["col3"]) || $_POST["col3wx"] == "Weather" || empty($_POST["col3desc"]) || empty($_POST["col3temp"]) || empty($_POST["col4"]) || $_POST["col4wx"] == "Weather" || empty($_POST["col4desc"]) || empty($_POST["col4temp"])) {
 		//if any required variables are empty then do not proceed to preview page
 		$proceed = false;
 	}
