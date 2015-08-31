@@ -58,7 +58,7 @@ $fieldErr1 = $fieldErr3 = $fieldErr4 = $fieldErr5 = $fieldErr6 = $fieldErr7 = $f
 if ($_SERVER["REQUEST_METHOD"] == "POST" && $proceed == false) {
 	
 	//Check to see if any of the required fields are blank or set at the default values
-	if (empty($_POST["forecaster"]) || empty($_POST["stationname"]) || empty($_POST["date"])|| empty($_POST["time"]) || empty($_POST["fxstartmonth"]) || $_POST["fxstartmonth"] == "Select Month" || empty($_POST["fxstartday"]) || $_POST["fxstartday"] == "Select Day" || empty($_POST["fxstartyear"]) || $_POST["fxstartyear"] == "Select Year" || empty($_POST["fxstarttime"]) || $_POST["fxstarttime"] == "Select Time" || empty($_POST["col1"]) || $_POST["col1wx"] == "Weather" || empty($_POST["col1desc"]) || empty($_POST["col1temp"]) || empty($_POST["col2"]) || $_POST["col2wx"] == "Weather" || empty($_POST["col2desc"]) || empty($_POST["col2temp"])) {
+	if (empty($_POST["forecaster"]) || empty($_POST["stationname"]) || empty($_POST["date"])|| empty($_POST["time"]) || empty($_POST["fxstartmonth"]) || $_POST["fxstartmonth"] == "Select Month" || empty($_POST["fxstartday"]) || $_POST["fxstartday"] == "Select Day" || empty($_POST["fxstartyear"]) || $_POST["fxstartyear"] == "Select Year" || empty($_POST["fxstarttime"]) || $_POST["fxstarttime"] == "Select Time" || empty($_POST["col1"]) || $_POST["col1wx"] == "Weather" || empty($_POST["col1desc"]) || empty($_POST["col1temp"]) || empty($_POST["col2"]) || $_POST["col2wx"] == "Weather" || empty($_POST["col2desc"]) || empty($_POST["col2temp"]) || empty($_POST["col3"]) || $_POST["col3wx"] == "Weather" || empty($_POST["col3desc"]) || empty($_POST["col3temp"])) {
 		//if any required variables are empty then do not proceed to preview page
 		$proceed = false;
 	}
