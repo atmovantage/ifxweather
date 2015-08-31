@@ -332,6 +332,25 @@ function submit_input() {
 	$_SESSION["col3windgust"] = $_POST["col3windgust"];
 	$_SESSION["col3detail"] = $_POST["col3detail"];
 	
+	// Column 4 Forecast Period Variables
+	$_SESSION["col4wx"] = $_POST["col4wx"];
+	$_SESSION["col4"] = $_POST["col4"];
+	$_SESSION["col4highlow"] = $_POST["col4highlow"];
+	$_SESSION["precipunit"] = $_POST["precipunit"];
+	$_SESSION["col4pop"] = $_POST["col4pop"];
+	$_SESSION["col4desc"] = $_POST["col4desc"];
+	$_SESSION["col4temp"] = $_POST["col4temp"];
+	$_SESSION["col4precip"] = $_POST["col4precip"];
+	$_SESSION["col4showrain"] = $_POST["col4showrain"];
+	$_SESSION["col4snowmin"] = $_POST["col4snowmin"];
+	$_SESSION["col4snowmax"] = $_POST["col4snowmax"];
+	$_SESSION["col4windmin"] = $_POST["col4windmin"];
+	$_SESSION["col4windmax"] = $_POST["col4windmax"];
+	$_SESSION["col4winddir"] = $_POST["col4winddir"];
+	$_SESSION["col4showwind"] = $_POST["col4showwind"];
+	$_SESSION["col4windgust"] = $_POST["col4windgust"];
+	$_SESSION["col4detail"] = $_POST["col4detail"];
+	
 	//Submit to the preview page
 	header('Location: /preview.php');
 	exit();
