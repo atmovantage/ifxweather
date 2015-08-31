@@ -341,67 +341,80 @@ if ($hour < "05" && $am_pm == "am") {
 	$fxvalid = "5AM";
 	$col1string = date('l');
 	$col2string = date('l') . " Night";
+	$col3string = date('l', strtotime("+1 day"));
 }
 elseif ($hour < "06" && $am_pm == "am") {
 	$fxvalid = "6AM";
 	$col1string = date('l');
 	$col2string = date('l') . " Night";
+	$col3string = date('l', strtotime("+1 day"));
 }
 elseif ($hour < "07" && $am_pm == "am") {
 	$fxvalid = "7AM";
 	$col1string = date('l');
 	$col2string = date('l') . " Night";
+	$col3string = date('l', strtotime("+1 day"));
 }
 elseif ($hour < "08" && $am_pm == "am") {
 	$fxvalid = "8AM";
 	$col1string = date('l');
 	$col2string = date('l') . " Night";
+	$col3string = date('l', strtotime("+1 day"));
 }
 elseif ($hour >= "08" && $hour < "12" && $am_pm == "am") {
 	$fxvalid = "5PM";
 	$col1string = date('l') . " Night";
 	$col2string = date('l', strtotime("+1 day"));
+	$col3string = date('l', strtotime("+1 day")) . " Night";
 	//$col1string = date('l', strtotime("+1 day")) . " Night";
 }
 elseif ($hour == "12" && $am_pm == "am") {
 	$fxvalid = "5AM";
 	$col1string = date('l');
 	$col2string = date('l') . " Night";
+	$col3string = date('l', strtotime("+1 day"));
 }
 elseif ($hour < "05" && $am_pm == "pm") {
 	$fxvalid = "5PM";
 	$col1string = date('l') . " Night";
 	$col2string = date('l', strtotime("+1 day"));
+	$col3string = date('l', strtotime("+1 day")) . " Night";
 }
 elseif ($hour < "06" && $am_pm == "pm") {
 	$fxvalid = "6PM";
 	$col1string = date('l') . " Night";
 	$col2string = date('l', strtotime("+1 day"));
+	$col3string = date('l', strtotime("+1 day")) . " Night";
 }
 elseif ($hour < "07" && $am_pm == "pm") {
 	$fxvalid = "7PM";
 	$col1string = date('l') . " Night";
 	$col2string = date('l', strtotime("+1 day"));
+	$col3string = date('l', strtotime("+1 day")) . " Night";
 }
 elseif ($hour < "08" && $am_pm == "pm") {
 	$fxvalid = "8PM";
 	$col1string = date('l') . " Night";
 	$col2string = date('l', strtotime("+1 day"));
+	$col3string = date('l', strtotime("+1 day")) . " Night";
 }
 elseif ($hour >= "08" && $hour < "12" && $am_pm == "pm") {
 	$fxvalid = "5AM";
 	$col1string = date('l', strtotime("+1 day"));
 	$col2string = date('l', strtotime("+1 day")) . " Night";
+	$col3string = date('l', strtotime("+2 day"));
 }
 elseif ($hour == "12" && $am_pm == "pm") {
 	$fxvalid = "5PM";
 	$col1string = date('l') . " Night";
 	$col2string = date('l', strtotime("+1 day"));
+	$col3string = date('l', strtotime("+1 day")) . " Night";
 }
 else {
 	$fxvalid = "Select Time";
 	$col1string = date('l');
 	$col2string = date('l') . " Night";
+	$col3string = date('l', strtotime("+1 day"));
 }
 // Convert the start time from the numerical value into a logical string for user to understand the duration of the forecast period
 switch ($fxvalid) {
