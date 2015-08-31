@@ -55,20 +55,14 @@
 	margin-bottom: 5px;
 		}
 
-	#hr0-12{
+	#hr0-12, #hr12-24{
     background: rgb(255, 250, 250); /* The Fallback */
    background: rgba(255, 250, 250, 0.8); 
 		-moz-border-radius: 6px 6px 6px 6px;
  border-radius: 6px 6px 6px 6px;
 		
 }
-#hr12-24{
-    background: rgb(255, 250, 250); /* The Fallback */
-   background: rgba(255, 250, 250, 0.8); 
-		-moz-border-radius: 6px 6px 6px 6px;
- border-radius: 6px 6px 6px 6px;
-		
-}
+
 #userpref{
 			background: rgb(255, 250, 250); /* The Fallback */
    background: rgba(255, 250, 250, 0.8); 

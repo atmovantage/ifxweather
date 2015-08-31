@@ -25,10 +25,13 @@ $logic = false;
 $snowlogic = $windlogic = $gustlogic= "";
 $logicnotice = "" ;
 
+// Global field error varibles
+$fieldErr1 = $fieldErr3 = $fieldErr4 = $fieldErr5 = $fieldErr6 = $fieldErr7 = $fieldErr8 = $fieldErr9 = $fieldErr10 =  "#FFF";
+
 // Column 1 variables
 
 	// Field Error variables are set white as default but will turn red if the specified field is left blank after user submits the form
-	$fieldErr1 = $fieldErr3 = $fieldErr4 = $fieldErr5 = $fieldErr6 = $fieldErr7 = $fieldErr8 = $fieldErr9 = $fieldErr10 = $fieldErr11 = $fieldErr12 = $fieldErr13 = $fieldErr14 = "#FFF";
+	$fieldErr11 = $fieldErr12 = $fieldErr13 = $fieldErr14 = "#FFF";
 	
 	// Logic Error variables are set to white as default but will turn blue if the specified fields do not pass the logic check
 	$logicErr1 = $logicErr2 = $logicErr3 = "FFF" ;
@@ -99,16 +102,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $proceed == false) {
 	}
 	// Column 2 variables
 	if (empty($_POST["col2"])) {
-		$fieldErr11 = "#FF8080";
+		$col2fieldErr11 = "#FF8080";
 	}
 	if ($_POST["col2wx"] == "Weather") {
-		$fieldErr12 = "#FF8080";
+		$col2fieldErr12 = "#FF8080";
 	}
 	if (empty($_POST["col2desc"])) {
-		$fieldErr13 = "#FF8080";
+		$col2fieldErr13 = "#FF8080";
 	}
 	if (empty($_POST["col2temp"])) {
-		$fieldErr14 = "#FF8080";
+		$col2fieldErr14 = "#FF8080";
 	}
 }
 
@@ -138,19 +141,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $logic == false) {
 	if ($_POST["col2snowmin"] > $_POST["col2snowmax"]) {
 		$snowlogic = "Minimum snow accumulation cannot be larger than maximum snow accumulation. <br>";
 		$logic = false;
-		$logicErr1 = "#2681FF";
+		$col2logicErr1 = "#2681FF";
 	}
 
 	if ($_POST["col2windmin"] > $_POST["col2windmax"]) {
 		$windlogic = "Minimum sustained wind cannot be larger than maximum sustained wind. <br>";
 		$logic = false;
-		$logicErr2 = "#2681FF";
+		$col2logicErr2 = "#2681FF";
 	}
 
 	if ($_POST["col2windmax"] >= $_POST["col2windgust"] && $_POST["col2windgust"] != "") {
 		$gustlogic = "Maximum sustained wind cannot be larger than or equal to wind gusts. <br>";
 		$logic = false;
-		$logicErr3 = "#2681FF";
+		$col2logicErr3 = "#2681FF";
 	}
 }
 
@@ -429,8 +432,8 @@ elseif (!empty($_SESSION["col2highlow"]) && $_SESSION["col2highlow"] == "red")
 } 
 
 elseif (($fxvalid == '5AM' || $fxvalid == '6AM' || $fxvalid == '7AM' || $fxvalid == '8AM') && empty($_SESSION["col2highlow"]) && empty($_POST["col2highlow"])) {
-	$col2highcheck = "checked";
-	$col2lowcheck = "";
+	$col2highcheck = "";
+	$col2lowcheck = "checked";
 }
 
 elseif (!empty($_POST["col2highlow"]) && $_POST["col2highlow"] == "blue") {
@@ -445,12 +448,12 @@ elseif (!empty($_SESSION["col2highlow"]) && $_SESSION["col2highlow"] == "blue")
 } 
 
 elseif (($fxvalid == '5PM' || $fxvalid == '6PM' || $fxvalid == '7PM' || $fxvalid == '8PM') && empty($_SESSION["col2highlow"]) && empty($_POST["col2highlow"])) {
-	$col2lowcheck = "checked";
-	$col2highcheck = "";
-						   }
-else {
 	$col2lowcheck = "";
 	$col2highcheck = "checked";
+						   }
+else {
+	$col2lowcheck = "checked";
+	$col2highcheck = "";
 	 }
 //
 //Check for pre-existing user selection for temperature units
@@ -1224,7 +1227,7 @@ else {
 			<div class="two columns" style="text-align: center;" id="hr12-24">
 				
 				<p>
-					<label id="col2title" for="col2label"><?php if (isset($_POST['fxstarttime'])) {echo $_POST['fxstarttime'];} elseif (isset($_SESSION['fxstarttime'])) {echo $_SESSION['fxstarttime'];} else {echo $fxvalidname;};?></label><br>
+					<label id="col2title" for="col2label"><?php if (isset($_POST['fxstarttime'])) {echo $_POST['fxstarttime'];} elseif (isset($_SESSION['fxstarttime'])) {echo $_SESSION['fxstarttime'];} else {echo $col2label;};?></label><br>
 					<input style="width:90%; background-color: <?php echo $col2fieldErr11 ?>" name="col2" id="col2label" placeholder="Monday" type="text" value="<?php if (isset($_POST['col2'])) {echo $_POST['col2'];} elseif (isset($_SESSION['col2'])) {echo $_SESSION['col2'];} else {echo $col2string;};?>">*
 					<br>
 				</p>
@@ -1300,14 +1303,14 @@ else {
 					<input style="width:90%; background-color: <?php echo $col2fieldErr13 ?>" name="col2desc" placeholder="Mostly Sunny" id="col2desc" type="text" value="<?php if (isset($_POST['col2desc'])) {echo $_POST['col2desc'];} elseif (isset($_SESSION['col2desc'])) {echo $_SESSION['col2desc'];} else {echo '';};?>">
 				
 					</p>
-			<p>
+			
 					<label for="col2temp">Temperature*</label>
 					<br>
 					<input style="width:90%; background-color: <?php echo $col2fieldErr14 ?>" placeholder="High/Low" min="-100" max="134" maxlength="3" name="col2temp" id="col2temp" type="number" value="<?php if (isset($_POST['col2temp'])) {echo $_POST['col2temp'];} elseif (isset($_SESSION['col2temp'])) {echo $_SESSION['col2temp'];} else {echo '';};?>"><br>
 				<form id="setcol2highlow">
 					<input type="radio" id="col2high" name="col2highlow" value="red" <?php echo $col2highcheck; ?>><small>High</small>
 					<input type="radio" id="col2low" name="col2highlow" value="blue" <?php echo $col2lowcheck; ?>><small>Low</small></form>
-				</p>
+				
 				<br>
 			<p>
 					<label for="col2pop">Precipitation</label>

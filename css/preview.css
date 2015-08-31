@@ -29,11 +29,15 @@
 	overflow: hidden;*/
 }
 
-.wximg{
-	display: inline-block;
-    vertical-align: bottom;
-    float: none;
+.two {
+	position: relative;
 }
+/*.wximg{
+	position: absolute;
+    top: 50px;
+	margin: auto;
+    float: none;
+}*/
 
 #Publish{
 			background-color: #A3FFAF;
