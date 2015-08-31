@@ -2691,103 +2691,90 @@ function reset_var() {
 			document.getElementById("col4title").innerHTML="5am - 5pm";
 		}
 		else if (val == "6pm - 6am"){
-			document.getElementById("col1high").checked = false;
+			
 			document.getElementById("col1low").checked = true;
 			document.getElementById("col2high").checked = true;
-			document.getElementById("col2low").checked = false;
-			document.getElementById("col3high").checked = true;
-			document.getElementById("col3low").checked = false;
+			document.getElementById("col3low").checked = true;
 			document.getElementById("col4high").checked = true;
-			document.getElementById("col4low").checked = false;
+			document.getElementById("col5low").checked = true;
 			document.getElementById("col1title").innerHTML=val;
 			document.getElementById("col2title").innerHTML="6am - 6pm";
 			document.getElementById("col3title").innerHTML=val;
 			document.getElementById("col4title").innerHTML="6am - 6pm";
+			document.getElementById("col5title").innerHTML=val;
 		}
 		else if (val == "7pm - 7am"){
-			document.getElementById("col1high").checked = false;
 			document.getElementById("col1low").checked = true;
 			document.getElementById("col2high").checked = true;
-			document.getElementById("col2low").checked = false;
-			document.getElementById("col3high").checked = true;
-			document.getElementById("col3low").checked = false;
+			document.getElementById("col3low").checked = true;
 			document.getElementById("col4high").checked = true;
-			document.getElementById("col4low").checked = false;
+			document.getElementById("col5low").checked = true;
 			document.getElementById("col1title").innerHTML=val;
 			document.getElementById("col2title").innerHTML="7am - 7pm";
 			document.getElementById("col3title").innerHTML=val;
 			document.getElementById("col4title").innerHTML="7am - 7pm";
+			document.getElementById("col5title").innerHTML=val;
 		}
 		else if (val == "8pm - 8am"){
-			document.getElementById("col1high").checked = false;
 			document.getElementById("col1low").checked = true;
 			document.getElementById("col2high").checked = true;
-			document.getElementById("col2low").checked = false;
-			document.getElementById("col3high").checked = true;
-			document.getElementById("col3low").checked = false;
+			document.getElementById("col3low").checked = true;
 			document.getElementById("col4high").checked = true;
-			document.getElementById("col4low").checked = false;
+			document.getElementById("col5low").checked = true;
 			document.getElementById("col1title").innerHTML=val;
 			document.getElementById("col2title").innerHTML="8am - 8pm";
 			document.getElementById("col3title").innerHTML=val;
 			document.getElementById("col4title").innerHTML="8am - 8pm";
+			document.getElementById("col5title").innerHTML=val;
 		}
 		else if (val == "5am - 5pm"){
-			document.getElementById("col1low").checked = false;
 			document.getElementById("col1high").checked = true;
 			document.getElementById("col2low").checked = true;
-			document.getElementById("col2high").checked = false;
-			document.getElementById("col3low").checked = false;
 			document.getElementById("col3high").checked = true;
 			document.getElementById("col4low").checked = true;
-			document.getElementById("col4high").checked = false;
+			document.getElementById("col5high").checked = true;
 			document.getElementById("col1title").innerHTML=val;
 			document.getElementById("col2title").innerHTML="5pm - 5am";
 			document.getElementById("col3title").innerHTML=val;
 			document.getElementById("col4title").innerHTML="5pm - 5am";
+			document.getElementById("col5title").innerHTML=val;
 		}
 		else if (val == "6am - 6pm"){
-			document.getElementById("col1low").checked = false;
 			document.getElementById("col1high").checked = true;
 			document.getElementById("col2low").checked = true;
-			document.getElementById("col2high").checked = false;
-			document.getElementById("col3low").checked = false;
 			document.getElementById("col3high").checked = true;
 			document.getElementById("col4low").checked = true;
-			document.getElementById("col4high").checked = false;
+			document.getElementById("col5high").checked = true;
 			document.getElementById("col1title").innerHTML=val;
 			document.getElementById("col2title").innerHTML="6pm - 6am";
 			document.getElementById("col3title").innerHTML=val;
 			document.getElementById("col4title").innerHTML="6pm - 6am";
+			document.getElementById("col5title").innerHTML=val;
 
 		}
 		else if (val == "7am - 7pm"){
-			document.getElementById("col1low").checked = false;
 			document.getElementById("col1high").checked = true;
 			document.getElementById("col2low").checked = true;
-			document.getElementById("col2high").checked = false;
-			document.getElementById("col3low").checked = false;
 			document.getElementById("col3high").checked = true;
 			document.getElementById("col4low").checked = true;
-			document.getElementById("col4high").checked = false;
+			document.getElementById("col5high").checked = true;
 			document.getElementById("col1title").innerHTML=val;
 			document.getElementById("col2title").innerHTML="7pm - 7am";
 			document.getElementById("col3title").innerHTML=val;
 			document.getElementById("col4title").innerHTML="7pm - 7am";
+			document.getElementById("col5title").innerHTML=val;
 		}
 		else if (val == "8am - 8pm"){
-			document.getElementById("col1low").checked = false;
 			document.getElementById("col1high").checked = true;
 			document.getElementById("col2low").checked = true;
-			document.getElementById("col2high").checked = false;
-			document.getElementById("col3low").checked = false;
 			document.getElementById("col3high").checked = true;
 			document.getElementById("col4low").checked = true;
-			document.getElementById("col4high").checked = false;
+			document.getElementById("col5high").checked = true;
 			document.getElementById("col1title").innerHTML=val;
 			document.getElementById("col2title").innerHTML="8pm - 8am";
 			document.getElementById("col3title").innerHTML=val;
 			document.getElementById("col4title").innerHTML="8pm - 8am";
+			document.getElementById("col5title").innerHTML=val;
 
 		}
 		else {
@@ -2795,6 +2782,7 @@ function reset_var() {
 			document.getElementById("col2title").innerHTML="";
 			document.getElementById("col3title").innerHTML="";
 			document.getElementById("col4title").innerHTML="";
+			document.getElementById("col5title").innerHTML="";
 		}
 		
 	}
