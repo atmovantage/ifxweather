@@ -2575,6 +2575,88 @@ default: col3wximg = "/ifxwx_images/select.png";
 }
 			document.getElementById("col3wximg").src = col3wximg;
 		}
+		// Column 4 weather icon preview script
+		// This script is to instantly change the weather icon preview in column 4 to whatever the user selects from the drop down menu
+		function updatecol4wximg(val) {
+switch (val) {
+case "Sunny": col4wximg = "/ifxwx_images/sunny.png";
+break;
+case "Partly Sunny": col4wximg = "/ifxwx_images/partly_cloudy_day.png";
+break;
+case "Mostly Cloudy": col4wximg = "/ifxwx_images/overcast.png";
+break;
+case "Clear": col4wximg = "/ifxwx_images/clear_night.png";
+break;
+case "Partly Cloudy": col4wximg = "/ifxwx_images/partly_cloudy_night.png";
+break;
+case "Overcast": col4wximg = "/ifxwx_images/overcast.png";
+break;
+case "Isolated Rain Showers": col4wximg = "/ifxwx_images/showers_isolated.png";
+break;
+case "Scattered Rain Showers": col4wximg = "/ifxwx_images/showers_scattered.png";
+break;
+case "Rain": col4wximg = "/ifxwx_images/rain.png";
+break;
+case "Heavy Rain": col4wximg = "/ifxwx_images/rain_heavy.png";
+break;
+case "Rain and Fog": col4wximg = "/ifxwx_images/showers_haze.png";
+break;
+case "Isolated T-Storms": col4wximg = "/ifxwx_images/tstorms_isolated.png";
+break;
+case "Scattered T-Storms": col4wximg = "/ifxwx_images/tstorms_scattered.png";
+break;
+case "Thunderstorms": col4wximg = "/ifxwx_images/tstorms_rain.png";
+break;
+case "Severe T-Storms": col4wximg = "/ifxwx_images/tstorms_severe.png";
+break;
+case "Snow Flurries": col4wximg = "/ifxwx_images/snow_flurries.png";
+break;
+case "Scattered Snow Showers": col4wximg = "/ifxwx_images/snow_scattered.png";
+break;
+case "Snow": col4wximg = "/ifxwx_images/snow.png";
+break;
+case "Heavy Snow": col4wximg = "/ifxwx_images/snow_heavy.png";
+break;
+case "Blizzard": col4wximg = "/ifxwx_images/snow_blizzard.png";
+break;
+case "Blowing Snow": col4wximg = "/ifxwx_images/blowing_snow.png";
+break;
+case "Rain/Snow": col4wximg = "/ifxwx_images/rain_snow.png";
+break;
+case "Freezing Rain/Snow": col4wximg = "/ifxwx_images/freezing_rain_snow.png";
+break;
+case "Freezing Rain/Rain": col4wximg = "/ifxwx_images/freezing_rain.png";
+break;
+case "Freezing Rain/Sleet": col4wximg = "/ifxwx_images/freezing_rain_sleet.png";
+break;
+case "Rain/Sleet": col4wximg = "/ifxwx_images/rain_sleet.png";
+break;
+case "Sleet": col4wximg = "/ifxwx_images/sleet.png";
+break;
+case "Overcast/Haze": col4wximg = "/ifxwx_images/overcast_haze.png";
+break;
+case "Haze": col4wximg = "/ifxwx_images/haze_day_night.png";
+break;
+case "Sunny/Fog": col4wximg = "/ifxwx_images/fog_day.png";
+break;
+case "Morning Fog": col4wximg = "/ifxwx_images/fog_morning.png";
+break;
+case "Overnight Fog": col4wximg = "/ifxwx_images/fog_night.png";
+break;
+case "Cloudy/Fog": col4wximg = "/ifxwx_images/fog_overcast.png";
+break;
+case "Dense Fog": col4wximg = "/ifxwx_images/fog_dense.png";
+break;
+case "Windy": col4wximg = "/ifxwx_images/windy.png";
+break;
+case "Lunar Eclipse": col4wximg = "/ifxwx_images/lunar_eclipse.png";
+break;
+case "Solar Eclipse": col4wximg = "/ifxwx_images/solar_eclipse.png";
+break;
+default: col4wximg = "/ifxwx_images/select.png";
+}
+			document.getElementById("col4wximg").src = col4wximg;
+		}
 	</script>
 </body>
 <!-- That's all she wrote folks!-->
