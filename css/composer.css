@@ -69,21 +69,13 @@
 		-moz-border-radius: 6px 6px 6px 6px;
  border-radius: 6px 6px 6px 6px;
 		}
-		#col1detail{
+		#col1detail, #col2detail, #col3detail{
 			width: 100%;
 			height: 10em;
 		}
-#col1wx{
+#col1wx, #col2wx, #col3wx {
 	width: auto;
 }
-#col2detail{
-			width: 100%;
-			height: 10em;
-		}
-#col2wx{
-	width: auto;
-}
-		
 		
 form label { 
     display: inline-block; 
