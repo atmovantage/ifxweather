@@ -142,6 +142,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $proceed == false) {
 	if (empty($_POST["col3temp"])) {
 		$col3fieldErr14 = "#FF8080";
 	}
+	// Column 4 variables
+	if (empty($_POST["col4"])) {
+		$col4fieldErr11 = "#FF8080";
+	}
+	if ($_POST["col4wx"] == "Weather") {
+		$col4fieldErr12 = "#FF8080";
+	}
+	if (empty($_POST["col4desc"])) {
+		$col4fieldErr13 = "#FF8080";
+	}
+	if (empty($_POST["col4temp"])) {
+		$col4fieldErr14 = "#FF8080";
+	}
 }
 
 // Logic check - test certain variables to make sure they make logical sense before proceeding
@@ -202,6 +215,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $logic == false) {
 		$gustlogic = "Maximum sustained wind cannot be larger than or equal to wind gusts. <br>";
 		$logic = false;
 		$col3logicErr3 = "#2681FF";
+	}
+	
+	// Column 4 logic check
+	if ($_POST["col4snowmin"] > $_POST["col4snowmax"]) {
+		$snowlogic = "Minimum snow accumulation cannot be larger than maximum snow accumulation. <br>";
+		$logic = false;
+		$col4logicErr1 = "#2681FF";
+	}
+
+	if ($_POST["col4windmin"] > $_POST["col4windmax"]) {
+		$windlogic = "Minimum sustained wind cannot be larger than maximum sustained wind. <br>";
+		$logic = false;
+		$col4logicErr2 = "#2681FF";
+	}
+
+	if ($_POST["col4windmax"] >= $_POST["col4windgust"] && $_POST["col4windgust"] != "") {
+		$gustlogic = "Maximum sustained wind cannot be larger than or equal to wind gusts. <br>";
+		$logic = false;
+		$col4logicErr3 = "#2681FF";
 	}
 }
 
