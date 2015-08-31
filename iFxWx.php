@@ -191,9 +191,7 @@ function submit_input() {
 	$_SESSION["tempunit"] = $_POST["tempunit"];
 	$_SESSION["colortemp"] = $_POST["colortemp"];
 	$_SESSION["windunit"] = $_POST["windunit"];
-	
 	$_SESSION["fxvalidname"] = $_POST["fxvalidname"];
-	
 	
 	// Column 1 Forecast Period Variables
 	$_SESSION["col1label"] = $_POST["col1label"];
@@ -333,8 +331,8 @@ elseif ($hour < "08" && $am_pm == "pm") {
 }
 elseif ($hour >= "08" && $hour < "12" && $am_pm == "pm") {
 	$fxvalid = "5AM";
-	$col1string = date('l');
-	$col2string = date('l') . " Night";
+	$col1string = date('l', strtotime("+1 day"));
+	$col2string = date('l', strtotime("+1 day")) . " Night";
 }
 elseif ($hour == "12" && $am_pm == "pm") {
 	$fxvalid = "5PM";
@@ -376,6 +374,53 @@ switch ($fxvalid) {
 	$col1label = "0-12hr";
 	$col2label = "12-24hr";
 	break;
+}
+// Set Column 2 label to alternate with whatever forecast start time is set as
+if (isset($_POST['fxstarttime'])) {
+switch ($_POST["fxstarttime"]) {
+	case "5am - 5pm": $col2label = "5pm - 5am";
+	break;
+	case "6am - 6pm": $col2label = "6pm - 6am";
+	break;
+	case "7am - 7pm": $col2label = "7pm - 7am";
+	break;
+	case "8am - 8pm": $col2label = "8pm - 8am";
+	break;
+	case "5pm - 5am": $col2label = "5am - 5pm";
+	break;
+	case "6pm - 6am": $col2label = "6am - 6pm";
+	break;
+	case "7pm - 7am": $col2label = "7am - 7pm";
+	break;
+	case "8pm - 8am": $col2label = "8am - 8pm";
+	break;
+	default:
+	$col2label = "12-24hr";
+	break;
+}
+}
+if (isset($_SESSION['fxstarttime'])) {
+switch ($_SESSION["fxstarttime"]) {
+	case "5am - 5pm": $col2label = "5pm - 5am";
+	break;
+	case "6am - 6pm": $col2label = "6pm - 6am";
+	break;
+	case "7am - 7pm": $col2label = "7pm - 7am";
+	break;
+	case "8am - 8pm": $col2label = "8pm - 8am";
+	break;
+	case "5pm - 5am": $col2label = "5am - 5pm";
+	break;
+	case "6pm - 6am": $col2label = "6am - 6pm";
+	break;
+	case "7pm - 7am": $col2label = "7am - 7pm";
+	break;
+	case "8pm - 8am": $col2label = "8am - 8pm";
+	break;
+	default:
+	$col2label = "12-24hr";
+	break;
+}
 }
 
 //Checkbox values
@@ -901,7 +946,7 @@ default: $col2wximg= "/ifxwx_images/select.png";
 			<img src="/ifxwx_images/background.jpg" id="bg" alt="">
 			<div class="container">
 			<div class="twelve columns" style="font-weight: bold; text-align: center" id="header">
-<p><img style="width: 70px; height: 61px;" alt="" src="/ifxwx_images/logo.png"> Version 0.15.0 pre-alpha<br><big style="font-family: Helvetica,Arial,sans-serif;"><big><big>Forecast Composer</big></big></big>
+<p><img style="width: 70px; height: 61px;" alt="" src="/ifxwx_images/logo.png"> Version 0.15.1 pre-alpha<br><big style="font-family: Helvetica,Arial,sans-serif;"><big><big>Forecast Composer</big></big></big>
 </p>
 			<div class="twelve columns" >
 				Welcome to the forecast composer page. This is the first step towards creating your own weather forecast. Enter the variables for your weather forecast using the forms below and click the 'Submit' button to view your final product.<small><br>Labels denoted with an asterisk (*) indicate required variables.</small>
@@ -1227,7 +1272,7 @@ else {
 			<div class="two columns" style="text-align: center;" id="hr12-24">
 				
 				<p>
-					<label id="col2title" for="col2label"><?php if (isset($_POST['fxstarttime'])) {echo $_POST['fxstarttime'];} elseif (isset($_SESSION['fxstarttime'])) {echo $_SESSION['fxstarttime'];} else {echo $col2label;};?></label><br>
+					<label id="col2title" for="col2label"><?php if (isset($_POST['col2label'])) {echo $_POST['col2label'];} elseif (isset($_SESSION['col2label'])) {echo $_SESSION['col2label'];} else {echo $col2label;};?></label><br>
 					<input style="width:90%; background-color: <?php echo $col2fieldErr11 ?>" name="col2" id="col2label" placeholder="Monday" type="text" value="<?php if (isset($_POST['col2'])) {echo $_POST['col2'];} elseif (isset($_SESSION['col2'])) {echo $_SESSION['col2'];} else {echo $col2string;};?>">*
 					<br>
 				</p>
