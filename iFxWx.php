@@ -2675,18 +2675,16 @@ function reset_var() {
 		// This script sets the titles for each forecast period to alternate day/night depending on user selection of forecast start time
 	function updateTitles(val) {
 		if (val == "5pm - 5am"){
-			document.getElementById("col1high").checked = false;
 			document.getElementById("col1low").checked = true;
 			document.getElementById("col2high").checked = true;
-			document.getElementById("col2low").checked = false;
-			document.getElementById("col3high").checked = true;
-			document.getElementById("col3low").checked = false;
+			document.getElementById("col3low").checked = true;
 			document.getElementById("col4high").checked = true;
-			document.getElementById("col4low").checked = false;
+			document.getElementById("col5low").checked = true;
 			document.getElementById("col1title").innerHTML=val;
 			document.getElementById("col2title").innerHTML="5am - 5pm";
 			document.getElementById("col3title").innerHTML=val;
 			document.getElementById("col4title").innerHTML="5am - 5pm";
+			document.getElementById("col5title").innerHTML=val;
 		}
 		else if (val == "6pm - 6am"){
 			
