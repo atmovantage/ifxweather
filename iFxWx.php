@@ -60,13 +60,21 @@ $fieldErr1 = $fieldErr3 = $fieldErr4 = $fieldErr5 = $fieldErr6 = $fieldErr7 = $f
 	// Logic Error variables are set to white as default but will turn blue if the specified fields do not pass the logic check
 	$col4logicErr1 = $col4logicErr2 = $col4logicErr3 = "FFF" ;
 
+// Column 5 variables
+
+	// Field Error variables are set white as default but will turn red if the specified field is left blank after user submits the form
+	$col5fieldErr1 = $col5fieldErr3 = $col5fieldErr4 = $col5fieldErr5 = $col5fieldErr6 = $col5fieldErr7 = $col5fieldErr8 = $col5fieldErr9 = $col5fieldErr10 = $col5fieldErr11 = $col5fieldErr12 = $col5fieldErr13 = $col5fieldErr14 = "#FFF";
+	
+	// Logic Error variables are set to white as default but will turn blue if the specified fields do not pass the logic check
+	$col5logicErr1 = $col5logicErr2 = $col5logicErr3 = "FFF" ;
+
 //
 //
 // Validation of required variables
 if ($_SERVER["REQUEST_METHOD"] == "POST" && $proceed == false) {
 	
 	//Check to see if any of the required fields are blank or set at the default values
-	if (empty($_POST["forecaster"]) || empty($_POST["stationname"]) || empty($_POST["date"])|| empty($_POST["time"]) || empty($_POST["fxstartmonth"]) || $_POST["fxstartmonth"] == "Select Month" || empty($_POST["fxstartday"]) || $_POST["fxstartday"] == "Select Day" || empty($_POST["fxstartyear"]) || $_POST["fxstartyear"] == "Select Year" || empty($_POST["fxstarttime"]) || $_POST["fxstarttime"] == "Select Time" || empty($_POST["col1"]) || $_POST["col1wx"] == "Weather" || empty($_POST["col1desc"]) || empty($_POST["col1temp"]) || empty($_POST["col2"]) || $_POST["col2wx"] == "Weather" || empty($_POST["col2desc"]) || empty($_POST["col2temp"]) || empty($_POST["col3"]) || $_POST["col3wx"] == "Weather" || empty($_POST["col3desc"]) || empty($_POST["col3temp"]) || empty($_POST["col4"]) || $_POST["col4wx"] == "Weather" || empty($_POST["col4desc"]) || empty($_POST["col4temp"])) {
+	if (empty($_POST["forecaster"]) || empty($_POST["stationname"]) || empty($_POST["date"])|| empty($_POST["time"]) || empty($_POST["fxstartmonth"]) || $_POST["fxstartmonth"] == "Select Month" || empty($_POST["fxstartday"]) || $_POST["fxstartday"] == "Select Day" || empty($_POST["fxstartyear"]) || $_POST["fxstartyear"] == "Select Year" || empty($_POST["fxstarttime"]) || $_POST["fxstarttime"] == "Select Time" || empty($_POST["col1"]) || $_POST["col1wx"] == "Weather" || empty($_POST["col1desc"]) || empty($_POST["col1temp"]) || empty($_POST["col2"]) || $_POST["col2wx"] == "Weather" || empty($_POST["col2desc"]) || empty($_POST["col2temp"]) || empty($_POST["col3"]) || $_POST["col3wx"] == "Weather" || empty($_POST["col3desc"]) || empty($_POST["col3temp"]) || empty($_POST["col4"]) || $_POST["col4wx"] == "Weather" || empty($_POST["col4desc"]) || empty($_POST["col4temp"]) || empty($_POST["col5"]) || $_POST["col5wx"] == "Weather" || empty($_POST["col5desc"]) || empty($_POST["col5temp"])) {
 		//if any required variables are empty then do not proceed to preview page
 		$proceed = false;
 	}
@@ -2275,56 +2283,122 @@ function reset_var() {
 		if (val == "5pm - 5am"){
 			document.getElementById("col1high").checked = false;
 			document.getElementById("col1low").checked = true;
+			document.getElementById("col2high").checked = true;
+			document.getElementById("col2low").checked = false;
+			document.getElementById("col3high").checked = true;
+			document.getElementById("col3low").checked = false;
+			document.getElementById("col4high").checked = true;
+			document.getElementById("col4low").checked = false;
 			document.getElementById("col1title").innerHTML=val;
 			document.getElementById("col2title").innerHTML="5am - 5pm";
+			document.getElementById("col3title").innerHTML=val;
+			document.getElementById("col4title").innerHTML="5am - 5pm";
 		}
 		else if (val == "6pm - 6am"){
 			document.getElementById("col1high").checked = false;
 			document.getElementById("col1low").checked = true;
+			document.getElementById("col2high").checked = true;
+			document.getElementById("col2low").checked = false;
+			document.getElementById("col3high").checked = true;
+			document.getElementById("col3low").checked = false;
+			document.getElementById("col4high").checked = true;
+			document.getElementById("col4low").checked = false;
 			document.getElementById("col1title").innerHTML=val;
 			document.getElementById("col2title").innerHTML="6am - 6pm";
+			document.getElementById("col3title").innerHTML=val;
+			document.getElementById("col4title").innerHTML="6am - 6pm";
 		}
 		else if (val == "7pm - 7am"){
 			document.getElementById("col1high").checked = false;
 			document.getElementById("col1low").checked = true;
+			document.getElementById("col2high").checked = true;
+			document.getElementById("col2low").checked = false;
+			document.getElementById("col3high").checked = true;
+			document.getElementById("col3low").checked = false;
+			document.getElementById("col4high").checked = true;
+			document.getElementById("col4low").checked = false;
 			document.getElementById("col1title").innerHTML=val;
 			document.getElementById("col2title").innerHTML="7am - 7pm";
+			document.getElementById("col3title").innerHTML=val;
+			document.getElementById("col4title").innerHTML="7am - 7pm";
 		}
 		else if (val == "8pm - 8am"){
 			document.getElementById("col1high").checked = false;
 			document.getElementById("col1low").checked = true;
+			document.getElementById("col2high").checked = true;
+			document.getElementById("col2low").checked = false;
+			document.getElementById("col3high").checked = true;
+			document.getElementById("col3low").checked = false;
+			document.getElementById("col4high").checked = true;
+			document.getElementById("col4low").checked = false;
 			document.getElementById("col1title").innerHTML=val;
 			document.getElementById("col2title").innerHTML="8am - 8pm";
+			document.getElementById("col3title").innerHTML=val;
+			document.getElementById("col4title").innerHTML="8am - 8pm";
 		}
 		else if (val == "5am - 5pm"){
 			document.getElementById("col1low").checked = false;
 			document.getElementById("col1high").checked = true;
+			document.getElementById("col2low").checked = true;
+			document.getElementById("col2high").checked = false;
+			document.getElementById("col3low").checked = false;
+			document.getElementById("col3high").checked = true;
+			document.getElementById("col4low").checked = true;
+			document.getElementById("col4high").checked = false;
 			document.getElementById("col1title").innerHTML=val;
 			document.getElementById("col2title").innerHTML="5pm - 5am";
+			document.getElementById("col3title").innerHTML=val;
+			document.getElementById("col4title").innerHTML="5pm - 5am";
 		}
 		else if (val == "6am - 6pm"){
 			document.getElementById("col1low").checked = false;
 			document.getElementById("col1high").checked = true;
+			document.getElementById("col2low").checked = true;
+			document.getElementById("col2high").checked = false;
+			document.getElementById("col3low").checked = false;
+			document.getElementById("col3high").checked = true;
+			document.getElementById("col4low").checked = true;
+			document.getElementById("col4high").checked = false;
 			document.getElementById("col1title").innerHTML=val;
 			document.getElementById("col2title").innerHTML="6pm - 6am";
+			document.getElementById("col3title").innerHTML=val;
+			document.getElementById("col4title").innerHTML="6pm - 6am";
 
 		}
 		else if (val == "7am - 7pm"){
 			document.getElementById("col1low").checked = false;
 			document.getElementById("col1high").checked = true;
+			document.getElementById("col2low").checked = true;
+			document.getElementById("col2high").checked = false;
+			document.getElementById("col3low").checked = false;
+			document.getElementById("col3high").checked = true;
+			document.getElementById("col4low").checked = true;
+			document.getElementById("col4high").checked = false;
 			document.getElementById("col1title").innerHTML=val;
 			document.getElementById("col2title").innerHTML="7pm - 7am";
+			document.getElementById("col3title").innerHTML=val;
+			document.getElementById("col4title").innerHTML="7pm - 7am";
 		}
 		else if (val == "8am - 8pm"){
 			document.getElementById("col1low").checked = false;
 			document.getElementById("col1high").checked = true;
+			document.getElementById("col2low").checked = true;
+			document.getElementById("col2high").checked = false;
+			document.getElementById("col3low").checked = false;
+			document.getElementById("col3high").checked = true;
+			document.getElementById("col4low").checked = true;
+			document.getElementById("col4high").checked = false;
 			document.getElementById("col1title").innerHTML=val;
 			document.getElementById("col2title").innerHTML="8pm - 8am";
+			document.getElementById("col3title").innerHTML=val;
+			document.getElementById("col4title").innerHTML="8pm - 8am";
 
 		}
 		else {
 			document.getElementById("col1title").innerHTML="";
 			document.getElementById("col2title").innerHTML="";
+			document.getElementById("col3title").innerHTML="";
+			document.getElementById("col4title").innerHTML="";
 		}
 		
 	}
