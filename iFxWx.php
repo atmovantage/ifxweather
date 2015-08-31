@@ -2074,6 +2074,139 @@ else {
 								<br>
 			</div>
 				<!-- End Column 3 Input-->
+				<!-- Column 4 variables -->
+			<div class="two columns" style="text-align: center;" id="hr36-48">
+				
+				<p>
+					<label id="col4title" for="col4label"><?php if (isset($_POST['col2label'])) {echo $_POST['col2label'];} elseif (isset($_SESSION['col2label'])) {echo $_SESSION['col2label'];} else {echo $col2label;};?></label><br>
+					<input style="width:90%; background-color: <?php echo $col4fieldErr11 ?>" name="col4" id="col4label" placeholder="Monday" type="text" value="<?php if (isset($_POST['col4'])) {echo $_POST['col4'];} elseif (isset($_SESSION['col4'])) {echo $_SESSION['col4'];} else {echo $col4string;};?>">*
+					<br>
+				</p>
+				<p>
+					<select style="width:90%; background-color: <?php echo $col4fieldErr12 ?>" name="col4wx" onchange="document.getElementById('col4desc').value=this.value; updatecol4wximg(this.value)">
+						<option value="<?php if (isset($_POST['col4wx'])) {echo $_POST['col4wx'];} elseif (isset($_SESSION['col4wx'])) {echo $_SESSION['col4wx'];} else {echo 'Weather';};?>"><?php if (isset($_POST['col4wx'])) {echo $_POST['col4wx'];} elseif (isset($_SESSION['col4wx'])) {echo $_SESSION['col4wx'];} else {echo 'Weather';};?></option>
+						<optgroup label="General Day">
+						<option value="Sunny">Sunny</option>
+						<option value="Partly Sunny">Partly Sunny</option>
+						<option value="Mostly Cloudy">Mostly Cloudy</option>
+							</optgroup>
+						<optgroup label="General Night">
+							<option value="Clear">Clear (Night)</option>
+							<option value="Partly Cloudy">Partly Cloudy (Night)</option>
+							<option value="Overcast">Overcast (Night)</option>
+							</optgroup>
+						<optgroup label="Rain"> 
+							<option value="Isolated Rain Showers">Isolated Rain Showers</option>
+							<option value="Scattered Rain Showers">Scattered Rain Showers</option>
+							<option value="Rain">Rain</option>
+							<option value="Heavy Rain">Heavy Rain</option>
+							<option value="Rain and Fog">Rain and Fog</option>
+							<option value="Isolated T-Storms">Isolated T-Storms</option>
+							<option value="Scattered T-Storms">Scattered T-Storms</option>
+							<option value="Thunderstorms">T-Storms</option>
+							<option value="Severe T-Storms">Severe T-Storms</option>
+							</optgroup>
+						<optgroup label="Snow"> 
+							<option value="Snow Flurries">Flurries</option>
+							<option value="Scattered Snow Showers">Scattered Snow Showers</option>
+							<option value="Snow">Snow</option>
+							<option value="Heavy Snow">Heavy Snow</option>
+							<option value="Blizzard">Blizzard</option>
+							<option value="Blowing Snow">Blowing Snow</option>
+							</optgroup>
+						<optgroup label="Mixed Precip"> 
+							<option value="Rain/Snow">Rain/Snow</option>
+							<option value="Freezing Rain/Snow">Freezing Rain/Snow</option>
+							<option value="Freezing Rain/Rain">Freezing Rain/Rain</option>
+							<option value="Freezing Rain/Sleet">Freezing Rain/Sleet</option>
+							<option value="Rain/Sleet">Rain/Sleet</option>
+							<option value="Sleet">Sleet</option>
+							</optgroup>
+						<optgroup label="Miscellaneous"> 
+							<option value="Haze">Haze</option>
+							<option value="Overcast/Haze">Overcast/Haze</option>
+							<option value="Sunny/Fog">Sunny w/ Fog</option>
+							<option value="Cloudy/Fog">Cloudy w/ Fog</option>
+							<option value="Morning Fog">Fog Early AM</option>
+							<option value="Overnight Fog">Fog Overnight</option>
+							<option value="Dense Fog">Dense Fog</option>
+							<option value="Windy">Windy/Breezy</option>
+							<option value="Lunar Eclipse">Lunar Eclipse</option>
+							<option value="Solar Eclipse">Solar Eclipse</option>
+							</optgroup>
+					</select>*
+					<br>
+					<?php
+if (isset($_POST['col4wx'])) {
+	echo '<img src="' . $col4wximg . '" alt="Weather Icon Preview" style="width:70px;height:70px;" id="col4wximg" name="col4wximg">';
+} 
+elseif (isset($_SESSION['col4wx'])) {
+	echo '<img src="' . $col4wximg . '" alt="Weather Icon Preview" style="width:70px;height:70px;" id="col4wximg" name="col4wximg">';
+} 
+else {
+	echo '<img src="/ifxwx_images/select.png" alt="Weather Icon Preview" style="width:70px;height:70px;" id="col4wximg" name="col4wximg">';
+	 }
+?>
+				</p>
+				<p>
+					<label for="col4desc">Weather Description*</label>
+					<br>
+					<input style="width:90%; background-color: <?php echo $col4fieldErr13 ?>" name="col4desc" placeholder="Mostly Sunny" id="col4desc" type="text" value="<?php if (isset($_POST['col4desc'])) {echo $_POST['col4desc'];} elseif (isset($_SESSION['col4desc'])) {echo $_SESSION['col4desc'];} else {echo '';};?>">
+				
+					</p>
+			
+					<label for="col4temp">Temperature*</label>
+					<br>
+					<input style="width:90%; background-color: <?php echo $col4fieldErr14 ?>" placeholder="High/Low" min="-100" max="134" maxlength="3" name="col4temp" id="col4temp" type="number" value="<?php if (isset($_POST['col4temp'])) {echo $_POST['col4temp'];} elseif (isset($_SESSION['col4temp'])) {echo $_SESSION['col4temp'];} else {echo '';};?>"><br>
+				<form id="setcol4highlow">
+					<input type="radio" id="col4high" name="col4highlow" value="red" <?php echo $col4highcheck; ?>><small>High</small>
+					<input type="radio" id="col4low" name="col4highlow" value="blue" <?php echo $col4lowcheck; ?>><small>Low</small></form>
+				
+				<br>
+			<p>
+					<label for="col4pop">Precipitation</label>
+					<br>
+					<input style="width:90%" min="0" max="100" size="15" maxlength="3" name="col4pop" placeholder="Probability %" id="col4pop" type="number" value="<?php if (isset($_POST['col4pop'])) {echo $_POST['col4pop'];} elseif (isset($_SESSION['col4pop'])) {echo $_SESSION['col4pop'];} else {echo '';};?>"><label style="display: none;" for="col4precip" id="col4precip_label">Precipitation Total</label><input style="width:90%" step=".01" min="0" max="100" name="col4precip" placeholder="Precip Total" id="col4precip" type="number" value="<?php if (isset($_POST['col4precip'])) {echo $_POST['col4precip'];} elseif (isset($_SESSION['col4precip'])) {echo $_SESSION['col4precip'];} else {echo '';};?>"><br><small><small><strong>Hide Rain Total<input type="checkbox" name="col4showrain" value="1" <?php echo (isset($_POST['col4showrain']))?$checked:$unchecked; echo (isset($_SESSION['col4showrain']))?$checked:$unchecked;?>></strong></small></small>
+					</p>
+			<p>
+					<label for="col4snowmin">Snow</label>
+					<br>
+			<input style="width:90%; background-color: <?php echo $col4logicErr1; ?>" step=".5" min="0" max="100" name="col4snowmin" placeholder="Min Accum" id="col4snowmin" type="number" value="<?php if (isset($_POST['col4snowmin'])) {echo $_POST['col4snowmin'];} elseif (isset($_SESSION['col4snowmin'])) {echo $_SESSION['col4snowmin'];} else {echo '';};?>"><label style="display: none;" for="col4snowmax" id="col4snowmax_label">Day 1 Snow Maximum</label><input style="width:90%; background-color: <?php echo $col4logicErr1; ?>" step=".5" min="0" max="100" name="col4snowmax" placeholder="Max Accum" id="col4snowmax" type="number" value="<?php if (isset($_POST['col4snowmax'])) {echo $_POST['col4snowmax'];} elseif (isset($_SESSION['col4snowmax'])) {echo $_SESSION['col4snowmax'];} else {echo '';};?>"><br>
+				</p>
+			<p>
+		
+					<label for="col4wind">Wind</label>
+					<br>
+					<input style="width:90%; background-color: <?php echo $col4logicErr2; ?>" maxlength="3" max="240" min="0" name="col4windmin" placeholder="Min Sustained" id="col4windmin" type="number" value="<?php if (isset($_POST['col4windmin'])) {echo $_POST['col4windmin'];} elseif (isset($_SESSION['col4windmin'])) {echo $_SESSION['col4windmin'];} else {echo '';};?>"><input style="width:90%; background-color: <?php echo $col4logicErr2; ?>" maxlength="3" max="240" min="0" name="col4windmax" placeholder="Max Sustained" id="col4windmax" type="number" value="<?php if (isset($_POST['col4windmax'])) {echo $_POST['col4windmax'];} elseif (isset($_SESSION['col4windmax'])) {echo $_SESSION['col4windmax'];} else {echo '';};?>"><input style="width:90%; background-color: <?php echo $col4logicErr3; ?>" maxlength="3" max="240" min="0" name="col4windgust" placeholder="Max Gust" id="col4windgust" type="number" value="<?php if (isset($_POST['col4windgust'])) {echo $_POST['col4windgust'];} elseif (isset($_SESSION['col4windgust'])) {echo $_SESSION['col4windgust'];} else {echo '';};?>">
+					<select style="width:80%" name="col4winddir">
+						<option value="<?php if (isset($_POST['col4winddir'])) {echo $_POST['col4winddir'];} elseif (isset($_SESSION['col4winddir'])) {echo $_SESSION['col4winddir'];} else {echo '';};?>"><?php if (isset($_POST['col4winddir'])) {echo $_POST['col4winddir'];} elseif (isset($_SESSION['col4winddir'])) {echo $_SESSION['col4winddir'];} else {echo 'Direction';};?></option>
+						<option value="North">North</option>
+						<option value="NNE">North-Northeast</option>
+						<option value="Northeast">Northeast</option>
+						<option value="ENE">East-Northeast</option>
+						<option value="East">East</option>
+						<option value="ESE">East-Southeast</option>
+						<option value="Southeast">Southeast</option>
+						<option value="SSE<">South-Southeast</option>
+						<option value="South">South</option>
+						<option value="SSW">South-Southwest</option>
+						<option value="Southwest">Southwest</option>
+						<option value="WSW">West-Southwest</option>
+						<option value="West">West</option>
+						<option value="WNW">West-Northwest</option>
+						<option value="Northwest">Northwest</option>
+						<option value="NNW">North-Northwest</option>
+						<option value="Variable">Variable</option>
+						<option value="Calm">Calm</option>
+					</select>
+					<br><small><small><strong>Hide Wind Info?<input type="checkbox" name="col4showwind" value="1" <?php echo (isset($_POST['col4showwind']))?$checked:$unchecked; echo (isset($_SESSION['col4showwind']))?$checked:$unchecked;?>></strong></small></small>
+				</p>
+				<label for="col4detail">Additional Details</label>
+				<br>
+				<textarea style="width:95%" height="200px" name="col4detail" id="col4detail" placeholder="Timing, intensity, confidence, etc." type="text"><?php if (isset($_POST['col4detail'])) {echo $_POST['col4detail'];} elseif (isset($_SESSION['col4detail'])) {echo $_SESSION['col4detail'];} else {echo '';};?></textarea>
+								<br>
+			</div>
+				<!-- End Column 4 Input-->
 <div class="twelve columns">
 	<hr>
 				</div>
