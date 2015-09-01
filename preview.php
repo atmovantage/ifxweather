@@ -171,13 +171,19 @@ if (isset($_POST['Edit'])) {
 }
 
     if ($_SESSION["colortemp"] == "yes") {
-      $tempcolor = $_SESSION["col1highlow"];
-	$tempcolor2 = $_SESSION["col2highlow"];
+		if ($_SESSION["col1highlow"] == "red") {
+      $tempcolor = "red";
+	  $tempcolor2 = "blue";
 	  }
-      else {
-		  $tempcolor = "black";
+      else if ($_SESSION["col1highlow"] == "blue") {
+		  $tempcolor = "blue";
+		  $tempcolor2 = "red";
+	  }
+	else {
+		$tempcolor = "black";
 		  $tempcolor2 = "black";
-	  }
+	}
+	}
 
 	switch ($_SESSION["precipunit"]) {
 		case "in.": $precipunit = "in.";
@@ -680,11 +686,12 @@ default: $col6wximg = "/ifxwx_images/fog_dense.png";
 <link rel="icon" type="image/png" href="/images/favicon.png">
 </head>
 <body>
+	<div class="wrapper">
 <div class="container">
 <div class="twelve columns" style="font-weight: bold; text-align: center">
 <p><big style="font-family: Helvetica,Arial,sans-serif;"><big><big><span><img style="width: 70px; height: 61px;" alt="" src="/ifxwx_images/logo.png"><br>iFx
 Weather Preview</span></big></big></big>
-Version 0.15.1 pre-alpha</p>
+Version 1.0.0 Alpha</p>
 </div>
 	<div class="twelve columns">
 				<hr>
@@ -695,7 +702,7 @@ Version 0.15.1 pre-alpha</p>
 		<strong>Forecaster: </strong><?php echo $_SESSION["forecaster"] ?>
 		</p>
 			</div>
-				<div class="two columns">
+				<div class="three columns">
 				<p>
 		<strong>Location: </strong><?php echo $_SESSION["stationid"] . " " . $_SESSION["stationname"] ?>
 		</p>
@@ -728,7 +735,7 @@ Version 0.15.1 pre-alpha</p>
 		echo "<p><strong>" . $_SESSION["col1desc"] . "</strong></p>" ;
 }
 ?>
-		<strong><big><big><?php echo "<p style='color:" . $tempcolor2 . "'>" . $_SESSION["col1temp"] . $tempunit . " </p>" 
+		<strong><big><big><?php echo "<p style='color:" . $tempcolor . "'>" . $_SESSION["col1temp"] . $tempunit . " </p>" 
 ?>  </big></big></strong>
 	
 		<small><?php if ($_SESSION["col1precip"] > 0 && empty($_SESSION["col1showrain"])) {
@@ -801,7 +808,7 @@ elseif ($_SESSION["col1windmin"] == $_SESSION["col1windmax"] && empty($_SESSION[
 		echo "<p><strong>" . $_SESSION["col2desc"] . "</strong></p>" ;
 }
 ?>
-		<strong><big><big><?php echo "<p style='color:" . $tempcolor . "'>" . $_SESSION["col2temp"] . $tempunit . " </p>" 
+		<strong><big><big><?php echo "<p style='color:" . $tempcolor2 . "'>" . $_SESSION["col2temp"] . $tempunit . " </p>" 
 ?>  </big></big></strong>
 	
 		<small><?php if ($_SESSION["col2precip"] > 0 && empty($_SESSION["col2showrain"])) {
@@ -947,7 +954,7 @@ elseif ($_SESSION["col3windmin"] == $_SESSION["col3windmax"] && empty($_SESSION[
 		echo "<p><strong>" . $_SESSION["col4desc"] . "</strong></p>" ;
 }
 ?>
-		<strong><big><big><?php echo "<p style='color:" . $tempcolor . "'>" . $_SESSION["col4temp"] . $tempunit . " </p>" 
+		<strong><big><big><?php echo "<p style='color:" . $tempcolor2 . "'>" . $_SESSION["col4temp"] . $tempunit . " </p>" 
 ?>  </big></big></strong>
 	
 		<small><?php if ($_SESSION["col4precip"] > 0 && empty($_SESSION["col4showrain"])) {
@@ -1093,7 +1100,7 @@ elseif ($_SESSION["col5windmin"] == $_SESSION["col5windmax"] && empty($_SESSION[
 		echo "<p><strong>" . $_SESSION["col6desc"] . "</strong></p>" ;
 }
 ?>
-		<strong><big><big><?php echo "<p style='color:" . $tempcolor . "'>" . $_SESSION["col6temp"] . $tempunit . " </p>" 
+		<strong><big><big><?php echo "<p style='color:" . $tempcolor2 . "'>" . $_SESSION["col6temp"] . $tempunit . " </p>" 
 ?>  </big></big></strong>
 	
 		<small><?php if ($_SESSION["col6precip"] > 0 && empty($_SESSION["col6showrain"])) {
@@ -1160,11 +1167,10 @@ elseif ($_SESSION["col6windmin"] == $_SESSION["col6windmax"] && empty($_SESSION[
 		<form action="/preview.php" method="POST">
 			<input name="Edit" id="Edit" value="Edit" type="submit">
 		</form></div>
-<div class="three columns offset-by-six">
+<div class="three columns offset-by-five">
 <form action="/publish.php">
 	<input name="Publish" id="Publish" value="Publish" type="submit">
 	</form></div>
 </div>
-	
-</div>
+	</div>
 </body></html>
