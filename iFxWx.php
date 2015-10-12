@@ -613,6 +613,9 @@ elseif ($hour >= "08" && $hour < "12" && $am_pm == "pm") {
 	$col4string = date('l', strtotime("+2 day")) . " Night";
 	$col5string = date('l', strtotime("+3 day"));
 	$col6string = date('l', strtotime("+3 day")) . " Night";
+	$month = date("m", strtotime("+1 day"));
+	$day = date("d", strtotime("+1 day"));
+	$year = date("Y", strtotime("+1 day"));
 }
 elseif ($hour == "12" && $am_pm == "pm") {
 	$fxvalid = "5PM";
