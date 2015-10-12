@@ -2,7 +2,8 @@
 // Start the session
 session_start();
  $timeout = 1800; // Number of seconds until it times out.
- 
+ $version = "1.0.1 Alpha";
+
 // Check if the timeout field exists.
 if(isset($_SESSION['timeout'])) {
     // See if the number of seconds since the last
@@ -2030,7 +2031,7 @@ default: $col6wximg= "/ifxwx_images/select.png";
 			<img src="/ifxwx_images/background.jpg" id="bg" alt="">
 			<div class="container">
 			<div class="twelve columns" style="font-weight: bold; text-align: center" id="header">
-<p><img style="width: 70px; height: 61px;" alt="" src="/ifxwx_images/logo.png"> Version 1.0.0 Alpha<br><big style="font-family: Helvetica,Arial,sans-serif;"><big><big>Forecast Composer</big></big></big>
+<p><img style="width: 70px; height: 61px;" alt="" src="/ifxwx_images/logo.png"> Version <?php echo " " . $version ?> <br><big style="font-family: Helvetica,Arial,sans-serif;"><big><big>Forecast Composer</big></big></big>
 </p>
 			<div class="twelve columns" >
 				Welcome to the forecast composer page. This is the first step towards creating your own weather forecast. Enter the variables for your weather forecast using the forms below and click the 'Submit' button to view your final product.<small><br>Labels denoted with an asterisk (*) indicate required variables.</small>

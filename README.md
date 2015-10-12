@@ -1,6 +1,26 @@
 # ifxweather
 Project to design and develop a web-based application to enable meteorologists to easily compose and publish a weather forecast.
 
+Version 1.0.1 Alpha (October 12th, 2015):
+Bug Fix for Version 1.0.0
+
+In this version update several bug fixes have been applied (see below). Additionally, I am working on integrating this static PHP application with WordPress in order to utilize user management, unique profiles and a MySQL database for storing all forecasts made with iFxWx. Further updates to come in the near future.
+
+Composer Page:
+
+    Fixed issue where the "forecast valid from" date would automatically input the wrong date if you created the forecast between 8PM and midnight. Fixed so that now it automatically parses the correct day, month and year for "tomorrow".
+    Made my life a little easier by making the version number a variable that is defined at the top of the page, rather than static HTML markup that I needed to scroll, find and change every time.
+
+Preview & Publish Page:
+
+    Fixed a bug in code for setting variable temperature colors. Colors worked but a misplaced bracket broke the variable names for default black text.
+    Also added version number variable at top of page.
+
+Version 1.0.0 Alpha (September 1st, 2015):
+Official Release of Version 1.0.0
+
+	At this stage all functions appear to work correctly and we can begin testing and adding of additional features.
+	
 Version 0.15.1 Pre-Alpha (August 31st, 2015):
 Bug Fix in version 0.15.1 pre-alpha:
 

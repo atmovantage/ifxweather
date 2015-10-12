@@ -2,7 +2,8 @@
 // Start the session
 session_start();
  $timeout = 1800; // Number of seconds until it times out.
- 
+ $version = "1.0.1 Alpha";
+
 // Check if the timeout field exists.
 if(isset($_SESSION['timeout'])) {
     // See if the number of seconds since the last
@@ -35,11 +36,12 @@ switch ($_SESSION["tempunit"]) {
 		  $tempcolor = "blue";
 		  $tempcolor2 = "red";
 	  }
+   }
 	else {
 		$tempcolor = "black";
 		  $tempcolor2 = "black";
 	}
-	}
+	
 
 	switch ($_SESSION["precipunit"]) {
 		case "in.": $precipunit = "in.";
@@ -545,7 +547,7 @@ default: $col6wximg = "/ifxwx_images/fog_dense.png";
 <div class="twelve columns" style="font-weight: bold; text-align: center">
 <p><big style="font-family: Helvetica,Arial,sans-serif;"><big><big><span><img style="width: 70px; height: 61px;" alt="" src="/ifxwx_images/logo.png"><br>iFx
 Weather</span></big></big></big>
-Version 1.0.0 Alpha</p>
+Version <?php echo " " . $version ?></p>
 </div>
 	<div class="twelve columns">
 				<hr>
