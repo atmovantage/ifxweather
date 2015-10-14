@@ -1,0 +1,1074 @@
+# This file is distrubuted under the GPL-2.0+
+msgid ""
+msgstr ""
+"Project-Id-Version: Modality v1.0.1\n"
+"POT-Creation-Date: 2015-05-16 11:24-0500\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Vitaly Pinchev <info@vpthemes.com>\n"
+"Language-Team: Vitaly Pinchev <info@vpthemes.com>\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Textdomain-Support: yesX-Generator: Poedit 1.7.6\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_x;esc_html_e;esc_html__;esc_attr_e;esc_attr__;"
+"_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_x:1,2c;_n:1,2;_n_noop:1,2;"
+"__ngettext_noop:1,2;_c,_nc:4c,1,2\n"
+"X-Poedit-Basepath: ../\n"
+"X-Generator: Poedit 1.7.6\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: 404.php:13
+msgid "Error 404 - Page not found!"
+msgstr ""
+
+#: 404.php:14
+msgid "Sorry! It seems that the page you are looking for is not here."
+msgstr ""
+
+#: breadcrumbs.php:12
+msgid "Home"
+msgstr ""
+
+#: breadcrumbs.php:38 title-section.php:18
+msgid "Tag: "
+msgstr ""
+
+#: breadcrumbs.php:40 breadcrumbs.php:41 breadcrumbs.php:42
+#: title-section.php:21 title-section.php:24 title-section.php:27
+msgid "Archive for "
+msgstr ""
+
+#: breadcrumbs.php:43 title-section.php:30
+msgid "Author: "
+msgstr ""
+
+#: breadcrumbs.php:44 title-section.php:33
+msgid "Blog Archives "
+msgstr ""
+
+#: breadcrumbs.php:45 title-section.php:36
+msgid "Search Results "
+msgstr ""
+
+#: comments.php:25
+#, php-format
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:32 comments.php:50
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:33 comments.php:51
+msgid "&larr; Older Comments"
+msgstr ""
+
+#: comments.php:34 comments.php:52
+msgid "Newer Comments &rarr;"
+msgstr ""
+
+#: comments.php:57
+msgid "Comments are closed."
+msgstr ""
+
+#: content-none.php:13
+msgid "Nothing Found!"
+msgstr ""
+
+#: content-none.php:14
+msgid ""
+"Sorry, but nothing matched your search criteria. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: content-single.php:34 page-fullwidth.php:40 page-left-sidebar.php:40
+#: page-right-sidebar.php:40 page.php:40
+msgid "Tags:"
+msgstr ""
+
+#: content-single.php:36 image.php:29 page-fullwidth.php:42
+#: page-left-sidebar.php:42 page-right-sidebar.php:42 page.php:42
+msgid "Pages:"
+msgstr ""
+
+#: contentboxes-section.php:20 contentboxes-section.php:28
+#: contentboxes-section.php:36
+msgid "Read More"
+msgstr ""
+
+#: copyright.php:10
+msgid "Modality Theme"
+msgstr ""
+
+#: copyright.php:10
+msgid " powered by "
+msgstr ""
+
+#: copyright.php:10
+msgid "WordPress"
+msgstr ""
+
+#: functions/modality-customizer.php:28
+msgid "If you like my work. Buy me a coffee."
+msgstr ""
+
+#: functions/modality-customizer.php:38
+msgid "Theme Support"
+msgstr ""
+
+#: functions/modality-customizer.php:39
+msgid "View Theme Demo"
+msgstr ""
+
+#: functions/modality-customizer.php:40
+msgid "Upgrade to Pro"
+msgstr ""
+
+#: functions/modality-customizer.php:68
+msgid "No Sidebars"
+msgstr ""
+
+#: functions/modality-customizer.php:68
+msgid "Right Sidebar"
+msgstr ""
+
+#: functions/modality-customizer.php:68
+msgid "Left Sidebar"
+msgstr ""
+
+#: functions/modality-customizer.php:71
+msgid "Excerpt"
+msgstr ""
+
+#: functions/modality-customizer.php:71
+msgid "Full Content"
+msgstr ""
+
+#: functions/modality-customizer.php:75 functions/modality-customizer.php:83
+msgid "Disable"
+msgstr ""
+
+#: functions/modality-customizer.php:76 functions/modality-functions.php:146
+msgid "Main Sidebar"
+msgstr ""
+
+#: functions/modality-customizer.php:77
+msgid "Below Content"
+msgstr ""
+
+#: functions/modality-customizer.php:84
+msgid "Above Content"
+msgstr ""
+
+#: functions/modality-customizer.php:102
+msgid "Modality Theme Options"
+msgstr ""
+
+#: functions/modality-customizer.php:109
+msgid "Theme Information"
+msgstr ""
+
+#: functions/modality-customizer.php:131
+msgid "Theme General Settings"
+msgstr ""
+
+#: functions/modality-customizer.php:144
+msgid "Theme Color"
+msgstr ""
+
+#: functions/modality-customizer.php:158
+msgid "Display Breadcrumbs"
+msgstr ""
+
+#: functions/modality-customizer.php:172
+msgid "Enable Animation"
+msgstr ""
+
+#: functions/modality-customizer.php:186
+msgid "Enable Resposive Design"
+msgstr ""
+
+#: functions/modality-customizer.php:200
+msgid "Enable Scrollup"
+msgstr ""
+
+#: functions/modality-customizer.php:213
+msgid "ScrollUp Color"
+msgstr ""
+
+#: functions/modality-customizer.php:226
+msgid "ScrollUp Hover Color"
+msgstr ""
+
+#: functions/modality-customizer.php:236
+msgid "Theme Logo Settings"
+msgstr ""
+
+#: functions/modality-customizer.php:250
+msgid "Logo Width (px)"
+msgstr ""
+
+#: functions/modality-customizer.php:264
+msgid "Logo Height (px)"
+msgstr ""
+
+#: functions/modality-customizer.php:278
+msgid "Logo Top Margin (px)"
+msgstr ""
+
+#: functions/modality-customizer.php:292
+msgid "Logo Left Margin (px)"
+msgstr ""
+
+#: functions/modality-customizer.php:306
+msgid "Logo Bottom Margin (px)"
+msgstr ""
+
+#: functions/modality-customizer.php:320
+msgid "Logo Right Margin (px)"
+msgstr ""
+
+#: functions/modality-customizer.php:334
+msgid "Image Logo"
+msgstr ""
+
+#: functions/modality-customizer.php:348
+msgid "Logo ALT Text"
+msgstr ""
+
+#: functions/modality-customizer.php:362
+msgid "Logo Uppercase"
+msgstr ""
+
+#: functions/modality-customizer.php:377
+msgid "Select logo font family"
+msgstr ""
+
+#: functions/modality-customizer.php:392
+msgid "Logo Font Size (px)"
+msgstr ""
+
+#: functions/modality-customizer.php:406
+msgid "Logo Font Weight"
+msgstr ""
+
+#: functions/modality-customizer.php:419
+msgid "Logo Color"
+msgstr ""
+
+#: functions/modality-customizer.php:433
+msgid "Display Tagline Underneath Logo"
+msgstr ""
+
+#: functions/modality-customizer.php:447
+msgid "Tagline Font Size (px)"
+msgstr ""
+
+#: functions/modality-customizer.php:460
+msgid "Tagline Color"
+msgstr ""
+
+#: functions/modality-customizer.php:474
+msgid "Tagline Uppercase"
+msgstr ""
+
+#: functions/modality-customizer.php:483
+msgid "Theme Navigation Settings"
+msgstr ""
+
+#: functions/modality-customizer.php:497
+msgid "Sticky Menu"
+msgstr ""
+
+#: functions/modality-customizer.php:511
+msgid "Menu Top Margin (px)"
+msgstr ""
+
+#: functions/modality-customizer.php:526
+msgid "Select Menu Font Family"
+msgstr ""
+
+#: functions/modality-customizer.php:541
+msgid "Menu Font Size (px)"
+msgstr ""
+
+#: functions/modality-customizer.php:555
+msgid "Menu Uppercase"
+msgstr ""
+
+#: functions/modality-customizer.php:568
+msgid "Navigation Menu Font Color"
+msgstr ""
+
+#: functions/modality-customizer.php:581
+msgid "Navigation Menu Border Color"
+msgstr ""
+
+#: functions/modality-customizer.php:594
+msgid "Navigation Menu Background Color"
+msgstr ""
+
+#: functions/modality-customizer.php:607
+msgid "SubMenu Background Color"
+msgstr ""
+
+#: functions/modality-customizer.php:620
+msgid "Menu Hover Font Color"
+msgstr ""
+
+#: functions/modality-customizer.php:633
+msgid "Menu Background Hover Color"
+msgstr ""
+
+#: functions/modality-customizer.php:646
+msgid "Selected Menu Color"
+msgstr ""
+
+#: functions/modality-customizer.php:654
+msgid "Theme Typography Settings"
+msgstr ""
+
+#: functions/modality-customizer.php:669
+msgid "Select Body Font Family"
+msgstr ""
+
+#: functions/modality-customizer.php:684
+msgid "Body Font Size (px)"
+msgstr ""
+
+#: functions/modality-customizer.php:697
+msgid "Body Font Color"
+msgstr ""
+
+#: functions/modality-customizer.php:705
+msgid "Theme Header Settings"
+msgstr ""
+
+#: functions/modality-customizer.php:718
+msgid "Header Background Color"
+msgstr ""
+
+#: functions/modality-customizer.php:732
+msgid "Header Background Color Opacity"
+msgstr ""
+
+#: functions/modality-customizer.php:748
+msgid "Display Top Header Section"
+msgstr ""
+
+#: functions/modality-customizer.php:762
+msgid "Address"
+msgstr ""
+
+#: functions/modality-customizer.php:776
+msgid "Phone Number"
+msgstr ""
+
+#: functions/modality-customizer.php:790
+msgid "Email"
+msgstr ""
+
+#: functions/modality-customizer.php:803
+#: functions/modality-customizer.php:1395
+msgid "Top Section Font Color"
+msgstr ""
+
+#: functions/modality-customizer.php:816
+msgid "Top Section Color"
+msgstr ""
+
+#: functions/modality-customizer.php:824
+msgid "Theme Home Page Settings"
+msgstr ""
+
+#: functions/modality-customizer.php:838
+msgid "Enable Image Slider"
+msgstr ""
+
+#: functions/modality-customizer.php:852
+msgid "Display Get Started Section"
+msgstr ""
+
+#: functions/modality-customizer.php:866
+msgid "Display Features Section"
+msgstr ""
+
+#: functions/modality-customizer.php:880
+msgid "Display About Section"
+msgstr ""
+
+#: functions/modality-customizer.php:894
+msgid "Display Services Section"
+msgstr ""
+
+#: functions/modality-customizer.php:908
+msgid "Display Call To Action Section"
+msgstr ""
+
+#: functions/modality-customizer.php:922
+msgid "Display Content Boxes Section"
+msgstr ""
+
+#: functions/modality-customizer.php:936
+msgid "Display Get In Touch Section"
+msgstr ""
+
+#: functions/modality-customizer.php:950
+msgid "Display Latest News Section"
+msgstr ""
+
+#: functions/modality-customizer.php:964
+msgid "Display Blog Posts"
+msgstr ""
+
+#: functions/modality-customizer.php:978
+msgid "Display Social Links"
+msgstr ""
+
+#: functions/modality-customizer.php:986
+msgid "Theme Image Slider Settings"
+msgstr ""
+
+#: functions/modality-customizer.php:1000
+msgid "Image Slider Height (px)"
+msgstr ""
+
+#: functions/modality-customizer.php:1014
+msgid "Image Slider Category"
+msgstr ""
+
+#: functions/modality-customizer.php:1030
+msgid "Slideshow Interval"
+msgstr ""
+
+#: functions/modality-customizer.php:1033
+msgid "1000 = 1 second, default value: 5000"
+msgstr ""
+
+#: functions/modality-customizer.php:1045
+msgid "Animation Speed"
+msgstr ""
+
+#: functions/modality-customizer.php:1048
+msgid "1000 = 1 second, default value: 800"
+msgstr ""
+
+#: functions/modality-customizer.php:1060
+msgid "Number of Slides"
+msgstr ""
+
+#: functions/modality-customizer.php:1074
+msgid "Enable Slider Captions"
+msgstr ""
+
+#: functions/modality-customizer.php:1088
+msgid "Caption Position Left %"
+msgstr ""
+
+#: functions/modality-customizer.php:1102
+msgid "Caption Position Top %"
+msgstr ""
+
+#: functions/modality-customizer.php:1116
+msgid "Caption Width %"
+msgstr ""
+
+#: functions/modality-customizer.php:1129
+msgid "Caption Title Color"
+msgstr ""
+
+#: functions/modality-customizer.php:1142
+msgid "Captions Text Color"
+msgstr ""
+
+#: functions/modality-customizer.php:1155
+msgid "Captions Button Color"
+msgstr ""
+
+#: functions/modality-customizer.php:1169
+msgid "Enable Captions Button"
+msgstr ""
+
+#: functions/modality-customizer.php:1183
+msgid "Captions Button Text"
+msgstr ""
+
+#: functions/modality-customizer.php:1191
+msgid "Theme Footer Settings"
+msgstr ""
+
+#: functions/modality-customizer.php:1204
+msgid "Footer Background Color"
+msgstr ""
+
+#: functions/modality-customizer.php:1217
+msgid "Copyright Section Background Color"
+msgstr ""
+
+#: functions/modality-customizer.php:1230
+msgid "Footer Widget Title Color"
+msgstr ""
+
+#: functions/modality-customizer.php:1243
+msgid "Footer Widget Title Border Color"
+msgstr ""
+
+#: functions/modality-customizer.php:1256
+msgid "Footer Widget Text Color"
+msgstr ""
+
+#: functions/modality-customizer.php:1269
+msgid "Footer Widget Text Border Color"
+msgstr ""
+
+#: functions/modality-customizer.php:1282
+msgid "Footer Social Icons Color"
+msgstr ""
+
+#: functions/modality-customizer.php:1296
+msgid "Enable Footer Widgets"
+msgstr ""
+
+#: functions/modality-customizer.php:1310
+msgid "Copyright Text"
+msgstr ""
+
+#: functions/modality-customizer.php:1318
+msgid "Theme Layout Settings"
+msgstr ""
+
+#: functions/modality-customizer.php:1333
+msgid "Theme Layout"
+msgstr ""
+
+#: functions/modality-customizer.php:1342
+msgid "Theme Blog Settings"
+msgstr ""
+
+#: functions/modality-customizer.php:1355
+#: functions/modality-customizer.php:1521
+#: functions/modality-customizer.php:1637
+#: functions/modality-customizer.php:2010
+#: functions/modality-customizer.php:2099
+#: functions/modality-customizer.php:2374
+#: functions/modality-customizer.php:2491
+#: functions/modality-customizer.php:2723
+#: functions/modality-customizer.php:2853
+#: functions/modality-customizer.php:2972
+msgid "Background Color"
+msgstr ""
+
+#: functions/modality-customizer.php:1369
+#: functions/modality-customizer.php:1651
+#: functions/modality-customizer.php:2024
+#: functions/modality-customizer.php:2113
+#: functions/modality-customizer.php:2388
+#: functions/modality-customizer.php:2505
+#: functions/modality-customizer.php:2737
+#: functions/modality-customizer.php:2867
+#: functions/modality-customizer.php:2986
+msgid "Background Image"
+msgstr ""
+
+#: functions/modality-customizer.php:1382
+msgid "Top Section Background Color"
+msgstr ""
+
+#: functions/modality-customizer.php:1409
+msgid "Top Section Image"
+msgstr ""
+
+#: functions/modality-customizer.php:1425
+msgid "Blog Content"
+msgstr ""
+
+#: functions/modality-customizer.php:1440
+msgid "Blog Excerpt Length"
+msgstr ""
+
+#: functions/modality-customizer.php:1454
+msgid "Use Simple Pagination"
+msgstr ""
+
+#: functions/modality-customizer.php:1469
+msgid "Post Navigation Links"
+msgstr ""
+
+#: functions/modality-customizer.php:1485
+msgid "Post Info Position"
+msgstr ""
+
+#: functions/modality-customizer.php:1500
+msgid "Featured Image Inside the Post"
+msgstr ""
+
+#: functions/modality-customizer.php:1508
+msgid "Theme Get Started Section"
+msgstr ""
+
+#: functions/modality-customizer.php:1534
+#: functions/modality-customizer.php:1664
+#: functions/modality-customizer.php:2037
+#: functions/modality-customizer.php:2126
+#: functions/modality-customizer.php:2750
+#: functions/modality-customizer.php:2924
+msgid "Title Color"
+msgstr ""
+
+#: functions/modality-customizer.php:1548
+#: functions/modality-customizer.php:1691
+#: functions/modality-customizer.php:2051
+#: functions/modality-customizer.php:2764
+#: functions/modality-customizer.php:2911
+msgid "Title Text"
+msgstr ""
+
+#: functions/modality-customizer.php:1561
+#: functions/modality-customizer.php:1602
+#: functions/modality-customizer.php:2777
+msgid "Subtitle Color"
+msgstr ""
+
+#: functions/modality-customizer.php:1575
+#: functions/modality-customizer.php:2791
+msgid "Subtitle Text"
+msgstr ""
+
+#: functions/modality-customizer.php:1589
+#: functions/modality-customizer.php:2456
+#: functions/modality-customizer.php:2805
+msgid "Button Text"
+msgstr ""
+
+#: functions/modality-customizer.php:1616
+#: functions/modality-customizer.php:2470
+#: functions/modality-customizer.php:2832
+msgid "Button URL"
+msgstr ""
+
+#: functions/modality-customizer.php:1624
+msgid "Theme Features Section"
+msgstr ""
+
+#: functions/modality-customizer.php:1677
+#: functions/modality-customizer.php:2064
+#: functions/modality-customizer.php:2531
+msgid "Text Color"
+msgstr ""
+
+#: functions/modality-customizer.php:1705
+#: functions/modality-customizer.php:2167
+msgid "Description Text"
+msgstr ""
+
+#: functions/modality-customizer.php:1719
+msgid "Feature #1 Title"
+msgstr ""
+
+#: functions/modality-customizer.php:1733
+msgid "Feature #1 Description"
+msgstr ""
+
+#: functions/modality-customizer.php:1747
+msgid "Feature #1 Icon"
+msgstr ""
+
+#: functions/modality-customizer.php:1750
+#: functions/modality-customizer.php:1821
+#: functions/modality-customizer.php:1892
+#: functions/modality-customizer.php:1963
+#: functions/modality-customizer.php:2226
+#: functions/modality-customizer.php:2269
+#: functions/modality-customizer.php:2312
+#: functions/modality-customizer.php:2355
+#: functions/modality-customizer.php:2576
+#: functions/modality-customizer.php:2633
+#: functions/modality-customizer.php:2690
+#, php-format
+msgid ""
+"Enter Font Awesome icon name. For icon name refer to: <a href=\"%1$s\" "
+"target=\"_blank\">Font Awesome Website</a>"
+msgstr ""
+
+#: functions/modality-customizer.php:1762
+msgid "Feature #1 Image"
+msgstr ""
+
+#: functions/modality-customizer.php:1776
+msgid "Feature #1 URL"
+msgstr ""
+
+#: functions/modality-customizer.php:1790
+msgid "Feature #2 Title"
+msgstr ""
+
+#: functions/modality-customizer.php:1804
+msgid "Feature #2 Description"
+msgstr ""
+
+#: functions/modality-customizer.php:1818
+msgid "Feature #2 Icon"
+msgstr ""
+
+#: functions/modality-customizer.php:1833
+msgid "Feature #2 Image"
+msgstr ""
+
+#: functions/modality-customizer.php:1847
+msgid "Feature #2 URL"
+msgstr ""
+
+#: functions/modality-customizer.php:1861
+msgid "Feature #3 Title"
+msgstr ""
+
+#: functions/modality-customizer.php:1875
+msgid "Feature #3 Description"
+msgstr ""
+
+#: functions/modality-customizer.php:1889
+msgid "Feature #3 Icon"
+msgstr ""
+
+#: functions/modality-customizer.php:1904
+msgid "Feature #3 Image"
+msgstr ""
+
+#: functions/modality-customizer.php:1918
+msgid "Feature #3 URL"
+msgstr ""
+
+#: functions/modality-customizer.php:1932
+msgid "Feature #4 Title"
+msgstr ""
+
+#: functions/modality-customizer.php:1946
+msgid "Feature #4 Description"
+msgstr ""
+
+#: functions/modality-customizer.php:1960
+msgid "Feature #4 Icon"
+msgstr ""
+
+#: functions/modality-customizer.php:1975
+msgid "Feature #4 Image"
+msgstr ""
+
+#: functions/modality-customizer.php:1989
+msgid "Feature #4 URL"
+msgstr ""
+
+#: functions/modality-customizer.php:1997
+msgid "Theme About Us Section"
+msgstr ""
+
+#: functions/modality-customizer.php:2078
+#: functions/modality-customizer.php:2153
+msgid "Section Text"
+msgstr ""
+
+#: functions/modality-customizer.php:2086
+msgid "Theme Services Section"
+msgstr ""
+
+#: functions/modality-customizer.php:2139
+msgid "Section Text Color"
+msgstr ""
+
+#: functions/modality-customizer.php:2181
+msgid "Section Image"
+msgstr ""
+
+#: functions/modality-customizer.php:2195
+msgid "Service #1 Title"
+msgstr ""
+
+#: functions/modality-customizer.php:2209
+msgid "Service #1 Description"
+msgstr ""
+
+#: functions/modality-customizer.php:2223
+msgid "Service #1 Icon"
+msgstr ""
+
+#: functions/modality-customizer.php:2238
+msgid "Service #2 Title"
+msgstr ""
+
+#: functions/modality-customizer.php:2252
+msgid "Service #2 Description"
+msgstr ""
+
+#: functions/modality-customizer.php:2266
+msgid "Service #2 Icon"
+msgstr ""
+
+#: functions/modality-customizer.php:2281
+msgid "Service #3 Title"
+msgstr ""
+
+#: functions/modality-customizer.php:2295
+msgid "Service #3 Description"
+msgstr ""
+
+#: functions/modality-customizer.php:2309
+msgid "Service #3 Icon"
+msgstr ""
+
+#: functions/modality-customizer.php:2324
+msgid "Service #4 Title"
+msgstr ""
+
+#: functions/modality-customizer.php:2338
+msgid "Service #4 Description"
+msgstr ""
+
+#: functions/modality-customizer.php:2352
+msgid "Service #4 Icon"
+msgstr ""
+
+#: functions/modality-customizer.php:2361
+msgid "Theme Call To Action Section"
+msgstr ""
+
+#: functions/modality-customizer.php:2402
+msgid "Small Header Text"
+msgstr ""
+
+#: functions/modality-customizer.php:2415
+msgid "Small Header Color"
+msgstr ""
+
+#: functions/modality-customizer.php:2429
+msgid "Big Header Text"
+msgstr ""
+
+#: functions/modality-customizer.php:2442
+msgid "Big Header Color"
+msgstr ""
+
+#: functions/modality-customizer.php:2478
+msgid "Theme Content Boxes Section"
+msgstr ""
+
+#: functions/modality-customizer.php:2518
+msgid "Titles Color"
+msgstr ""
+
+#: functions/modality-customizer.php:2545
+msgid "First Column Header"
+msgstr ""
+
+#: functions/modality-customizer.php:2559
+msgid "First Column Text"
+msgstr ""
+
+#: functions/modality-customizer.php:2573
+msgid "First Column Image"
+msgstr ""
+
+#: functions/modality-customizer.php:2588
+msgid "First Column URL"
+msgstr ""
+
+#: functions/modality-customizer.php:2602
+msgid "Second Column Header"
+msgstr ""
+
+#: functions/modality-customizer.php:2616
+msgid "Second Column Text"
+msgstr ""
+
+#: functions/modality-customizer.php:2630
+msgid "Second Column Image"
+msgstr ""
+
+#: functions/modality-customizer.php:2645
+msgid "Second Column URL"
+msgstr ""
+
+#: functions/modality-customizer.php:2659
+msgid "Third Column Header"
+msgstr ""
+
+#: functions/modality-customizer.php:2673
+msgid "Third Column Text"
+msgstr ""
+
+#: functions/modality-customizer.php:2687
+msgid "Third Column Image"
+msgstr ""
+
+#: functions/modality-customizer.php:2702
+msgid "Third Column URL"
+msgstr ""
+
+#: functions/modality-customizer.php:2710
+msgid "Theme Get In Touch Section"
+msgstr ""
+
+#: functions/modality-customizer.php:2818
+msgid "Button Color"
+msgstr ""
+
+#: functions/modality-customizer.php:2840
+msgid "Theme Latest News Section"
+msgstr ""
+
+#: functions/modality-customizer.php:2881
+msgid "Latest News Category"
+msgstr ""
+
+#: functions/modality-customizer.php:2897
+msgid "Number of Posts"
+msgstr ""
+
+#: functions/modality-customizer.php:2937
+msgid "Post Title Color"
+msgstr ""
+
+#: functions/modality-customizer.php:2950
+msgid "Post Meta Color"
+msgstr ""
+
+#: functions/modality-customizer.php:2958
+msgid "Theme Social Links"
+msgstr ""
+
+#: functions/modality-customizer.php:2961
+msgid "Enter your profile URL. To remove it, just leave it blank"
+msgstr ""
+
+#: functions/modality-customizer.php:3000 social-section.php:16
+msgid "Facebook"
+msgstr ""
+
+#: functions/modality-customizer.php:3014 social-section.php:19
+msgid "Twitter"
+msgstr ""
+
+#: functions/modality-customizer.php:3028
+msgid "Google Plus"
+msgstr ""
+
+#: functions/modality-customizer.php:3042 social-section.php:25
+msgid "LinkedIn"
+msgstr ""
+
+#: functions/modality-customizer.php:3056 social-section.php:28
+msgid "Instagram"
+msgstr ""
+
+#: functions/modality-customizer.php:3070 social-section.php:31
+msgid "Vimeo"
+msgstr ""
+
+#: functions/modality-functions.php:45
+msgid "Primary Menu"
+msgstr ""
+
+#: functions/modality-functions.php:155
+msgid "Footer Widget 1"
+msgstr ""
+
+#: functions/modality-functions.php:164
+msgid "Footer Widget 2"
+msgstr ""
+
+#: functions/modality-functions.php:173
+msgid "Footer Widget 3"
+msgstr ""
+
+#: functions/modality-functions.php:182
+msgid "Footer Widget 4"
+msgstr ""
+
+#: functions/modality-functions.php:234
+msgid "&larr; Previous"
+msgstr ""
+
+#: functions/modality-functions.php:235
+msgid "Next &rarr;"
+msgstr ""
+
+#: functions/modality-functions.php:292
+#, php-format
+msgid "Page %s"
+msgstr ""
+
+#: image.php:36 post-nav.php:8
+msgid "Next"
+msgstr ""
+
+#: image.php:37 post-nav.php:9
+msgid "Previous"
+msgstr ""
+
+#: owlpost-info.php:7 post-info.php:21
+msgid "by "
+msgstr ""
+
+#: post-formats.php:37 post-formats.php:60
+msgid "Continue Reading..."
+msgstr ""
+
+#: post-info.php:8
+msgid "Image"
+msgstr ""
+
+#: post-info.php:10
+msgid "Gallery"
+msgstr ""
+
+#: post-info.php:12
+msgid "Video"
+msgstr ""
+
+#: post-info.php:14
+msgid "Aside"
+msgstr ""
+
+#: post-info.php:16
+msgid "Audio"
+msgstr ""
+
+#: post-info.php:18
+msgid "Standard"
+msgstr ""
+
+#: post-info.php:25 post-meta.php:11
+msgid "No Comments"
+msgstr ""
+
+#: post-info.php:25 post-meta.php:11
+msgid "1 Comment"
+msgstr ""
+
+#: post-info.php:25 post-meta.php:11
+msgid "% Comments"
+msgstr ""
+
+#: post-meta.php:13
+msgid "More"
+msgstr ""
+
+#: sidebar.php:13
+msgid "Archives"
+msgstr ""
+
+#: sidebar.php:21
+msgid "Meta"
+msgstr ""
+
+#: social-section.php:22
+msgid "Google+"
+msgstr ""
+
+#: title-section.php:39
+msgid "Blog Posts "
+msgstr ""

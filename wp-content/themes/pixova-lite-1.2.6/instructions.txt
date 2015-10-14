@@ -1,0 +1,57 @@
+Q: How can I set-up the blog page ?
+A: Go to Pages -> Add new. Create a new page (this page will also be the URL where your blog will be housed; we recommend creating a page named Blog). Select the 'Blog Template' on the right hand side (don't enter any text in this page). Click Save & you can now point your browser
+ to www.yoursite.com/blog/ - this is where your blog archive will be housed.
+
+Q: Do I also have to set-up the permalinks in any special way so that the theme looks like in the demo ?
+A: No, in this version you can use any permalink setting you want.
+
+Q: How can I set-up the menu like in the demo ?
+A: If there is no menu set, there's a fallback menu. The sections available for this version of the theme are: About, Works, Testimonials, Team, Contact. For each of these sections, you should create a menu entry with the following link structure:
+    www.yoursiteurl/#about
+    www.yoursiteurl/#works
+    www.yoursiteurl/#testimonials
+    www.yoursiteurl/#team
+    www.yoursiteurl/#contact
+
+Simply go to Appearance -> Menus -> Create a new menu. After you've created your new menu, locate, on the left side, the "custom link option". Proceed to add the links to the menu with the above link structure(#about, #works, #testimonials, #team & #contact). The labels for these links are at your own choosing,
+only the link destination has to be as detailed above.
+
+Q: How do I integrate WooCommerce into my theme ?
+A: Simply download the WooCommerce plugin from the repository and activate it. After that, go to Appearance -> Menus and add the following link:
+    www.yoursiteurl/shop/
+
+    That's it :) enjoy a nicely styled WooCommerce powered shop :)
+
+Q: How do I set-up the Contact Form to look like in the demo ?
+A: After you've installed the plugin: Contact Form 7, Copy & Paste the code below in the Contact -> Contact Forms -> Your Contact form content area. Save, go to Appearance -> Customize -> Contact -> Contact Forms and select your newly created contact Form. Click on the save button (upper right) and enjoy :)
+
+
+<div class="col-md-4">
+    [text* your-name placeholder "Your name"] 
+</div>
+
+<div class="col-md-4">
+    [email* your-email placeholder "Your email"] 
+</div>
+
+<div class="col-md-4">
+    [text your-subject placeholder "Your subject"] 
+</div>
+
+<div class="col-md-12">
+    [textarea your-message placeholder "Your message"] 
+</div>
+
+<p>[submit  class:btn class:btn-cta-light class:pull-right "Send"]</p>
+
+Q: Can I remove the copyright message in the footer ?
+A: Since this is a free theme, we only ask for a link in the footer of the site. IF that's too much for you, you can simply remove it by editing the footer.php file.
+
+Q: How can I configure the widgets as in the demo ?
+A: Go to Appearance -> Customize -> Widgets. There are 4 available widget areas: Footer 1, 2, 3 & 4. All the widgets that were created for this theme have the [MT] prefix. Locate these widgets and add them into their corresponding places. Configure the widgets and enjoy :)
+
+Q: How can I remove the pie charts from the homepage ?
+A: Go to Appearance -> Customize -> About -> Section chart #1,2,3 or 4 and just delete the percentages. That's it, save and enjoy :)
+
+Q: How can I remove the blockquote from the homepage ?
+A: Go to Appearance -> Customize -> About -> Section text -> Blockquote field and simply delete it's contents.
