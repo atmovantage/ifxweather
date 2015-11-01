@@ -4468,3 +4468,87 @@ Message: gzinflate(): data error
 File:    /home/cabox/workspace/wp-includes/class-http.php
 Line:    2136
 -------------------------------------------- 
+[Nov 01 2015 20:55:59] ERROR_HANDLER 
+Number:  2
+Message: gzinflate(): data error
+File:    /home/cabox/workspace/wp-includes/class-http.php
+Line:    2136
+-------------------------------------------- 
+[Nov 01 2015 20:56:06] ERROR_HANDLER 
+Number:  2
+Message: gzinflate(): data error
+File:    /home/cabox/workspace/wp-includes/class-http.php
+Line:    2136
+-------------------------------------------- 
+[Nov 01 2015 21:20:24] ERROR_HANDLER 
+Number:  2
+Message: call_user_func_array() expects parameter 1 to be a valid callback, function 'jal_install' not found or invalid function name
+File:    /home/cabox/workspace/wp-includes/plugin.php
+Line:    503
+-------------------------------------------- 
+[Nov 01 2015 21:20:24] ERROR_HANDLER 
+Number:  2
+Message: call_user_func_array() expects parameter 1 to be a valid callback, function 'jal_install_data' not found or invalid function name
+File:    /home/cabox/workspace/wp-includes/plugin.php
+Line:    503
+-------------------------------------------- 
+[Nov 01 2015 21:28:41] ERROR_HANDLER 
+Number:  2
+Message: call_user_func_array() expects parameter 1 to be a valid callback, function 'jal_install' not found or invalid function name
+File:    /home/cabox/workspace/wp-includes/plugin.php
+Line:    503
+-------------------------------------------- 
+[Nov 01 2015 21:28:41] ERROR_HANDLER 
+Number:  2
+Message: call_user_func_array() expects parameter 1 to be a valid callback, function 'jal_install_data' not found or invalid function name
+File:    /home/cabox/workspace/wp-includes/plugin.php
+Line:    503
+-------------------------------------------- 
+[Nov 01 2015 21:29:56] ERROR_HANDLER 
+Number:  2
+Message: call_user_func_array() expects parameter 1 to be a valid callback, function 'jal_install' not found or invalid function name
+File:    /home/cabox/workspace/wp-includes/plugin.php
+Line:    503
+-------------------------------------------- 
+[Nov 01 2015 21:29:56] ERROR_HANDLER 
+Number:  2
+Message: call_user_func_array() expects parameter 1 to be a valid callback, function 'jal_install_data' not found or invalid function name
+File:    /home/cabox/workspace/wp-includes/plugin.php
+Line:    503
+-------------------------------------------- 
+[Nov 01 2015 21:30:44] ERROR_HANDLER 
+Number:  2
+Message: call_user_func_array() expects parameter 1 to be a valid callback, function 'jal_install' not found or invalid function name
+File:    /home/cabox/workspace/wp-includes/plugin.php
+Line:    503
+-------------------------------------------- 
+[Nov 01 2015 21:30:44] ERROR_HANDLER 
+Number:  2
+Message: call_user_func_array() expects parameter 1 to be a valid callback, function 'jal_install_data' not found or invalid function name
+File:    /home/cabox/workspace/wp-includes/plugin.php
+Line:    503
+-------------------------------------------- 
+[Nov 01 2015 21:32:35] ERROR_HANDLER 
+Number:  2
+Message: call_user_func_array() expects parameter 1 to be a valid callback, function 'jal_install' not found or invalid function name
+File:    /home/cabox/workspace/wp-includes/plugin.php
+Line:    503
+-------------------------------------------- 
+[Nov 01 2015 21:32:35] ERROR_HANDLER 
+Number:  2
+Message: call_user_func_array() expects parameter 1 to be a valid callback, function 'jal_install_data' not found or invalid function name
+File:    /home/cabox/workspace/wp-includes/plugin.php
+Line:    503
+-------------------------------------------- 
+[Nov 01 2015 21:33:47] ERROR_HANDLER 
+Number:  2
+Message: call_user_func_array() expects parameter 1 to be a valid callback, function 'jal_install' not found or invalid function name
+File:    /home/cabox/workspace/wp-includes/plugin.php
+Line:    503
+-------------------------------------------- 
+[Nov 01 2015 21:33:47] ERROR_HANDLER 
+Number:  2
+Message: call_user_func_array() expects parameter 1 to be a valid callback, function 'jal_install_data' not found or invalid function name
+File:    /home/cabox/workspace/wp-includes/plugin.php
+Line:    503
+-------------------------------------------- 
