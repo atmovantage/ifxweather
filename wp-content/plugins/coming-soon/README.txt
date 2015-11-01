@@ -1,11 +1,10 @@
 === Plugin Name ===
-Contributors: seedprod
+Contributors: seedprod, johnnytee
 Donate link: http://www.seedprod.com
 Tags: wordpress coming soon, wordpress under construction, wordpress maintenance mode, maintenance mode, coming soon, under construction, launch page, launch, maintenance, construction, offline, unavailable, newsletter, coming soon page, landing page
 Requires at least: 3.5.1
-Tested up to: 4.3.1
-Stable tag: 4.2.0
-Text Domain: coming-soon
+Tested up to: 4.3.0
+Stable tag: 4.1.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -114,9 +113,6 @@ This is always a caching issue. Go to the caching plugin's setting page and clea
 4. Design Page
 
 == Changelog ==
-= 4.2.0 =
-* Language Packs
-
 = 4.1.4 =
 * Added Danish Translation
 
@@ -148,9 +144,6 @@ This is always a caching issue. Go to the caching plugin's setting page and clea
 * Initial Commit
 
 == Upgrade Notice ==
-= 4.2.0 =
-* Language Packs
-
 = 4.1.4 =
 * Added Danish Translation
 

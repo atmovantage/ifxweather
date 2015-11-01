@@ -78,10 +78,6 @@
 			if ('copy' != this.action.value) {
 				$(window).off('beforeunload');
 			}
-
-			if ('save' == this.action.value) {
-				$('#publishing-action .spinner').addClass('is-active');
-			}
 		});
 	});
 

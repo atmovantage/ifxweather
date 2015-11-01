@@ -2,7 +2,7 @@
 // Start the session
 session_start();
  $timeout = 1800; // Number of seconds until it times out.
- $version = "1.0.1 Alpha";
+ $version = "1.1.0 Alpha";
 
 // Check if the timeout field exists.
 if(isset($_SESSION['timeout'])) {

@@ -33,8 +33,7 @@ class WPCOM_JSON_API_Autosave_Post_v1_1_Endpoint extends WPCOM_JSON_API_Post_v1_
 		$post_data = array (
 			'post_ID'      => $post_id,
 			'post_title'   => $input['title'],
-			'post_content' => $input['content'],
-			'post_excerpt' => $input['excerpt'],
+			'post_content' => $input['content']
 		);
 
 		$preview_url = add_query_arg( 'preview', 'true', get_permalink( $post->ID ) );
@@ -56,9 +55,9 @@ class WPCOM_JSON_API_Autosave_Post_v1_1_Endpoint extends WPCOM_JSON_API_Post_v1_
 
 		if ( $updated_post && $updated_post->ID && $updated_post->post_modified ) {
 			return array(
-				'ID'          => $auto_ID,
-				'post_ID'     => $post->ID,
-				'modified'    => $this->format_date( $updated_post->post_modified ),
+				'auto_ID' => $auto_ID,
+				'post_ID' => $post->ID,
+				'modified' => $this->format_date( $updated_post->post_modified ),
 				'preview_URL' => $preview_url
 			);
 		} else {

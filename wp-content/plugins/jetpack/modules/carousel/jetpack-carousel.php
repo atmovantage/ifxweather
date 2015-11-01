@@ -52,13 +52,6 @@ class Jetpack_Carousel {
 					return; // Carousel disabled, abort early
 			}
 			// If on front-end, do the Carousel thang.
-			/**
-			 * Filter the array of default prebuilt widths used in Carousel.
-			 *
-			 * @since 1.6.0
-			 *
-			 * @param array $this->prebuilt_widths Array of default widths.
-			 */
 			$this->prebuilt_widths = apply_filters( 'jp_carousel_widths', $this->prebuilt_widths );
 			add_filter( 'post_gallery', array( $this, 'enqueue_assets' ), 1000, 2 ); // load later than other callbacks hooked it
 			add_filter( 'post_gallery', array( $this, 'set_in_gallery' ), -1000 );
@@ -73,13 +66,6 @@ class Jetpack_Carousel {
 	}
 
 	function maybe_disable_jp_carousel() {
-		/**
-		 * Allow third-party plugins or themes to disable Carousel.
-		 *
-		 * @since 1.6.0
-		 *
-		 * @param bool false Should Carousel be disabled? Default to fase.
-		 */
 		return apply_filters( 'jp_carousel_maybe_disable', false );
 	}
 
@@ -89,13 +75,6 @@ class Jetpack_Carousel {
 	}
 
 	function asset_version( $version ) {
-		/**
-		 * Filter the version string used when enqueuing Carousel assets.
-		 *
-		 * @since 1.6.0
-		 *
-		 * @param string $version Asset version.
-		 */
 		return apply_filters( 'jp_carousel_asset_version', $version );
 	}
 
@@ -110,17 +89,7 @@ class Jetpack_Carousel {
 	}
 
 	function enqueue_assets( $output ) {
-		if (
-			! empty( $output ) &&
-			/**
-			 * Allow third-party plugins or themes to force-enable Carousel.
-			 *
-			 * @since 1.9.0
-			 *
-			 * @param bool false Should we force enable Carousel? Default to false.
-			 */
-			! apply_filters( 'jp_carousel_force_enable', false )
-		) {
+		if ( ! empty( $output ) && ! apply_filters( 'jp_carousel_force_enable', false ) ) {
 			// Bail because someone is overriding the [gallery] shortcode.
 			remove_filter( 'gallery_style', array( $this, 'add_data_to_container' ) );
 			remove_filter( 'wp_get_attachment_image_attributes', array( $this, 'add_data_to_images' ) );
@@ -134,7 +103,8 @@ class Jetpack_Carousel {
 		/**
 		 * Fires when thumbnails are shown in Carousel.
 		 *
-		 * @since 1.6.0
+		 * @since ?
+		 * @module Carousel
 		 **/
 		do_action( 'jp_carousel_thumbnails_shown' );
 
@@ -173,7 +143,6 @@ class Jetpack_Carousel {
 				'focal_length'         => __( 'Focal Length', 'jetpack' ),
 				'comment_registration' => $comment_registration,
 				'require_name_email'   => $require_name_email,
-				/** This action is documented in core/src/wp-includes/link-template.php */
 				'login_url'            => wp_login_url( apply_filters( 'the_permalink', get_permalink() ) ),
 			);
 
@@ -198,13 +167,6 @@ class Jetpack_Carousel {
 				}
 			}
 
-			/**
-			 * Filter the strings passed to the Carousel's js file.
-			 *
-			 * @since 1.6.0
-			 *
-			 * @param array $localize_strings Array of strings passed to the Jetpack js file.
-			 */
 			$localize_strings = apply_filters( 'jp_carousel_localize_strings', $localize_strings );
 			wp_localize_script( 'jetpack-carousel', 'jetpackCarouselStrings', $localize_strings );
 			if( is_rtl() ) {
@@ -221,11 +183,11 @@ class Jetpack_Carousel {
 			 * Fires after carousel assets are enqueued for the first time.
 			 * Allows for adding additional assets to the carousel page.
 			 *
-			 * @since 1.6.0
-			 *
-			 * @param bool $first_run First load if Carousel on the page.
-			 * @param array $localized_strings Array of strings passed to the Jetpack js file.
-			 */
+			 * @since ?
+			 * @module Carousel
+			 * @param boolean $first_run
+			 * @param array $localized_strings
+			 **/
 			do_action( 'jp_carousel_enqueue_assets', $this->first_run, $localize_strings );
 
 			$this->first_run = false;
@@ -287,11 +249,6 @@ class Jetpack_Carousel {
 			}
 		}
 
-		// See https://github.com/Automattic/jetpack/issues/2765
-		if ( isset( $img_meta['keywords'] ) ) {
-			unset( $img_meta['keywords'] );
-		}
-
 		$img_meta = json_encode( array_map( 'strval', $img_meta ) );
 
 		$attr['data-attachment-id']     = $attachment_id;
@@ -327,13 +284,6 @@ class Jetpack_Carousel {
 					)
 				);
 
-			/**
-			 * Filter the data added to the Gallery container.
-			 *
-			 * @since 1.6.0
-			 *
-			 * @param array $extra_data Array of data about the site and the post.
-			 */
 			$extra_data = apply_filters( 'jp_carousel_add_data_to_container', $extra_data );
 			foreach ( (array) $extra_data as $data_key => $data_values ) {
 				$html = str_replace( '<div ', '<div ' . esc_attr( $data_key ) . "='" . json_encode( $data_values ) . "' ", $html );
@@ -352,8 +302,10 @@ class Jetpack_Carousel {
 		 * are packaged as JSON and sent back from the get_attachment_comments
 		 * AJAX endpoint
 		 *
-		 * @since 1.6.0
-		 */
+		 * @duplicate yes
+		 * @since ?
+		 * @module Carousel
+		 **/
 		do_action('jp_carousel_check_blog_user_privileges');
 
 		$attachment_id = ( isset( $_REQUEST['id'] ) ) ? (int) $_REQUEST['id'] : 0;
@@ -422,7 +374,11 @@ class Jetpack_Carousel {
 			$switched = true;
 		}
 
-		/** This action is documented in modules/carousel/jetpack-carousel.php */
+		/**
+		 * @duplicate yes
+		 * @since ?
+		 * @module Carousel
+		 **/
 		do_action('jp_carousel_check_blog_user_privileges');
 
 		if ( ! comments_open( $_post_id ) )
@@ -472,10 +428,12 @@ class Jetpack_Carousel {
 		$comment_id = wp_new_comment( $comment_data );
 
 		/**
-		 * Fires before adding a new comment to the database via the get_attachment_comments ajax endpoint.
+		 * Fires before adding a new comment to the database via the get_attachment_comments
+		 * ajax endpoint
 		 *
-		 * @since 1.6.0
-		 */
+		 * @since ?
+		 * @module Carousel
+		 **/
 		do_action( 'jp_carousel_post_attachment_comment' );
 		$comment_status = wp_get_comment_status( $comment_id );
 

@@ -114,8 +114,7 @@ class WPCOM_JSON_API_Update_Post_Endpoint extends WPCOM_JSON_API_Post_Endpoint {
 			$new_status = isset( $input['status'] ) ? $input['status'] : $last_status;
 
 			// Make sure that drafts get the current date when transitioning to publish if not supplied in the post.
-			$date_in_past = ( strtotime($post->post_date_gmt) < time() );
-			if ( 'publish' === $new_status && 'draft' === $last_status && ! isset( $input['date_gmt'] ) && $date_in_past ) {
+			if ( 'publish' === $new_status && 'draft' === $last_status && ! isset( $input['date_gmt'] ) ) {
 				$input['date_gmt'] = gmdate( 'Y-m-d H:i:s' );
 			}
 		}
@@ -231,10 +230,10 @@ class WPCOM_JSON_API_Update_Post_Endpoint extends WPCOM_JSON_API_Post_Endpoint {
 			unset( $input['menu_order'] );
 		}
 
-		$publicize = isset( $input['publicize'] ) ? $input['publicize'] : null;
+		$publicize = isset( $input['publicize'] ) ? $input['publicize'] : array();
 		unset( $input['publicize'] );
 
-		$publicize_custom_message = isset( $input['publicize_message'] ) ? $input['publicize_message'] : null;
+		$publicize_custom_message = isset( $input['publicize_message'] ) ? $input['publicize_message'] : '';
 		unset( $input['publicize_message'] );
 
 		if ( isset( $input['featured_image'] ) ) {
@@ -243,16 +242,16 @@ class WPCOM_JSON_API_Update_Post_Endpoint extends WPCOM_JSON_API_Post_Endpoint {
 			unset( $input['featured_image'] );
 		}
 
-		$metadata = isset( $input['metadata'] ) ? $input['metadata'] : null;
+		$metadata = isset( $input['metadata'] ) ? $input['metadata'] : array();
 		unset( $input['metadata'] );
 
-		$likes = isset( $input['likes_enabled'] ) ? $input['likes_enabled'] : null;
+		$likes = isset( $input['likes_enabled'] ) ? $input['likes_enabled'] : false;
 		unset( $input['likes_enabled'] );
 
-		$sharing = isset( $input['sharing_enabled'] ) ? $input['sharing_enabled'] : null;
+		$sharing = isset( $input['sharing_enabled'] ) ? $input['sharing_enabled'] : false;
 		unset( $input['sharing_enabled'] );
 
-		$sticky = isset( $input['sticky'] ) ? $input['sticky'] : null;
+		$sticky = isset( $input['sticky'] ) ? $input['sticky'] : false;
 		unset( $input['sticky'] );
 
 		foreach ( $input as $key => $value ) {
@@ -381,12 +380,10 @@ class WPCOM_JSON_API_Update_Post_Endpoint extends WPCOM_JSON_API_Post_Endpoint {
 			}
 		}
 
-		if ( isset( $sticky ) ) {
-			if ( true === $sticky ) {
-				stick_post( $post_id );
-			} else {
-				unstick_post( $post_id );
-			}
+		if ( true === $sticky ) {
+			stick_post( $post_id );
+		} else {
+			unstick_post( $post_id );
 		}
 
 		// WPCOM Specific (Jetpack's will get bumped elsewhere
@@ -593,10 +590,8 @@ class WPCOM_JSON_API_Update_Post_Endpoint extends WPCOM_JSON_API_Post_Endpoint {
 			$return['preview_nonce'] = wp_create_nonce( 'post_preview_' . $input['parent'] );
 		}
 
-		if ( isset( $sticky ) ) {
-			// workaround for sticky test occasionally failing, maybe a race condition with stick_post() above
-			$return['sticky'] = ( true === $sticky );
-		}
+		// workaround for sticky test occasionally failing, maybe a race condition with stick_post() above
+		$return['sticky'] = ( true === $sticky );
 
 		/** This action is documented in json-endpoints/class.wpcom-json-api-site-settings-endpoint.php */
 		do_action( 'wpcom_json_api_objects', 'posts' );

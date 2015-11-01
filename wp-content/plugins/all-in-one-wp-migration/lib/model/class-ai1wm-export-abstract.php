@@ -407,7 +407,7 @@ abstract class Ai1wm_Export_Abstract {
 		}
 
 		// Resolve domain
-		$url      = admin_url( 'admin-ajax.php?action=ai1wm_export' );
+		$url      = admin_url( 'admin-ajax.php?action=ai1wm_export&' . http_build_query( $this->args ) );
 		$hostname = parse_url( $url, PHP_URL_HOST );
 		$port     = parse_url( $url, PHP_URL_PORT );
 		$ip       = gethostbyname( $hostname );
@@ -428,28 +428,27 @@ abstract class Ai1wm_Export_Abstract {
 			if ( filter_var( $ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV6 ) ) {
 				$ip = "[$ip]";
 			}
+		}
 
-			// Replace URL
-			$url = preg_replace( sprintf( '/%s/', preg_quote( $hostname, '-' ) ), $ip, $url, 1 );
+		// Replace URL
+		$url = preg_replace( sprintf( '/%s/', preg_quote( $hostname, '-' ) ), $ip, $url, 1 );
 
-			// Set host header
-			if ( ! empty( $port ) ) {
-				$headers['Host'] = sprintf( '%s:%s', $hostname, $port );
-			} else {
-				$headers['Host'] = sprintf( '%s', $hostname );
-			}
+		// Set host header
+		if ( ! empty( $port ) ) {
+			$headers['Host'] = sprintf( '%s:%s', $hostname, $port );
+		} else {
+			$headers['Host'] = sprintf( '%s', $hostname );
 		}
 
 		// HTTP request
 		remove_all_filters( 'http_request_args' );
-		wp_remote_post(
+		wp_remote_get(
 			$url,
 			array(
 				'timeout'    => apply_filters( 'ai1wm_http_timeout', 5 ),
 				'blocking'   => false,
 				'sslverify'  => apply_filters( 'https_local_ssl_verify', false ),
 				'user-agent' => 'ai1wm',
-				'body'       => $this->args,
 				'headers'    => $headers,
 			)
 		);
