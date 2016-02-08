@@ -206,9 +206,9 @@ function ifxwx_install () {
 	$welcome_forecaster = 'Austin';
 	$welcome_station = 'KDXR';
 	$welcome_location = 'Danbury, CT';
-	$welcome_fx_valid_month = '10';
-	$welcome_fx_valid_day = '14';
-	$welcome_fx_valid_year = '2015';
+	$welcome_fx_valid_month = '02';
+	$welcome_fx_valid_day = '08';
+	$welcome_fx_valid_year = '2016';
 	$welcome_fx_valid_time = '5PM - 5AM';
 	
 	$table_name = $wpdb->prefix . '3dayforecasts';
