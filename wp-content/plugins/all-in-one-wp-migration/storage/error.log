@@ -4552,3 +4552,33 @@ Message: call_user_func_array() expects parameter 1 to be a valid callback, func
 File:    /home/cabox/workspace/wp-includes/plugin.php
 Line:    503
 -------------------------------------------- 
+[Nov 02 2015 19:19:19] ERROR_HANDLER 
+Number:  2
+Message: gzinflate(): data error
+File:    /home/cabox/workspace/wp-includes/class-http.php
+Line:    2136
+-------------------------------------------- 
+[Feb 08 2016 18:00:21] ERROR_HANDLER 
+Number:  2
+Message: gzinflate(): data error
+File:    /home/cabox/workspace/wp-includes/class-http.php
+Line:    2136
+-------------------------------------------- 
+[Feb 08 2016 18:00:21] ERROR_HANDLER 
+Number:  2
+Message: gzinflate(): data error
+File:    /home/cabox/workspace/wp-includes/class-http.php
+Line:    2136
+-------------------------------------------- 
+[Feb 08 2016 18:00:29] ERROR_HANDLER 
+Number:  2
+Message: gzinflate(): data error
+File:    /home/cabox/workspace/wp-includes/class-http.php
+Line:    2136
+-------------------------------------------- 
+[Feb 08 2016 18:00:37] ERROR_HANDLER 
+Number:  2
+Message: gzinflate(): data error
+File:    /home/cabox/workspace/wp-includes/class-http.php
+Line:    2136
+-------------------------------------------- 
