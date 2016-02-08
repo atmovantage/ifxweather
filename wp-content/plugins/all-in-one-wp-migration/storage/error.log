@@ -4582,3 +4582,3039 @@ Message: gzinflate(): data error
 File:    /home/cabox/workspace/wp-includes/class-http.php
 Line:    2136
 -------------------------------------------- 
+[Feb 08 2016 19:36:06] ERROR_HANDLER 
+Number:  2
+Message: gzinflate(): data error
+File:    /home/cabox/workspace/wp-includes/class-http.php
+Line:    2136
+-------------------------------------------- 
+[Feb 08 2016 19:36:06] ERROR_HANDLER 
+Number:  2
+Message: printf(): Argument number must be greater than zero
+File:    /home/cabox/workspace/wp-content/plugins/jetpack/class.jetpack.php
+Line:    5991
+-------------------------------------------- 
+[Feb 08 2016 19:36:13] ERROR_HANDLER 
+Number:  2
+Message: gzinflate(): data error
+File:    /home/cabox/workspace/wp-includes/class-http.php
+Line:    2136
+-------------------------------------------- 
+[Feb 08 2016 19:36:14] ERROR_HANDLER 
+Number:  2
+Message: gzinflate(): data error
+File:    /home/cabox/workspace/wp-includes/class-http.php
+Line:    2136
+-------------------------------------------- 
+[Feb 08 2016 19:36:16] ERROR_HANDLER 
+Number:  2
+Message: gzinflate(): data error
+File:    /home/cabox/workspace/wp-includes/class-http.php
+Line:    2136
+-------------------------------------------- 
+[Feb 08 2016 19:36:16] ERROR_HANDLER 
+Number:  2
+Message: gzinflate(): data error
+File:    /home/cabox/workspace/wp-includes/class-http.php
+Line:    2136
+-------------------------------------------- 
+[Feb 08 2016 19:36:23] ERROR_HANDLER 
+Number:  2
+Message: gzinflate(): data error
+File:    /home/cabox/workspace/wp-includes/class-http.php
+Line:    2136
+-------------------------------------------- 
+[Feb 08 2016 19:36:25] ERROR_HANDLER 
+Number:  2
+Message: gzinflate(): data error
+File:    /home/cabox/workspace/wp-includes/class-http.php
+Line:    2136
+-------------------------------------------- 
+[Feb 08 2016 19:36:30] ERROR_HANDLER 
+Number:  2
+Message: gzinflate(): data error
+File:    /home/cabox/workspace/wp-includes/class-http.php
+Line:    2136
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:32] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:33] ERROR_HANDLER 
+Number:  2
+Message: chmod(): Operation not permitted
+File:    /home/cabox/workspace/wp-admin/includes/class-wp-filesystem-direct.php
+Line:    144
+-------------------------------------------- 
+[Feb 08 2016 19:36:35] ERROR_HANDLER 
+Number:  2
+Message: gzinflate(): data error
+File:    /home/cabox/workspace/wp-includes/class-http.php
+Line:    2136
+-------------------------------------------- 
+[Feb 08 2016 19:36:36] ERROR_HANDLER 
+Number:  2
+Message: gzinflate(): data error
+File:    /home/cabox/workspace/wp-includes/class-wp-http-encoding.php
+Line:    58
+-------------------------------------------- 
+[Feb 08 2016 19:36:55] ERROR_HANDLER 
+Number:  2
+Message: gzinflate(): data error
+File:    /home/cabox/workspace/wp-includes/class-wp-http-encoding.php
+Line:    58
+-------------------------------------------- 
+[Feb 08 2016 21:30:41] ERROR_HANDLER 
+Number:  2
+Message: mysqli::mysqli(): (28000/1045): Access denied for user 'www-data'@'localhost' (using password: NO)
+File:    /home/cabox/workspace/wp-content/plugins/ifx-weather/publish.php
+Line:    34
+-------------------------------------------- 
+[Feb 08 2016 21:37:15] ERROR_HANDLER 
+Number:  2
+Message: mysqli::mysqli(): (28000/1045): Access denied for user 'www-data'@'localhost' (using password: NO)
+File:    /home/cabox/workspace/wp-content/plugins/ifx-weather/publish.php
+Line:    40
+-------------------------------------------- 
+[Feb 08 2016 21:38:16] ERROR_HANDLER 
+Number:  2
+Message: mysqli::mysqli(): (28000/1045): Access denied for user 'www-data'@'localhost' (using password: NO)
+File:    /home/cabox/workspace/wp-content/plugins/ifx-weather/publish.php
+Line:    40
+-------------------------------------------- 
+[Feb 08 2016 21:38:20] ERROR_HANDLER 
+Number:  2
+Message: mysqli::mysqli(): (28000/1045): Access denied for user 'www-data'@'localhost' (using password: NO)
+File:    /home/cabox/workspace/wp-content/plugins/ifx-weather/publish.php
+Line:    40
+-------------------------------------------- 
+[Feb 08 2016 21:38:27] ERROR_HANDLER 
+Number:  2
+Message: mysqli::mysqli(): (28000/1045): Access denied for user 'www-data'@'localhost' (using password: NO)
+File:    /home/cabox/workspace/wp-content/plugins/ifx-weather/publish.php
+Line:    40
+-------------------------------------------- 
+[Feb 08 2016 21:40:08] ERROR_HANDLER 
+Number:  2
+Message: mysqli::mysqli(): (28000/1045): Access denied for user 'www-data'@'localhost' (using password: NO)
+File:    /home/cabox/workspace/wp-content/plugins/ifx-weather/publish.php
+Line:    40
+-------------------------------------------- 
+[Feb 08 2016 21:40:38] ERROR_HANDLER 
+Number:  2
+Message: mysqli::mysqli(): (28000/1045): Access denied for user 'www-data'@'localhost' (using password: NO)
+File:    /home/cabox/workspace/wp-content/plugins/ifx-weather/publish.php
+Line:    40
+-------------------------------------------- 
+[Feb 08 2016 21:50:59] ERROR_HANDLER 
+Number:  2
+Message: mysqli::mysqli(): (28000/1045): Access denied for user 'www-data'@'localhost' (using password: NO)
+File:    /home/cabox/workspace/wp-content/plugins/ifx-weather/publish.php
+Line:    40
+-------------------------------------------- 

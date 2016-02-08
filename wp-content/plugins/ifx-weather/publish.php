@@ -1,4 +1,5 @@
 <?php
+
 // Start the session
 session_start();
  $timeout = 1800; // Number of seconds until it times out.
@@ -20,13 +21,16 @@ if(isset($_SESSION['timeout'])) {
 $_SESSION['timeout'] = time();
 
 //insert published data into database
+//access WordPress required files
+require('../../../wp-blog-header.php');
+
 global $wpdb;
 	
-	$welcome_forecaster = 'Austin';
-	$welcome_station = 'KDXR';
-	$welcome_location = 'Danbury, CT';
-	$welcome_fx_valid_month = '02';
-	$welcome_fx_valid_day = '08';
+	$welcome_forecaster = 'Adam';
+	$welcome_station = 'K1P1';
+	$welcome_location = 'Plymouth, NH';
+	$welcome_fx_valid_month = '03';
+	$welcome_fx_valid_day = '15';
 	$welcome_fx_valid_year = '2016';
 	$welcome_fx_valid_time = '5PM - 5AM';
 	
@@ -46,6 +50,7 @@ global $wpdb;
 		) 
 	);
 
+//Begin importing user-entered session data
 switch ($_SESSION["tempunit"]) {
 	case "fahrenheit": $tempunit = "&#8457";
 		break;
@@ -1048,7 +1053,7 @@ elseif ($_SESSION["col6windmin"] == $_SESSION["col6windmax"] && empty($_SESSION[
 				<hr>
 			</div>
 	<div class="three columns">
-		<form action="/iFxWx.php">
+		<form action="iFxWx.php">
 			<input name="New" id="New" value="Make a New Forecast" type="submit">
 		</form></div>
 	

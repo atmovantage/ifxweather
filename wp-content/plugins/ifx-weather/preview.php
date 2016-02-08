@@ -154,7 +154,7 @@ function submit_input() {
 	$_SESSION["col6detail"] = $_SESSION["col6detail"];
 	
 	//Submit to the preview page
-	header('Location: /iFxWx.php');
+	header('Location: iFxWx.php');
 	//echo "/iFxWx.php";
 	exit();
 }
@@ -1166,11 +1166,11 @@ elseif ($_SESSION["col6windmin"] == $_SESSION["col6windmax"] && empty($_SESSION[
 				<hr>
 			</div>
 	<div class="three columns">
-		<form action="/preview.php" method="POST">
+		<form action="preview.php" method="POST">
 			<input name="Edit" id="Edit" value="Edit" type="submit">
 		</form></div>
 <div class="three columns offset-by-five">
-<form action="/publish.php">
+<form action="publish.php">
 	<input name="Publish" id="Publish" value="Publish" type="submit">
 	</form></div>
 </div>

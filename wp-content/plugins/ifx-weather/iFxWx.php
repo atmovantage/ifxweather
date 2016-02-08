@@ -1,4 +1,5 @@
 <?php
+
 // Start the session
 session_start();
  $timeout = 1800; // Number of seconds until it times out.
@@ -471,7 +472,7 @@ function submit_input() {
 	$_SESSION["col6detail"] = $_POST["col6detail"];
 	
 	//Submit to the preview page
-	header('Location: /preview.php');
+	header('Location: preview.php');
 	exit();
 }
 
@@ -2024,12 +2025,14 @@ default: $col6wximg= "ifxwx_images/select.png";
 </style>
 </head>
 <body>
+
 	<!-- When form is submitted via POST we pass all variables back through this same page in order to perform validation and verification -->
 	<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-		
+			
 		<div class="wrapper">
 			<img src="ifxwx_images/background.jpg" id="bg" alt="">
 			<div class="container">
+			
 			<div class="twelve columns" style="font-weight: bold; text-align: center" id="header">
 <p><img style="width: 70px; height: 61px;" alt="" src="ifxwx_images/logo.png"> Version <?php echo " " . $version ?> <br><big style="font-family: Helvetica,Arial,sans-serif;"><big><big>Forecast Composer</big></big></big>
 </p>
