@@ -1,6 +1,26 @@
 # ifxweather
 Project to design and develop a web-based application to enable meteorologists to easily compose and publish a weather forecast.
 
+Version 1.1.0 Alpha (February 8th, 2016):
+
+Overall:
+
+    iFxWeather has been re-organized into a WordPress plugin called 'iFx Weather' (not yet published to the WordPress Plugin Directory)
+        This has been done so that it is more universal and can installed by any user very easily
+        The original Composer, Preview and Publish pages remain independent of the WordPress theme (no headers, footers, etc)
+        When the 'iFx Weather' plugin is activated it creates a new database table called '3dayforecasts'
+        The table '3dayforecasts' has all the columns to store every variable from the Composer page (forecaster name, column 1 weather, etc)
+
+Publish Page:
+
+    After a user creates a forecast in the Composer page, and verifies it on the Preview page, all data is sent to the Publish page
+        The Publish page establishes a connection to the local WordPress installation in order to access the MySQL database
+        All forecast data are automatically inserted into a new row in the '3dayforecasts' database table
+        Each row (forecast) is given a unique identification number
+
+This update is especially important because it means that all published forecast data is now stored in a database, which can then be retrieved at a later date in order to review and eventually verify the forecast against actual observed weather conditions.
+
+----------
 Version 1.0.1 Alpha (October 12th, 2015):
 Bug Fix for Version 1.0.0
 
@@ -15,12 +35,12 @@ Preview & Publish Page:
 
     Fixed a bug in code for setting variable temperature colors. Colors worked but a misplaced bracket broke the variable names for default black text.
     Also added version number variable at top of page.
-
+----------
 Version 1.0.0 Alpha (September 1st, 2015):
 Official Release of Version 1.0.0
 
 	At this stage all functions appear to work correctly and we can begin testing and adding of additional features.
-	
+----------
 Version 0.15.1 Pre-Alpha (August 31st, 2015):
 Bug Fix in version 0.15.1 pre-alpha:
 
