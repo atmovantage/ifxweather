@@ -20,6 +20,11 @@ if(isset($_SESSION['timeout'])) {
 // Update the timeout field with the current time.
 $_SESSION['timeout'] = time();
 
+//Links into local WordPress installation
+require('../../../wp-blog-header.php');
+require_once('../../../wp-includes/link-template.php');
+$homepath = get_option('home');
+
 // Global Variables
 $fieldErr2 ="**All fields highlighted in red must be filled in before submitting your forecast**";
 $proceed = false;
@@ -362,6 +367,7 @@ function submit_input() {
 	$_SESSION["col1highlow"] = $_POST["col1highlow"];
 	$_SESSION["precipunit"] = $_POST["precipunit"];
 	$_SESSION["col1pop"] = $_POST["col1pop"];
+	$_SESSION["col1wximg"] = $_POST["col1wximg"];
 	$_SESSION["col1desc"] = $_POST["col1desc"];
 	$_SESSION["col1temp"] = $_POST["col1temp"];
 	$_SESSION["col1precip"] = $_POST["col1precip"];
@@ -382,6 +388,7 @@ function submit_input() {
 	$_SESSION["col2highlow"] = $_POST["col2highlow"];
 	$_SESSION["precipunit"] = $_POST["precipunit"];
 	$_SESSION["col2pop"] = $_POST["col2pop"];
+	$_SESSION["col2wximg"] = $_POST["col2wximg"];
 	$_SESSION["col2desc"] = $_POST["col2desc"];
 	$_SESSION["col2temp"] = $_POST["col2temp"];
 	$_SESSION["col2precip"] = $_POST["col2precip"];
@@ -401,6 +408,7 @@ function submit_input() {
 	$_SESSION["col3highlow"] = $_POST["col3highlow"];
 	$_SESSION["precipunit"] = $_POST["precipunit"];
 	$_SESSION["col3pop"] = $_POST["col3pop"];
+	$_SESSION["col3wximg"] = $_POST["col3wximg"];
 	$_SESSION["col3desc"] = $_POST["col3desc"];
 	$_SESSION["col3temp"] = $_POST["col3temp"];
 	$_SESSION["col3precip"] = $_POST["col3precip"];
@@ -420,6 +428,7 @@ function submit_input() {
 	$_SESSION["col4highlow"] = $_POST["col4highlow"];
 	$_SESSION["precipunit"] = $_POST["precipunit"];
 	$_SESSION["col4pop"] = $_POST["col4pop"];
+	$_SESSION["col4wximg"] = $_POST["col4wximg"];
 	$_SESSION["col4desc"] = $_POST["col4desc"];
 	$_SESSION["col4temp"] = $_POST["col4temp"];
 	$_SESSION["col4precip"] = $_POST["col4precip"];
@@ -439,6 +448,7 @@ function submit_input() {
 	$_SESSION["col5highlow"] = $_POST["col5highlow"];
 	$_SESSION["precipunit"] = $_POST["precipunit"];
 	$_SESSION["col5pop"] = $_POST["col5pop"];
+	$_SESSION["col5wximg"] = $_POST["col5wximg"];
 	$_SESSION["col5desc"] = $_POST["col5desc"];
 	$_SESSION["col5temp"] = $_POST["col5temp"];
 	$_SESSION["col5precip"] = $_POST["col5precip"];
@@ -458,6 +468,7 @@ function submit_input() {
 	$_SESSION["col6highlow"] = $_POST["col6highlow"];
 	$_SESSION["precipunit"] = $_POST["precipunit"];
 	$_SESSION["col6pop"] = $_POST["col6pop"];
+	$_SESSION["col6wximg"] = $_POST["col6wximg"];
 	$_SESSION["col6desc"] = $_POST["col6desc"];
 	$_SESSION["col6temp"] = $_POST["col6temp"];
 	$_SESSION["col6precip"] = $_POST["col6precip"];
@@ -2034,7 +2045,7 @@ default: $col6wximg= "ifxwx_images/select.png";
 			<div class="container">
 			
 			<div class="twelve columns" style="font-weight: bold; text-align: center" id="header">
-<p><img style="width: 70px; height: 61px;" alt="" src="ifxwx_images/logo.png"> Version <?php echo " " . $version ?> <br><big style="font-family: Helvetica,Arial,sans-serif;"><big><big>Forecast Composer</big></big></big>
+<p><a href="<?php $homepath ?>"><img style="width: 70px; height: 61px;" alt="" src="ifxwx_images/logo.png"></a>Version <?php echo " " . $version ?> <br><big style="font-family: Helvetica,Arial,sans-serif;"><big><big>Forecast Composer</big></big></big>
 </p>
 			<div class="twelve columns" >
 				Welcome to the forecast composer page. This is the first step towards creating your own weather forecast. Enter the variables for your weather forecast using the forms below and click the 'Submit' button to view your final product.<small><br>Labels denoted with an asterisk (*) indicate required variables.</small>

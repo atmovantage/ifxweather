@@ -7618,3 +7618,87 @@ Message: mysqli::mysqli(): (28000/1045): Access denied for user 'www-data'@'loca
 File:    /home/cabox/workspace/wp-content/plugins/ifx-weather/publish.php
 Line:    40
 -------------------------------------------- 
+[Feb 08 2016 22:38:33] ERROR_HANDLER 
+Number:  2
+Message: gzinflate(): data error
+File:    /home/cabox/workspace/wp-includes/class-wp-http-encoding.php
+Line:    58
+-------------------------------------------- 
+[Feb 08 2016 23:22:17] ERROR_HANDLER 
+Number:  2
+Message: gzinflate(): data error
+File:    /home/cabox/workspace/wp-includes/class-wp-http-encoding.php
+Line:    58
+-------------------------------------------- 
+[Feb 08 2016 23:22:22] ERROR_HANDLER 
+Number:  2
+Message: gzinflate(): data error
+File:    /home/cabox/workspace/wp-includes/class-wp-http-encoding.php
+Line:    58
+-------------------------------------------- 
+[Feb 08 2016 23:22:23] ERROR_HANDLER 
+Number:  2
+Message: gzinflate(): data error
+File:    /home/cabox/workspace/wp-includes/class-wp-http-encoding.php
+Line:    58
+-------------------------------------------- 
+[Feb 08 2016 23:22:23] ERROR_HANDLER 
+Number:  2
+Message: gzinflate(): data error
+File:    /home/cabox/workspace/wp-includes/class-wp-http-encoding.php
+Line:    58
+-------------------------------------------- 
+[Feb 08 2016 23:22:24] ERROR_HANDLER 
+Number:  2
+Message: gzinflate(): data error
+File:    /home/cabox/workspace/wp-includes/class-wp-http-encoding.php
+Line:    58
+-------------------------------------------- 
+[Feb 08 2016 23:22:54] ERROR_HANDLER 
+Number:  2
+Message: gzinflate(): data error
+File:    /home/cabox/workspace/wp-includes/class-wp-http-encoding.php
+Line:    58
+-------------------------------------------- 
+[Feb 08 2016 23:23:00] ERROR_HANDLER 
+Number:  2
+Message: gzinflate(): data error
+File:    /home/cabox/workspace/wp-includes/class-wp-http-encoding.php
+Line:    58
+-------------------------------------------- 
+[Feb 08 2016 23:23:40] ERROR_HANDLER 
+Number:  2
+Message: gzinflate(): data error
+File:    /home/cabox/workspace/wp-includes/class-wp-http-encoding.php
+Line:    58
+-------------------------------------------- 
+[Feb 08 2016 23:23:45] ERROR_HANDLER 
+Number:  2
+Message: gzinflate(): data error
+File:    /home/cabox/workspace/wp-includes/class-wp-http-encoding.php
+Line:    58
+-------------------------------------------- 
+[Feb 08 2016 23:24:32] ERROR_HANDLER 
+Number:  2
+Message: gzinflate(): data error
+File:    /home/cabox/workspace/wp-includes/class-wp-http-encoding.php
+Line:    58
+-------------------------------------------- 
+[Feb 08 2016 23:24:38] ERROR_HANDLER 
+Number:  2
+Message: gzinflate(): data error
+File:    /home/cabox/workspace/wp-includes/class-wp-http-encoding.php
+Line:    58
+-------------------------------------------- 
+[Feb 08 2016 23:25:03] ERROR_HANDLER 
+Number:  2
+Message: gzinflate(): data error
+File:    /home/cabox/workspace/wp-includes/class-wp-http-encoding.php
+Line:    58
+-------------------------------------------- 
+[Feb 08 2016 23:25:07] ERROR_HANDLER 
+Number:  2
+Message: gzinflate(): data error
+File:    /home/cabox/workspace/wp-includes/class-wp-http-encoding.php
+Line:    58
+-------------------------------------------- 

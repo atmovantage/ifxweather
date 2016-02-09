@@ -87,6 +87,8 @@ function ifxwx_install () {
     forecaster varchar(55) NOT NULL,
     station varchar(20),
     location varchar(55) NOT NULL,
+		date varchar(55) NOT NULL,
+		time varchar(55) NOT NULL,
 	fx_valid_month tinyint(2) NOT NULL,
 	fx_valid_day tinyint(2) NOT NULL,
 	fx_valid_year tinyint(4) NOT NULL,
