@@ -112,13 +112,14 @@ if (!class_exists('SeedProd_Framework')) {
         	<div class="wrap seedprod">
         	    <?php screen_icon(); ?>
         		<h2><?php echo $this->plugin_name; ?> </h2>
+                <div style="margin:30px 0; color: #a94442; background:#f2dede; padding:10px; border: 1px #ebccd1 solid;"><strong>Important:</strong> This plugin is being deprecated and will be removed soon from wordpress.org. Please use our new version located at: <a href="plugin-install.php?tab=search&s=Coming+Soon+Page+%26+Maintenance+Mode+by+SeedProd">Coming Soon Page & Maintenance Mode by SeedProd</a></div>
                 <a href="http://www.seedprod.com/ultimate-coming-soon-page-vs-coming-soon-pro/?utm_source=plugin&utm_medium=banner&utm_campaign=coming-soon-pro-in-plugin-banner" target="_blank">
                 <img src="//s3.amazonaws.com/static.seedprod.com/ads/ultimate-coming-soon-page-banner-772x250.jpg" style="max-width:100%">
                 </a>
         		<?php //settings_errors(); ?>
                 <h2 class="nav-tab-wrapper" style="padding-left:20px">
                     <a class="nav-tab seed_csp3-support" href="options-general.php?page=seedprod_coming_soon"><?php _e('Settings','ultimate-coming-soon-page') ?></a>
-                    <a class="nav-tab seed_csp3-preview thickbox-preview" href="<?php echo home_url(); ?>?cs_preview=true&TB_iframe=true&width=640&height=632" title="<?php _e('&larr; Close Window','ultimate-coming-soon-page') ?>"><?php _e('Live Preview','ultimate-coming-soon-page'); ?></a>
+                    <a class="nav-tab seed_csp3-preview thickbox-preview" href="<?php echo home_url(); ?>?cs_preview=true&TB_iframe=true&width=640&height=632" target="_blank" title="<?php _e('&larr; Close Window','ultimate-coming-soon-page') ?>"><?php _e('Live Preview','ultimate-coming-soon-page'); ?></a>
                 </h2>
 
         		<div id="poststuff" >

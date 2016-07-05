@@ -7,34 +7,38 @@
 		</h4>
 		<ul>
 			<li>
-				<input type="checkbox" id="ai1wm-no-spam-comments" name="options[no-spam-comments]" />
+				<input type="checkbox" id="ai1wm-no-spam-comments" name="options[no_spam_comments]" />
 				<label for="ai1wm-no-spam-comments"><?php _e( 'Do <strong>not</strong> export spam comments', AI1WM_PLUGIN_NAME ); ?></label>
 			</li>
 			<li>
-				<input type="checkbox" id="ai1wm-no-revisions" name="options[no-revisions]" />
+				<input type="checkbox" id="ai1wm-no-revisions" name="options[no_revisions]" />
 				<label for="ai1wm-no-revisions"><?php _e( 'Do <strong>not</strong> export post revisions', AI1WM_PLUGIN_NAME ); ?></label>
 			</li>
 			<li>
-				<input type="checkbox" id="ai1wm-no-media" name="options[no-media]" />
+				<input type="checkbox" id="ai1wm-no-media" name="options[no_media]" />
 				<label for="ai1wm-no-media"><?php _e( 'Do <strong>not</strong> export media library (files)', AI1WM_PLUGIN_NAME ); ?></label>
 			</li>
 			<li>
-				<input type="checkbox" id="ai1wm-no-themes" name="options[no-themes]" />
+				<input type="checkbox" id="ai1wm-no-themes" name="options[no_themes]" />
 				<label for="ai1wm-no-themes"><?php _e( 'Do <strong>not</strong> export themes (files)', AI1WM_PLUGIN_NAME ); ?></label>
 			</li>
 			<li>
-				<input type="checkbox" id="ai1wm-no-plugins" name="options[no-plugins]" />
+				<input type="checkbox" id="ai1wm-no-plugins" name="options[no_plugins]" />
 				<label for="ai1wm-no-plugins"><?php _e( 'Do <strong>not</strong> export plugins (files)', AI1WM_PLUGIN_NAME ); ?></label>
 			</li>
+
+			<?php if ( apply_filters( 'ai1wm_max_file_size', AI1WM_MAX_FILE_SIZE ) === 0 ): ?>
+				<li>
+					<input type="checkbox" id="ai1wm-no-cache" name="options[no_cache]" />
+					<label for="ai1wm-no-cache"><?php _e( 'Do <strong>not</strong> export cache (files)', AI1WM_PLUGIN_NAME ); ?></label>
+					<small style="color:red"><?php _e( 'new', AI1WM_PLUGIN_NAME ); ?></small>
+				</li>
+			<?php endif; ?>
+
 			<li>
-				<input type="checkbox" id="ai1wm-no-database" name="options[no-database]" />
+				<input type="checkbox" id="ai1wm-no-database" name="options[no_database]" />
 				<label for="ai1wm-no-database"><?php _e( 'Do <strong>not</strong> export database (sql)', AI1WM_PLUGIN_NAME ); ?></label>
-			</li>
-			<li>
-				<input type="checkbox" id="ai1wm-maintenance-mode" name="options[maintenance-mode]" />
-				<label for="ai1wm-maintenance-mode"><?php _e( 'Put the site in <strong>maintenance mode</strong> while exporting', AI1WM_PLUGIN_NAME ); ?></label>
 			</li>
 		</ul>
 	</div>
 </div>
-

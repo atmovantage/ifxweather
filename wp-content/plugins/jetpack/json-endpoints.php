@@ -33,6 +33,7 @@ require_once( $json_endpoints_dir . 'class.wpcom-json-api-get-taxonomies-endpoin
 require_once( $json_endpoints_dir . 'class.wpcom-json-api-get-taxonomy-endpoint.php' );
 require_once( $json_endpoints_dir . 'class.wpcom-json-api-list-comments-endpoint.php' );
 require_once( $json_endpoints_dir . 'class.wpcom-json-api-list-media-endpoint.php' );
+require_once( $json_endpoints_dir . 'class.wpcom-json-api-list-post-types-endpoint.php' );
 require_once( $json_endpoints_dir . 'class.wpcom-json-api-list-posts-endpoint.php' );
 require_once( $json_endpoints_dir . 'class.wpcom-json-api-list-roles-endpoint.php' );
 require_once( $json_endpoints_dir . 'class.wpcom-json-api-list-users-endpoint.php' );
@@ -40,12 +41,10 @@ require_once( $json_endpoints_dir . 'class.wpcom-json-api-site-user-endpoint.php
 require_once( $json_endpoints_dir . 'class.wpcom-json-api-update-comment-endpoint.php' );
 require_once( $json_endpoints_dir . 'class.wpcom-json-api-update-media-endpoint.php' );
 require_once( $json_endpoints_dir . 'class.wpcom-json-api-update-post-endpoint.php' );
-require_once( $json_endpoints_dir . 'class.wpcom-json-api-update-user-endpoint.php' );
 require_once( $json_endpoints_dir . 'class.wpcom-json-api-update-taxonomy-endpoint.php' );
 require_once( $json_endpoints_dir . 'class.wpcom-json-api-update-user-endpoint.php' );
 require_once( $json_endpoints_dir . 'class.wpcom-json-api-upload-media-endpoint.php' );
 require_once( $json_endpoints_dir . 'class.wpcom-json-api-site-settings-endpoint.php' );
-require_once( $json_endpoints_dir . 'class.wpcom-json-api-publicize-endpoint.php' );
 require_once( $json_endpoints_dir . 'class.wpcom-json-api-sharing-buttons-endpoint.php' );
 
 // **********
@@ -63,6 +62,7 @@ require_once( $json_endpoints_dir . 'class.wpcom-json-api-upload-media-v1-1-endp
 require_once( $json_endpoints_dir . 'class.wpcom-json-api-get-post-v1-1-endpoint.php' );
 require_once( $json_endpoints_dir . 'class.wpcom-json-api-list-posts-v1-1-endpoint.php' );
 require_once( $json_endpoints_dir . 'class.wpcom-json-api-update-post-v1-1-endpoint.php' );
+require_once( $json_endpoints_dir . 'class.wpcom-json-api-get-autosave-v1-1-endpoint.php' );
 require_once( $json_endpoints_dir . 'class.wpcom-json-api-autosave-post-v1-1-endpoint.php' );
 require_once( $json_endpoints_dir . 'class.wpcom-json-api-get-post-counts-v1-1-endpoint.php' );
 
@@ -72,6 +72,10 @@ require_once( $json_endpoints_dir . 'class.wpcom-json-api-menus-v1-1-endpoint.ph
 // Users
 require_once( $json_endpoints_dir . 'class.wpcom-json-api-list-invites-endpoint.php' );
 require_once( $json_endpoints_dir . 'class.wpcom-json-api-update-invites-endpoint.php' );
+
+// Custom CSS
+require_once( $json_endpoints_dir . 'class.wpcom-json-api-get-customcss.php' );
+require_once( $json_endpoints_dir . 'class.wpcom-json-api-update-customcss.php' );
 
 // **********
 // v1.2
@@ -110,7 +114,7 @@ new WPCOM_JSON_API_GET_Site_Endpoint( array(
 
 new WPCOM_JSON_API_GET_Post_Counts_V1_1_Endpoint( array(
 	'description'   => 'Get number of posts in the post type groups by post status',
-	'group'         => '__do_not_document',
+	'group'         => 'sites',
 	'stat'          => 'sites:X:post-counts:X',
 	'force'         => 'wpcom',
 	'method'        => 'GET',
@@ -178,7 +182,7 @@ new WPCOM_JSON_API_List_Page_Templates_Endpoint( array(
 
 new WPCOM_JSON_API_List_Post_Types_Endpoint( array (
 	'description' => 'Get a list of post types available for a site.',
-	'group'       => '__do_not_document',
+	'group'       => 'sites',
 	'stat'        => 'sites:X:post-types',
 
 	'method'      => 'GET',
@@ -614,6 +618,7 @@ new WPCOM_JSON_API_Update_Post_v1_1_Endpoint( array(
 			'private' => 'Privately publish the post.',
 			'draft'   => 'Save the post as a draft.',
 			'pending' => 'Mark the post as pending editorial approval.',
+			'future'  => 'Schedule the post (alias for publish; you must also set a future date).',
 			'auto-draft' => 'Save a placeholder for a newly created post, with no content.',
 		),
 		'sticky'    => array(
@@ -683,6 +688,7 @@ new WPCOM_JSON_API_Update_Post_v1_2_Endpoint( array(
 			'private' => 'Privately publish the post.',
 			'draft'   => 'Save the post as a draft.',
 			'pending' => 'Mark the post as pending editorial approval.',
+			'future'  => 'Schedule the post (alias for publish; you must also set a future date).',
 			'auto-draft' => 'Save a placeholder for a newly created post, with no content.',
 		),
 		'sticky'    => array(
@@ -818,6 +824,7 @@ new WPCOM_JSON_API_Update_Post_v1_1_Endpoint( array(
 			'publish' => 'Publish the post.',
 			'private' => 'Privately publish the post.',
 			'draft'   => 'Save the post as a draft.',
+			'future'  => 'Schedule the post (alias for publish; you must also set a future date).',
 			'pending' => 'Mark the post as pending editorial approval.',
 		),
 		'sticky'    => array(
@@ -883,6 +890,7 @@ new WPCOM_JSON_API_Update_Post_v1_2_Endpoint( array(
 			'publish' => 'Publish the post.',
 			'private' => 'Privately publish the post.',
 			'draft'   => 'Save the post as a draft.',
+			'future'  => 'Schedule the post (alias for publish; you must also set a future date).',
 			'pending' => 'Mark the post as pending editorial approval.',
 		),
 		'sticky'    => array(
@@ -1013,6 +1021,31 @@ new WPCOM_JSON_API_Update_Post_v1_1_Endpoint( array(
 	)
 ) );
 
+new WPCOM_JSON_API_Get_Autosave_v1_1_Endpoint( array(
+	'description' => 'Get the most recent autosave for a post.',
+	'group'       => '__do_not_document',
+	'stat'        => 'posts:autosave',
+	'min_version' => '1.1',
+	'method'      => 'GET',
+	'path'        => '/sites/%s/posts/%d/autosave',
+	'path_labels' => array(
+		'$site'    => '(int|string) Site ID or domain',
+		'$post_ID' => '(int) The post ID',
+	),
+	'response_format' => array(
+		'ID'          => '(int) autodraft post ID',
+		'post_ID'     => '(int) post ID',
+		'author_ID'   => '(int) author ID',
+		'title'       => '(HTML) The post title.',
+		'content'     => '(HTML) The post content.',
+		'excerpt'     => '(HTML) The post excerpt.',
+		'preview_URL' => '(string) preview URL for the post',
+		'modified'    => '(ISO 8601 datetime) modified time',
+	),
+
+	'example_request' => 'https://public-api.wordpress.com/rest/v1.1/sites/82974409/posts/1/autosave',
+) );
+
 new WPCOM_JSON_API_Autosave_Post_v1_1_Endpoint( array(
 	'description' => 'Create a post autosave.',
 	'group'       => '__do_not_document',
@@ -1027,13 +1060,13 @@ new WPCOM_JSON_API_Autosave_Post_v1_1_Endpoint( array(
 	'request_format' => array(
 		'content' => '(HTML) The post content.',
 		'title'   => '(HTML) The post title.',
+		'excerpt' => '(HTML) The post excerpt.',
 	),
 	'response_format' => array(
-		'auto_ID'  => '(int) autodraft post ID',
-		'post_ID'   => '(int) post ID',
+		'ID'          => '(int) autodraft post ID',
+		'post_ID'     => '(int) post ID',
 		'preview_URL' => '(string) preview URL for the post',
-		'parent'   => '(int) post autodraft is attached to',
-		'modified' => '(ISO 8601 datetime) modified time',
+		'modified'    => '(ISO 8601 datetime) modified time',
 	),
 
 	'example_request' => 'https://public-api.wordpress.com/rest/v1.1/sites/82974409/posts/1/autosave',
@@ -1181,6 +1214,7 @@ new WPCOM_JSON_API_Get_Media_v1_1_Endpoint( array(
 		'ID'               => '(int) The ID of the media item',
 		'date'             => '(ISO 8601 datetime) The date the media was uploaded',
 		'post_ID'          => '(int) ID of the post this media is attached to',
+		'author_ID'        => '(int) ID of the user who uploaded the media',
 		'URL'              => '(string) URL to the file',
 		'guid'             => '(string) Unique identifier',
 		'file'			   => '(string) Filename',
@@ -1345,6 +1379,7 @@ new WPCOM_JSON_API_Update_Media_v1_1_Endpoint( array(
 		'ID'               => '(int) The ID of the media item',
 		'date'             => '(ISO 8601 datetime) The date the media was uploaded',
 		'post_ID'          => '(int) ID of the post this media is attached to',
+		'author_ID'        => '(int) ID of the user who uploaded the media',
 		'URL'              => '(string) URL to the file',
 		'guid'             => '(string) Unique identifier',
 		'file'			   => '(string) File name',
@@ -1427,6 +1462,7 @@ new WPCOM_JSON_API_Delete_Media_v1_1_Endpoint( array(
 		'ID'               => '(int) The ID of the media item',
 		'date'             => '(ISO 8601 datetime) The date the media was uploaded',
 		'post_ID'          => '(int) ID of the post this media is attached to',
+		'author_ID'        => '(int) ID of the user who uploaded the media',
 		'URL'              => '(string) URL to the file',
 		'guid'             => '(string) Unique identifier',
 		'file'			   => '(string) File name',
@@ -1520,7 +1556,6 @@ new WPCOM_JSON_API_Update_Comment_Endpoint( array(
 	),
 
 	'pass_wpcom_user_details' => true,
-	'can_use_user_details_instead_of_blog_membership' => true,
 
 	'example_request'      => 'https://public-api.wordpress.com/rest/v1/sites/82974409/posts/843/replies/new/',
 	'example_request_data' =>  array(
@@ -1552,7 +1587,6 @@ new WPCOM_JSON_API_Update_Comment_Endpoint( array(
 	),
 
 	'pass_wpcom_user_details' => true,
-	'can_use_user_details_instead_of_blog_membership' => true,
 
 	'example_request'      => 'https://public-api.wordpress.com/rest/v1/sites/82974409/comments/29/replies/new',
 	'example_request_data' => array(
@@ -1656,7 +1690,7 @@ new WPCOM_JSON_API_Get_Taxonomies_Endpoint( array(
 		'search'   => '(string) Limit response to include only categories whose names or slugs match the provided search query.',
 		'order'    => array(
 			'ASC'  => 'Return categories in ascending order.',
-			'DESC' => 'Return categories in decending order.',
+			'DESC' => 'Return categories in descending order.',
 		),
 		'order_by' => array(
 			'name'  => 'Order by the name of each category.',
@@ -1686,7 +1720,7 @@ new WPCOM_JSON_API_Get_Taxonomies_Endpoint( array(
 		'search'   => '(string) Limit response to include only tags whose names or slugs match the provided search query.',
 		'order'    => array(
 			'ASC'  => 'Return tags in ascending order.',
-			'DESC' => 'Return tags in decending order.',
+			'DESC' => 'Return tags in descending order.',
 		),
 		'order_by' => array(
 			'name'  => 'Order by the name of each tag.',
@@ -1973,15 +2007,15 @@ new WPCOM_JSON_API_List_Users_Endpoint( array(
 ) );
 
 new WPCOM_JSON_API_Update_User_Endpoint( array(
-	'description' => 'Delete a user of a site.',
-	'group'       => '__do_not_document',
+	'description' => 'Deletes or removes a user of a site.',
+	'group'       => 'users',
 	'stat'        => 'users:delete',
 
 	'method'      => 'POST',
 	'path'        => '/sites/%s/users/%d/delete',
 	'path_labels' => array(
-		'$site'       => '(int|string) Site ID or domain',
-		'$user_ID'    => '(int) User ID'
+		'$site'       => '(int|string) The site ID or domain.',
+		'$user_ID'    => '(int) The user\'s ID'
 	),
 
 	'request_format' => array(
@@ -1998,6 +2032,39 @@ new WPCOM_JSON_API_Update_User_Endpoint( array(
 			'authorization' => 'Bearer YOUR_API_TOKEN'
 		),
 	)
+) );
+
+new WPCOM_JSON_API_List_Invites_Endpoint( array(
+	'description' => 'List the invites of a site.',
+	'group'       => '__do_not_document',
+	'stat'        => 'invites:list',
+
+	'method'      => 'GET',
+	'path'        => '/sites/%s/invites',
+	'path_labels' => array(
+		'$site' => '(int|string) Site ID or domain',
+	),
+
+	'query_parameters' => array(
+		'number'   => '(int=25) Limit the total number of invites to be returned.',
+		'offset'   => '(int=0) The first n invites to be skipped in the returned array.',
+		'status'   => array(
+			'pending' => 'Return only pending invites.',
+			'all'     => 'Return all invites, pending and accepted, that have not been deleted.',
+		)
+	),
+
+	'response_format' => array(
+		'found'   => '(int) The total number of invites found that match the request (ignoring limits and offsets).',
+		'invites' => '(array) Array of invites.',
+	),
+
+	'example_request'      => 'https://public-api.wordpress.com/rest/v1/sites/82974409/invites',
+	'example_request_data' => array(
+		'headers' => array(
+			'authorization' => 'Bearer YOUR_API_TOKEN'
+		),
+	),
 ) );
 
 new WPCOM_JSON_API_Site_User_Endpoint( array(
@@ -2031,13 +2098,13 @@ new WPCOM_JSON_API_Site_User_Endpoint( array(
 
 new WPCOM_JSON_API_Site_User_Endpoint( array(
 	'description' => 'Get details of a user of a site by login.',
-	'group'       => '__do_not_document', //'users'
+	'group'       => 'users',
 	'stat'        => 'sites:1:user',
 	'method'      => 'GET',
 	'path'        => '/sites/%s/users/login:%s',
 	'path_labels' => array(
-		'$site'    => '(int|string) Site ID or domain',
-		'$user_id' => '(string) User login',
+		'$site'    => '(int|string) The site ID or domain.',
+		'$user_id' => '(string) The user\'s login.',
 	),
 	'response_format' => WPCOM_JSON_API_Site_User_Endpoint::$user_format,
 	'example_request'      => 'https://public-api.wordpress.com/rest/v1/sites/30434183/user/login:binarysmash',
@@ -2059,14 +2126,14 @@ new WPCOM_JSON_API_Site_User_Endpoint( array(
 ) );
 
 new WPCOM_JSON_API_Site_User_Endpoint( array(
-	'description' => 'Update details of a users of a site.',
-	'group'       => '__do_not_document', //'users'
+	'description' => 'Update details of a user of a site.',
+	'group'       => 'users',
 	'stat'        => 'sites:1:user',
 	'method'      => 'POST',
 	'path'        => '/sites/%s/users/%d',
 	'path_labels' => array(
-		'$site' => '(int|string) Site ID or domain',
-		'$user_id' => '(int) User ID',
+		'$site'    => '(int|string) The site ID or domain.',
+		'$user_id' => '(int) The user\'s ID.',
 	),
 	'request_format'  => WPCOM_JSON_API_Site_User_Endpoint::$user_format,
 	'response_format' => WPCOM_JSON_API_Site_User_Endpoint::$user_format,
@@ -2084,39 +2151,6 @@ new WPCOM_JSON_API_Site_User_Endpoint( array(
 			'first_name' => 'Rocco',
 			'last_name' => 'Tripaldi',
 		)
-	),
-) );
-
-new WPCOM_JSON_API_List_Invites_Endpoint( array(
-	'description' => 'List the invites of a site.',
-	'group'       => '__do_not_document',
-	'stat'        => 'invites:list',
-
-	'method'      => 'GET',
-	'path'        => '/sites/%s/invites',
-	'path_labels' => array(
-		'$site' => '(int|string) Site ID or domain',
-	),
-
-	'query_parameters' => array(
-		'number'   => '(int=25) Limit the total number of invites to be returned.',
-		'offset'   => '(int=0) The first n invites to be skipped in the returned array.',
-		'status'   => array(
-			'pending' => 'Return only pending invites.',
-			'all'     => 'Return all invites, pending and accepted, that have not been deleted.',
-		)
-	),
-
-	'response_format' => array(
-		'found'   => '(int) The total number of invites found that match the request (ignoring limits and offsets).',
-		'invites' => '(array) Array of invites.',
-	),
-
-	'example_request'      => 'https://public-api.wordpress.com/rest/v1/sites/82974409/invites',
-	'example_request_data' => array(
-		'headers' => array(
-			'authorization' => 'Bearer YOUR_API_TOKEN'
-		),
 	),
 	'example_response'     => '{
 		"ID": 18342963,
@@ -2157,7 +2191,7 @@ new WPCOM_JSON_API_Update_Invites_Endpoint( array(
 	'group'       => '__do_not_document',
 	'stat'        => 'invites:1',
 	'method'      => 'POST',
-	'path'        => '/sites/%s/invites/%s',
+	'path'        => '/sites/%s/invites/%s/resend',
 	'path_labels' => array(
 		'$site'      => '(int|string) Site ID or domain',
 		'$invite_id' => '(string) The ID of the invite'
@@ -2251,6 +2285,7 @@ new WPCOM_JSON_API_Site_Settings_Endpoint( array(
 		'twitter_via'                  => '(string) Twitter username to include in tweets when people share using the Twitter button',
 		'jetpack-twitter-cards-site-tag' => '(string) The Twitter username of the owner of the site\'s domain.',
 		'eventbrite_api_token'         => '(int) The Keyring token ID for an Eventbrite token to associate with the site',
+		'holidaysnow'                  => '(bool) Enable snowfall on frontend of site?'
 	),
 
 	'response_format' => array(
@@ -2261,80 +2296,12 @@ new WPCOM_JSON_API_Site_Settings_Endpoint( array(
 ) );
 
 /**
- * Publicize Endpoints
- */
-
-new WPCOM_JSON_API_Get_Connections_Endpoint( array(
-	'description' => 'Get a list of a site\'s current Publicize connections to third-party services for the current user (personal or shared).',
-	'group'       => 'Publicize',
-	'stat'        => 'connections',
-	'method'      => 'GET',
-	'path'        => '/sites/%s/connections/',
-	'path_labels' => array(
-		'$site' => '(int|string) Site ID or domain',
-	),
-	'query_parameters' => array(
-		'service'   => "(string) Get Publicize connections for a specific service only. Default is 'all' but you can enter 'facebook', 'twitter', etc."
-	),
-	'response_format' => array(
-		'connections'    => '(array:object) List of Publicize connections'
-	)
-) );
-
-new WPCOM_JSON_API_Get_Connection_Endpoint( array(
-	'description' => 'Get information about a specific Publicize connection.',
-	'group'       => 'Publicize',
-	'stat'        => 'connections:1',
-	'method'      => 'GET',
-	'path'        => '/sites/%s/connections/%d',
-	'path_labels' => array(
-		'$site'          => '(int|string) Site ID or domain',
-		'$connection_id' => '(int) The ID of the Publicize connection',
-	),
-	'response_format' => array(
-		'ID'               => '(int) Identifier for the Publicize connection',
-		'token_ID'         => '(int) Identifier for the Keyring token',
-		'conn_ID'          => '(int) Identifier for the Publicize connection',
-		'site_ID'          => '(int) Identifier for the Site',
-		'user_ID'          => '(int) Identifier for the Publicize connection user, or 0 if the connection is shared',
-		'shared'           => '(bool) Is this connection specific to the current user, or a shared one for the site?',
-		'service'          => '(string) An identifier for the type of service (facebook, linkedin, path, tumblr, etc)',
-		'label'            => '(string) Formatted nicename for the service.',
-		'issued'           => '(ISO 8601 datetime) When the conncetion was created',
-		'expires'          => '(ISO 8601 datetime) When the connection expires and needs to be refreshed',
-		'external_ID'      => '(string) An identifier for the user on the third-party service',
-		'external_name'    => '(string) Usually a username or login name.',
-		'external_display' => '(string) How the user prefers their name to be displayed on the third-party service.',
-		'URL'              => '(string|null) URL to the user\'s profile. NULL if there is no URL to link to.',
-		'status'           => '(string) The current status of the connection. "ok" for connections with no problems, and "broken" for connections that need fixed.',
-		'refresh_url'      => '(string) The URL to refresh a token if it is broken.',
-		'meta'             => '(object) Extra and optional metadata for the current Publicize connection',
-	)
-) );
-
-new WPCOM_JSON_API_Delete_Connection_Endpoint( array(
-	'description' => 'Delete a publicize connection.',
-	'group'		  => 'Publicize',
-	'stat'		  => 'connections:1:delete',
-	'method'	  => 'POST',
-	'path'		  => '/sites/%s/connections/%d/delete',
-	'path_labels' => array(
-		'$site'          => '(int|string) Site ID or domain',
-		'$connection_id' => 'The ID of the connection',
-	),
-	'response_format' => array(
-		'ID'      => '(int) Identifier for the connection',
-		'deleted' => '(bool) Confirmation that the connection has been removed'
-	)
-) );
-
-/**
  * Sharing Button Endpoints
  */
 
 new WPCOM_JSON_API_Get_Sharing_Buttons_Endpoint( array(
 	'description' => 'Get a list of a site\'s sharing buttons.',
-	'group'       => '__do_not_document',
+	'group'       => 'sharing',
 	'stat'        => 'sharing-buttons',
 	'method'      => 'GET',
 	'path'        => '/sites/%s/sharing-buttons/',
@@ -2407,7 +2374,7 @@ new WPCOM_JSON_API_Get_Sharing_Button_Endpoint( array(
 
 new WPCOM_JSON_API_Update_Sharing_Buttons_Endpoint( array(
 	'description' => 'Edit all sharing buttons for a site.',
-	'group'       => '__do_not_document',
+	'group'       => 'sharing',
 	'stat'        => 'sharing-buttons:X:POST',
 	'method'      => 'POST',
 	'path'        => '/sites/%s/sharing-buttons',
@@ -2573,6 +2540,71 @@ new WPCOM_JSON_API_Delete_Sharing_Button_Endpoint( array(
 	"ID": "custom-123456789",
 	"success": "true"
 }'
+) );
+
+/*
+ * Custom CSS endpoints
+ */
+new WPCOM_JSON_API_Get_CustomCss_Endpoint( array (
+	'description'      => 'Retrieve custom-css data for a site.',
+	'group'            => '__do_not_document',
+	'stat'             => 'customcss:1:get',
+	'method'           => 'GET',
+	'min_version'      => '1.1',
+	'path'             => '/sites/%s/customcss',
+	'path_labels'      => array(
+		'$site' => '(string) Site ID or domain.',
+	),
+	'response_format'  => array(
+		'css' => '(string) The raw CSS.',
+		'preprocessor' => '(string) The name of the preprocessor if any.',
+		'add_to_existing' => '(bool) False to skip the existing styles.',
+	),
+	'example_request'  => 'https://public-api.wordpress.com/rest/v1.1/sites/12345678/customcss',
+	'example_response' => array(
+		array(
+			'css' => '.stie-title { color: #fff; }',
+			'preprocessor' => 'sass',
+			'add_to_existing' => 'true',
+		)
+	)
+) );
+
+new WPCOM_JSON_API_Update_CustomCss_Endpoint( array (
+	'description'      => 'Set custom-css data for a site.',
+	'group'            => '__do_not_document',
+	'stat'             => 'customcss:1:update',
+	'method'           => 'POST',
+	'min_version'      => '1.1',
+	'path'             => '/sites/%s/customcss',
+	'path_labels'      => array(
+		'$site' => '(string) Site ID or domain.',
+	),
+	'request_format'  => array(
+		'css' => '(string) Optional. The raw CSS.',
+		'preprocessor' => '(string) Optional. The name of the preprocessor if any.',
+		'add_to_existing' => '(bool) Optional. False to skip the existing styles.',
+	),
+	'response_format'  => array(
+		'css' => '(string) The raw CSS.',
+		'preprocessor' => '(string) The name of the preprocessor if any.',
+		'add_to_existing' => '(bool) False to skip the existing styles.',
+	),
+	'example_request'  => 'https://public-api.wordpress.com/rest/v1.1/sites/12345678/customcss',
+	'example_request_data' => array(
+		'headers' => array( 'authorization' => 'Bearer YOUR_API_TOKEN' ),
+		'body' => array(
+			'css' => '.stie-title { color: #fff; }',
+			'preprocessor' => 'sass'
+		),
+	),
+	'example_response' => array(
+		array(
+			'css' => '.stie-title { color: #fff; }',
+			'preprocessor' => 'sass',
+			'add_to_existing' => 'true',
+		)
+	)
 ) );
 
 /*

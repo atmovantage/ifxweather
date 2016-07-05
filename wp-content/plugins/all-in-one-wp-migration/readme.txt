@@ -2,8 +2,8 @@
 Contributors: yani.iliev, bangelov, pimjitsawang
 Tags: db migration, migration, wordpress migration, db backup, db restore, website backup, website restore, website migration, website deploy, wordpress deploy, db backup, database export, database serialization, database find replace
 Requires at least: 3.3
-Tested up to: 4.3
-Stable tag: 4.8
+Tested up to: 4.5
+Stable tag: 5.43
 License: GPLv2 or later
 
 All-in-One WP Migration is the only tool that you will ever need to migrate a WordPress site.
@@ -25,11 +25,26 @@ All in One WP Plugin is the first plugin to offer true mobile experience on Word
 = 0 Dependencies =
 * The plugin does not require any php extensions and can work with PHP v5.2.
 
-= Support for MySQL, PDO, MySQLi =
+= Support for MySQL and MySQLi =
 * No matter what php mysql driver your webserver ships with, we support it.
 
-= Support WordPress v3.3 up to v4.3 =
-* We tested every WordPress version from `3.3` up to `4.3`.
+= Support WordPress v3.3 up to v4.x =
+* We tested every WordPress version from `3.3` up to `4.x`.
+
+= Supported hosting providers =
+* Bluehost
+* InMotion
+* Web Hosting Hub
+* Siteground
+* Pagely
+* Dreamhost
+* Justhost
+* GoDaddy
+* WP Engine
+* Site5
+* 1&1
+* Pantheon
+* [See the full list of supported providers here](https://help.servmask.com/knowledgebase/supported-hosting-providers/)
 
 = Migrate WordPress to most popular cloud services using our completely new extensions =
 * [Unlimited](https://servmask.com/products/unlimited-extension)
@@ -39,7 +54,7 @@ All in One WP Plugin is the first plugin to offer true mobile experience on Word
 * [Google Drive](https://servmask.com/products/google-drive-extension)
 * [Amazon S3](https://servmask.com/products/amazon-s3-extension)
 * [URL](https://servmask.com/products/url-extension)
-
+* [OneDrive](https://servmask.com/products/onedrive-extension)
 * And many more to come
 
 = Contact us =
@@ -60,6 +75,79 @@ All in One WP Plugin is the first plugin to offer true mobile experience on Word
 3. Plugin Menu
 
 == Changelog ==
+= 5.43 =
+* Fix an issue when archiving dynamic files on export
+* Support custom upload path for multisites
+* Add support for various cache plugins
+
+= 5.42 =
+* Catch E_PARSE error on mu-plugins import
+* Fix an issue with stop export that doesn't clean up the storage directory
+* Initialize new cache instead of flushing the existing one on import/export
+
+= 5.41 =
+* Fix an issue when replacing serialized values on import
+* List files in chunks
+* Convert svg images to png
+* Check if backups are readable before displaying them on "Backups" page
+* Display version incompatibility notification on export/import/restore screen
+* Fix double port issue on Bitnami
+* Fix an issue on multisite export with cloud extensions
+
+= 5.40 =
+* Test plugin up to WordPress 4.5
+
+= 5.39 =
+* Fix a bug in uploads path replacement
+
+= 5.38 =
+* Deactivate mu-plugins if fatal error appears on import
+
+= 5.37 =
+* Validate the archive before import
+
+= 5.36 =
+* Add OneDrive to readme.txt
+* Fix a typo on import
+
+= 5.35 =
+* Add OneDrive to export/import pages
+* Fix a bug when WordPress was used without a db prefix
+* Fix a problem when downloading wpress files
+* Improve the log system
+
+= 4.19 =
+* Fixed an issue with options cache
+
+= 4.18 =
+* Fixed an issue with large media files
+* Fixed an issue with status file being cached
+
+= 4.17 =
+* Set "Tested up to" WordPress 4.4
+
+= 4.16 =
+* Fix an issue with the transport layer on export/import
+
+= 4.15 =
+* Fix an issue with resovling mechanism on export/import
+
+= 4.14 =
+* Fix an issue with database import
+
+= 4.13 =
+* Add new mechanism for resolving HTTP requests
+
+= 4.12 =
+* Fix an issue with Google Drive extension
+
+= 4.11 =
+* Fix content filters on export
+
+= 4.10 =
+* Add HTTPS URL replacement
+* Fix an issue when PDO is not available
+
 = 4.6 =
 * Fix an issue when the plugin was getting stuck on "Done creating an empty archive"
 * Fix an issue when the plugin was getting stuck during import

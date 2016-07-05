@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright (C) 2014 ServMask Inc.
+ * Copyright (C) 2014-2016 ServMask Inc.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -34,11 +34,10 @@ require_once dirname( __FILE__ ) .
 if ( defined( 'WP_UNINSTALL_PLUGIN' ) ) {
 	global $wpdb, $wp_filesystem;
 
-	// delete any options or other data stored in the database here
-	delete_site_option( AI1WM_MAINTENANCE_MODE );
-	delete_site_option( AI1WM_EXPORT_OPTIONS );
-	delete_site_option( AI1WM_ERROR_HANDLER );
-	delete_site_option( AI1WM_EXCEPTION_HANDLER );
-	delete_site_option( AI1WM_MESSAGES );
-	delete_site_option( AI1WM_SECRET_KEY );
+	// Delete any options or other data stored in the database here
+	delete_option( AI1WM_URL_IP );
+	delete_option( AI1WM_URL_TRANSPORT );
+	delete_option( AI1WM_SECRET_KEY );
+	delete_option( AI1WM_AUTH_USER );
+	delete_option( AI1WM_AUTH_PASSWORD );
 }

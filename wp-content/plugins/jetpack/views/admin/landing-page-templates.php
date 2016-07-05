@@ -8,7 +8,7 @@
 			$target = '_self';
 		}
 	} else {
-		$vp_link = add_query_arg( array( 'from' => 'jpnux', 'url' => Jetpack::build_raw_urls( get_home_url() ) ), 'https://vaultpress.com/jetpack' );
+		$vp_link = esc_url( 'https://wordpress.com/plans/' . Jetpack::build_raw_urls( get_home_url() ) );
 		$target = '_blank';
 	}
 	$modules = 	array('Appearance', 'Developers', 'Mobile', 'Other', 'Photos and Videos', 'Social', 'Site Stats', 'Writing' );
@@ -47,7 +47,11 @@
 </script>
 <?php // NUX - Performance and security section ?>
 <script id="tmpl-mod-nux" type="text/html">
-	<div id="toggle-{{ data.module }}" data-index="{{ data.index }}" class="{{ data.activated ? 'activated' : '' }} j-row">
+	<?php if ( Jetpack::is_development_mode() ) : ?>
+		<div id="toggle-{{ data.module }}" data-index="{{ data.index }}" class="{{ data.activated ? 'activated' : '' }} {{ data.requires_connection && 'vaultpress' !== data.module ? 'unavailable' : '' }} j-row">
+	<?php else : ?>
+		<div id="toggle-{{ data.module }}" data-index="{{ data.index }}" class="{{ data.activated ? 'activated' : '' }} j-row">
+	<?php endif; ?>
 		<div href="{{ data.url }}" tabindex="0" data-index="{{ data.index }}" data-name="{{ data.name }}" class="feat j-col j-lrg-8 j-md-12 j-sm-7">
 			<h4 title="{{ data.name }}" style="cursor: pointer; display: inline;">{{{ data.name }}}</h4>
 			<# if ( 'vaultpress' == data.module ) { #>
@@ -79,9 +83,9 @@
 
 					<# if ( 'vaultpress' == data.module ) { #>
 						<?php if ( is_plugin_active( 'vaultpress/vaultpress.php' ) ) : ?>
-							<a href="<?php echo esc_url( $vp_link ); ?>" class="dashicons dashicons-external" title="<?php esc_attr_e( 'Configure', 'jetpack' ); ?>" target="<?php echo $target; ?>"></a>
+							<a href="<?php echo esc_url( $vp_link ); ?>" class="dashicons dashicons-external jptracks" data-jptracks-name="nudge_click" data-jptracks-prop="nux-vaultpress-configure" title="<?php esc_attr_e( 'Configure', 'jetpack' ); ?>" target="<?php echo $target; ?>"></a>
 						<?php else : ?>
-							<a href="<?php echo esc_url( $vp_link ); ?>" class="lmore" title="<?php esc_attr_e( 'Learn More', 'jetpack' ); ?>" target="<?php echo $target; ?>"><?php _e( 'Learn More', 'jetpack' ); ?></a>
+							<a href="<?php echo esc_url( $vp_link ); ?>" class="lmore jptracks" data-jptracks-name="nudge_click" data-jptracks-prop="nux-vaultpress-learnmore" title="<?php esc_attr_e( 'Learn More', 'jetpack' ); ?>" target="<?php echo $target; ?>"><?php _e( 'Learn More', 'jetpack' ); ?></a>
 						<?php endif; ?>
 					<# } else { #>
 						<span class="form-toggle__switch"></span>

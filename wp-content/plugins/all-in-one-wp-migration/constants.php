@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright (C) 2014 ServMask Inc.
+ * Copyright (C) 2014-2016 ServMask Inc.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -24,9 +24,10 @@
  */
 
 $local = array(
-	'ИЛИЕВ™',
-	'dev.servmask.com',
+	'iliev.local',
+	'develop.servmask.com',
 	'Borislav-MacBook-Pro.local',
+	'Simeon-PC',
 );
 
 if ( function_exists( 'gethostname' ) && in_array( gethostname(), $local ) ) {
@@ -38,7 +39,7 @@ if ( function_exists( 'gethostname' ) && in_array( gethostname(), $local ) ) {
 // ==================
 // = Plugin Version =
 // ==================
-define( 'AI1WM_VERSION', '4.8' );
+define( 'AI1WM_VERSION', '5.43' );
 
 // ===============
 // = Plugin Name =
@@ -58,12 +59,12 @@ define( 'AI1WM_STORAGE_PATH', AI1WM_PATH . DIRECTORY_SEPARATOR . 'storage' );
 // ==================
 // = Error Log Path =
 // ==================
-define( 'AI1WM_LOG_FILE', AI1WM_STORAGE_PATH . DIRECTORY_SEPARATOR . 'error.log' );
+define( 'AI1WM_ERROR_FILE', AI1WM_STORAGE_PATH . DIRECTORY_SEPARATOR . 'error.log' );
 
 // ===============
 // = Status Path =
 // ===============
-define( 'AI1WM_STATUS_FILE', AI1WM_STORAGE_PATH . DIRECTORY_SEPARATOR . 'status.html' );
+define( 'AI1WM_STATUS_FILE', AI1WM_STORAGE_PATH . DIRECTORY_SEPARATOR . 'status.js' );
 
 // ============
 // = Lib Path =
@@ -80,10 +81,15 @@ define( 'AI1WM_CONTROLLER_PATH', AI1WM_LIB_PATH . DIRECTORY_SEPARATOR . 'control
 // ==============
 define( 'AI1WM_MODEL_PATH', AI1WM_LIB_PATH . DIRECTORY_SEPARATOR . 'model' );
 
-// ================
-// = Service Path =
-// ================
-define( 'AI1WM_SERVICE_PATH', AI1WM_MODEL_PATH . DIRECTORY_SEPARATOR . 'service' );
+// ===============
+// = Export Path =
+// ===============
+define( 'AI1WM_EXPORT_PATH', AI1WM_MODEL_PATH . DIRECTORY_SEPARATOR . 'export' );
+
+// ===============
+// = Import Path =
+// ===============
+define( 'AI1WM_IMPORT_PATH', AI1WM_MODEL_PATH . DIRECTORY_SEPARATOR . 'import' );
 
 // =============
 // = View Path =
@@ -135,35 +141,55 @@ define( 'AI1WM_DATABASE_NAME', 'database.sql' );
 // ========================
 define( 'AI1WM_PACKAGE_NAME', 'package.json' );
 
+// ==========================
+// = Archive Multisite Name =
+// ==========================
+define( 'AI1WM_MULTISITE_NAME', 'multisite.json' );
+
+// ======================
+// = Archive Blogs Name =
+// ======================
+define( 'AI1WM_BLOGS_NAME', 'blogs.json' );
+
 // ========================
 // = Archive Status Name  =
 // ========================
-define( 'AI1WM_STATUS_NAME', 'status.html' );
+define( 'AI1WM_STATUS_NAME', 'status.js' );
 
 // ========================
 // = Archive FileMap Name =
 // ========================
 define( 'AI1WM_FILEMAP_NAME', 'filemap.list' );
 
-// ======================
-// = Export Options Key =
-// ======================
-define( 'AI1WM_EXPORT_OPTIONS', 'ai1wm_export_options' );
+// =================================
+// = Archive Must-Use Plugins Name =
+// =================================
+define( 'AI1WM_MUPLUGINS_NAME', 'mu-plugins' );
 
-// =====================
-// = Error Handler Key =
-// =====================
-define( 'AI1WM_ERROR_HANDLER', 'ai1wm_error_handler' );
+// ===================
+// = Export Log Name =
+// ===================
+define( 'AI1WM_EXPORT_NAME', 'export.log' );
 
-// =========================
-// = Exception Handler Key =
-// =========================
-define( 'AI1WM_EXCEPTION_HANDLER', 'ai1wm_exception_handler' );
+// ===================
+// = Import Log Name =
+// ===================
+define( 'AI1WM_IMPORT_NAME', 'import.log' );
 
-// ========================
-// = Maintenance Mode Key =
-// ========================
-define( 'AI1WM_MAINTENANCE_MODE', 'ai1wm_maintenance_mode' );
+// ==================
+// = Error Log Name =
+// ==================
+define( 'AI1WM_ERROR_NAME', 'error.log' );
+
+// ==========
+// = URL IP =
+// ==========
+define( 'AI1WM_URL_IP', 'ai1wm_url_ip' );
+
+// =================
+// = URL Transport =
+// =================
+define( 'AI1WM_URL_TRANSPORT', 'ai1wm_url_transport' );
 
 // ==============
 // = Secret Key =
@@ -180,10 +206,25 @@ define( 'AI1WM_AUTH_USER', 'ai1wm_auth_user' );
 // =================
 define( 'AI1WM_AUTH_PASSWORD', 'ai1wm_auth_password' );
 
-// ================
-// = Messages Key =
-// ================
-define( 'AI1WM_MESSAGES', 'ai1wm_messages' );
+// ==================
+// = Active Plugins =
+// ==================
+define( 'AI1WM_ACTIVE_PLUGINS', 'active_plugins' );
+
+// ===========================
+// = Active Sitewide Plugins =
+// ===========================
+define( 'AI1WM_ACTIVE_SITEWIDE_PLUGINS', 'active_sitewide_plugins' );
+
+// ======================
+// = MS Files Rewriting =
+// ======================
+define( 'AI1WM_MS_FILES_REWRITING', 'ms_files_rewriting' );
+
+// ===============
+// = Updater Key =
+// ===============
+define( 'AI1WM_UPDATER', 'ai1wm_updater' );
 
 // =================
 // = Support Email =
@@ -213,6 +254,21 @@ if ( ! defined( 'WP_CONTENT_DIR' ) ) {
 }
 
 // ================
+// = Uploads Path =
+// ================
+define( 'AI1WM_UPLOADS_PATH', 'uploads' );
+
+// ==============
+// = Blogs Path =
+// ==============
+define( 'AI1WM_BLOGSDIR_PATH', 'blogs.dir' );
+
+// ==============
+// = Sites Path =
+// ==============
+define( 'AI1WM_SITES_PATH', AI1WM_UPLOADS_PATH . DIRECTORY_SEPARATOR . 'sites' );
+
+// ================
 // = Backups Path =
 // ================
 define( 'AI1WM_BACKUPS_PATH', WP_CONTENT_DIR . DIRECTORY_SEPARATOR . 'ai1wm-backups' );
@@ -226,6 +282,11 @@ define( 'AI1WM_STORAGE_INDEX', AI1WM_STORAGE_PATH . DIRECTORY_SEPARATOR . 'index
 // = Backups Index File =
 // ======================
 define( 'AI1WM_BACKUPS_INDEX', AI1WM_BACKUPS_PATH . DIRECTORY_SEPARATOR . 'index.php' );
+
+// ======================
+// = Backups Htaccess File =
+// ======================
+define( 'AI1WM_BACKUPS_HTACCESS', AI1WM_BACKUPS_PATH . DIRECTORY_SEPARATOR . '.htaccess' );
 
 // ====================================
 // = WP Migration Plugin Base Dir =
@@ -245,6 +306,27 @@ if ( defined( 'AI1WMDE_PLUGIN_BASENAME' ) ) {
 	define( 'AI1WMDE_PLUGIN_BASEDIR', 'all-in-one-wp-migration-dropbox-extension' );
 }
 
+// ===========================
+// = Dropbox Extension About =
+// ===========================
+if ( ! defined( 'AI1WMDE_PLUGIN_ABOUT' ) ) {
+	define( 'AI1WMDE_PLUGIN_ABOUT', 'https://servmask.com/products/dropbox-extension/about' );
+}
+
+// =========================
+// = Dropbox Extension Key =
+// =========================
+if ( ! defined( 'AI1WMDE_PLUGIN_KEY' ) ) {
+	define( 'AI1WMDE_PLUGIN_KEY', 'ai1wmde_plugin_key' );
+}
+
+// ===========================
+// = Dropbox Extension Short =
+// ===========================
+if ( ! defined( 'AI1WMDE_PLUGIN_SHORT' ) ) {
+	define( 'AI1WMDE_PLUGIN_SHORT', 'dropbox' );
+}
+
 // ===================================
 // = Google Drive Extension Base Dir =
 // ===================================
@@ -252,6 +334,27 @@ if ( defined( 'AI1WMGE_PLUGIN_BASENAME' ) ) {
 	define( 'AI1WMGE_PLUGIN_BASEDIR', dirname( AI1WMGE_PLUGIN_BASENAME ) );
 } else {
 	define( 'AI1WMGE_PLUGIN_BASEDIR', 'all-in-one-wp-migration-gdrive-extension' );
+}
+
+// ================================
+// = Google Drive Extension About =
+// ================================
+if ( ! defined( 'AI1WMGE_PLUGIN_ABOUT' ) ) {
+	define( 'AI1WMGE_PLUGIN_ABOUT', 'https://servmask.com/products/google-drive-extension/about' );
+}
+
+// ==============================
+// = Google Drive Extension Key =
+// ==============================
+if ( ! defined( 'AI1WMGE_PLUGIN_KEY' ) ) {
+	define( 'AI1WMGE_PLUGIN_KEY', 'ai1wmge_plugin_key' );
+}
+
+// ================================
+// = Google Drive Extension Short =
+// ================================
+if ( ! defined( 'AI1WMGE_PLUGIN_SHORT' ) ) {
+	define( 'AI1WMGE_PLUGIN_SHORT', 'gdrive' );
 }
 
 // ================================
@@ -263,6 +366,27 @@ if ( defined( 'AI1WMSE_PLUGIN_BASENAME' ) ) {
 	define( 'AI1WMSE_PLUGIN_BASEDIR', 'all-in-one-wp-migration-s3-extension' );
 }
 
+// =============================
+// = Amazon S3 Extension About =
+// =============================
+if ( ! defined( 'AI1WMSE_PLUGIN_ABOUT' ) ) {
+	define( 'AI1WMSE_PLUGIN_ABOUT', 'https://servmask.com/products/amazon-s3-extension/about' );
+}
+
+// ===========================
+// = Amazon S3 Extension Key =
+// ===========================
+if ( ! defined( 'AI1WMSE_PLUGIN_KEY' ) ) {
+	define( 'AI1WMSE_PLUGIN_KEY', 'ai1wmse_plugin_key' );
+}
+
+// =============================
+// = Amazon S3 Extension Short =
+// =============================
+if ( ! defined( 'AI1WMSE_PLUGIN_SHORT' ) ) {
+	define( 'AI1WMSE_PLUGIN_SHORT', 's3' );
+}
+
 // ================================
 // = Multisite Extension Base Dir =
 // ================================
@@ -270,6 +394,27 @@ if ( defined( 'AI1WMME_PLUGIN_BASENAME' ) ) {
 	define( 'AI1WMME_PLUGIN_BASEDIR', dirname( AI1WMME_PLUGIN_BASENAME ) );
 } else {
 	define( 'AI1WMME_PLUGIN_BASEDIR', 'all-in-one-wp-migration-multisite-extension' );
+}
+
+// =============================
+// = Multisite Extension About =
+// =============================
+if ( ! defined( 'AI1WMME_PLUGIN_ABOUT' ) ) {
+	define( 'AI1WMME_PLUGIN_ABOUT', 'https://servmask.com/products/multisite-extension/about' );
+}
+
+// ===========================
+// = Multisite Extension Key =
+// ===========================
+if ( ! defined( 'AI1WMME_PLUGIN_KEY' ) ) {
+	define( 'AI1WMME_PLUGIN_KEY', 'ai1wmme_plugin_key' );
+}
+
+// =============================
+// = Multisite Extension Short =
+// =============================
+if ( ! defined( 'AI1WMME_PLUGIN_SHORT' ) ) {
+	define( 'AI1WMME_PLUGIN_SHORT', 'multisite' );
 }
 
 // ================================
@@ -281,6 +426,27 @@ if ( defined( 'AI1WMUE_PLUGIN_BASENAME' ) ) {
 	define( 'AI1WMUE_PLUGIN_BASEDIR', 'all-in-one-wp-migration-unlimited-extension' );
 }
 
+// =============================
+// = Unlimited Extension About =
+// =============================
+if ( ! defined( 'AI1WMUE_PLUGIN_ABOUT' ) ) {
+	define( 'AI1WMUE_PLUGIN_ABOUT', 'https://servmask.com/products/unlimited-extension/about' );
+}
+
+// ===========================
+// = Unlimited Extension Key =
+// ===========================
+if ( ! defined( 'AI1WMUE_PLUGIN_KEY' ) ) {
+	define( 'AI1WMUE_PLUGIN_KEY', 'ai1wmue_plugin_key' );
+}
+
+// =============================
+// = Unlimited Extension Short =
+// =============================
+if ( ! defined( 'AI1WMUE_PLUGIN_SHORT' ) ) {
+	define( 'AI1WMUE_PLUGIN_SHORT', 'unlimited' );
+}
+
 // ==========================
 // = FTP Extension Base Dir =
 // ==========================
@@ -290,6 +456,27 @@ if ( defined( 'AI1WMFE_PLUGIN_BASENAME' ) ) {
 	define( 'AI1WMFE_PLUGIN_BASEDIR', 'all-in-one-wp-migration-ftp-extension' );
 }
 
+// =======================
+// = FTP Extension About =
+// =======================
+if ( ! defined( 'AI1WMFE_PLUGIN_ABOUT' ) ) {
+	define( 'AI1WMFE_PLUGIN_ABOUT', 'https://servmask.com/products/ftp-extension/about' );
+}
+
+// =====================
+// = FTP Extension Key =
+// =====================
+if ( ! defined( 'AI1WMFE_PLUGIN_KEY' ) ) {
+	define( 'AI1WMFE_PLUGIN_KEY', 'ai1wmfe_plugin_key' );
+}
+
+// =======================
+// = FTP Extension Short =
+// =======================
+if ( ! defined( 'AI1WMFE_PLUGIN_SHORT' ) ) {
+	define( 'AI1WMFE_PLUGIN_SHORT', 'ftp' );
+}
+
 // ==========================
 // = URL Extension Base Dir =
 // ==========================
@@ -297,4 +484,55 @@ if ( defined( 'AI1WMLE_PLUGIN_BASENAME' ) ) {
 	define( 'AI1WMLE_PLUGIN_BASEDIR', dirname( AI1WMLE_PLUGIN_BASENAME ) );
 } else {
 	define( 'AI1WMLE_PLUGIN_BASEDIR', 'all-in-one-wp-migration-url-extension' );
+}
+
+// =======================
+// = URL Extension About =
+// =======================
+if ( ! defined( 'AI1WMLE_PLUGIN_ABOUT' ) ) {
+	define( 'AI1WMLE_PLUGIN_ABOUT', 'https://servmask.com/products/url-extension/about' );
+}
+
+// =====================
+// = URL Extension Key =
+// =====================
+if ( ! defined( 'AI1WMLE_PLUGIN_KEY' ) ) {
+	define( 'AI1WMLE_PLUGIN_KEY', 'ai1wmle_plugin_key' );
+}
+
+// =======================
+// = URL Extension Short =
+// =======================
+if ( ! defined( 'AI1WMLE_PLUGIN_SHORT' ) ) {
+	define( 'AI1WMLE_PLUGIN_SHORT', 'url' );
+}
+
+// ===============================
+// = OneDrive Extension Base Dir =
+// ===============================
+if ( defined( 'AI1WMOE_PLUGIN_BASENAME' ) ) {
+	define( 'AI1WMOE_PLUGIN_BASEDIR', dirname( AI1WMOE_PLUGIN_BASENAME ) );
+} else {
+	define( 'AI1WMOE_PLUGIN_BASEDIR', 'all-in-one-wp-migration-onedrive-extension' );
+}
+
+// ============================
+// = OneDrive Extension About =
+// ============================
+if ( ! defined( 'AI1WMOE_PLUGIN_ABOUT' ) ) {
+	define( 'AI1WMOE_PLUGIN_ABOUT', 'https://servmask.com/products/onedrive-extension/about' );
+}
+
+// ==========================
+// = OneDrive Extension Key =
+// ==========================
+if ( ! defined( 'AI1WMOE_PLUGIN_KEY' ) ) {
+	define( 'AI1WMOE_PLUGIN_KEY', 'ai1wmoe_plugin_key' );
+}
+
+// ============================
+// = OneDrive Extension Short =
+// ============================
+if ( ! defined( 'AI1WMOE_PLUGIN_SHORT' ) ) {
+	define( 'AI1WMOE_PLUGIN_SHORT', 'onedrive' );
 }
