@@ -3,7 +3,7 @@
 // Start the session
 session_start();
  $timeout = 1800; // Number of seconds until it times out.
- $version = "1.1.0 Alpha";
+ $version = "1.3.1 Alpha";
 
 // Check if the timeout field exists.
 if(isset($_SESSION['timeout'])) {
@@ -89,7 +89,7 @@ $fieldErr1 = $fieldErr3 = $fieldErr4 = $fieldErr5 = $fieldErr6 = $fieldErr7 = $f
 if ($_SERVER["REQUEST_METHOD"] == "POST" && $proceed == false) {
 	
 	//Check to see if any of the required fields are blank or set at the default values
-	if (empty($_POST["forecaster"]) || empty($_POST["stationname"]) || empty($_POST["date"])|| empty($_POST["time"]) || empty($_POST["fxstartmonth"]) || $_POST["fxstartmonth"] == "Select Month" || empty($_POST["fxstartday"]) || $_POST["fxstartday"] == "Select Day" || empty($_POST["fxstartyear"]) || $_POST["fxstartyear"] == "Select Year" || empty($_POST["fxstarttime"]) || $_POST["fxstarttime"] == "Select Time" || empty($_POST["col1"]) || $_POST["col1wx"] == "Weather" || empty($_POST["col1desc"]) || empty($_POST["col1temp"]) || empty($_POST["col2"]) || $_POST["col2wx"] == "Weather" || empty($_POST["col2desc"]) || empty($_POST["col2temp"]) || empty($_POST["col3"]) || $_POST["col3wx"] == "Weather" || empty($_POST["col3desc"]) || empty($_POST["col3temp"]) || empty($_POST["col4"]) || $_POST["col4wx"] == "Weather" || empty($_POST["col4desc"]) || empty($_POST["col4temp"]) || empty($_POST["col5"]) || $_POST["col5wx"] == "Weather" || empty($_POST["col5desc"]) || empty($_POST["col5temp"]) || empty($_POST["col6"]) || $_POST["col6wx"] == "Weather" || empty($_POST["col6desc"]) || empty($_POST["col6temp"])) {
+	if (empty($_POST["forecaster"]) || empty($_POST["location"]) || empty($_POST["date"])|| empty($_POST["time"]) || empty($_POST["fxstartmonth"]) || $_POST["fxstartmonth"] == "Select Month" || empty($_POST["fxstartday"]) || $_POST["fxstartday"] == "Select Day" || empty($_POST["fxstartyear"]) || $_POST["fxstartyear"] == "Select Year" || empty($_POST["fxstarttime"]) || $_POST["fxstarttime"] == "Select Time" || empty($_POST["col1"]) || $_POST["col1wx"] == "Weather" || empty($_POST["col1desc"]) || empty($_POST["col1temp"]) || empty($_POST["col2"]) || $_POST["col2wx"] == "Weather" || empty($_POST["col2desc"]) || empty($_POST["col2temp"]) || empty($_POST["col3"]) || $_POST["col3wx"] == "Weather" || empty($_POST["col3desc"]) || empty($_POST["col3temp"]) || empty($_POST["col4"]) || $_POST["col4wx"] == "Weather" || empty($_POST["col4desc"]) || empty($_POST["col4temp"]) || empty($_POST["col5"]) || $_POST["col5wx"] == "Weather" || empty($_POST["col5desc"]) || empty($_POST["col5temp"]) || empty($_POST["col6"]) || $_POST["col6wx"] == "Weather" || empty($_POST["col6desc"]) || empty($_POST["col6temp"])) {
 		//if any required variables are empty then do not proceed to preview page
 		$proceed = false;
 	}
@@ -105,7 +105,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $proceed == false) {
 	if (empty($_POST["forecaster"])) {
 		$fieldErr3 = "#FF8080";
 	}
-	if (empty($_POST["stationname"])) {
+	if (empty($_POST["location"])) {
 		$fieldErr4 = "#FF8080";
 	}
 	if (empty($_POST["date"])) {
@@ -348,7 +348,7 @@ function submit_input() {
 	// Meta data variables
 	$_SESSION["forecaster"] = $_POST["forecaster"];
 	$_SESSION["stationid"] = $_POST["stationid"];
-	$_SESSION["stationname"] = $_POST["stationname"];
+	$_SESSION["location"] = $_POST["location"];
 	$_SESSION["date"] = $_POST["date"];
 	$_SESSION["time"] = $_POST["time"];
 	$_SESSION["fxstarttime"] = $_POST["fxstarttime"];
@@ -2092,9 +2092,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $logic == false) {
 			</div>
 			<div style="text-align: center;" class="three columns offset-by-one">
 				<p>
-					<label for="stationname">Location Name*</label>
+					<label for="location">Location/Zip Code*</label>
 					<br>
-					<input style="background-color: <?php echo $fieldErr4 ?>" size="15" name="stationname" id="stationname" placeholder="Danbury, CT" type="text" value="<?php echo (isset($_POST['stationname']))?$_POST['stationname']:''; echo (isset($_SESSION['stationname']))?$_SESSION['stationname']:'';?>">
+					<input style="background-color: <?php echo $fieldErr4 ?>" size="15" name="location" id="location" placeholder="06776" type="text" value="<?php echo (isset($_POST['location']))?$_POST['location']:''; echo (isset($_SESSION['location']))?$_SESSION['location']:'';?>">
 					<br>
 				</p>
 			</div>
@@ -2347,7 +2347,7 @@ else {
 						<option value="East">East</option>
 						<option value="ESE">East-Southeast</option>
 						<option value="Southeast">Southeast</option>
-						<option value="SSE<">South-Southeast</option>
+						<option value="SSE">South-Southeast</option>
 						<option value="South">South</option>
 						<option value="SSW">South-Southwest</option>
 						<option value="Southwest">Southwest</option>
@@ -2480,7 +2480,7 @@ else {
 						<option value="East">East</option>
 						<option value="ESE">East-Southeast</option>
 						<option value="Southeast">Southeast</option>
-						<option value="SSE<">South-Southeast</option>
+						<option value="SSE">South-Southeast</option>
 						<option value="South">South</option>
 						<option value="SSW">South-Southwest</option>
 						<option value="Southwest">Southwest</option>
@@ -2613,7 +2613,7 @@ else {
 						<option value="East">East</option>
 						<option value="ESE">East-Southeast</option>
 						<option value="Southeast">Southeast</option>
-						<option value="SSE<">South-Southeast</option>
+						<option value="SSE">South-Southeast</option>
 						<option value="South">South</option>
 						<option value="SSW">South-Southwest</option>
 						<option value="Southwest">Southwest</option>
@@ -2746,7 +2746,7 @@ else {
 						<option value="East">East</option>
 						<option value="ESE">East-Southeast</option>
 						<option value="Southeast">Southeast</option>
-						<option value="SSE<">South-Southeast</option>
+						<option value="SSE">South-Southeast</option>
 						<option value="South">South</option>
 						<option value="SSW">South-Southwest</option>
 						<option value="Southwest">Southwest</option>
@@ -2879,7 +2879,7 @@ else {
 						<option value="East">East</option>
 						<option value="ESE">East-Southeast</option>
 						<option value="Southeast">Southeast</option>
-						<option value="SSE<">South-Southeast</option>
+						<option value="SSE">South-Southeast</option>
 						<option value="South">South</option>
 						<option value="SSW">South-Southwest</option>
 						<option value="Southwest">Southwest</option>
@@ -3012,7 +3012,7 @@ else {
 						<option value="East">East</option>
 						<option value="ESE">East-Southeast</option>
 						<option value="Southeast">Southeast</option>
-						<option value="SSE<">South-Southeast</option>
+						<option value="SSE">South-Southeast</option>
 						<option value="South">South</option>
 						<option value="SSW">South-Southwest</option>
 						<option value="Southwest">Southwest</option>

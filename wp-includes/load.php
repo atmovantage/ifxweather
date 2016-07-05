@@ -302,7 +302,11 @@ function wp_debug_mode() {
 	}
 
 	if ( defined( 'XMLRPC_REQUEST' ) || defined( 'REST_REQUEST' ) || ( defined( 'DOING_AJAX' ) && DOING_AJAX ) ) {
+<<<<<<< HEAD
 		@ini_set( 'display_errors', 0 );
+=======
+		ini_set( 'display_errors', 0 );
+>>>>>>> 268efcc334f09bb74d84098d844d265ec4b8dc11
 	}
 }
 

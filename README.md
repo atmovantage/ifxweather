@@ -1,6 +1,90 @@
 # ifxweather
 Project to design and develop a web-based application to enable meteorologists to easily compose and publish a weather forecast.
 
+----------
+Version 1.3.1 Alpha (April 13th, 2016):
+
+A few minor changes were made to prepare the forecast entry forms and database for using API to verify forecast.
+
+Composer/Preview/Publish Pages:
+
+    Changed "Location" field title to "Location/Zipcode"
+		Changed the "Location/Zipcode" div container id from "stationname" to "location"
+		
+Plugin file "ifx-weather.php":
+
+    Duplicated existing code that creates the '3dayforecast' database table to also create '3dayobservations' table
+		Edit the values of the '3dayobservations' table to include only relevant variables
+		Upon plugin activation new database tables are created and some default "welcome" data is input automatically
+
+
+----------
+Version 1.3.0 Alpha (April 10th, 2016):
+
+In this version a new page called "verify.php" has been added and functionality has been introduced to retreive a given forecast from the database and display it on the verification page.
+
+Publish Page:
+
+    Added a "Verify" button in the bottom right (above the forecast ID number)
+        CSS to colorize button
+    The forecast ID number is added to the SESSION and is passed along using POST method to verification page
+
+Verify Page:
+
+    Added the following:
+        "Forecast Verification" page title
+        "Forecast ID" underneath page title
+        Tables for all six forecast periods
+            Table has rows for conditions, temp, pop, precip, snow, wind, and wind direction
+            Table has columns for the variable, forecast value, actual value and error points
+                Actual values have a "Coming Soon" placeholder
+                Error points have a "Null" placeholder
+    Instead of calling variables from the SESSION all the variables on this page are called directly from the appropriate row in the database table, thus making it possible to look up any forecast using the relevant ID number.
+								
+----------
+Version 1.2.1 Alpha (April 3rd, 2016):
+
+Minor change to the way shortcode outputs the list of forecasts from the database (changed from 'echo' to 'output buffer')
+
+----------
+Version 1.2.0 Alpha (April 3rd, 2016):
+
+This update makes some substantial changes and additions to the way that forecasts are entered into the database in order to pave the way for future features to be implemented.
+Preview Page
+
+    The code that was previously on the "Publish" page has been moved to the "Preview" page so that when the user hits the "Publish" button the forecast data is input into the database table before the "Publish" page is loaded. This allows for the unique ID number in the database to be referenced on the "Publish" page.
+
+Publish Page
+
+    Added code at the bottom right of the page to display the unique ID key for the last database table entry as the "Forecast ID Number" for future reference.
+
+Plugin File 'iFx-Weather.php'
+
+    Added function "test_shortcode" to add shortcode "listforecasts" to WordPress installation
+    Shortcode "listforecasts" simply lists the ID number and location of all the rows of "3dayforecasts" database table.
+
+----------
+Version 1.1.1 Alpha (March 30th, 2016):
+
+Made several minor changes to the way information is entered into the mySQL database.
+
+Datebase:
+
+    Changed year column from tinyint(4) to smallint(4)
+    Added new column for "type"
+        Will be used to differential "forecast" from "actual"
+    Added new column for "verified"
+        Will be used to determine if a forecast has been verified or not
+    Changed precip column from smallint(3) to decimal(3,3) to account for more percise values
+
+Publish Page:
+
+    Moved the code to insert into mySQL database to the end of the page so that all variables are finished rendering before inserting data to the database
+    Added "type" and "verified" variables to be insert as default values "F" and "N" respectively
+    Updated the way the weather icon URL variable is inserted into the database
+    Updated the way the temperature color is inserted into the database
+
+----------
 Version 1.1.0 Alpha (February 8th, 2016):
 
 Overall:

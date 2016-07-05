@@ -378,7 +378,8 @@ form {
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .u-full-width {
   width: 100%;
-  box-sizing: border-box; }
+  box-sizing: border-box; 
+  font-size: 12px; }
 .u-max-full-width {
   max-width: 100%;
   box-sizing: border-box; }
@@ -386,7 +387,12 @@ form {
   float: right; }
 .u-pull-left {
   float: left; }
-
+.u-normal {
+	box-sizing: border-box;
+	margin-left:auto; 
+  margin-right:auto;
+	font-size: 15px; 
+}
 
 /* Misc
 –––––––––––––––––––––––––––––––––––––––––––––––––– */

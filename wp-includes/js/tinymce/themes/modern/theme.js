@@ -656,6 +656,18 @@ tinymce.ThemeManager.add('modern', function(editor) {
 		};
 	}
 
+	function fireSkinLoaded(editor) {
+		return function() {
+			if (editor.initialized) {
+				editor.fire('SkinLoaded');
+			} else {
+				editor.on('init', function() {
+					editor.fire('SkinLoaded');
+				});
+			}
+		};
+	}
+
 	/**
 	 * Renders the inline editor UI.
 	 *

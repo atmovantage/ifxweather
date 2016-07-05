@@ -902,12 +902,16 @@ tinymce.PluginManager.add( 'wordpress', function( editor ) {
 				if ( activeToolbar.tempHide || event.type === 'hide' ) {
 					activeToolbar.hide();
 					activeToolbar = false;
+<<<<<<< HEAD
 				} else if ( (
 					event.type === 'resizewindow' ||
 					event.type === 'scrollwindow' ||
 					event.type === 'resize' ||
 					event.type === 'scroll'
 				) && ! activeToolbar.blockHide ) {
+=======
+				} else if ( ( event.type === 'resize' || event.type === 'scroll' ) && ! activeToolbar.blockHide ) {
+>>>>>>> 268efcc334f09bb74d84098d844d265ec4b8dc11
 					clearTimeout( timeout );
 
 					timeout = setTimeout( function() {

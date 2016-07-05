@@ -630,11 +630,18 @@ function feed_content_type( $type = '' ) {
 		$type = get_default_feed();
 
 	$types = array(
+<<<<<<< HEAD
 		'rss'      => 'application/rss+xml',
 		'rss2'     => 'application/rss+xml',
 		'rss-http' => 'text/xml',
 		'atom'     => 'application/atom+xml',
 		'rdf'      => 'application/rdf+xml'
+=======
+		'rss'  => 'application/rss+xml',
+		'rss2' => 'application/rss+xml',
+		'atom' => 'application/atom+xml',
+		'rdf'  => 'application/rdf+xml'
+>>>>>>> 268efcc334f09bb74d84098d844d265ec4b8dc11
 	);
 
 	$content_type = ( !empty($types[$type]) ) ? $types[$type] : 'application/octet-stream';

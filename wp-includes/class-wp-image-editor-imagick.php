@@ -376,8 +376,13 @@ class WP_Image_Editor_Imagick extends WP_Image_Editor {
 			 */
 			if ( is_callable( array( $this->image, 'getImageAlphaChannel' ) )
 				&& is_callable( array( $this->image, 'setImageAlphaChannel' ) )
+<<<<<<< HEAD
 				&& defined( 'Imagick::ALPHACHANNEL_UNDEFINED' )
 				&& defined( 'Imagick::ALPHACHANNEL_OPAQUE' )
+=======
+				&& defined( Imagick::ALPHACHANNEL_UNDEFINED )
+				&& defined( Imagick::ALPHACHANNEL_OPAQUE )
+>>>>>>> 268efcc334f09bb74d84098d844d265ec4b8dc11
 			) {
 				if ( $this->image->getImageAlphaChannel() === Imagick::ALPHACHANNEL_UNDEFINED ) {
 					$this->image->setImageAlphaChannel( Imagick::ALPHACHANNEL_OPAQUE );

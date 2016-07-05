@@ -1079,6 +1079,7 @@ function the_embed_site_title() {
 	 */
 	echo apply_filters( 'embed_site_title_html', $site_title );
 }
+<<<<<<< HEAD
 
 /**
  * Filters the oEmbed result before any HTTP requests are made.
@@ -1115,3 +1116,5 @@ function wp_filter_pre_oembed_result( $result, $url, $args ) {
 
 	return $data;
 }
+=======
+>>>>>>> 268efcc334f09bb74d84098d844d265ec4b8dc11

@@ -1,5 +1,9 @@
 /*!
+<<<<<<< HEAD
  * jQuery Migrate - v1.4.1 - 2016-05-19
+=======
+ * jQuery Migrate - v1.4.0 - 2016-02-26
+>>>>>>> 268efcc334f09bb74d84098d844d265ec4b8dc11
  * Copyright jQuery Foundation and other contributors
  */
 (function( jQuery, window, undefined ) {
@@ -7,7 +11,11 @@
 // "use strict";
 
 
+<<<<<<< HEAD
 jQuery.migrateVersion = "1.4.1";
+=======
+jQuery.migrateVersion = "1.4.0";
+>>>>>>> 268efcc334f09bb74d84098d844d265ec4b8dc11
 
 
 var warnedAbout = {};
@@ -193,11 +201,17 @@ jQuery.attrHooks.value = {
 
 var matched, browser,
 	oldInit = jQuery.fn.init,
+<<<<<<< HEAD
 	oldFind = jQuery.find,
 	oldParseJSON = jQuery.parseJSON,
 	rspaceAngle = /^\s*</,
 	rattrHashTest = /\[(\s*[-\w]+\s*)([~|^$*]?=)\s*([-\w#]*?#[-\w#]*)\s*\]/,
 	rattrHashGlob = /\[(\s*[-\w]+\s*)([~|^$*]?=)\s*([-\w#]*?#[-\w#]*)\s*\]/g,
+=======
+	oldParseJSON = jQuery.parseJSON,
+	rspaceAngle = /^\s*</,
+	rattrHash = /\[\s*\w+\s*[~|^$*]?=\s*(?![\s'"])[^#\]]*#/,
+>>>>>>> 268efcc334f09bb74d84098d844d265ec4b8dc11
 	// Note: XSS check is done below after string is trimmed
 	rquickExpr = /^([^<]*)(<[\w\W]+>)([^>]*)$/;
 
@@ -205,6 +219,7 @@ var matched, browser,
 jQuery.fn.init = function( selector, context, rootjQuery ) {
 	var match, ret;
 
+<<<<<<< HEAD
 	if ( selector && typeof selector === "string" ) {
 		if ( !jQuery.isPlainObject( context ) &&
 				(match = rquickExpr.exec( jQuery.trim( selector ) )) && match[ 0 ] ) {
@@ -236,6 +251,47 @@ jQuery.fn.init = function( selector, context, rootjQuery ) {
 							context || document, true ), context, rootjQuery );
 			}
 		}
+=======
+	if ( selector && typeof selector === "string" && !jQuery.isPlainObject( context ) &&
+			(match = rquickExpr.exec( jQuery.trim( selector ) )) && match[ 0 ] ) {
+		// This is an HTML string according to the "old" rules; is it still?
+		if ( !rspaceAngle.test( selector ) ) {
+			migrateWarn("$(html) HTML strings must start with '<' character");
+		}
+		if ( match[ 3 ] ) {
+			migrateWarn("$(html) HTML text after last tag is ignored");
+		}
+
+		// Consistently reject any HTML-like string starting with a hash (#9521)
+		// Note that this may break jQuery 1.6.x code that otherwise would work.
+		if ( match[ 0 ].charAt( 0 ) === "#" ) {
+			migrateWarn("HTML string cannot start with a '#' character");
+			jQuery.error("JQMIGRATE: Invalid selector string (XSS)");
+		}
+		// Now process using loose rules; let pre-1.8 play too
+		if ( context && context.context ) {
+			// jQuery object as context; parseHTML expects a DOM object
+			context = context.context;
+		}
+		if ( jQuery.parseHTML ) {
+			return oldInit.call( this,
+					jQuery.parseHTML( match[ 2 ], context && context.ownerDocument ||
+						context || document, true ), context, rootjQuery );
+		}
+	}
+
+	if ( selector === "#" ) {
+
+		// jQuery( "#" ) is a bogus ID selector, but it returned an empty set before jQuery 3.0
+		migrateWarn( "jQuery( '#' ) is not a valid selector" );
+		selector = [];
+
+	} else if ( rattrHash.test( selector ) ) {
+
+		// The nonstandard and undocumented unquoted-hash was removed in jQuery 1.12.0
+		// Note that this doesn't actually fix the selector due to potential false positives
+		migrateWarn( "Attribute selectors with '#' must be quoted: '" + selector + "'" );
+>>>>>>> 268efcc334f09bb74d84098d844d265ec4b8dc11
 	}
 
 	ret = oldInit.apply( this, arguments );
@@ -257,6 +313,7 @@ jQuery.fn.init = function( selector, context, rootjQuery ) {
 };
 jQuery.fn.init.prototype = jQuery.fn;
 
+<<<<<<< HEAD
 jQuery.find = function( selector ) {
 	var args = Array.prototype.slice.call( arguments );
 
@@ -298,6 +355,8 @@ for ( findProp in oldFind ) {
 	}
 }
 
+=======
+>>>>>>> 268efcc334f09bb74d84098d844d265ec4b8dc11
 // Let $.parseJSON(falsy_value) return null
 jQuery.parseJSON = function( json ) {
 	if ( !json ) {
@@ -666,7 +725,11 @@ jQuery.event.special.ready = {
 };
 
 var oldSelf = jQuery.fn.andSelf || jQuery.fn.addBack,
+<<<<<<< HEAD
 	oldFnFind = jQuery.fn.find;
+=======
+	oldFind = jQuery.fn.find;
+>>>>>>> 268efcc334f09bb74d84098d844d265ec4b8dc11
 
 jQuery.fn.andSelf = function() {
 	migrateWarn("jQuery.fn.andSelf() replaced by jQuery.fn.addBack()");
@@ -674,7 +737,11 @@ jQuery.fn.andSelf = function() {
 };
 
 jQuery.fn.find = function( selector ) {
+<<<<<<< HEAD
 	var ret = oldFnFind.apply( this, arguments );
+=======
+	var ret = oldFind.apply( this, arguments );
+>>>>>>> 268efcc334f09bb74d84098d844d265ec4b8dc11
 	ret.context = this.context;
 	ret.selector = this.selector ? this.selector + " " + selector : selector;
 	return ret;

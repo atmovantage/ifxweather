@@ -61,6 +61,17 @@
 			-moz-appearance: none;
 }
 
+#Verify{
+			background-color: #FFA3B4;
+			-webkit-appearance: none;
+			-moz-appearance: none;
+		} 
+#Verify:hover{
+	background-color: #FA326E;
+			-webkit-appearance: none;
+			-moz-appearance: none;
+}
+
 .container {
   position: relative;
   width: 100%;

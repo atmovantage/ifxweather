@@ -3,7 +3,7 @@
 // Start the session
 session_start();
  $timeout = 1800; // Number of seconds until it times out.
- $version = "1.1.0 Alpha";
+ $version = "1.3.1 Alpha";
 
 // Check if the timeout field exists.
 if(isset($_SESSION['timeout'])) {
@@ -20,137 +20,8 @@ if(isset($_SESSION['timeout'])) {
 // Update the timeout field with the current time.
 $_SESSION['timeout'] = time();
 
-//insert published data into database
 //access WordPress required files
 require('../../../wp-blog-header.php');
-
-global $wpdb;
-	
-	//$welcome_forecaster = 'Adam';
-	//$welcome_station = 'K1P1';
-	//$welcome_location = 'Plymouth, NH';
-	//$welcome_fx_valid_month = '03';
-	//$welcome_fx_valid_day = '15';
-	//$welcome_fx_valid_year = '2016';
-	//$welcome_fx_valid_time = '5PM - 5AM';
-	
-	$table_name = $wpdb->prefix . '3dayforecasts';
-	
-	$wpdb->insert( 
-		$table_name, 
-		array( 
-			/*'time' => current_time( 'mysql' ),*/ 
-			'forecaster' => $_SESSION["forecaster"], 
-			'station' => $_SESSION["stationid"],
-			'location'=> $_SESSION["stationname"],
-			'date' => $_SESSION["date"],
-			'time' => $_SESSION["time"],
-			'fx_valid_month' => $_SESSION["fxstartmonth"],
-			'fx_valid_day' => $_SESSION["fxstartday"],
-			'fx_valid_year' => $_SESSION["fxstartyear"],
-			'fx_valid_time' => $_SESSION["fxstarttime"],
-			'col1_title' => $_SESSION["col1"],
-			'col1_icon' => $_SESSION["col1wximg"],
-			'col1_weather' => $_SESSION["col1wx"],
-			'col1_temp' => $_SESSION["col1temp"],
-			'col1_highlow' => $_SESSION["col1highlow"],
-			'col1_pop' => $_SESSION["col1pop"],
-			'col1_precip' => $_SESSION["col1precip"],
-			'col1_hiderain' => $_SESSION["col1showrain"],
-			'col1_snowmin' => $_SESSION["col1snowmin"],
-			'col1_snowmax' =>  $_SESSION["col1snowmax"],
-			'col1_windmin' => $_SESSION["col1windmin"],
-			'col1_winmax' => $_SESSION["col1windmax"],
-			'col1_windgust' => $_SESSION["col1windgust"],
-			'col1_winddir' => $_SESSION["col1winddir"],
-			'col1_hidewind' => $_SESSION["col1showwind"],
-			'col1_details' => $_SESSION["col1detail"],
-			'col2_title' => $_SESSION["col2"],
-			'col2_icon' => $_SESSION["col2wximg"],
-			'col2_weather' => $_SESSION["col2wx"],
-			'col2_temp' => $_SESSION["col2temp"],
-			'col2_highlow' => $_SESSION["col2highlow"],
-			'col2_pop' => $_SESSION["col2pop"],
-			'col2_precip' => $_SESSION["col2precip"],
-			'col2_hiderain' => $_SESSION["col2showrain"],
-			'col2_snowmin' => $_SESSION["col2snowmin"],
-			'col2_snowmax' =>  $_SESSION["col2snowmax"],
-			'col2_windmin' => $_SESSION["col2windmin"],
-			'col2_winmax' => $_SESSION["col2windmax"],
-			'col2_windgust' => $_SESSION["col2windgust"],
-			'col2_winddir' => $_SESSION["col2winddir"],
-			'col2_hidewind' => $_SESSION["col2showwind"],
-			'col2_details' => $_SESSION["col2detail"],
-			'col3_title' => $_SESSION["col3"],
-			'col3_icon' => $_SESSION["col3wximg"],
-			'col3_weather' => $_SESSION["col3wx"],
-			'col3_temp' => $_SESSION["col3temp"],
-			'col3_highlow' => $_SESSION["col3highlow"],
-			'col3_pop' => $_SESSION["col3pop"],
-			'col3_precip' => $_SESSION["col3precip"],
-			'col3_hiderain' => $_SESSION["col3showrain"],
-			'col3_snowmin' => $_SESSION["col3snowmin"],
-			'col3_snowmax' =>  $_SESSION["col3snowmax"],
-			'col3_windmin' => $_SESSION["col3windmin"],
-			'col3_winmax' => $_SESSION["col3windmax"],
-			'col3_windgust' => $_SESSION["col3windgust"],
-			'col3_winddir' => $_SESSION["col3winddir"],
-			'col3_hidewind' => $_SESSION["col3showwind"],
-			'col3_details' => $_SESSION["col3detail"],
-			'col4_title' => $_SESSION["col4"],
-			'col4_icon' => $_SESSION["col4wximg"],
-			'col4_weather' => $_SESSION["col4wx"],
-			'col4_temp' => $_SESSION["col4temp"],
-			'col4_highlow' => $_SESSION["col4highlow"],
-			'col4_pop' => $_SESSION["col4pop"],
-			'col4_precip' => $_SESSION["col4precip"],
-			'col4_hiderain' => $_SESSION["col4showrain"],
-			'col4_snowmin' => $_SESSION["col4snowmin"],
-			'col4_snowmax' =>  $_SESSION["col4snowmax"],
-			'col4_windmin' => $_SESSION["col4windmin"],
-			'col4_winmax' => $_SESSION["col4windmax"],
-			'col4_windgust' => $_SESSION["col4windgust"],
-			'col4_winddir' => $_SESSION["col4winddir"],
-			'col4_hidewind' => $_SESSION["col4showwind"],
-			'col4_details' => $_SESSION["col4detail"],
-			'col5_title' => $_SESSION["col5"],
-			'col5_icon' => $_SESSION["col5wximg"],
-			'col5_weather' => $_SESSION["col5wx"],
-			'col5_temp' => $_SESSION["col5temp"],
-			'col5_highlow' => $_SESSION["col5highlow"],
-			'col5_pop' => $_SESSION["col5pop"],
-			'col5_precip' => $_SESSION["col5precip"],
-			'col5_hiderain' => $_SESSION["col5showrain"],
-			'col5_snowmin' => $_SESSION["col5snowmin"],
-			'col5_snowmax' =>  $_SESSION["col5snowmax"],
-			'col5_windmin' => $_SESSION["col5windmin"],
-			'col5_winmax' => $_SESSION["col5windmax"],
-			'col5_windgust' => $_SESSION["col5windgust"],
-			'col5_winddir' => $_SESSION["col5winddir"],
-			'col5_hidewind' => $_SESSION["col5showwind"],
-			'col5_details' => $_SESSION["col5detail"],
-			'col6_title' => $_SESSION["col6"],
-			'col6_icon' => $_SESSION["col6wximg"],
-			'col6_weather' => $_SESSION["col6wx"],
-			'col6_temp' => $_SESSION["col6temp"],
-			'col6_highlow' => $_SESSION["col6highlow"],
-			'col6_pop' => $_SESSION["col6pop"],
-			'col6_precip' => $_SESSION["col6precip"],
-			'col6_hiderain' => $_SESSION["col6showrain"],
-			'col6_snowmin' => $_SESSION["col6snowmin"],
-			'col6_snowmax' =>  $_SESSION["col6snowmax"],
-			'col6_windmin' => $_SESSION["col6windmin"],
-			'col6_winmax' => $_SESSION["col6windmax"],
-			'col6_windgust' => $_SESSION["col6windgust"],
-			'col6_winddir' => $_SESSION["col6winddir"],
-			'col6_hidewind' => $_SESSION["col6showwind"],
-			'col6_details' => $_SESSION["col6detail"],
-			'temp_unit' => $_SESSION["tempunit"],
-			'precip_unit' => $_SESSION["precipunit"],
-			'wind_unit' => $_SESSION["windunit"],
-			'colorize_temp' => $_SESSION["colortemp"]
-		) 
-	);
 
 //Begin importing user-entered session data
 switch ($_SESSION["tempunit"]) {
@@ -694,7 +565,7 @@ Version <?php echo " " . $version ?></p>
 			</div>
 				<div class="three columns">
 				<p>
-		<strong>Location: </strong><?php echo $_SESSION["stationid"] . " " . $_SESSION["stationname"] ?>
+		<strong>Location: </strong><?php echo $_SESSION["stationid"] . " " . $_SESSION["location"] ?>
 		</p>
 			</div>
 			<div class="three columns">
@@ -1158,6 +1029,151 @@ elseif ($_SESSION["col6windmin"] == $_SESSION["col6windmax"] && empty($_SESSION[
 		<form action="iFxWx.php">
 			<input name="New" id="New" value="Make a New Forecast" type="submit">
 		</form></div>
+	<div class="eight columns" align="right">
+				<form  action="verify.php" method="POST" >
+	<input name="Verify" id="Verify" value="Verify" type="submit">
+	</form>
+			</div>
+	<div class="eleven columns" align="right">
+		<?php 
+						//insert published data into database
+global $wpdb;
 	
+	//$welcome_forecaster = 'Adam';
+	//$welcome_station = 'K1P1';
+	//$welcome_location = 'Plymouth, NH';
+	//$welcome_fx_valid_month = '03';
+	//$welcome_fx_valid_day = '15';
+	//$welcome_fx_valid_year = '2016';
+	//$welcome_fx_valid_time = '5PM - 5AM';
+	
+	$table_name = $wpdb->prefix . '3dayforecasts';
+	
+	$wpdb->insert( 
+		$table_name, 
+		array( 
+			/*'time' => current_time( 'mysql' ),*/ 
+			'type' => "F",
+			'verified' => "N",
+			'forecaster' => $_SESSION["forecaster"], 
+			'station' => $_SESSION["stationid"],
+			'location'=> $_SESSION["location"],
+			'date' => $_SESSION["date"],
+			'time' => $_SESSION["time"],
+			'fx_valid_month' => $_SESSION["fxstartmonth"],
+			'fx_valid_day' => $_SESSION["fxstartday"],
+			'fx_valid_year' => $_SESSION["fxstartyear"],
+			'fx_valid_time' => $_SESSION["fxstarttime"],
+			'col1_title' => $_SESSION["col1"],
+			'col1_icon' => $col1wximg,
+			'col1_weather' => $_SESSION["col1wx"],
+			'col1_temp' => $_SESSION["col1temp"],
+			'col1_highlow' => $tempcolor,
+			'col1_pop' => $_SESSION["col1pop"],
+			'col1_precip' => $_SESSION["col1precip"],
+			'col1_hiderain' => $_SESSION["col1showrain"],
+			'col1_snowmin' => $_SESSION["col1snowmin"],
+			'col1_snowmax' =>  $_SESSION["col1snowmax"],
+			'col1_windmin' => $_SESSION["col1windmin"],
+			'col1_winmax' => $_SESSION["col1windmax"],
+			'col1_windgust' => $_SESSION["col1windgust"],
+			'col1_winddir' => $_SESSION["col1winddir"],
+			'col1_hidewind' => $_SESSION["col1showwind"],
+			'col1_details' => $_SESSION["col1detail"],
+			'col2_title' => $_SESSION["col2"],
+			'col2_icon' => $col2wximg,
+			'col2_weather' => $_SESSION["col2wx"],
+			'col2_temp' => $_SESSION["col2temp"],
+			'col2_highlow' => $tempcolor2,
+			'col2_pop' => $_SESSION["col2pop"],
+			'col2_precip' => $_SESSION["col2precip"],
+			'col2_hiderain' => $_SESSION["col2showrain"],
+			'col2_snowmin' => $_SESSION["col2snowmin"],
+			'col2_snowmax' =>  $_SESSION["col2snowmax"],
+			'col2_windmin' => $_SESSION["col2windmin"],
+			'col2_winmax' => $_SESSION["col2windmax"],
+			'col2_windgust' => $_SESSION["col2windgust"],
+			'col2_winddir' => $_SESSION["col2winddir"],
+			'col2_hidewind' => $_SESSION["col2showwind"],
+			'col2_details' => $_SESSION["col2detail"],
+			'col3_title' => $_SESSION["col3"],
+			'col3_icon' => $col3wximg,
+			'col3_weather' => $_SESSION["col3wx"],
+			'col3_temp' => $_SESSION["col3temp"],
+			'col3_highlow' => $tempcolor,
+			'col3_pop' => $_SESSION["col3pop"],
+			'col3_precip' => $_SESSION["col3precip"],
+			'col3_hiderain' => $_SESSION["col3showrain"],
+			'col3_snowmin' => $_SESSION["col3snowmin"],
+			'col3_snowmax' =>  $_SESSION["col3snowmax"],
+			'col3_windmin' => $_SESSION["col3windmin"],
+			'col3_winmax' => $_SESSION["col3windmax"],
+			'col3_windgust' => $_SESSION["col3windgust"],
+			'col3_winddir' => $_SESSION["col3winddir"],
+			'col3_hidewind' => $_SESSION["col3showwind"],
+			'col3_details' => $_SESSION["col3detail"],
+			'col4_title' => $_SESSION["col4"],
+			'col4_icon' => $col4wximg,
+			'col4_weather' => $_SESSION["col4wx"],
+			'col4_temp' => $_SESSION["col4temp"],
+			'col4_highlow' => $tempcolor2,
+			'col4_pop' => $_SESSION["col4pop"],
+			'col4_precip' => $_SESSION["col4precip"],
+			'col4_hiderain' => $_SESSION["col4showrain"],
+			'col4_snowmin' => $_SESSION["col4snowmin"],
+			'col4_snowmax' =>  $_SESSION["col4snowmax"],
+			'col4_windmin' => $_SESSION["col4windmin"],
+			'col4_winmax' => $_SESSION["col4windmax"],
+			'col4_windgust' => $_SESSION["col4windgust"],
+			'col4_winddir' => $_SESSION["col4winddir"],
+			'col4_hidewind' => $_SESSION["col4showwind"],
+			'col4_details' => $_SESSION["col4detail"],
+			'col5_title' => $_SESSION["col5"],
+			'col5_icon' => $col5wximg,
+			'col5_weather' => $_SESSION["col5wx"],
+			'col5_temp' => $_SESSION["col5temp"],
+			'col5_highlow' => $tempcolor,
+			'col5_pop' => $_SESSION["col5pop"],
+			'col5_precip' => $_SESSION["col5precip"],
+			'col5_hiderain' => $_SESSION["col5showrain"],
+			'col5_snowmin' => $_SESSION["col5snowmin"],
+			'col5_snowmax' =>  $_SESSION["col5snowmax"],
+			'col5_windmin' => $_SESSION["col5windmin"],
+			'col5_winmax' => $_SESSION["col5windmax"],
+			'col5_windgust' => $_SESSION["col5windgust"],
+			'col5_winddir' => $_SESSION["col5winddir"],
+			'col5_hidewind' => $_SESSION["col5showwind"],
+			'col5_details' => $_SESSION["col5detail"],
+			'col6_title' => $_SESSION["col6"],
+			'col6_icon' => $col6wximg,
+			'col6_weather' => $_SESSION["col6wx"],
+			'col6_temp' => $_SESSION["col6temp"],
+			'col6_highlow' => $tempcolor2,
+			'col6_pop' => $_SESSION["col6pop"],
+			'col6_precip' => $_SESSION["col6precip"],
+			'col6_hiderain' => $_SESSION["col6showrain"],
+			'col6_snowmin' => $_SESSION["col6snowmin"],
+			'col6_snowmax' =>  $_SESSION["col6snowmax"],
+			'col6_windmin' => $_SESSION["col6windmin"],
+			'col6_winmax' => $_SESSION["col6windmax"],
+			'col6_windgust' => $_SESSION["col6windgust"],
+			'col6_winddir' => $_SESSION["col6winddir"],
+			'col6_hidewind' => $_SESSION["col6showwind"],
+			'col6_details' => $_SESSION["col6detail"],
+			'temp_unit' => $_SESSION["tempunit"],
+			'precip_unit' => $_SESSION["precipunit"],
+			'wind_unit' => $_SESSION["windunit"],
+			'colorize_temp' => $_SESSION["colortemp"]
+		) 
+	);
+	$lastid = $wpdb->insert_id;
+	$_SESSION["lastid"] = $lastid;
+		
+		echo "Forecast ID Number: " . $_SESSION["lastid"]; ?>
+	</div>
+	
+	</div>
 </div>
+	
+	
 </body></html>

@@ -833,7 +833,11 @@ define("tinymce/pasteplugin/Clipboard", [
 
 				dropContent = getDataTransferItems(e.dataTransfer);
 
+<<<<<<< HEAD
 				if ((!hasHtmlOrText(dropContent) || isPlainTextFileUrl(dropContent)) && pasteImageData(e, rng)) {
+=======
+				if (!hasHtmlOrText(dropContent) && pasteImageData(e, rng)) {
+>>>>>>> 268efcc334f09bb74d84098d844d265ec4b8dc11
 					return;
 				}
 

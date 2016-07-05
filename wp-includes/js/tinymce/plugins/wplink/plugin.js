@@ -440,6 +440,7 @@
 							$input.autocomplete( 'search' );
 						}
 					} )
+<<<<<<< HEAD
 					// Returns a jQuery object containing the menu element.
 					.autocomplete( 'widget' )
 						.addClass( 'wplink-autocomplete' )
@@ -460,6 +461,12 @@
 							 */
 							$( this ).find( '[aria-selected="true"]' ).removeAttr( 'aria-selected' );
 						});
+=======
+					.autocomplete( 'widget' )
+						.addClass( 'wplink-autocomplete' )
+						.attr( 'role', 'listbox' )
+						.removeAttr( 'tabindex' ); // Remove the `tabindex=0` attribute added by jQuery UI.
+>>>>>>> 268efcc334f09bb74d84098d844d265ec4b8dc11
 				}
 
 				tinymce.$( input ).on( 'keydown', function( event ) {
@@ -488,7 +495,11 @@
 				edit = $linkNode.attr( 'data-wplink-edit' );
 
 				if ( href === '_wp_link_placeholder' || edit ) {
+<<<<<<< HEAD
 					if ( href !== '_wp_link_placeholder' && ! inputInstance.getURL() ) {
+=======
+					if ( edit && ! inputInstance.getURL() ) {
+>>>>>>> 268efcc334f09bb74d84098d844d265ec4b8dc11
 						inputInstance.setURL( href );
 					}
 

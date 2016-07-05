@@ -2,7 +2,7 @@
 // Start the session
 session_start();
  $timeout = 1800; // Number of seconds until it times out.
- $version = "1.1.0 Alpha";
+ $version = "1.3.1 Alpha";
 
 // Check if the timeout field exists.
 if(isset($_SESSION['timeout'])) {
@@ -15,166 +15,15 @@ if(isset($_SESSION['timeout'])) {
         session_start();
     }
 }
-
-
 // Update the timeout field with the current time.
 $_SESSION['timeout'] = time();
 
-//Links into local WordPress installation
+	//Links into local WordPress installation
 require('../../../wp-blog-header.php');
 require_once('../../../wp-includes/link-template.php');
 $homepath = get_option('home');
+	
 
-function submit_input() {
-	// Meta data variables
-	$_SESSION["forecaster"] = $_SESSION["forecaster"];
-	$_SESSION["stationid"] = $_SESSION["stationid"];
-	$_SESSION["stationname"] = $_SESSION["stationname"];
-	$_SESSION["date"] = $_SESSION["date"];
-	$_SESSION["time"] = $_SESSION["time"];
-	$_SESSION["fxstarttime"] = $_SESSION["fxstarttime"];
-	$_SESSION["fxstartmonth"] = $_SESSION["fxstartmonth"];
-	$_SESSION["fxstartday"] = $_SESSION["fxstartday"];
-	$_SESSION["fxstartyear"] = $_SESSION["fxstartyear"];
-	$_SESSION["tempunit"] = $_SESSION["tempunit"];
-	$_SESSION["colortemp"] = $_SESSION["colortemp"];
-	$_SESSION["windunit"] = $_SESSION["windunit"];
-	
-	$_SESSION["fxvalidname"] = $_SESSION["fxvalidname"];
-	
-	
-	// Column 1 Forecast Period Variables
-	$_SESSION["col1label"] = $_SESSION["col1label"];
-	$_SESSION["col1wx"] = $_SESSION["col1wx"];
-	$_SESSION["col1"] = $_SESSION["col1"];
-	$_SESSION["col1highlow"] = $_SESSION["col1highlow"];
-	$_SESSION["precipunit"] = $_SESSION["precipunit"];
-	$_SESSION["col1pop"] = $_SESSION["col1pop"];
-	$_SESSION["col1wximg"] = $_SESSION["col1wximg"];
-	$_SESSION["col1desc"] = $_SESSION["col1desc"];
-	$_SESSION["col1temp"] = $_SESSION["col1temp"];
-	$_SESSION["col1precip"] = $_SESSION["col1precip"];
-	$_SESSION["col1showrain"] = $_SESSION["col1showrain"];
-	$_SESSION["col1snowmin"] = $_SESSION["col1snowmin"];
-	$_SESSION["col1snowmax"] = $_SESSION["col1snowmax"];
-	$_SESSION["col1windmin"] = $_SESSION["col1windmin"];
-	$_SESSION["col1windmax"] = $_SESSION["col1windmax"];
-	$_SESSION["col1winddir"] = $_SESSION["col1winddir"];
-	$_SESSION["col1showwind"] = $_SESSION["col1showwind"];
-	$_SESSION["col1windgust"] = $_SESSION["col1windgust"];
-	$_SESSION["col1detail"] = $_SESSION["col1detail"];
-	
-	// Column 2 Forecast Period Variables
-	$_SESSION["col2label"] = $_SESSION["col2label"];
-	$_SESSION["col2wx"] = $_SESSION["col2wx"];
-	$_SESSION["col2"] = $_SESSION["col2"];
-	$_SESSION["col2highlow"] = $_SESSION["col2highlow"];
-	$_SESSION["precipunit"] = $_SESSION["precipunit"];
-	$_SESSION["col2pop"] = $_SESSION["col2pop"];
-	$_SESSION["col2wximg"] = $_SESSION["col2wximg"];
-	$_SESSION["col2desc"] = $_SESSION["col2desc"];
-	$_SESSION["col2temp"] = $_SESSION["col2temp"];
-	$_SESSION["col2precip"] = $_SESSION["col2precip"];
-	$_SESSION["col2showrain"] = $_SESSION["col2showrain"];
-	$_SESSION["col2snowmin"] = $_SESSION["col2snowmin"];
-	$_SESSION["col2snowmax"] = $_SESSION["col2snowmax"];
-	$_SESSION["col2windmin"] = $_SESSION["col2windmin"];
-	$_SESSION["col2windmax"] = $_SESSION["col2windmax"];
-	$_SESSION["col2winddir"] = $_SESSION["col2winddir"];
-	$_SESSION["col2showwind"] = $_SESSION["col2showwind"];
-	$_SESSION["col2windgust"] = $_SESSION["col2windgust"];
-	$_SESSION["col2detail"] = $_SESSION["col2detail"];
-	
-	// Column 3 Forecast Period Variables
-	$_SESSION["col3wx"] = $_SESSION["col3wx"];
-	$_SESSION["col3"] = $_SESSION["col3"];
-	$_SESSION["col3highlow"] = $_SESSION["col3highlow"];
-	$_SESSION["precipunit"] = $_SESSION["precipunit"];
-	$_SESSION["col3pop"] = $_SESSION["col3pop"];
-	$_SESSION["col3wximg"] = $_SESSION["col3wximg"];
-	$_SESSION["col3desc"] = $_SESSION["col3desc"];
-	$_SESSION["col3temp"] = $_SESSION["col3temp"];
-	$_SESSION["col3precip"] = $_SESSION["col3precip"];
-	$_SESSION["col3showrain"] = $_SESSION["col3showrain"];
-	$_SESSION["col3snowmin"] = $_SESSION["col3snowmin"];
-	$_SESSION["col3snowmax"] = $_SESSION["col3snowmax"];
-	$_SESSION["col3windmin"] = $_SESSION["col3windmin"];
-	$_SESSION["col3windmax"] = $_SESSION["col3windmax"];
-	$_SESSION["col3winddir"] = $_SESSION["col3winddir"];
-	$_SESSION["col3showwind"] = $_SESSION["col3showwind"];
-	$_SESSION["col3windgust"] = $_SESSION["col3windgust"];
-	$_SESSION["col3detail"] = $_SESSION["col3detail"];
-	
-	// Column 4 Forecast Period Variables
-	$_SESSION["col4wx"] = $_SESSION["col4wx"];
-	$_SESSION["col4"] = $_SESSION["col4"];
-	$_SESSION["col4highlow"] = $_SESSION["col4highlow"];
-	$_SESSION["precipunit"] = $_SESSION["precipunit"];
-	$_SESSION["col4pop"] = $_SESSION["col4pop"];
-	$_SESSION["col4wximg"] = $_SESSION["col4wximg"];
-	$_SESSION["col4desc"] = $_SESSION["col4desc"];
-	$_SESSION["col4temp"] = $_SESSION["col4temp"];
-	$_SESSION["col4precip"] = $_SESSION["col4precip"];
-	$_SESSION["col4showrain"] = $_SESSION["col4showrain"];
-	$_SESSION["col4snowmin"] = $_SESSION["col4snowmin"];
-	$_SESSION["col4snowmax"] = $_SESSION["col4snowmax"];
-	$_SESSION["col4windmin"] = $_SESSION["col4windmin"];
-	$_SESSION["col4windmax"] = $_SESSION["col4windmax"];
-	$_SESSION["col4winddir"] = $_SESSION["col4winddir"];
-	$_SESSION["col4showwind"] = $_SESSION["col4showwind"];
-	$_SESSION["col4windgust"] = $_SESSION["col4windgust"];
-	$_SESSION["col4detail"] = $_SESSION["col4detail"];
-	
-	// Column 5 Forecast Period Variables
-	$_SESSION["col5wx"] = $_SESSION["col5wx"];
-	$_SESSION["col5"] = $_SESSION["col5"];
-	$_SESSION["col5highlow"] = $_SESSION["col5highlow"];
-	$_SESSION["precipunit"] = $_SESSION["precipunit"];
-	$_SESSION["col5pop"] = $_SESSION["col5pop"];
-	$_SESSION["col5wximg"] = $_SESSION["col5wximg"];
-	$_SESSION["col5desc"] = $_SESSION["col5desc"];
-	$_SESSION["col5temp"] = $_SESSION["col5temp"];
-	$_SESSION["col5precip"] = $_SESSION["col5precip"];
-	$_SESSION["col5showrain"] = $_SESSION["col5showrain"];
-	$_SESSION["col5snowmin"] = $_SESSION["col5snowmin"];
-	$_SESSION["col5snowmax"] = $_SESSION["col5snowmax"];
-	$_SESSION["col5windmin"] = $_SESSION["col5windmin"];
-	$_SESSION["col5windmax"] = $_SESSION["col5windmax"];
-	$_SESSION["col5winddir"] = $_SESSION["col5winddir"];
-	$_SESSION["col5showwind"] = $_SESSION["col5showwind"];
-	$_SESSION["col5windgust"] = $_SESSION["col5windgust"];
-	$_SESSION["col5detail"] = $_SESSION["col5detail"];
-	
-	// Column 6 Forecast Period Variables
-	$_SESSION["col6wx"] = $_SESSION["col6wx"];
-	$_SESSION["col6"] = $_SESSION["col6"];
-	$_SESSION["col6highlow"] = $_SESSION["col6highlow"];
-	$_SESSION["precipunit"] = $_SESSION["precipunit"];
-	$_SESSION["col6pop"] = $_SESSION["col6pop"];
-	$_SESSION["col6wximg"] = $_SESSION["col6wximg"];
-	$_SESSION["col6desc"] = $_SESSION["col6desc"];
-	$_SESSION["col6temp"] = $_SESSION["col6temp"];
-	$_SESSION["col6precip"] = $_SESSION["col6precip"];
-	$_SESSION["col6showrain"] = $_SESSION["col6showrain"];
-	$_SESSION["col6snowmin"] = $_SESSION["col6snowmin"];
-	$_SESSION["col6snowmax"] = $_SESSION["col6snowmax"];
-	$_SESSION["col6windmin"] = $_SESSION["col6windmin"];
-	$_SESSION["col6windmax"] = $_SESSION["col6windmax"];
-	$_SESSION["col6winddir"] = $_SESSION["col6winddir"];
-	$_SESSION["col6showwind"] = $_SESSION["col6showwind"];
-	$_SESSION["col6windgust"] = $_SESSION["col6windgust"];
-	$_SESSION["col6detail"] = $_SESSION["col6detail"];
-	
-	//Submit to the preview page
-	header('Location: iFxWx.php');
-	//echo "/iFxWx.php";
-	exit();
-}
-
-if (isset($_POST['Edit'])) {
-	submit_input();
-}
-	
 	switch ($_SESSION["tempunit"]) {
 	case "fahrenheit": $tempunit = "&#8457";
 		break;
@@ -686,6 +535,311 @@ case "Solar Eclipse": $col6wximg = "ifxwx_images/solar_eclipse.png";
 break;
 default: $col6wximg = "ifxwx_images/fog_dense.png";
 }
+
+if (isset($_POST['Edit'])) {
+	edit_input();
+}
+
+if (isset($_POST['Publish'])) {
+		publish_input();
+}
+
+	function publish_input() {
+		
+	// Meta data variables
+	$_SESSION["forecaster"] = $_SESSION["forecaster"];
+	$_SESSION["stationid"] = $_SESSION["stationid"];
+	$_SESSION["location"] = $_SESSION["location"];
+	$_SESSION["date"] = $_SESSION["date"];
+	$_SESSION["time"] = $_SESSION["time"];
+	$_SESSION["fxstarttime"] = $_SESSION["fxstarttime"];
+	$_SESSION["fxstartmonth"] = $_SESSION["fxstartmonth"];
+	$_SESSION["fxstartday"] = $_SESSION["fxstartday"];
+	$_SESSION["fxstartyear"] = $_SESSION["fxstartyear"];
+	$_SESSION["tempunit"] = $_SESSION["tempunit"];
+	$_SESSION["colortemp"] = $_SESSION["colortemp"];
+	$_SESSION["windunit"] = $_SESSION["windunit"];
+	
+	$_SESSION["fxvalidname"] = $_SESSION["fxvalidname"];
+	
+	
+	// Column 1 Forecast Period Variables
+	$_SESSION["col1label"] = $_SESSION["col1label"];
+	$_SESSION["col1wx"] = $_SESSION["col1wx"];
+	$_SESSION["col1"] = $_SESSION["col1"];
+	$_SESSION["col1highlow"] = $_SESSION["col1highlow"];
+	$_SESSION["precipunit"] = $_SESSION["precipunit"];
+	$_SESSION["col1pop"] = $_SESSION["col1pop"];
+	$_SESSION["col1wximg"] = $_SESSION["col1wximg"];
+	$_SESSION["col1desc"] = $_SESSION["col1desc"];
+	$_SESSION["col1temp"] = $_SESSION["col1temp"];
+	$_SESSION["col1precip"] = $_SESSION["col1precip"];
+	$_SESSION["col1showrain"] = $_SESSION["col1showrain"];
+	$_SESSION["col1snowmin"] = $_SESSION["col1snowmin"];
+	$_SESSION["col1snowmax"] = $_SESSION["col1snowmax"];
+	$_SESSION["col1windmin"] = $_SESSION["col1windmin"];
+	$_SESSION["col1windmax"] = $_SESSION["col1windmax"];
+	$_SESSION["col1winddir"] = $_SESSION["col1winddir"];
+	$_SESSION["col1showwind"] = $_SESSION["col1showwind"];
+	$_SESSION["col1windgust"] = $_SESSION["col1windgust"];
+	$_SESSION["col1detail"] = $_SESSION["col1detail"];
+	
+	// Column 2 Forecast Period Variables
+	$_SESSION["col2label"] = $_SESSION["col2label"];
+	$_SESSION["col2wx"] = $_SESSION["col2wx"];
+	$_SESSION["col2"] = $_SESSION["col2"];
+	$_SESSION["col2highlow"] = $_SESSION["col2highlow"];
+	$_SESSION["precipunit"] = $_SESSION["precipunit"];
+	$_SESSION["col2pop"] = $_SESSION["col2pop"];
+	$_SESSION["col2wximg"] = $_SESSION["col2wximg"];
+	$_SESSION["col2desc"] = $_SESSION["col2desc"];
+	$_SESSION["col2temp"] = $_SESSION["col2temp"];
+	$_SESSION["col2precip"] = $_SESSION["col2precip"];
+	$_SESSION["col2showrain"] = $_SESSION["col2showrain"];
+	$_SESSION["col2snowmin"] = $_SESSION["col2snowmin"];
+	$_SESSION["col2snowmax"] = $_SESSION["col2snowmax"];
+	$_SESSION["col2windmin"] = $_SESSION["col2windmin"];
+	$_SESSION["col2windmax"] = $_SESSION["col2windmax"];
+	$_SESSION["col2winddir"] = $_SESSION["col2winddir"];
+	$_SESSION["col2showwind"] = $_SESSION["col2showwind"];
+	$_SESSION["col2windgust"] = $_SESSION["col2windgust"];
+	$_SESSION["col2detail"] = $_SESSION["col2detail"];
+	
+	// Column 3 Forecast Period Variables
+	$_SESSION["col3wx"] = $_SESSION["col3wx"];
+	$_SESSION["col3"] = $_SESSION["col3"];
+	$_SESSION["col3highlow"] = $_SESSION["col3highlow"];
+	$_SESSION["precipunit"] = $_SESSION["precipunit"];
+	$_SESSION["col3pop"] = $_SESSION["col3pop"];
+	$_SESSION["col3wximg"] = $_SESSION["col3wximg"];
+	$_SESSION["col3desc"] = $_SESSION["col3desc"];
+	$_SESSION["col3temp"] = $_SESSION["col3temp"];
+	$_SESSION["col3precip"] = $_SESSION["col3precip"];
+	$_SESSION["col3showrain"] = $_SESSION["col3showrain"];
+	$_SESSION["col3snowmin"] = $_SESSION["col3snowmin"];
+	$_SESSION["col3snowmax"] = $_SESSION["col3snowmax"];
+	$_SESSION["col3windmin"] = $_SESSION["col3windmin"];
+	$_SESSION["col3windmax"] = $_SESSION["col3windmax"];
+	$_SESSION["col3winddir"] = $_SESSION["col3winddir"];
+	$_SESSION["col3showwind"] = $_SESSION["col3showwind"];
+	$_SESSION["col3windgust"] = $_SESSION["col3windgust"];
+	$_SESSION["col3detail"] = $_SESSION["col3detail"];
+	
+	// Column 4 Forecast Period Variables
+	$_SESSION["col4wx"] = $_SESSION["col4wx"];
+	$_SESSION["col4"] = $_SESSION["col4"];
+	$_SESSION["col4highlow"] = $_SESSION["col4highlow"];
+	$_SESSION["precipunit"] = $_SESSION["precipunit"];
+	$_SESSION["col4pop"] = $_SESSION["col4pop"];
+	$_SESSION["col4wximg"] = $_SESSION["col4wximg"];
+	$_SESSION["col4desc"] = $_SESSION["col4desc"];
+	$_SESSION["col4temp"] = $_SESSION["col4temp"];
+	$_SESSION["col4precip"] = $_SESSION["col4precip"];
+	$_SESSION["col4showrain"] = $_SESSION["col4showrain"];
+	$_SESSION["col4snowmin"] = $_SESSION["col4snowmin"];
+	$_SESSION["col4snowmax"] = $_SESSION["col4snowmax"];
+	$_SESSION["col4windmin"] = $_SESSION["col4windmin"];
+	$_SESSION["col4windmax"] = $_SESSION["col4windmax"];
+	$_SESSION["col4winddir"] = $_SESSION["col4winddir"];
+	$_SESSION["col4showwind"] = $_SESSION["col4showwind"];
+	$_SESSION["col4windgust"] = $_SESSION["col4windgust"];
+	$_SESSION["col4detail"] = $_SESSION["col4detail"];
+	
+	// Column 5 Forecast Period Variables
+	$_SESSION["col5wx"] = $_SESSION["col5wx"];
+	$_SESSION["col5"] = $_SESSION["col5"];
+	$_SESSION["col5highlow"] = $_SESSION["col5highlow"];
+	$_SESSION["precipunit"] = $_SESSION["precipunit"];
+	$_SESSION["col5pop"] = $_SESSION["col5pop"];
+	$_SESSION["col5wximg"] = $_SESSION["col5wximg"];
+	$_SESSION["col5desc"] = $_SESSION["col5desc"];
+	$_SESSION["col5temp"] = $_SESSION["col5temp"];
+	$_SESSION["col5precip"] = $_SESSION["col5precip"];
+	$_SESSION["col5showrain"] = $_SESSION["col5showrain"];
+	$_SESSION["col5snowmin"] = $_SESSION["col5snowmin"];
+	$_SESSION["col5snowmax"] = $_SESSION["col5snowmax"];
+	$_SESSION["col5windmin"] = $_SESSION["col5windmin"];
+	$_SESSION["col5windmax"] = $_SESSION["col5windmax"];
+	$_SESSION["col5winddir"] = $_SESSION["col5winddir"];
+	$_SESSION["col5showwind"] = $_SESSION["col5showwind"];
+	$_SESSION["col5windgust"] = $_SESSION["col5windgust"];
+	$_SESSION["col5detail"] = $_SESSION["col5detail"];
+	
+	// Column 6 Forecast Period Variables
+	$_SESSION["col6wx"] = $_SESSION["col6wx"];
+	$_SESSION["col6"] = $_SESSION["col6"];
+	$_SESSION["col6highlow"] = $_SESSION["col6highlow"];
+	$_SESSION["precipunit"] = $_SESSION["precipunit"];
+	$_SESSION["col6pop"] = $_SESSION["col6pop"];
+	$_SESSION["col6wximg"] = $_SESSION["col6wximg"];
+	$_SESSION["col6desc"] = $_SESSION["col6desc"];
+	$_SESSION["col6temp"] = $_SESSION["col6temp"];
+	$_SESSION["col6precip"] = $_SESSION["col6precip"];
+	$_SESSION["col6showrain"] = $_SESSION["col6showrain"];
+	$_SESSION["col6snowmin"] = $_SESSION["col6snowmin"];
+	$_SESSION["col6snowmax"] = $_SESSION["col6snowmax"];
+	$_SESSION["col6windmin"] = $_SESSION["col6windmin"];
+	$_SESSION["col6windmax"] = $_SESSION["col6windmax"];
+	$_SESSION["col6winddir"] = $_SESSION["col6winddir"];
+	$_SESSION["col6showwind"] = $_SESSION["col6showwind"];
+	$_SESSION["col6windgust"] = $_SESSION["col6windgust"];
+	$_SESSION["col6detail"] = $_SESSION["col6detail"];
+	
+	//Submit to the preview page
+	header('Location: publish.php');
+	//echo "/iFxWx.php";
+	exit();
+	
+}
+
+function edit_input() {
+		
+
+	// Meta data variables
+	$_SESSION["forecaster"] = $_SESSION["forecaster"];
+	$_SESSION["stationid"] = $_SESSION["stationid"];
+	$_SESSION["location"] = $_SESSION["location"];
+	$_SESSION["date"] = $_SESSION["date"];
+	$_SESSION["time"] = $_SESSION["time"];
+	$_SESSION["fxstarttime"] = $_SESSION["fxstarttime"];
+	$_SESSION["fxstartmonth"] = $_SESSION["fxstartmonth"];
+	$_SESSION["fxstartday"] = $_SESSION["fxstartday"];
+	$_SESSION["fxstartyear"] = $_SESSION["fxstartyear"];
+	$_SESSION["tempunit"] = $_SESSION["tempunit"];
+	$_SESSION["colortemp"] = $_SESSION["colortemp"];
+	$_SESSION["windunit"] = $_SESSION["windunit"];
+	
+	$_SESSION["fxvalidname"] = $_SESSION["fxvalidname"];
+	
+	
+	// Column 1 Forecast Period Variables
+	$_SESSION["col1label"] = $_SESSION["col1label"];
+	$_SESSION["col1wx"] = $_SESSION["col1wx"];
+	$_SESSION["col1"] = $_SESSION["col1"];
+	$_SESSION["col1highlow"] = $_SESSION["col1highlow"];
+	$_SESSION["precipunit"] = $_SESSION["precipunit"];
+	$_SESSION["col1pop"] = $_SESSION["col1pop"];
+	$_SESSION["col1wximg"] = $_SESSION["col1wximg"];
+	$_SESSION["col1desc"] = $_SESSION["col1desc"];
+	$_SESSION["col1temp"] = $_SESSION["col1temp"];
+	$_SESSION["col1precip"] = $_SESSION["col1precip"];
+	$_SESSION["col1showrain"] = $_SESSION["col1showrain"];
+	$_SESSION["col1snowmin"] = $_SESSION["col1snowmin"];
+	$_SESSION["col1snowmax"] = $_SESSION["col1snowmax"];
+	$_SESSION["col1windmin"] = $_SESSION["col1windmin"];
+	$_SESSION["col1windmax"] = $_SESSION["col1windmax"];
+	$_SESSION["col1winddir"] = $_SESSION["col1winddir"];
+	$_SESSION["col1showwind"] = $_SESSION["col1showwind"];
+	$_SESSION["col1windgust"] = $_SESSION["col1windgust"];
+	$_SESSION["col1detail"] = $_SESSION["col1detail"];
+	
+	// Column 2 Forecast Period Variables
+	$_SESSION["col2label"] = $_SESSION["col2label"];
+	$_SESSION["col2wx"] = $_SESSION["col2wx"];
+	$_SESSION["col2"] = $_SESSION["col2"];
+	$_SESSION["col2highlow"] = $_SESSION["col2highlow"];
+	$_SESSION["precipunit"] = $_SESSION["precipunit"];
+	$_SESSION["col2pop"] = $_SESSION["col2pop"];
+	$_SESSION["col2wximg"] = $_SESSION["col2wximg"];
+	$_SESSION["col2desc"] = $_SESSION["col2desc"];
+	$_SESSION["col2temp"] = $_SESSION["col2temp"];
+	$_SESSION["col2precip"] = $_SESSION["col2precip"];
+	$_SESSION["col2showrain"] = $_SESSION["col2showrain"];
+	$_SESSION["col2snowmin"] = $_SESSION["col2snowmin"];
+	$_SESSION["col2snowmax"] = $_SESSION["col2snowmax"];
+	$_SESSION["col2windmin"] = $_SESSION["col2windmin"];
+	$_SESSION["col2windmax"] = $_SESSION["col2windmax"];
+	$_SESSION["col2winddir"] = $_SESSION["col2winddir"];
+	$_SESSION["col2showwind"] = $_SESSION["col2showwind"];
+	$_SESSION["col2windgust"] = $_SESSION["col2windgust"];
+	$_SESSION["col2detail"] = $_SESSION["col2detail"];
+	
+	// Column 3 Forecast Period Variables
+	$_SESSION["col3wx"] = $_SESSION["col3wx"];
+	$_SESSION["col3"] = $_SESSION["col3"];
+	$_SESSION["col3highlow"] = $_SESSION["col3highlow"];
+	$_SESSION["precipunit"] = $_SESSION["precipunit"];
+	$_SESSION["col3pop"] = $_SESSION["col3pop"];
+	$_SESSION["col3wximg"] = $_SESSION["col3wximg"];
+	$_SESSION["col3desc"] = $_SESSION["col3desc"];
+	$_SESSION["col3temp"] = $_SESSION["col3temp"];
+	$_SESSION["col3precip"] = $_SESSION["col3precip"];
+	$_SESSION["col3showrain"] = $_SESSION["col3showrain"];
+	$_SESSION["col3snowmin"] = $_SESSION["col3snowmin"];
+	$_SESSION["col3snowmax"] = $_SESSION["col3snowmax"];
+	$_SESSION["col3windmin"] = $_SESSION["col3windmin"];
+	$_SESSION["col3windmax"] = $_SESSION["col3windmax"];
+	$_SESSION["col3winddir"] = $_SESSION["col3winddir"];
+	$_SESSION["col3showwind"] = $_SESSION["col3showwind"];
+	$_SESSION["col3windgust"] = $_SESSION["col3windgust"];
+	$_SESSION["col3detail"] = $_SESSION["col3detail"];
+	
+	// Column 4 Forecast Period Variables
+	$_SESSION["col4wx"] = $_SESSION["col4wx"];
+	$_SESSION["col4"] = $_SESSION["col4"];
+	$_SESSION["col4highlow"] = $_SESSION["col4highlow"];
+	$_SESSION["precipunit"] = $_SESSION["precipunit"];
+	$_SESSION["col4pop"] = $_SESSION["col4pop"];
+	$_SESSION["col4wximg"] = $_SESSION["col4wximg"];
+	$_SESSION["col4desc"] = $_SESSION["col4desc"];
+	$_SESSION["col4temp"] = $_SESSION["col4temp"];
+	$_SESSION["col4precip"] = $_SESSION["col4precip"];
+	$_SESSION["col4showrain"] = $_SESSION["col4showrain"];
+	$_SESSION["col4snowmin"] = $_SESSION["col4snowmin"];
+	$_SESSION["col4snowmax"] = $_SESSION["col4snowmax"];
+	$_SESSION["col4windmin"] = $_SESSION["col4windmin"];
+	$_SESSION["col4windmax"] = $_SESSION["col4windmax"];
+	$_SESSION["col4winddir"] = $_SESSION["col4winddir"];
+	$_SESSION["col4showwind"] = $_SESSION["col4showwind"];
+	$_SESSION["col4windgust"] = $_SESSION["col4windgust"];
+	$_SESSION["col4detail"] = $_SESSION["col4detail"];
+	
+	// Column 5 Forecast Period Variables
+	$_SESSION["col5wx"] = $_SESSION["col5wx"];
+	$_SESSION["col5"] = $_SESSION["col5"];
+	$_SESSION["col5highlow"] = $_SESSION["col5highlow"];
+	$_SESSION["precipunit"] = $_SESSION["precipunit"];
+	$_SESSION["col5pop"] = $_SESSION["col5pop"];
+	$_SESSION["col5wximg"] = $_SESSION["col5wximg"];
+	$_SESSION["col5desc"] = $_SESSION["col5desc"];
+	$_SESSION["col5temp"] = $_SESSION["col5temp"];
+	$_SESSION["col5precip"] = $_SESSION["col5precip"];
+	$_SESSION["col5showrain"] = $_SESSION["col5showrain"];
+	$_SESSION["col5snowmin"] = $_SESSION["col5snowmin"];
+	$_SESSION["col5snowmax"] = $_SESSION["col5snowmax"];
+	$_SESSION["col5windmin"] = $_SESSION["col5windmin"];
+	$_SESSION["col5windmax"] = $_SESSION["col5windmax"];
+	$_SESSION["col5winddir"] = $_SESSION["col5winddir"];
+	$_SESSION["col5showwind"] = $_SESSION["col5showwind"];
+	$_SESSION["col5windgust"] = $_SESSION["col5windgust"];
+	$_SESSION["col5detail"] = $_SESSION["col5detail"];
+	
+	// Column 6 Forecast Period Variables
+	$_SESSION["col6wx"] = $_SESSION["col6wx"];
+	$_SESSION["col6"] = $_SESSION["col6"];
+	$_SESSION["col6highlow"] = $_SESSION["col6highlow"];
+	$_SESSION["precipunit"] = $_SESSION["precipunit"];
+	$_SESSION["col6pop"] = $_SESSION["col6pop"];
+	$_SESSION["col6wximg"] = $_SESSION["col6wximg"];
+	$_SESSION["col6desc"] = $_SESSION["col6desc"];
+	$_SESSION["col6temp"] = $_SESSION["col6temp"];
+	$_SESSION["col6precip"] = $_SESSION["col6precip"];
+	$_SESSION["col6showrain"] = $_SESSION["col6showrain"];
+	$_SESSION["col6snowmin"] = $_SESSION["col6snowmin"];
+	$_SESSION["col6snowmax"] = $_SESSION["col6snowmax"];
+	$_SESSION["col6windmin"] = $_SESSION["col6windmin"];
+	$_SESSION["col6windmax"] = $_SESSION["col6windmax"];
+	$_SESSION["col6winddir"] = $_SESSION["col6winddir"];
+	$_SESSION["col6showwind"] = $_SESSION["col6showwind"];
+	$_SESSION["col6windgust"] = $_SESSION["col6windgust"];
+	$_SESSION["col6detail"] = $_SESSION["col6detail"];
+	
+		//Submit to the preview page
+	header('Location: iFxWx.php');
+	//echo "/iFxWx.php";
+	exit();
+}
+
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
@@ -718,7 +872,7 @@ Version <?php echo " " . $version ?> </p>
 			</div>
 				<div class="three columns">
 				<p>
-		<strong>Location: </strong><?php echo $_SESSION["stationid"] . " " . $_SESSION["stationname"] ?>
+		<strong>Location: </strong><?php echo $_SESSION["stationid"] . " " . $_SESSION["location"] ?>
 		</p>
 			</div>
 			<div class="three columns">
@@ -1182,9 +1336,10 @@ elseif ($_SESSION["col6windmin"] == $_SESSION["col6windmax"] && empty($_SESSION[
 			<input name="Edit" id="Edit" value="Edit" type="submit">
 		</form></div>
 <div class="three columns offset-by-five">
-<form action="publish.php">
+<form action="preview.php" method="POST">
 	<input name="Publish" id="Publish" value="Publish" type="submit">
 	</form></div>
 </div>
 	</div>
+
 </body></html>
