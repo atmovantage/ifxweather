@@ -368,6 +368,6 @@ register_activation_hook( __FILE__, 'ifxwx_install_data' );
 add_action( 'admin_menu', 'my_admin_menu' );
 
 function my_admin_menu() {
-	add_menu_page( 'iFx Weather', 'iFx Weather', 'manage_options', 'ifxwx/admin.php', 'myplguin_admin_page', 'dashicons-cloud', 6  );
+	add_menu_page( 'iFx Weather', 'iFx Weather', 'manage_options', 'ifxwx/options.php', 'myplguin_admin_page', 'dashicons-cloud', 6  );
 }
 
