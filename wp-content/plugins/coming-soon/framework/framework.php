@@ -100,7 +100,7 @@ class SEED_CSP4_ADMIN
         wp_enqueue_style( 'media-upload' );
         wp_enqueue_style( 'wp-color-picker' );
         wp_enqueue_style( 'seed_csp4-framework-css', SEED_CSP4_PLUGIN_URL . 'framework/settings-style.css', false, $this->plugin_version );
-        wp_enqueue_style( 'font-awesome', '//netdna.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.css', false, $this->plugin_version );
+        wp_enqueue_style( 'font-awesome', SEED_CSP4_PLUGIN_URL . 'framework/css/font-awesome.css', false, $this->plugin_version, false, $this->plugin_version );
     }
 
     /**
@@ -316,7 +316,7 @@ class SEED_CSP4_ADMIN
                             
 
                            
-                            <a href="https://www.seedprod.com/ultimate-coming-soon-page-vs-coming-soon-pro/?utm_source=coming-soon-plugin&utm_medium=banner&utm_campaign=coming-soon-banner-in-plugin" target="_blank"><img src="http://static.seedprod.com/ads/coming-soon-pro-sidebar.png" /></a>
+                            <a href="https://www.seedprod.com/ultimate-coming-soon-page-vs-coming-soon-pro/?utm_source=coming-soon-plugin&utm_medium=banner&utm_campaign=coming-soon-banner-in-plugin" target="_blank"><img src="<?php echo SEED_CSP4_PLUGIN_URL; ?>framework/coming-soon-pro-sidebar.png" /></a>
                             <br><br>
                             <div class="postbox ">
                                 <div class="handlediv" title="Click to toggle"><br /></div>
@@ -611,4 +611,16 @@ class SEED_CSP4_ADMIN
           }
       }
 
+}
+
+add_action( 'admin_head', 'seed_csp4_set_user_settings' );
+function seed_csp4_set_user_settings() {
+  if(isset($_GET['page']) && $_GET['page'] == 'seed_csp4'){
+              $user_id = get_current_user_id();
+              $options = get_user_option( 'user-settings', $user_id );
+              parse_str($options,$user_settings);
+              $user_settings['imgsize'] = 'full';
+              update_user_option( $user_id, 'user-settings', http_build_query($user_settings), false );
+              update_user_option( $user_id, 'user-settings-time', time(), false );
+  }
 }

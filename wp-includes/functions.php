@@ -1854,11 +1854,7 @@ function wp_get_upload_dir() {
  * @return array See above for description.
  */
 function wp_upload_dir( $time = null, $create_dir = true, $refresh_cache = false ) {
-<<<<<<< HEAD
 	static $cache = array(), $tested_paths = array();
-=======
-	static $cache = array();
->>>>>>> 268efcc334f09bb74d84098d844d265ec4b8dc11
 
 	$key = sprintf( '%d-%s', get_current_blog_id(), (string) $time );
 
@@ -1878,20 +1874,10 @@ function wp_upload_dir( $time = null, $create_dir = true, $refresh_cache = false
 
 	if ( $create_dir ) {
 		$path = $uploads['path'];
-<<<<<<< HEAD
 
 		if ( array_key_exists( $path, $tested_paths ) ) {
 			$uploads['error'] = $tested_paths[ $path ];
 		} else {
-=======
-		$tested_paths = wp_cache_get( 'upload_dir_tested_paths' );
-
-		if ( ! is_array( $tested_paths ) ) {
-			$tested_paths = array();
-		}
-
-		if ( ! in_array( $path, $tested_paths, true ) ) {
->>>>>>> 268efcc334f09bb74d84098d844d265ec4b8dc11
 			if ( ! wp_mkdir_p( $path ) ) {
 				if ( 0 === strpos( $uploads['basedir'], ABSPATH ) ) {
 					$error_path = str_replace( ABSPATH, '', $uploads['basedir'] ) . $uploads['subdir'];
@@ -1900,21 +1886,15 @@ function wp_upload_dir( $time = null, $create_dir = true, $refresh_cache = false
 				}
 
 				$uploads['error'] = sprintf( __( 'Unable to create directory %s. Is its parent directory writable by the server?' ), esc_html( $error_path ) );
-<<<<<<< HEAD
 			}
 
 			$tested_paths[ $path ] = $uploads['error'];
-=======
-			} else {
-				$tested_paths[] = $path;
-				wp_cache_set( 'upload_dir_tested_paths', $tested_paths );
-			}
->>>>>>> 268efcc334f09bb74d84098d844d265ec4b8dc11
 		}
 	}
 
 	return $uploads;
 }
+
 
 /**
  * A non-filtered, non-cached version of wp_upload_dir() that doesn't check the path.

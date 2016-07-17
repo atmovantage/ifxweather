@@ -670,3 +670,74 @@ function ai1wm_urlencode( $value ) {
 function ai1wm_urldecode( $value ) {
 	return is_array( $value ) ? array_map( 'ai1wm_urldecode', $value ) : urldecode( stripslashes( $value ) );
 }
+
+/**
+ * Opens a file in specified mode
+ *
+ * @param  string $file Path to the file to open
+ * @param  string $mode Mode in which to open the file
+ * @return resource
+ * @throws Exception
+ */
+function ai1wm_open( $file, $mode ) {
+	$file_handle = fopen( $file, $mode );
+
+	if ( false === $file_handle ) {
+		throw new Exception( sprintf( __( 'Unable to open %s with mode %s', AI1WM_PLUGIN_NAME ), $file, $mode ) );
+	}
+	return $file_handle;
+}
+
+/**
+ * Write contents to a file
+ *
+ * @param  resource $handle File handle to write to
+ * @param  string   $content Contents to write to the file
+ * @param  string   $file Filename that contents shall be written to
+ * @return int
+ * @throws Exception
+ */
+function ai1wm_write( $handle, $content, $file ) {
+	$write_result = fwrite( $handle, $content );
+
+	if ( false === $write_result ) {
+		throw new Exception( sprintf( __( 'Unable to write to %s.', AI1WM_PLUGIN_NAME ), $file ) );
+	}
+	return $write_result;
+}
+
+/**
+ * Closes a file handle
+ *
+ * @param  resource $handle File handle to close
+ * @return bool
+ */
+function ai1wm_close( $handle ) {
+	return @fclose( $handle );
+}
+
+/**
+ * Deletes a file
+ *
+ * @param  string $file Path to file to delete
+ * @return bool
+ */
+function ai1wm_unlink( $file ) {
+	return @unlink( $file );
+}
+
+/**
+ * Copies one file's contents to another
+ *
+ * @param  string   $source_file      File to copy the contents from
+ * @param  string   $destination_file File to copy the contents to
+ */
+function ai1wm_copy( $source_file, $destination_file ) {
+	$source_handle = ai1wm_open( $source_file, 'rb' );
+	$destination_handle = ai1wm_open( $destination_file, 'ab' );
+	while ( $buffer = fread( $source_handle, 4096 ) ) {
+		ai1wm_write( $destination_handle, $buffer, $destination_file );
+	}
+	ai1wm_close( $source_handle );
+	ai1wm_close( $destination_handle );
+}

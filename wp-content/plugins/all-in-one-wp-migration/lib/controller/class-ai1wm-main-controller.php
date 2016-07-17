@@ -430,33 +430,21 @@ class Ai1wm_Main_Controller {
 		wp_enqueue_script(
 			'ai1wm-js-import',
 			Ai1wm_Template::asset_link( 'javascript/import.min.js' ),
-			array( 'plupload-all', 'jquery' )
+			array( 'jquery' )
 		);
 		wp_enqueue_style(
 			'ai1wm-css-import',
 			Ai1wm_Template::asset_link( 'css/import.min.css' )
 		);
 		wp_localize_script( 'ai1wm-js-import', 'ai1wm_uploader', array(
-			'runtimes'            => 'html5,silverlight,flash,html4',
-			'browse_button'       => 'ai1wm-import-file',
-			'container'           => 'ai1wm-plupload-upload-ui',
-			'drop_element'        => 'ai1wm-drag-drop-area',
-			'file_data_name'      => 'upload-file',
-			'chunk_size'          => apply_filters( 'ai1wm_max_chunk_size', AI1WM_MAX_CHUNK_SIZE ),
-			'max_retries'         => apply_filters( 'ai1wm_max_chunk_retries', AI1WM_MAX_CHUNK_RETRIES ),
-			'url'                 => wp_make_link_relative( admin_url( 'admin-ajax.php?action=ai1wm_import' ) ),
-			'flash_swf_url'       => includes_url( 'js/plupload/plupload.flash.swf' ),
-			'silverlight_xap_url' => includes_url( 'js/plupload/plupload.silverlight.xap' ),
-			'multiple_queues'     => false,
-			'multi_selection'     => false,
-			'urlstream_upload'    => true,
-			'unique_names'        => true,
-			'multipart'           => true,
-			'multipart_params'    => array(
+			'chunk_size'  => apply_filters( 'ai1wm_max_chunk_size', AI1WM_MAX_CHUNK_SIZE ),
+			'max_retries' => apply_filters( 'ai1wm_max_chunk_retries', AI1WM_MAX_CHUNK_RETRIES ),
+			'url'         => wp_make_link_relative( admin_url( 'admin-ajax.php?action=ai1wm_import' ) ),
+			'params'      => array(
 				'priority'   => 5,
 				'secret_key' => get_option( AI1WM_SECRET_KEY ),
 			),
-			'filters'             => array(
+			'filters'     => array(
 				'ai1wm_archive_extension' => array( 'wpress', 'bin' ),
 				'ai1wm_archive_size'      => apply_filters( 'ai1wm_max_file_size', AI1WM_MAX_FILE_SIZE ),
 			),

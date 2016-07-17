@@ -68,7 +68,13 @@ class Ai1wm_Import_Controller {
 					foreach ( $hooks as  $hook ) {
 						try {
 							$params = call_user_func_array( $hook['function'], array( $params ) );
-						} catch ( Exception $e ) {
+						}
+						catch ( Ai1wm_Import_Retry_Exception $exception ) {
+							status_header( $exception->getCode() );
+							wp_send_json_error( array( 'message' => $exception->getMessage() ) );
+							exit;
+						}
+						catch ( Exception $e ) {
 							Ai1wm_Status::error( $e->getMessage(), __( 'Unable to import', AI1WM_PLUGIN_NAME ) );
 							exit;
 						}

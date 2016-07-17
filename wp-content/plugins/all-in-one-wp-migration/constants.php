@@ -39,7 +39,7 @@ if ( function_exists( 'gethostname' ) && in_array( gethostname(), $local ) ) {
 // ==================
 // = Plugin Version =
 // ==================
-define( 'AI1WM_VERSION', '5.43' );
+define( 'AI1WM_VERSION', '5.45' );
 
 // ===============
 // = Plugin Name =
@@ -100,11 +100,6 @@ define( 'AI1WM_TEMPLATES_PATH', AI1WM_LIB_PATH . DIRECTORY_SEPARATOR . 'view' );
 // = Set Bandar Path =
 // ===================
 define( 'BANDAR_TEMPLATES_PATH', AI1WM_TEMPLATES_PATH );
-
-// ==================
-// = Exception Path =
-// ==================
-define( 'AI1WM_EXCEPTION_PATH', AI1WM_LIB_PATH . DIRECTORY_SEPARATOR . 'exception' );
 
 // ===============
 // = Vendor Path =

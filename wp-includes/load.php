@@ -301,12 +301,8 @@ function wp_debug_mode() {
 		error_reporting( E_CORE_ERROR | E_CORE_WARNING | E_COMPILE_ERROR | E_ERROR | E_WARNING | E_PARSE | E_USER_ERROR | E_USER_WARNING | E_RECOVERABLE_ERROR );
 	}
 
-	if ( defined( 'XMLRPC_REQUEST' ) || defined( 'REST_REQUEST' ) || ( defined( 'DOING_AJAX' ) && DOING_AJAX ) ) {
-<<<<<<< HEAD
+if ( defined( 'XMLRPC_REQUEST' ) || defined( 'REST_REQUEST' ) || ( defined( 'DOING_AJAX' ) && DOING_AJAX ) ) {
 		@ini_set( 'display_errors', 0 );
-=======
-		ini_set( 'display_errors', 0 );
->>>>>>> 268efcc334f09bb74d84098d844d265ec4b8dc11
 	}
 }
 

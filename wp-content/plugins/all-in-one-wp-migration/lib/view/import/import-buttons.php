@@ -3,7 +3,7 @@
 
 	<div class="ai1wm-import-form">
 		<form action=""  method="post" enctype="multipart/form-data">
-			<div class="hide-if-no-js" id="ai1wm-plupload-upload-ui">
+			<div class="hide-if-no-js">
 				<div class="ai1wm-drag-drop-area" id="ai1wm-drag-drop-area">
 					<div id="ai1wm-import-init">
 						<p>

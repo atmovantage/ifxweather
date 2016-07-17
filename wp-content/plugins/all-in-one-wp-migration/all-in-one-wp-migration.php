@@ -5,7 +5,7 @@
  * Description: Migration tool for all your blog data. Import or Export your blog content with a single click.
  * Author: ServMask
  * Author URI: https://servmask.com/
- * Version: 5.43
+ * Version: 5.45
  * Text Domain: all-in-one-wp-migration
  * Domain Path: /languages
  * Network: True
@@ -68,6 +68,9 @@ require_once dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'deprecated.php';
 
 // Include functions
 require_once dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'functions.php';
+
+// Include exceptions
+require_once dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'exceptions.php';
 
 // Include loader
 require_once dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'loader.php';

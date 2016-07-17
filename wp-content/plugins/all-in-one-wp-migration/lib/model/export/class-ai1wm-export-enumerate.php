@@ -47,12 +47,25 @@ class Ai1wm_Export_Enumerate {
 		if ( isset( $params['options']['no_plugins'] ) ) {
 			$exclude_filters = array_merge( $exclude_filters, array( 'plugins', 'mu-plugins' ) );
 		} else {
-			$exclude_filters = array_merge( $exclude_filters, ai1wm_plugin_filters() );
+			$inactive_plugins = array();
+
+			// Exclude inactive plugins
+			if ( isset( $params['options']['no_inactive_plugins'] ) ) {
+				foreach ( get_plugins() as $basename => $plugin ) {
+					if ( is_plugin_inactive( $basename ) ) {
+						$inactive_plugins[] = 'plugins' . DIRECTORY_SEPARATOR . dirname( $basename );
+					}
+				}
+			}
+
+			// Set exclude filters
+			$exclude_filters = array_merge( $exclude_filters, ai1wm_plugin_filters( $inactive_plugins ) );
 		}
 
 		// Exclude media
 		if ( isset( $params['options']['no_media'] ) ) {
 			$exclude_filters[] = 'uploads';
+			$exclude_filters[] = 'blogs.dir';
 		}
 
 		// Get total files
@@ -78,7 +91,7 @@ class Ai1wm_Export_Enumerate {
 			$iterator = new Ai1wm_Recursive_Directory_Iterator( WP_CONTENT_DIR );
 
 			// Exclude uploads, plugins or themes
-			$iterator = new Ai1wm_Recursive_Exclude_Filter( $iterator, $exclude_filters );
+			$iterator = new Ai1wm_Recursive_Exclude_Filter( $iterator, apply_filters( 'ai1wm_exclude_content_from_export', $exclude_filters ) );
 
 			// Recursively iterate over content directory
 			$iterator = new RecursiveIteratorIterator( $iterator, RecursiveIteratorIterator::LEAVES_ONLY, RecursiveIteratorIterator::CATCH_GET_CHILD );
