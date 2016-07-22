@@ -1,8 +1,9 @@
 # This file is distrubuted under the GPL-2.0+
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Modality v1.0.1\n"
-"POT-Creation-Date: 2015-05-16 11:24-0500\n"
+"POT-Creation-Date: 2016-02-25 14:15-0500\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Vitaly Pinchev <info@vpthemes.com>\n"
 "Language-Team: Vitaly Pinchev <info@vpthemes.com>\n"
@@ -16,8 +17,8 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e;_x;esc_html_e;esc_html__;esc_attr_e;esc_attr__;"
 "_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_x:1,2c;_n:1,2;_n_noop:1,2;"
 "__ngettext_noop:1,2;_c,_nc:4c,1,2\n"
-"X-Poedit-Basepath: ../\n"
-"X-Generator: Poedit 1.7.6\n"
+"X-Poedit-Basepath: ..\n"
+"X-Generator: Poedit 1.8.7\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: 404.php:13
@@ -98,8 +99,9 @@ msgstr ""
 
 #: contentboxes-section.php:20 contentboxes-section.php:28
 #: contentboxes-section.php:36
+#, fuzzy
 msgid "Read More"
-msgstr ""
+msgstr "Подробнее"
 
 #: copyright.php:10
 msgid "Modality Theme"
@@ -130,841 +132,890 @@ msgid "Upgrade to Pro"
 msgstr ""
 
 #: functions/modality-customizer.php:68
+msgid "Ideal Image Slider"
+msgstr ""
+
+#: functions/modality-customizer.php:68
+msgid "Unslider"
+msgstr ""
+
+#: functions/modality-customizer.php:71
+msgid "Slide"
+msgstr ""
+
+#: functions/modality-customizer.php:71
+msgid "Fade"
+msgstr ""
+
+#: functions/modality-customizer.php:74
 msgid "No Sidebars"
 msgstr ""
 
-#: functions/modality-customizer.php:68
+#: functions/modality-customizer.php:74
 msgid "Right Sidebar"
 msgstr ""
 
-#: functions/modality-customizer.php:68
+#: functions/modality-customizer.php:74
 msgid "Left Sidebar"
 msgstr ""
 
-#: functions/modality-customizer.php:71
+#: functions/modality-customizer.php:77
 msgid "Excerpt"
 msgstr ""
 
-#: functions/modality-customizer.php:71
+#: functions/modality-customizer.php:77
 msgid "Full Content"
 msgstr ""
 
-#: functions/modality-customizer.php:75 functions/modality-customizer.php:83
+#: functions/modality-customizer.php:81 functions/modality-customizer.php:89
 msgid "Disable"
 msgstr ""
 
-#: functions/modality-customizer.php:76 functions/modality-functions.php:146
+#: functions/modality-customizer.php:82 functions/modality-functions.php:154
 msgid "Main Sidebar"
 msgstr ""
 
-#: functions/modality-customizer.php:77
+#: functions/modality-customizer.php:83
 msgid "Below Content"
 msgstr ""
 
-#: functions/modality-customizer.php:84
+#: functions/modality-customizer.php:90
 msgid "Above Content"
 msgstr ""
 
-#: functions/modality-customizer.php:102
+#: functions/modality-customizer.php:108
 msgid "Modality Theme Options"
 msgstr ""
 
-#: functions/modality-customizer.php:109
+#: functions/modality-customizer.php:115
 msgid "Theme Information"
 msgstr ""
 
-#: functions/modality-customizer.php:131
+#: functions/modality-customizer.php:128
+msgid " "
+msgstr ""
+
+#: functions/modality-customizer.php:137
 msgid "Theme General Settings"
 msgstr ""
 
-#: functions/modality-customizer.php:144
+#: functions/modality-customizer.php:150
 msgid "Theme Color"
 msgstr ""
 
-#: functions/modality-customizer.php:158
+#: functions/modality-customizer.php:164
 msgid "Display Breadcrumbs"
 msgstr ""
 
-#: functions/modality-customizer.php:172
+#: functions/modality-customizer.php:178
 msgid "Enable Animation"
 msgstr ""
 
-#: functions/modality-customizer.php:186
+#: functions/modality-customizer.php:192
 msgid "Enable Resposive Design"
 msgstr ""
 
-#: functions/modality-customizer.php:200
+#: functions/modality-customizer.php:206
 msgid "Enable Scrollup"
 msgstr ""
 
-#: functions/modality-customizer.php:213
+#: functions/modality-customizer.php:219
 msgid "ScrollUp Color"
 msgstr ""
 
-#: functions/modality-customizer.php:226
+#: functions/modality-customizer.php:232
 msgid "ScrollUp Hover Color"
 msgstr ""
 
-#: functions/modality-customizer.php:236
+#: functions/modality-customizer.php:242
 msgid "Theme Logo Settings"
 msgstr ""
 
-#: functions/modality-customizer.php:250
+#: functions/modality-customizer.php:256
 msgid "Logo Width (px)"
 msgstr ""
 
-#: functions/modality-customizer.php:264
+#: functions/modality-customizer.php:270
 msgid "Logo Height (px)"
 msgstr ""
 
-#: functions/modality-customizer.php:278
+#: functions/modality-customizer.php:284
 msgid "Logo Top Margin (px)"
 msgstr ""
 
-#: functions/modality-customizer.php:292
+#: functions/modality-customizer.php:298
 msgid "Logo Left Margin (px)"
 msgstr ""
 
-#: functions/modality-customizer.php:306
+#: functions/modality-customizer.php:312
 msgid "Logo Bottom Margin (px)"
 msgstr ""
 
-#: functions/modality-customizer.php:320
+#: functions/modality-customizer.php:326
 msgid "Logo Right Margin (px)"
 msgstr ""
 
-#: functions/modality-customizer.php:334
+#: functions/modality-customizer.php:340
 msgid "Image Logo"
 msgstr ""
 
-#: functions/modality-customizer.php:348
+#: functions/modality-customizer.php:354
 msgid "Logo ALT Text"
 msgstr ""
 
-#: functions/modality-customizer.php:362
+#: functions/modality-customizer.php:368
 msgid "Logo Uppercase"
 msgstr ""
 
-#: functions/modality-customizer.php:377
+#: functions/modality-customizer.php:383
 msgid "Select logo font family"
 msgstr ""
 
-#: functions/modality-customizer.php:392
+#: functions/modality-customizer.php:398
 msgid "Logo Font Size (px)"
 msgstr ""
 
-#: functions/modality-customizer.php:406
+#: functions/modality-customizer.php:412
 msgid "Logo Font Weight"
 msgstr ""
 
-#: functions/modality-customizer.php:419
+#: functions/modality-customizer.php:425
 msgid "Logo Color"
 msgstr ""
 
-#: functions/modality-customizer.php:433
+#: functions/modality-customizer.php:439
 msgid "Display Tagline Underneath Logo"
 msgstr ""
 
-#: functions/modality-customizer.php:447
+#: functions/modality-customizer.php:453
 msgid "Tagline Font Size (px)"
 msgstr ""
 
-#: functions/modality-customizer.php:460
+#: functions/modality-customizer.php:466
 msgid "Tagline Color"
 msgstr ""
 
-#: functions/modality-customizer.php:474
+#: functions/modality-customizer.php:480
 msgid "Tagline Uppercase"
 msgstr ""
 
-#: functions/modality-customizer.php:483
+#: functions/modality-customizer.php:489
 msgid "Theme Navigation Settings"
 msgstr ""
 
-#: functions/modality-customizer.php:497
+#: functions/modality-customizer.php:503
 msgid "Sticky Menu"
 msgstr ""
 
-#: functions/modality-customizer.php:511
+#: functions/modality-customizer.php:517
 msgid "Menu Top Margin (px)"
 msgstr ""
 
-#: functions/modality-customizer.php:526
+#: functions/modality-customizer.php:532
 msgid "Select Menu Font Family"
 msgstr ""
 
-#: functions/modality-customizer.php:541
+#: functions/modality-customizer.php:547
 msgid "Menu Font Size (px)"
 msgstr ""
 
-#: functions/modality-customizer.php:555
+#: functions/modality-customizer.php:561
 msgid "Menu Uppercase"
 msgstr ""
 
-#: functions/modality-customizer.php:568
+#: functions/modality-customizer.php:574
 msgid "Navigation Menu Font Color"
 msgstr ""
 
-#: functions/modality-customizer.php:581
+#: functions/modality-customizer.php:587
 msgid "Navigation Menu Border Color"
 msgstr ""
 
-#: functions/modality-customizer.php:594
+#: functions/modality-customizer.php:600
 msgid "Navigation Menu Background Color"
 msgstr ""
 
-#: functions/modality-customizer.php:607
+#: functions/modality-customizer.php:613
 msgid "SubMenu Background Color"
 msgstr ""
 
-#: functions/modality-customizer.php:620
+#: functions/modality-customizer.php:626
 msgid "Menu Hover Font Color"
 msgstr ""
 
-#: functions/modality-customizer.php:633
+#: functions/modality-customizer.php:639
 msgid "Menu Background Hover Color"
 msgstr ""
 
-#: functions/modality-customizer.php:646
+#: functions/modality-customizer.php:652
 msgid "Selected Menu Color"
 msgstr ""
 
-#: functions/modality-customizer.php:654
+#: functions/modality-customizer.php:660
 msgid "Theme Typography Settings"
 msgstr ""
 
-#: functions/modality-customizer.php:669
+#: functions/modality-customizer.php:675
 msgid "Select Body Font Family"
 msgstr ""
 
-#: functions/modality-customizer.php:684
+#: functions/modality-customizer.php:690
 msgid "Body Font Size (px)"
 msgstr ""
 
-#: functions/modality-customizer.php:697
+#: functions/modality-customizer.php:703
 msgid "Body Font Color"
 msgstr ""
 
-#: functions/modality-customizer.php:705
+#: functions/modality-customizer.php:711
 msgid "Theme Header Settings"
 msgstr ""
 
-#: functions/modality-customizer.php:718
+#: functions/modality-customizer.php:724
 msgid "Header Background Color"
 msgstr ""
 
-#: functions/modality-customizer.php:732
+#: functions/modality-customizer.php:738
 msgid "Header Background Color Opacity"
 msgstr ""
 
-#: functions/modality-customizer.php:748
+#: functions/modality-customizer.php:754
 msgid "Display Top Header Section"
 msgstr ""
 
-#: functions/modality-customizer.php:762
+#: functions/modality-customizer.php:768
 msgid "Address"
 msgstr ""
 
-#: functions/modality-customizer.php:776
+#: functions/modality-customizer.php:782
 msgid "Phone Number"
 msgstr ""
 
-#: functions/modality-customizer.php:790
+#: functions/modality-customizer.php:796
 msgid "Email"
 msgstr ""
 
-#: functions/modality-customizer.php:803
-#: functions/modality-customizer.php:1395
+#: functions/modality-customizer.php:809
+#: functions/modality-customizer.php:1468
 msgid "Top Section Font Color"
 msgstr ""
 
-#: functions/modality-customizer.php:816
+#: functions/modality-customizer.php:822
 msgid "Top Section Color"
 msgstr ""
 
-#: functions/modality-customizer.php:824
+#: functions/modality-customizer.php:830
 msgid "Theme Home Page Settings"
 msgstr ""
 
-#: functions/modality-customizer.php:838
+#: functions/modality-customizer.php:844
 msgid "Enable Image Slider"
 msgstr ""
 
-#: functions/modality-customizer.php:852
+#: functions/modality-customizer.php:858
 msgid "Display Get Started Section"
 msgstr ""
 
-#: functions/modality-customizer.php:866
+#: functions/modality-customizer.php:872
 msgid "Display Features Section"
 msgstr ""
 
-#: functions/modality-customizer.php:880
+#: functions/modality-customizer.php:886
 msgid "Display About Section"
 msgstr ""
 
-#: functions/modality-customizer.php:894
+#: functions/modality-customizer.php:900
 msgid "Display Services Section"
 msgstr ""
 
-#: functions/modality-customizer.php:908
+#: functions/modality-customizer.php:914
 msgid "Display Call To Action Section"
 msgstr ""
 
-#: functions/modality-customizer.php:922
+#: functions/modality-customizer.php:928
 msgid "Display Content Boxes Section"
 msgstr ""
 
-#: functions/modality-customizer.php:936
+#: functions/modality-customizer.php:942
 msgid "Display Get In Touch Section"
 msgstr ""
 
-#: functions/modality-customizer.php:950
+#: functions/modality-customizer.php:956
 msgid "Display Latest News Section"
 msgstr ""
 
-#: functions/modality-customizer.php:964
+#: functions/modality-customizer.php:970
 msgid "Display Blog Posts"
 msgstr ""
 
-#: functions/modality-customizer.php:978
+#: functions/modality-customizer.php:984
 msgid "Display Social Links"
 msgstr ""
 
-#: functions/modality-customizer.php:986
+#: functions/modality-customizer.php:992
 msgid "Theme Image Slider Settings"
 msgstr ""
 
-#: functions/modality-customizer.php:1000
+#: functions/modality-customizer.php:1006
+msgid "Default Image Slider"
+msgstr ""
+
+#: functions/modality-customizer.php:1022
 msgid "Image Slider Height (px)"
 msgstr ""
 
-#: functions/modality-customizer.php:1014
+#: functions/modality-customizer.php:1036
 msgid "Image Slider Category"
 msgstr ""
 
-#: functions/modality-customizer.php:1030
+#: functions/modality-customizer.php:1052
 msgid "Slideshow Interval"
 msgstr ""
 
-#: functions/modality-customizer.php:1033
+#: functions/modality-customizer.php:1055
 msgid "1000 = 1 second, default value: 5000"
 msgstr ""
 
-#: functions/modality-customizer.php:1045
+#: functions/modality-customizer.php:1067
 msgid "Animation Speed"
 msgstr ""
 
-#: functions/modality-customizer.php:1048
+#: functions/modality-customizer.php:1070
 msgid "1000 = 1 second, default value: 800"
 msgstr ""
 
-#: functions/modality-customizer.php:1060
+#: functions/modality-customizer.php:1082
 msgid "Number of Slides"
 msgstr ""
 
-#: functions/modality-customizer.php:1074
+#: functions/modality-customizer.php:1096
+msgid "Image Slider Effect"
+msgstr ""
+
+#: functions/modality-customizer.php:1101
+#: functions/modality-customizer.php:1159
+msgid "Can be only used with Ideal Image Slider"
+msgstr ""
+
+#: functions/modality-customizer.php:1113
 msgid "Enable Slider Captions"
 msgstr ""
 
-#: functions/modality-customizer.php:1088
+#: functions/modality-customizer.php:1127
 msgid "Caption Position Left %"
 msgstr ""
 
-#: functions/modality-customizer.php:1102
-msgid "Caption Position Top %"
+#: functions/modality-customizer.php:1141
+msgid "Caption Position Top (px)"
 msgstr ""
 
-#: functions/modality-customizer.php:1116
+#: functions/modality-customizer.php:1144
+#: functions/modality-customizer.php:1213
+#: functions/modality-customizer.php:1228
+#: functions/modality-customizer.php:1243
+#: functions/modality-customizer.php:1258
+msgid "Can be only used with Unslider Image Slider"
+msgstr ""
+
+#: functions/modality-customizer.php:1156
+msgid "Caption Position Bottom %"
+msgstr ""
+
+#: functions/modality-customizer.php:1171
 msgid "Caption Width %"
 msgstr ""
 
-#: functions/modality-customizer.php:1129
+#: functions/modality-customizer.php:1184
 msgid "Caption Title Color"
 msgstr ""
 
-#: functions/modality-customizer.php:1142
+#: functions/modality-customizer.php:1197
 msgid "Captions Text Color"
 msgstr ""
 
-#: functions/modality-customizer.php:1155
+#: functions/modality-customizer.php:1210
 msgid "Captions Button Color"
 msgstr ""
 
-#: functions/modality-customizer.php:1169
+#: functions/modality-customizer.php:1225
 msgid "Enable Captions Button"
 msgstr ""
 
-#: functions/modality-customizer.php:1183
+#: functions/modality-customizer.php:1240
 msgid "Captions Button Text"
 msgstr ""
 
-#: functions/modality-customizer.php:1191
+#: functions/modality-customizer.php:1255
+msgid "Enable Slider Dots"
+msgstr ""
+
+#: functions/modality-customizer.php:1264
 msgid "Theme Footer Settings"
 msgstr ""
 
-#: functions/modality-customizer.php:1204
+#: functions/modality-customizer.php:1277
 msgid "Footer Background Color"
 msgstr ""
 
-#: functions/modality-customizer.php:1217
+#: functions/modality-customizer.php:1290
 msgid "Copyright Section Background Color"
 msgstr ""
 
-#: functions/modality-customizer.php:1230
+#: functions/modality-customizer.php:1303
 msgid "Footer Widget Title Color"
 msgstr ""
 
-#: functions/modality-customizer.php:1243
+#: functions/modality-customizer.php:1316
 msgid "Footer Widget Title Border Color"
 msgstr ""
 
-#: functions/modality-customizer.php:1256
+#: functions/modality-customizer.php:1329
 msgid "Footer Widget Text Color"
 msgstr ""
 
-#: functions/modality-customizer.php:1269
+#: functions/modality-customizer.php:1342
 msgid "Footer Widget Text Border Color"
 msgstr ""
 
-#: functions/modality-customizer.php:1282
+#: functions/modality-customizer.php:1355
 msgid "Footer Social Icons Color"
 msgstr ""
 
-#: functions/modality-customizer.php:1296
+#: functions/modality-customizer.php:1369
 msgid "Enable Footer Widgets"
 msgstr ""
 
-#: functions/modality-customizer.php:1310
+#: functions/modality-customizer.php:1383
 msgid "Copyright Text"
 msgstr ""
 
-#: functions/modality-customizer.php:1318
+#: functions/modality-customizer.php:1391
 msgid "Theme Layout Settings"
 msgstr ""
 
-#: functions/modality-customizer.php:1333
+#: functions/modality-customizer.php:1406
 msgid "Theme Layout"
 msgstr ""
 
-#: functions/modality-customizer.php:1342
+#: functions/modality-customizer.php:1415
 msgid "Theme Blog Settings"
 msgstr ""
 
-#: functions/modality-customizer.php:1355
-#: functions/modality-customizer.php:1521
-#: functions/modality-customizer.php:1637
-#: functions/modality-customizer.php:2010
-#: functions/modality-customizer.php:2099
-#: functions/modality-customizer.php:2374
-#: functions/modality-customizer.php:2491
-#: functions/modality-customizer.php:2723
-#: functions/modality-customizer.php:2853
-#: functions/modality-customizer.php:2972
+#: functions/modality-customizer.php:1428
+#: functions/modality-customizer.php:1594
+#: functions/modality-customizer.php:1710
+#: functions/modality-customizer.php:2083
+#: functions/modality-customizer.php:2172
+#: functions/modality-customizer.php:2447
+#: functions/modality-customizer.php:2564
+#: functions/modality-customizer.php:2796
+#: functions/modality-customizer.php:2926
+#: functions/modality-customizer.php:3045
 msgid "Background Color"
 msgstr ""
 
-#: functions/modality-customizer.php:1369
-#: functions/modality-customizer.php:1651
-#: functions/modality-customizer.php:2024
-#: functions/modality-customizer.php:2113
-#: functions/modality-customizer.php:2388
-#: functions/modality-customizer.php:2505
-#: functions/modality-customizer.php:2737
-#: functions/modality-customizer.php:2867
-#: functions/modality-customizer.php:2986
+#: functions/modality-customizer.php:1442
+#: functions/modality-customizer.php:1724
+#: functions/modality-customizer.php:2097
+#: functions/modality-customizer.php:2186
+#: functions/modality-customizer.php:2461
+#: functions/modality-customizer.php:2578
+#: functions/modality-customizer.php:2810
+#: functions/modality-customizer.php:2940
+#: functions/modality-customizer.php:3059
 msgid "Background Image"
 msgstr ""
 
-#: functions/modality-customizer.php:1382
+#: functions/modality-customizer.php:1455
 msgid "Top Section Background Color"
 msgstr ""
 
-#: functions/modality-customizer.php:1409
+#: functions/modality-customizer.php:1482
 msgid "Top Section Image"
 msgstr ""
 
-#: functions/modality-customizer.php:1425
+#: functions/modality-customizer.php:1498
 msgid "Blog Content"
 msgstr ""
 
-#: functions/modality-customizer.php:1440
+#: functions/modality-customizer.php:1513
 msgid "Blog Excerpt Length"
 msgstr ""
 
-#: functions/modality-customizer.php:1454
+#: functions/modality-customizer.php:1527
 msgid "Use Simple Pagination"
 msgstr ""
 
-#: functions/modality-customizer.php:1469
+#: functions/modality-customizer.php:1542
 msgid "Post Navigation Links"
 msgstr ""
 
-#: functions/modality-customizer.php:1485
+#: functions/modality-customizer.php:1558
 msgid "Post Info Position"
 msgstr ""
 
-#: functions/modality-customizer.php:1500
+#: functions/modality-customizer.php:1573
 msgid "Featured Image Inside the Post"
 msgstr ""
 
-#: functions/modality-customizer.php:1508
+#: functions/modality-customizer.php:1581
 msgid "Theme Get Started Section"
 msgstr ""
 
-#: functions/modality-customizer.php:1534
-#: functions/modality-customizer.php:1664
-#: functions/modality-customizer.php:2037
-#: functions/modality-customizer.php:2126
-#: functions/modality-customizer.php:2750
-#: functions/modality-customizer.php:2924
+#: functions/modality-customizer.php:1607
+#: functions/modality-customizer.php:1737
+#: functions/modality-customizer.php:2110
+#: functions/modality-customizer.php:2199
+#: functions/modality-customizer.php:2823
+#: functions/modality-customizer.php:2997
 msgid "Title Color"
 msgstr ""
 
-#: functions/modality-customizer.php:1548
-#: functions/modality-customizer.php:1691
-#: functions/modality-customizer.php:2051
-#: functions/modality-customizer.php:2764
-#: functions/modality-customizer.php:2911
+#: functions/modality-customizer.php:1621
+#: functions/modality-customizer.php:1764
+#: functions/modality-customizer.php:2124
+#: functions/modality-customizer.php:2837
+#: functions/modality-customizer.php:2984
 msgid "Title Text"
 msgstr ""
 
-#: functions/modality-customizer.php:1561
-#: functions/modality-customizer.php:1602
-#: functions/modality-customizer.php:2777
+#: functions/modality-customizer.php:1634
+#: functions/modality-customizer.php:1675
+#: functions/modality-customizer.php:2850
 msgid "Subtitle Color"
 msgstr ""
 
-#: functions/modality-customizer.php:1575
-#: functions/modality-customizer.php:2791
+#: functions/modality-customizer.php:1648
+#: functions/modality-customizer.php:2864
 msgid "Subtitle Text"
 msgstr ""
 
-#: functions/modality-customizer.php:1589
-#: functions/modality-customizer.php:2456
-#: functions/modality-customizer.php:2805
+#: functions/modality-customizer.php:1662
+#: functions/modality-customizer.php:2529
+#: functions/modality-customizer.php:2878
 msgid "Button Text"
 msgstr ""
 
-#: functions/modality-customizer.php:1616
-#: functions/modality-customizer.php:2470
-#: functions/modality-customizer.php:2832
+#: functions/modality-customizer.php:1689
+#: functions/modality-customizer.php:2543
+#: functions/modality-customizer.php:2905
 msgid "Button URL"
 msgstr ""
 
-#: functions/modality-customizer.php:1624
+#: functions/modality-customizer.php:1697
 msgid "Theme Features Section"
 msgstr ""
 
-#: functions/modality-customizer.php:1677
-#: functions/modality-customizer.php:2064
-#: functions/modality-customizer.php:2531
+#: functions/modality-customizer.php:1750
+#: functions/modality-customizer.php:2137
+#: functions/modality-customizer.php:2604
 msgid "Text Color"
 msgstr ""
 
-#: functions/modality-customizer.php:1705
-#: functions/modality-customizer.php:2167
+#: functions/modality-customizer.php:1778
+#: functions/modality-customizer.php:2240
 msgid "Description Text"
 msgstr ""
 
-#: functions/modality-customizer.php:1719
+#: functions/modality-customizer.php:1792
 msgid "Feature #1 Title"
 msgstr ""
 
-#: functions/modality-customizer.php:1733
+#: functions/modality-customizer.php:1806
 msgid "Feature #1 Description"
 msgstr ""
 
-#: functions/modality-customizer.php:1747
+#: functions/modality-customizer.php:1820
 msgid "Feature #1 Icon"
 msgstr ""
 
-#: functions/modality-customizer.php:1750
-#: functions/modality-customizer.php:1821
-#: functions/modality-customizer.php:1892
-#: functions/modality-customizer.php:1963
-#: functions/modality-customizer.php:2226
-#: functions/modality-customizer.php:2269
-#: functions/modality-customizer.php:2312
-#: functions/modality-customizer.php:2355
-#: functions/modality-customizer.php:2576
-#: functions/modality-customizer.php:2633
-#: functions/modality-customizer.php:2690
+#: functions/modality-customizer.php:1823
+#: functions/modality-customizer.php:1894
+#: functions/modality-customizer.php:1965
+#: functions/modality-customizer.php:2036
+#: functions/modality-customizer.php:2299
+#: functions/modality-customizer.php:2342
+#: functions/modality-customizer.php:2385
+#: functions/modality-customizer.php:2428
+#: functions/modality-customizer.php:2649
+#: functions/modality-customizer.php:2706
+#: functions/modality-customizer.php:2763
 #, php-format
 msgid ""
 "Enter Font Awesome icon name. For icon name refer to: <a href=\"%1$s\" "
 "target=\"_blank\">Font Awesome Website</a>"
 msgstr ""
 
-#: functions/modality-customizer.php:1762
+#: functions/modality-customizer.php:1835
 msgid "Feature #1 Image"
 msgstr ""
 
-#: functions/modality-customizer.php:1776
+#: functions/modality-customizer.php:1849
 msgid "Feature #1 URL"
 msgstr ""
 
-#: functions/modality-customizer.php:1790
+#: functions/modality-customizer.php:1863
 msgid "Feature #2 Title"
 msgstr ""
 
-#: functions/modality-customizer.php:1804
+#: functions/modality-customizer.php:1877
 msgid "Feature #2 Description"
 msgstr ""
 
-#: functions/modality-customizer.php:1818
+#: functions/modality-customizer.php:1891
 msgid "Feature #2 Icon"
 msgstr ""
 
-#: functions/modality-customizer.php:1833
+#: functions/modality-customizer.php:1906
 msgid "Feature #2 Image"
 msgstr ""
 
-#: functions/modality-customizer.php:1847
+#: functions/modality-customizer.php:1920
 msgid "Feature #2 URL"
 msgstr ""
 
-#: functions/modality-customizer.php:1861
+#: functions/modality-customizer.php:1934
 msgid "Feature #3 Title"
 msgstr ""
 
-#: functions/modality-customizer.php:1875
+#: functions/modality-customizer.php:1948
 msgid "Feature #3 Description"
 msgstr ""
 
-#: functions/modality-customizer.php:1889
+#: functions/modality-customizer.php:1962
 msgid "Feature #3 Icon"
 msgstr ""
 
-#: functions/modality-customizer.php:1904
+#: functions/modality-customizer.php:1977
 msgid "Feature #3 Image"
 msgstr ""
 
-#: functions/modality-customizer.php:1918
+#: functions/modality-customizer.php:1991
 msgid "Feature #3 URL"
 msgstr ""
 
-#: functions/modality-customizer.php:1932
+#: functions/modality-customizer.php:2005
 msgid "Feature #4 Title"
 msgstr ""
 
-#: functions/modality-customizer.php:1946
+#: functions/modality-customizer.php:2019
 msgid "Feature #4 Description"
 msgstr ""
 
-#: functions/modality-customizer.php:1960
+#: functions/modality-customizer.php:2033
 msgid "Feature #4 Icon"
 msgstr ""
 
-#: functions/modality-customizer.php:1975
+#: functions/modality-customizer.php:2048
 msgid "Feature #4 Image"
 msgstr ""
 
-#: functions/modality-customizer.php:1989
+#: functions/modality-customizer.php:2062
 msgid "Feature #4 URL"
 msgstr ""
 
-#: functions/modality-customizer.php:1997
+#: functions/modality-customizer.php:2070
 msgid "Theme About Us Section"
 msgstr ""
 
-#: functions/modality-customizer.php:2078
-#: functions/modality-customizer.php:2153
+#: functions/modality-customizer.php:2151
+#: functions/modality-customizer.php:2226
 msgid "Section Text"
 msgstr ""
 
-#: functions/modality-customizer.php:2086
+#: functions/modality-customizer.php:2159
 msgid "Theme Services Section"
 msgstr ""
 
-#: functions/modality-customizer.php:2139
+#: functions/modality-customizer.php:2212
 msgid "Section Text Color"
 msgstr ""
 
-#: functions/modality-customizer.php:2181
+#: functions/modality-customizer.php:2254
 msgid "Section Image"
 msgstr ""
 
-#: functions/modality-customizer.php:2195
+#: functions/modality-customizer.php:2268
 msgid "Service #1 Title"
 msgstr ""
 
-#: functions/modality-customizer.php:2209
+#: functions/modality-customizer.php:2282
 msgid "Service #1 Description"
 msgstr ""
 
-#: functions/modality-customizer.php:2223
+#: functions/modality-customizer.php:2296
 msgid "Service #1 Icon"
 msgstr ""
 
-#: functions/modality-customizer.php:2238
+#: functions/modality-customizer.php:2311
 msgid "Service #2 Title"
 msgstr ""
 
-#: functions/modality-customizer.php:2252
+#: functions/modality-customizer.php:2325
 msgid "Service #2 Description"
 msgstr ""
 
-#: functions/modality-customizer.php:2266
+#: functions/modality-customizer.php:2339
 msgid "Service #2 Icon"
 msgstr ""
 
-#: functions/modality-customizer.php:2281
+#: functions/modality-customizer.php:2354
 msgid "Service #3 Title"
 msgstr ""
 
-#: functions/modality-customizer.php:2295
+#: functions/modality-customizer.php:2368
 msgid "Service #3 Description"
 msgstr ""
 
-#: functions/modality-customizer.php:2309
+#: functions/modality-customizer.php:2382
 msgid "Service #3 Icon"
 msgstr ""
 
-#: functions/modality-customizer.php:2324
+#: functions/modality-customizer.php:2397
 msgid "Service #4 Title"
 msgstr ""
 
-#: functions/modality-customizer.php:2338
+#: functions/modality-customizer.php:2411
 msgid "Service #4 Description"
 msgstr ""
 
-#: functions/modality-customizer.php:2352
+#: functions/modality-customizer.php:2425
 msgid "Service #4 Icon"
 msgstr ""
 
-#: functions/modality-customizer.php:2361
+#: functions/modality-customizer.php:2434
 msgid "Theme Call To Action Section"
 msgstr ""
 
-#: functions/modality-customizer.php:2402
+#: functions/modality-customizer.php:2475
 msgid "Small Header Text"
 msgstr ""
 
-#: functions/modality-customizer.php:2415
+#: functions/modality-customizer.php:2488
 msgid "Small Header Color"
 msgstr ""
 
-#: functions/modality-customizer.php:2429
+#: functions/modality-customizer.php:2502
 msgid "Big Header Text"
 msgstr ""
 
-#: functions/modality-customizer.php:2442
+#: functions/modality-customizer.php:2515
 msgid "Big Header Color"
 msgstr ""
 
-#: functions/modality-customizer.php:2478
+#: functions/modality-customizer.php:2551
 msgid "Theme Content Boxes Section"
 msgstr ""
 
-#: functions/modality-customizer.php:2518
+#: functions/modality-customizer.php:2591
 msgid "Titles Color"
 msgstr ""
 
-#: functions/modality-customizer.php:2545
+#: functions/modality-customizer.php:2618
 msgid "First Column Header"
 msgstr ""
 
-#: functions/modality-customizer.php:2559
+#: functions/modality-customizer.php:2632
 msgid "First Column Text"
 msgstr ""
 
-#: functions/modality-customizer.php:2573
+#: functions/modality-customizer.php:2646
 msgid "First Column Image"
 msgstr ""
 
-#: functions/modality-customizer.php:2588
+#: functions/modality-customizer.php:2661
 msgid "First Column URL"
 msgstr ""
 
-#: functions/modality-customizer.php:2602
+#: functions/modality-customizer.php:2675
 msgid "Second Column Header"
 msgstr ""
 
-#: functions/modality-customizer.php:2616
+#: functions/modality-customizer.php:2689
 msgid "Second Column Text"
 msgstr ""
 
-#: functions/modality-customizer.php:2630
+#: functions/modality-customizer.php:2703
 msgid "Second Column Image"
 msgstr ""
 
-#: functions/modality-customizer.php:2645
+#: functions/modality-customizer.php:2718
 msgid "Second Column URL"
 msgstr ""
 
-#: functions/modality-customizer.php:2659
+#: functions/modality-customizer.php:2732
 msgid "Third Column Header"
 msgstr ""
 
-#: functions/modality-customizer.php:2673
+#: functions/modality-customizer.php:2746
 msgid "Third Column Text"
 msgstr ""
 
-#: functions/modality-customizer.php:2687
+#: functions/modality-customizer.php:2760
 msgid "Third Column Image"
 msgstr ""
 
-#: functions/modality-customizer.php:2702
+#: functions/modality-customizer.php:2775
 msgid "Third Column URL"
 msgstr ""
 
-#: functions/modality-customizer.php:2710
+#: functions/modality-customizer.php:2783
 msgid "Theme Get In Touch Section"
 msgstr ""
 
-#: functions/modality-customizer.php:2818
+#: functions/modality-customizer.php:2891
 msgid "Button Color"
 msgstr ""
 
-#: functions/modality-customizer.php:2840
+#: functions/modality-customizer.php:2913
 msgid "Theme Latest News Section"
 msgstr ""
 
-#: functions/modality-customizer.php:2881
+#: functions/modality-customizer.php:2954
 msgid "Latest News Category"
 msgstr ""
 
-#: functions/modality-customizer.php:2897
+#: functions/modality-customizer.php:2970
 msgid "Number of Posts"
 msgstr ""
 
-#: functions/modality-customizer.php:2937
+#: functions/modality-customizer.php:3010
 msgid "Post Title Color"
 msgstr ""
 
-#: functions/modality-customizer.php:2950
+#: functions/modality-customizer.php:3023
 msgid "Post Meta Color"
 msgstr ""
 
-#: functions/modality-customizer.php:2958
+#: functions/modality-customizer.php:3031
 msgid "Theme Social Links"
 msgstr ""
 
-#: functions/modality-customizer.php:2961
+#: functions/modality-customizer.php:3034
 msgid "Enter your profile URL. To remove it, just leave it blank"
 msgstr ""
 
-#: functions/modality-customizer.php:3000 social-section.php:16
+#: functions/modality-customizer.php:3073 social-section.php:16
 msgid "Facebook"
 msgstr ""
 
-#: functions/modality-customizer.php:3014 social-section.php:19
+#: functions/modality-customizer.php:3087 social-section.php:19
 msgid "Twitter"
 msgstr ""
 
-#: functions/modality-customizer.php:3028
+#: functions/modality-customizer.php:3101
 msgid "Google Plus"
 msgstr ""
 
-#: functions/modality-customizer.php:3042 social-section.php:25
+#: functions/modality-customizer.php:3115 social-section.php:25
 msgid "LinkedIn"
 msgstr ""
 
-#: functions/modality-customizer.php:3056 social-section.php:28
+#: functions/modality-customizer.php:3129 social-section.php:28
 msgid "Instagram"
 msgstr ""
 
-#: functions/modality-customizer.php:3070 social-section.php:31
+#: functions/modality-customizer.php:3143 social-section.php:31
 msgid "Vimeo"
 msgstr ""
 
@@ -972,31 +1023,31 @@ msgstr ""
 msgid "Primary Menu"
 msgstr ""
 
-#: functions/modality-functions.php:155
+#: functions/modality-functions.php:163
 msgid "Footer Widget 1"
 msgstr ""
 
-#: functions/modality-functions.php:164
+#: functions/modality-functions.php:172
 msgid "Footer Widget 2"
 msgstr ""
 
-#: functions/modality-functions.php:173
+#: functions/modality-functions.php:181
 msgid "Footer Widget 3"
 msgstr ""
 
-#: functions/modality-functions.php:182
+#: functions/modality-functions.php:190
 msgid "Footer Widget 4"
 msgstr ""
 
-#: functions/modality-functions.php:234
+#: functions/modality-functions.php:242
 msgid "&larr; Previous"
 msgstr ""
 
-#: functions/modality-functions.php:235
+#: functions/modality-functions.php:243
 msgid "Next &rarr;"
 msgstr ""
 
-#: functions/modality-functions.php:292
+#: functions/modality-functions.php:300
 #, php-format
 msgid "Page %s"
 msgstr ""

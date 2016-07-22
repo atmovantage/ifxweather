@@ -22,6 +22,15 @@
 				<input type="checkbox" id="ai1wm-no-themes" name="options[no_themes]" />
 				<label for="ai1wm-no-themes"><?php _e( 'Do <strong>not</strong> export themes (files)', AI1WM_PLUGIN_NAME ); ?></label>
 			</li>
+
+			<?php if ( apply_filters( 'ai1wm_max_file_size', AI1WM_MAX_FILE_SIZE ) === 0 ): ?>
+				<li>
+					<input type="checkbox" id="ai1wm-no-inactive-themes" name="options[no_inactive_themes]" />
+					<label for="ai1wm-no-inactive-themes"><?php _e( 'Do <strong>not</strong> export inactive themes (files)', AI1WM_PLUGIN_NAME ); ?></label>
+					<small style="color:red"><?php _e( 'new', AI1WM_PLUGIN_NAME ); ?></small>
+				</li>
+			<?php endif; ?>
+
 			<li>
 				<input type="checkbox" id="ai1wm-no-plugins" name="options[no_plugins]" />
 				<label for="ai1wm-no-plugins"><?php _e( 'Do <strong>not</strong> export plugins (files)', AI1WM_PLUGIN_NAME ); ?></label>

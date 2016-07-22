@@ -6,6 +6,11 @@
  * @package Quest
  */
 
+if ( !defined( 'QUEST_MINIFY_SCRIPTS' ) ) {
+	define( 'QUEST_MINIFY_SCRIPTS', true );
+}
+
+
 /**
  * Set the content width based on the theme's design and stylesheet.
  */
@@ -141,38 +146,54 @@ if ( ! function_exists( 'quest_scripts' ) ):
 	 */
 	function quest_scripts() {
 
-		// Enqueue required styles
-		wp_enqueue_style( 'quest-bootstrap', get_template_directory_uri() . '/assets/plugins/bootstrap/css/bootstrap.min.css' );
-		wp_enqueue_style( 'smartmenus', get_template_directory_uri() . '/assets/plugins/smartmenus/addons/bootstrap/jquery.smartmenus.bootstrap.css' );
-		wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/assets/plugins/font-awesome/css/font-awesome.min.css' );
-		wp_enqueue_style( 'animate-css', get_template_directory_uri() . '/assets/plugins/animate/animate.css' );
-		wp_enqueue_style( 'slit-slider', get_template_directory_uri() . '/assets/plugins/FullscreenSlitSlider/css/style.css' );
-		wp_enqueue_style( 'colorbox', get_template_directory_uri() . '/assets/plugins/colorbox/colorbox.css' );
-		wp_enqueue_style( 'Quest-style', get_stylesheet_uri(), 	array(
-        	'quest-bootstrap',
-        	'smartmenus',
-        	'font-awesome',
-        	'animate-css',
-        	'slit-slider',
-        	'colorbox'
-    	) );
+		if( ! ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ) {
 
-		// Enqueue required scripts
-		wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/assets/plugins/modernizr/modernizr.custom.js' );
-		wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/assets/plugins/bootstrap/js/bootstrap.js', array(
-			'jquery',
-			'masonry'
-		) );
-		wp_enqueue_script( 'smoothscroll', get_template_directory_uri() . '/assets/plugins/smoothscroll/SmoothScroll.js' );
-		wp_enqueue_script( 'wow', get_template_directory_uri() . '/assets/plugins/wow/wow.min.js' );
-		wp_enqueue_script( 'ba-cond', get_template_directory_uri() . '/assets/plugins/FullscreenSlitSlider/js/jquery.ba-cond.js', array( 'jquery' ) );
-		wp_enqueue_script( 'slit-slider', get_template_directory_uri() . '/assets/plugins/FullscreenSlitSlider/js/jquery.slitslider.js' );
-		wp_enqueue_script( 'colorbox', get_template_directory_uri() . '/assets/plugins/colorbox/jquery.colorbox-min.js', array( 'jquery' ) );
-		wp_enqueue_script( 'imagesloaded', get_template_directory_uri() . '/assets/plugins/imagesloaded/imagesloaded.pkgd.js', array( 'jquery' ) );
-		wp_enqueue_script( 'smartmenus', get_template_directory_uri() . '/assets/plugins/smartmenus/jquery.smartmenus.min.js' );
-		wp_enqueue_script( 'bs-smartmenus', get_template_directory_uri() . '/assets/plugins/smartmenus/addons/bootstrap/jquery.smartmenus.bootstrap.js' );
-		wp_enqueue_script( 'smartmenus-keyboard', get_template_directory_uri() . '/assets/plugins/smartmenus/addons/keyboard/jquery.smartmenus.keyboard.js' );
-		wp_enqueue_script( 'quest-js', get_template_directory_uri() . '/assets/js/quest.js' );
+			// Enqueue required styles
+			wp_enqueue_style( 'quest-all-css', get_template_directory_uri() . '/assets/css/plugins-all.min.css' );
+			wp_enqueue_style( 'Quest-style', get_stylesheet_uri(), array( 'quest-all-css' ) );
+
+			// Enqueue required scripts
+			wp_enqueue_script( 'quest-all-js', get_template_directory_uri() . '/assets/js/quest-and-plugins.js', array(
+				'jquery',
+				'masonry'
+			) );
+
+		} else {
+
+			// Enqueue required styles
+			wp_enqueue_style( 'quest-bootstrap', get_template_directory_uri() . '/assets/plugins/bootstrap/css/bootstrap.min.css' );
+			wp_enqueue_style( 'smartmenus', get_template_directory_uri() . '/assets/plugins/smartmenus/addons/bootstrap/jquery.smartmenus.bootstrap.css' );
+			wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/assets/plugins/font-awesome/css/font-awesome.min.css' );
+			wp_enqueue_style( 'animate-css', get_template_directory_uri() . '/assets/plugins/animate/animate.css' );
+			wp_enqueue_style( 'slit-slider', get_template_directory_uri() . '/assets/plugins/FullscreenSlitSlider/css/style.css' );
+			wp_enqueue_style( 'colorbox', get_template_directory_uri() . '/assets/plugins/colorbox/colorbox.css' );
+			wp_enqueue_style( 'Quest-style', get_stylesheet_uri(), array(
+				'quest-bootstrap',
+				'smartmenus',
+				'font-awesome',
+				'animate-css',
+				'slit-slider',
+				'colorbox'
+			) );
+
+			// Enqueue required scripts
+			wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/assets/plugins/modernizr/modernizr.custom.js' );
+			wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/assets/plugins/bootstrap/js/bootstrap.js', array(
+				'jquery',
+				'masonry'
+			) );
+			wp_enqueue_script( 'smoothscroll', get_template_directory_uri() . '/assets/plugins/smoothscroll/SmoothScroll.js' );
+			wp_enqueue_script( 'wow', get_template_directory_uri() . '/assets/plugins/wow/wow.min.js' );
+			wp_enqueue_script( 'ba-cond', get_template_directory_uri() . '/assets/plugins/FullscreenSlitSlider/js/jquery.ba-cond.js', array( 'jquery' ) );
+			wp_enqueue_script( 'slit-slider', get_template_directory_uri() . '/assets/plugins/FullscreenSlitSlider/js/jquery.slitslider.js' );
+			wp_enqueue_script( 'colorbox', get_template_directory_uri() . '/assets/plugins/colorbox/jquery.colorbox-min.js', array( 'jquery' ) );
+			wp_enqueue_script( 'imagesloaded', get_template_directory_uri() . '/assets/plugins/imagesloaded/imagesloaded.pkgd.js', array( 'jquery' ) );
+			wp_enqueue_script( 'smartmenus', get_template_directory_uri() . '/assets/plugins/smartmenus/jquery.smartmenus.js' );
+			wp_enqueue_script( 'bs-smartmenus', get_template_directory_uri() . '/assets/plugins/smartmenus/addons/bootstrap/jquery.smartmenus.bootstrap.js' );
+			wp_enqueue_script( 'smartmenus-keyboard', get_template_directory_uri() . '/assets/plugins/smartmenus/addons/keyboard/jquery.smartmenus.keyboard.js' );
+			wp_enqueue_script( 'quest-js', get_template_directory_uri() . '/assets/js/quest.js' );
+
+		}
 
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 			wp_enqueue_script( 'comment-reply' );
@@ -358,18 +379,10 @@ if ( ! function_exists( 'quest_wp_page_menu' ) ):
 	}
 endif;
 
-
 /**
- * Admin includes
+ * Pace Builder Helper
  */
-if ( is_admin() )  :
-
-	/**
-	 * Page Builder
-	 */
-	require get_template_directory() . '/inc/pagebuilder/builder.php';
-
-endif;
+require get_template_directory() . '/inc/pacebuilder/helper.php';
 
 /**
  * Custom template tags for this theme.
@@ -392,17 +405,68 @@ require get_template_directory() . '/inc/customizer/bootstrap.php';
 require get_template_directory() . '/inc/jetpack.php';
 
 /**
- * Meta Revisions for PageBuilder.
- */
-require get_template_directory() . '/inc/wp-post-meta-revisions.php';
-
-/**
  * Woocommerce
  */
 if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/woocommerce.php';
 }
 
+/**
+ * CMB2
+ */
+require get_template_directory() . '/inc/metaboxes.php';
+
+/**
+ * Theme info
+ */
+require get_template_directory() . '/inc/theme-info.php';
+
+/**
+ *TGM Plugin activation.
+ */
+require get_template_directory() . '/inc/class-tgm-plugin-activation.php';
+
+
+/**
+ * Admin includes
+ */
+if ( is_admin() )  :
+
+	/**
+	 * Pace Builder
+	 */
+	require get_template_directory() . '/inc/pacebuilder/builder.php';
+
+	/**
+	 * Meta Revisions for PaceBuilder.
+	 */
+	require get_template_directory() . '/inc/pacebuilder/revisions.php';
+
+endif;
+
+add_action( 'tgmpa_register', 'quest_recommended_plugins' );
+
+if ( ! function_exists( 'quest_recommended_plugins' ) ):
+
+	/**
+	 * Hook into TGMPA and add recommended plugins
+	 *
+	 * @return void
+	 */
+	function quest_recommended_plugins() {
+	 
+	    $plugins = array(
+	        array(
+	            'name'               => 'Meta Slider',
+	            'slug'               => 'ml-slider',
+	            'required'           => false
+	        )          
+	    );
+	 
+	    tgmpa( $plugins);
+	 
+	}
+endif;
 
 if ( ! function_exists( 'quest_search_menu_icon' ) ):
 
@@ -430,5 +494,25 @@ if ( ! function_exists( 'quest_search_menu_icon' ) ):
 endif;
 
 add_filter( 'wp_nav_menu_items', 'quest_search_menu_icon', 10, 2 );
+
+
+/**
+ * Add filter to Meta Slider hoplink
+ *
+ * @return string link
+ */
+function quest_metaslider_hoplink( $link ) {
+    return "https://getdpd.com/cart/hoplink/15318?referrer=163zqrxlk328s84";
+}
+
+if( class_exists( 'MetaSliderPlugin' ) ) {
+	/**
+	 * Filter the MetaSlider Hop Link
+	 *
+	 * @return string link
+	 */
+	add_filter( 'metaslider_hoplink', 'quest_metaslider_hoplink', 10, 1 );
+}
+
 
 ?>

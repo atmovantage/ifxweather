@@ -59,7 +59,7 @@ class Ai1wm_Import_Blogs {
 								'HomeURL' => $site->HomeURL,
 							),
 							'New' => array(
-								'Id'      => 0,
+								'Id'      => 1,
 								'SiteURL' => site_url(),
 								'HomeURL' => home_url(),
 							),

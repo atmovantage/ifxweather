@@ -29,7 +29,6 @@ class Quest_Customize_General {
 		$site_title        = $wp_customize->get_section( $section_id );
 		$site_title->panel = $panel_id;
 
-
 		// Change priority for Site Title
 		$site_title           = $wp_customize->get_control( 'blogname' );
 		$site_title->priority = 15;
@@ -37,7 +36,6 @@ class Quest_Customize_General {
 		// Change priority for Site Tagline
 		$site_title           = $wp_customize->get_control( 'blogdescription' );
 		$site_title->priority = 17;
-
 
 		$setting_id = $section_id . '_hide_title';
 
@@ -93,7 +91,6 @@ class Quest_Customize_General {
 		$site_title        = $wp_customize->get_section( 'static_front_page' );
 		$site_title->panel = $panel_id;
 
-
 		/******************
 		 * // Logo Section
 		 *******************/
@@ -108,7 +105,6 @@ class Quest_Customize_General {
 				'panel'      => $panel_id
 			)
 		);
-
 
 		$setting_id = $section_id . '_logo';
 
@@ -133,6 +129,29 @@ class Quest_Customize_General {
 			)
 		);
 
+		$setting_id = $section_id . '_logo_retina';
+
+		$wp_customize->add_setting(
+			$setting_id,
+			array(
+				'default'           => quest_get_default( $setting_id ),
+				'type'              => 'theme_mod',
+				'sanitize_callback' => 'esc_url_raw'
+			)
+		);
+
+		$wp_customize->add_control(
+			new WP_Customize_Image_Control(
+				$wp_customize,
+				$setting_id,
+				array(
+					'label'       => __( 'Retina Logo', 'quest' ),
+					'description' => __( 'Will be visible only on devices with screen width more than 2500px', 'quest' ),
+					'section'     => $section_id,
+					'settings'    => $setting_id
+				)
+			)
+		);
 
 		$setting_id = $section_id . '_favicon';
 
@@ -157,7 +176,6 @@ class Quest_Customize_General {
 				)
 			)
 		);
-
 
 		/******************************
 		 * // Social Profiles Section
@@ -196,7 +214,6 @@ class Quest_Customize_General {
 				)
 			)
 		);
-
 
 		$setting_id = $section_id . '_twitter';
 
@@ -289,7 +306,6 @@ class Quest_Customize_General {
 				)
 			)
 		);
-
 
 		$setting_id = $section_id . '_vimeo-square';
 
@@ -406,7 +422,6 @@ class Quest_Customize_General {
 			)
 		);
 
-
 		$setting_id = $section_id . '_digg';
 
 		$wp_customize->add_setting(
@@ -430,7 +445,6 @@ class Quest_Customize_General {
 			)
 		);
 
-
 		/******************************
 		 * // Sticky Posts Section
 		 *******************************/
@@ -453,7 +467,7 @@ class Quest_Customize_General {
 			array(
 				'default'           => quest_get_default( $setting_id ),
 				'type'              => 'theme_mod',
-				'sanitize_callback' => 'esc_url_raw'
+				'sanitize_callback' => 'esc_attr'
 			)
 		);
 
@@ -469,6 +483,44 @@ class Quest_Customize_General {
 			)
 		);
 
+		/******************************
+		 * // Custom Section
+		 *******************************/
+
+		$section_id = 'custom';
+
+		$wp_customize->add_section( $section_id,
+			array(
+				'title'      => __( 'Custom', 'quest' ),
+				'priority'   => 35,
+				'capability' => 'edit_theme_options',
+				'panel'      => $panel_id
+			)
+		);
+
+		$setting_id = $section_id . '_css';
+
+		$wp_customize->add_setting(
+			$setting_id,
+			array(
+				'default'           => quest_get_default( $setting_id ),
+				'type'              => 'theme_mod',
+				'sanitize_callback' => 'wp_kses'
+			)
+		);
+
+		$wp_customize->add_control(
+			new WP_Customize_Control(
+				$wp_customize,
+				$setting_id,
+				array(
+					'label'    => __( 'Custom CSS', 'quest' ),
+					'section'  => $section_id,
+					'settings' => $setting_id,
+					'type'	   => 'textarea'
+				)
+			)
+		);
 
 	}
 }

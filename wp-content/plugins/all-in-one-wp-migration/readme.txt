@@ -3,7 +3,7 @@ Contributors: yani.iliev, bangelov, pimjitsawang
 Tags: db migration, migration, wordpress migration, db backup, db restore, website backup, website restore, website migration, website deploy, wordpress deploy, db backup, database export, database serialization, database find replace
 Requires at least: 3.3
 Tested up to: 4.5
-Stable tag: 5.45
+Stable tag: 5.46
 License: GPLv2 or later
 
 All-in-One WP Migration is the only tool that you will ever need to migrate a WordPress site.
@@ -64,6 +64,8 @@ All in One WP Plugin is the first plugin to offer true mobile experience on Word
 
 [youtube http://www.youtube.com/watch?v=BpWxCeUWBOk]
 
+[youtube http://www.youtube.com/watch?v=mRp7qTFYKgs]
+
 == Installation ==
 1. Upload the `all-in-one-wp-migration` folder to the `/wp-content/plugins/` directory
 1. Activate the All in One WP Migration plugin through the 'Plugins' menu in WordPress
@@ -75,6 +77,10 @@ All in One WP Plugin is the first plugin to offer true mobile experience on Word
 3. Plugin Menu
 
 == Changelog ==
+= 5.46 =
+* Add "Restore from Backups" video in readme file
+* Display message if backups are inaccessible
+
 = 5.45 =
 * Fix an issue with blogs.dir path replacement
 

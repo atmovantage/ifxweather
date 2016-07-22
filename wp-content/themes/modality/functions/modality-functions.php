@@ -122,6 +122,12 @@ function modality_add_script_function() {
 	wp_enqueue_script('modernizr', get_template_directory_uri() . '/js/modernizr.js', array( 'jquery' ),'', false);
 	wp_enqueue_script( 'unslider', get_template_directory_uri() . '/js/unslider.js', array( 'jquery' ),'', true);
 	wp_enqueue_script( 'flexslider', get_template_directory_uri() . '/js/jquery.flexslider.js', array( 'jquery' ),'', true);
+	wp_enqueue_script( 'ideal-image-slider', get_template_directory_uri() . '/js/ideal-image-slider.js', array(), '20160115', true );
+	if ($modality_theme_options['captions_on'] == '1') {	
+		if (is_home() && ! is_paged()) {
+			wp_enqueue_script( 'iis-captions', get_template_directory_uri() . '/js/iis-captions.js', array(), '20160116', true );
+		}
+	}
 	if ( $modality_theme_options['menu_sticky'] == 1) {
 		wp_enqueue_script('stickUp', get_template_directory_uri() . '/js/stickUp.js', array( 'jquery' ),'', false);
 		wp_enqueue_script('sticky', get_template_directory_uri() . '/js/sticky.js', array( 'jquery' ),'', false);

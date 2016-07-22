@@ -64,6 +64,12 @@ function modality_customize_register($wp_customize){
 		'0'	=> '0',
 	);
 	
+	//Image Sliders
+	$image_sliders = array('ideal' => __('Ideal Image Slider','modality'), 'unslider' => __('Unslider','modality'));
+	
+	// Slider Effects
+	$options_effects = array('slide' => __('Slide', 'modality'), 'fade' => __('Fade', 'modality'));
+	
 	// Sidebar Position
 	$theme_layout = array('col1' => __('No Sidebars','modality'), 'col2-l' => __('Right Sidebar','modality'), 'col2-r' => __('Left Sidebar','modality'));
 	
@@ -119,7 +125,7 @@ function modality_customize_register($wp_customize){
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Info_Control($wp_customize, 'theme_info', array(
-        'label'    => __('', 'modality'),
+        'label'    => __(' ', 'modality'),
         'section'  => 'Theme Settings',
         'settings' => 'modality_theme_options[theme_info]',
     )));
@@ -988,6 +994,22 @@ function modality_customize_register($wp_customize){
 		'panel' => 'theme_options',
 	) );
 	//===============================
+    $wp_customize->add_setting( 'modality_theme_options[default_image_slider]', array(
+        'default'        => 'unslider',
+		'sanitize_callback' => 'modality_sanitize_cb',
+        'capability'     => 'edit_theme_options',
+        'type'           => 'option',
+ 
+    ));
+ 
+    $wp_customize->add_control('default_image_slider', array(
+        'label'      => __('Default Image Slider', 'modality'),
+        'section'    => 'Slider Settings',
+        'settings'   => 'modality_theme_options[default_image_slider]',
+        'type'    => 'select',
+        'choices'    => $image_sliders,
+    ));
+	//===============================
     $wp_customize->add_setting( 'modality_theme_options[slider_height]', array(
         'default'        => '500',
 		'sanitize_callback' => 'modality_sanitize_number',
@@ -1062,11 +1084,28 @@ function modality_customize_register($wp_customize){
         'settings'   => 'modality_theme_options[slider_num]',
     ));
 	//===============================
+    $wp_customize->add_setting( 'modality_theme_options[image_slider_effect]', array(
+        'default'        => 'fade',
+		'sanitize_callback' => 'modality_sanitize_cb',
+        'capability'     => 'edit_theme_options',
+        'type'           => 'option',
+ 
+    ));
+ 
+    $wp_customize->add_control('image_slider_effect', array(
+        'label'      => __('Image Slider Effect', 'modality'),
+        'section'    => 'Slider Settings',
+        'settings'   => 'modality_theme_options[image_slider_effect]',
+        'type'    => 'select',
+        'choices'    => $options_effects,
+		'description' => __('Can be only used with Ideal Image Slider', 'modality'),
+    ));
+	//===============================
 	$wp_customize->add_setting('modality_theme_options[captions_on]', array(
         'capability' => 'edit_theme_options',
 		'sanitize_callback' => 'modality_sanitize_checkbox',
         'type'       => 'option',
-		'default'        => true,
+		'default'        => false,
     ));
  
     $wp_customize->add_control('captions_on', array(
@@ -1102,10 +1141,26 @@ function modality_customize_register($wp_customize){
         'label'      => __('Caption Position Top (px)', 'modality'),
         'section'    => 'Slider Settings',
         'settings'   => 'modality_theme_options[captions_pos_top]',
+		'description' => __('Can be only used with Unslider Image Slider', 'modality'),
+    ));
+	//===============================
+    $wp_customize->add_setting( 'modality_theme_options[captions_pos_bottom]', array(
+        'default'        => '5',
+		'sanitize_callback' => 'modality_sanitize_number',
+        'capability'     => 'edit_theme_options',
+        'type'           => 'option',
+ 
+    ));
+ 
+    $wp_customize->add_control('captions_pos_bottom', array(
+        'label'      => __('Caption Position Bottom %', 'modality'),
+        'section'    => 'Slider Settings',
+        'settings'   => 'modality_theme_options[captions_pos_bottom]',
+		'description' => __('Can be only used with Ideal Image Slider', 'modality'),
     ));
 	//===============================
     $wp_customize->add_setting( 'modality_theme_options[captions_width]', array(
-        'default'        => '70',
+        'default'        => '90',
 		'sanitize_callback' => 'modality_sanitize_number',
         'capability'     => 'edit_theme_options',
         'type'           => 'option',
@@ -1119,7 +1174,7 @@ function modality_customize_register($wp_customize){
     ));
 	//===============================
 	$wp_customize->add_setting( 'modality_theme_options[captions_title_color]', array(
-    	'default'        => '#ffffff',
+    	'default'        => '#111111',
 		'sanitize_callback' => 'sanitize_hex_color',
     	'type'           => 'option',
     	'capability'     => 'edit_theme_options',
@@ -1132,7 +1187,7 @@ function modality_customize_register($wp_customize){
     )));
 	//===============================
 	$wp_customize->add_setting( 'modality_theme_options[captions_text_color]', array(
-    	'default'        => '#ffffff',
+    	'default'        => '#111111',
 		'sanitize_callback' => 'sanitize_hex_color',
     	'type'           => 'option',
     	'capability'     => 'edit_theme_options',
@@ -1145,7 +1200,7 @@ function modality_customize_register($wp_customize){
     )));
 	//===============================
 	$wp_customize->add_setting( 'modality_theme_options[captions_button_color]', array(
-    	'default'        => '#ffffff',
+    	'default'        => '#111111',
 		'sanitize_callback' => 'sanitize_hex_color',
     	'type'           => 'option',
     	'capability'     => 'edit_theme_options',
@@ -1155,6 +1210,7 @@ function modality_customize_register($wp_customize){
         'label'    => __('Captions Button Color', 'modality'),
         'section'  => 'Slider Settings',
         'settings' => 'modality_theme_options[captions_button_color]',
+		'description' => __('Can be only used with Unslider Image Slider', 'modality'),
     )));
 	//===============================
 	$wp_customize->add_setting('modality_theme_options[captions_button]', array(
@@ -1169,6 +1225,7 @@ function modality_customize_register($wp_customize){
         'label'    => __('Enable Captions Button', 'modality'),
         'section'  => 'Slider Settings',
         'type'     => 'checkbox',
+		'description' => __('Can be only used with Unslider Image Slider', 'modality'),
     ));
 	//===============================
     $wp_customize->add_setting( 'modality_theme_options[caption_button_text]', array(
@@ -1183,6 +1240,22 @@ function modality_customize_register($wp_customize){
         'label'      => __('Captions Button Text', 'modality'),
         'section'    => 'Slider Settings',
         'settings'   => 'modality_theme_options[caption_button_text]',
+		'description' => __('Can be only used with Unslider Image Slider', 'modality'),
+    ));
+	//===============================
+	$wp_customize->add_setting('modality_theme_options[slider_dots]', array(
+        'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'modality_sanitize_checkbox',
+        'type'       => 'option',
+		'default'        => '1',
+    ));
+ 
+    $wp_customize->add_control('slider_dots', array(
+        'settings' => 'modality_theme_options[slider_dots]',
+        'label'    => __('Enable Slider Dots', 'modality'),
+        'section'  => 'Slider Settings',
+        'type'     => 'checkbox',
+		'description' => __('Can be only used with Unslider Image Slider', 'modality'),
     ));
 	//  =============================
     //  = Footer Section            =
@@ -3140,10 +3213,12 @@ function modality_theme_custom_styling() {
 	$slider_height = $modality_theme_options['slider_height'];
 	$captions_pos_left = $modality_theme_options['captions_pos_left'];
 	$captions_pos_top = $modality_theme_options['captions_pos_top'];
+	$captions_pos_bottom = $modality_theme_options['captions_pos_bottom'];
 	$captions_width = $modality_theme_options['captions_width'];
 	$captions_title_color = $modality_theme_options['captions_title_color'];
 	$captions_text_color = $modality_theme_options['captions_text_color'];
 	$captions_button_color = $modality_theme_options['captions_button_color'];
+	$slider_dots = $modality_theme_options['slider_dots'];
 	/**
 	 * Footer Settings
 	 */
@@ -3346,9 +3421,11 @@ function modality_theme_custom_styling() {
 
 	if ( $captions_title_color )
 	$output .= '.banner .inner h1 { color:' . $captions_title_color . '}' . "\n";
+	$output .= '.iis-caption-title a { color:' . $captions_title_color . '}' . "\n";
 	
 	if ( $captions_text_color )
 	$output .= '.banner .inner p { color: ' . $captions_text_color . '}' . "\n";
+	$output .= '.iis-caption-content p { color: ' . $captions_text_color . '}' . "\n";
 	
 	if ( $captions_button_color )
 	$output .= '.banner .btn { color: ' . $captions_button_color . '}' . "\n";
@@ -3356,12 +3433,20 @@ function modality_theme_custom_styling() {
 	
 	if ( $captions_pos_left )
 	$output .= '.banner .inner { padding-left: ' . $captions_pos_left . '%}' . "\n";
+	$output .= '.iis-caption { left: ' . $captions_pos_left . '%}' . "\n";
 	
 	if ( $captions_pos_top )
 	$output .= '.banner .inner { padding-top: ' . $captions_pos_top . 'px}' . "\n";
 	
+	if ( $captions_pos_bottom )
+	$output .= '.iis-caption { bottom: ' . $captions_pos_bottom . '%}' . "\n";
+	
 	if ( $captions_width )
 	$output .= '.banner .inner { width: ' . $captions_width . '%}' . "\n";
+	$output .= '.iis-caption { max-width: ' . $captions_width . '%}' . "\n";
+	
+	if ( $slider_dots == false )
+	$output .= '.banner ol.dots { display: none;}' . "\n";
 	/**
 	 * Footer Settings
 	 */
@@ -3776,20 +3861,24 @@ function modality_get_option_defaults() {
 		'blog_section_on' => '1',
 		'latest_posts_on' => '1',
 		'social_section_on' => '1',
+		'default_image_slider' => 'unslider',
 		'slider_height' => '500',
 		'image_slider_cat' => '',
 		'slideshow_speed' => '5000',
 		'animation_speed' => '800',
 		'slider_num' => '3',
-		'captions_on' => true,
+		'image_slider_effect' => 'fade',
+		'captions_on' => false,
 		'captions_pos_left' => '0',
 		'captions_pos_top' => '120',
-		'captions_width' => '70',
-		'captions_title_color' => '#ffffff',
-		'captions_text_color' => '#ffffff',
-		'captions_button_color' => '#ffffff',
+		'captions_pos_bottom' => '5',
+		'captions_width' => '90',
+		'captions_title_color' => '#111111',
+		'captions_text_color' => '#111111',
+		'captions_button_color' => '#111111',
 		'captions_button' => '1',
 		'caption_button_text' => 'Read More',
+		'slider_dots' => '1',
 		'footer_bg_color' => '#252525',
 		'copyright_bg_color' => '#111111',
 		'footer_widget_title_color' => '#ffffff',

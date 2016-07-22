@@ -41,6 +41,21 @@ class Ai1wm_Export_Enumerate {
 		// Exclude themes
 		if ( isset( $params['options']['no_themes'] ) ) {
 			$exclude_filters[] = 'themes';
+		} else {
+			$inactive_themes = array();
+
+			// Exclude inactive themes
+			if ( isset( $params['options']['no_inactive_themes'] ) ) {
+				foreach ( wp_get_themes() as $theme => $info ) {
+					// Exclude current parent and child themes
+					if ( ! in_array( $theme, array( get_template(), get_stylesheet() ) ) ) {
+						$inactive_themes[] = 'themes' . DIRECTORY_SEPARATOR . $theme;
+					}
+				}
+			}
+
+			// Set exclude filters
+			$exclude_filters = array_merge( $exclude_filters, $inactive_themes );
 		}
 
 		// Exclude plugins
@@ -53,7 +68,11 @@ class Ai1wm_Export_Enumerate {
 			if ( isset( $params['options']['no_inactive_plugins'] ) ) {
 				foreach ( get_plugins() as $basename => $plugin ) {
 					if ( is_plugin_inactive( $basename ) ) {
-						$inactive_plugins[] = 'plugins' . DIRECTORY_SEPARATOR . dirname( $basename );
+						if ( dirname( $basename ) === '.' ) {
+							$inactive_plugins[] = 'plugins' . DIRECTORY_SEPARATOR . basename( $basename );
+						} else {
+							$inactive_plugins[] = 'plugins' . DIRECTORY_SEPARATOR . dirname( $basename );
+						}
 					}
 				}
 			}
@@ -64,8 +83,7 @@ class Ai1wm_Export_Enumerate {
 
 		// Exclude media
 		if ( isset( $params['options']['no_media'] ) ) {
-			$exclude_filters[] = 'uploads';
-			$exclude_filters[] = 'blogs.dir';
+			$exclude_filters = array_merge( $exclude_filters, array( 'uploads', 'blogs.dir' ) );
 		}
 
 		// Get total files

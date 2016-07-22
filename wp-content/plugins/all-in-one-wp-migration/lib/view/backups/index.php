@@ -67,26 +67,32 @@
 									<i class="ai1wm-icon-file-zip"></i>
 									<?php echo $backup['filename']; ?>
 								</td>
-								<td class="ai1wm-column-date">
-									<?php echo human_time_diff( $backup['mtime'] ); ?> <?php _e( 'ago', AI1WM_PLUGIN_NAME ); ?>
-								</td>
-								<td class="ai1wm-column-size">
-									<?php echo size_format( $backup['size'], 2 ); ?>
-								</td>
-								<td class="ai1wm-column-actions ai1wm-backup-actions">
-									<a href="<?php echo ai1wm_backups_url( array( 'archive' => $backup['filename'] ) ); ?>" class="ai1wm-button-green ai1wm-button-alone ai1wm-backup-download">
-										<i class="ai1wm-icon-arrow-down ai1wm-icon-alone"></i>
-										<span><?php _e( 'Download', AI1WM_PLUGIN_NAME ); ?></span>
-									</a>
-									<a href="#" data-archive="<?php echo $backup['filename']; ?>" class="ai1wm-button-gray ai1wm-button-alone ai1wm-backup-restore">
-										<i class="ai1wm-icon-cloud-upload ai1wm-icon-alone"></i>
-										<span><?php _e( 'Restore', AI1WM_PLUGIN_NAME ); ?></span>
-									</a>
-									<a href="#" data-archive="<?php echo $backup['filename']; ?>" class="ai1wm-button-red ai1wm-button-alone ai1wm-backup-delete">
-										<i class="ai1wm-icon-close ai1wm-icon-alone"></i>
-										<span><?php _e( 'Delete', AI1WM_PLUGIN_NAME ); ?></span>
-									</a>
-								</td>
+								<?php if ( is_null( $backup['mtime'] ) || is_null( $backup['size'] ) ): ?>
+									<td class="ai1wm-column-info" colspan="3">
+										<?php _e( 'The file is too large for your hosting plan.', AI1WM_PLUGIN_NAME ); ?>
+									</td>
+								<?php else: ?>
+									<td class="ai1wm-column-date">
+										<?php echo human_time_diff( $backup['mtime'] ); ?> <?php _e( 'ago', AI1WM_PLUGIN_NAME ); ?>
+									</td>
+									<td class="ai1wm-column-size">
+										<?php echo size_format( $backup['size'], 2 ); ?>
+									</td>
+									<td class="ai1wm-column-actions ai1wm-backup-actions">
+										<a href="<?php echo ai1wm_backups_url( array( 'archive' => $backup['filename'] ) ); ?>" class="ai1wm-button-green ai1wm-button-alone ai1wm-backup-download">
+											<i class="ai1wm-icon-arrow-down ai1wm-icon-alone"></i>
+											<span><?php _e( 'Download', AI1WM_PLUGIN_NAME ); ?></span>
+										</a>
+										<a href="#" data-archive="<?php echo $backup['filename']; ?>" class="ai1wm-button-gray ai1wm-button-alone ai1wm-backup-restore">
+											<i class="ai1wm-icon-cloud-upload ai1wm-icon-alone"></i>
+											<span><?php _e( 'Restore', AI1WM_PLUGIN_NAME ); ?></span>
+										</a>
+										<a href="#" data-archive="<?php echo $backup['filename']; ?>" class="ai1wm-button-red ai1wm-button-alone ai1wm-backup-delete">
+											<i class="ai1wm-icon-close ai1wm-icon-alone"></i>
+											<span><?php _e( 'Delete', AI1WM_PLUGIN_NAME ); ?></span>
+										</a>
+									</td>
+								<?php endif; ?>
 							</tr>
 							<?php endforeach; ?>
 						</tbody>

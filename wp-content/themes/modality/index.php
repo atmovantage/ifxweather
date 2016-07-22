@@ -18,7 +18,11 @@ get_header(); ?>
 		
 			if ($modality_theme_options['image_slider_on'] == '1') {
 					
-				 modality_slider(); 
+				if ($modality_theme_options['default_image_slider'] == 'ideal') {
+					modality_ideal_slider();
+				} else { 
+					modality_unslider_slider(); 
+				}
 				
 			}
 

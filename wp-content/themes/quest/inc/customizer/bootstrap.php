@@ -25,18 +25,22 @@ if ( ! class_exists( 'Quest_Customize' ) ):
 		public function __construct() {
 
 			// Setup the Theme Customizer settings and controls...
-			add_action( 'customize_register', array( $this, 'Register' ) );
+			add_action( 'customize_register', array( $this, 'register' ) );
 
 			// Output custom CSS to live site
-			add_action( 'wp_head', array( $this, 'HeaderOutput' ) );
+			add_action( 'wp_head', array( $this, 'header_output' ) );
 
 			//enqueue required fonts
-			add_action( 'wp_enqueue_scripts', array( $this, 'EnqueueFonts' ) );
+			add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_fonts' ) );
 
 			// Enqueue live preview javascript in Theme Customizer admin screen
-			add_action( 'customize_preview_init', array( $this, 'LivePreview' ) );
+			add_action( 'customize_preview_init', array( $this, 'live_preview' ) );
 
-			add_action( 'customize_controls_enqueue_scripts', array( $this, 'EnqueueScripts' ) );
+			add_action( 'customize_controls_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
+
+			add_filter( 'body_class', array( $this, 'body_classes' ) );
+
+			add_action( 'quest_pb_header_css', array( $this, 'pb_header_css' ) );
 		}
 
 		/**
@@ -44,12 +48,17 @@ if ( ! class_exists( 'Quest_Customize' ) ):
 		 *
 		 * @return Quest_Customize
 		 */
-		public static function getInstance() {
+		public static function get_instance() {
 			if ( ! isset( self::$instance ) ) {
 				self::$instance = new self ();
 			}
 
 			return self::$instance;
+		}
+
+		// Temporary fix to prevent fatal errors
+		public static function getInstance(){
+			return self::get_instance();
 		}
 
 		/**
@@ -66,14 +75,15 @@ if ( ! class_exists( 'Quest_Customize' ) ):
 		 * @link http://ottopress.com/2012/how-to-leverage-the-theme-customizer-in-your-own-themes/
 		 * @since MyTheme 1.0
 		 */
-		public static function Register( $wp_customize ) {
-			$quest_customizer_path  = trailingslashit( get_template_directory() ) . 'inc/customizer/';
+		public static function register( $wp_customize ) {
+			$quest_customizer_path = trailingslashit( get_template_directory() ) . 'inc/customizer/';
 
 			// Load all custom controls
 			require $quest_customizer_path . "custom-controls/google-fonts-control.php";
 			require $quest_customizer_path . "custom-controls/text-area-control.php";
 			require $quest_customizer_path . "custom-controls/misc-control.php";
 			require $quest_customizer_path . "custom-controls/multiple-checkbox-control.php";
+			require $quest_customizer_path . "custom-controls/range-control.php";
 
 			// Load all Customizer Panels
 			require $quest_customizer_path . "panels/general.php";
@@ -97,14 +107,21 @@ if ( ! class_exists( 'Quest_Customize' ) ):
 		 * @see add_action('wp_head',$func)
 		 * @since MyTheme 1.0
 		 */
-		public static function HeaderOutput() {
+		public static function header_output() {
 			?>
 			<!--Customizer CSS-->
 			<style type="text/css">
+				/* Custom CSS from Customizer Options for Quest */
+				<?php self::print_css(); ?>
+				/* Custom CSS from Quest Page Options */
+				<?php self::print_pb_css(); ?>
+				/* Custom CSS from the Custom CSS setting */
 				<?php
-			self::PrintCss(); ?>
-				<?php
-			self::PrintPBCss(); ?>
+					$css = esc_textarea( quest_get_mod( 'custom_css' ) );
+					if( $css !== '' ) {
+						echo $css;
+					}
+				?>
 			</style>
 			<!--/Customizer CSS-->
 		<?php
@@ -121,7 +138,7 @@ if ( ! class_exists( 'Quest_Customize' ) ):
 		 * @see add_action('customize_preview_init',$func)
 		 * @since MyTheme 1.0
 		 */
-		public static function LivePreview() {
+		public static function live_preview() {
 
 			/*TO DO - Implement Live Preview using Javascript and postMessage Transport*/
 
@@ -130,18 +147,20 @@ if ( ! class_exists( 'Quest_Customize' ) ):
 
 		}
 
-		public static function PrintPBCss() {
+		public static function print_pb_css() {
 			global $post;
 
-			if ( null === $post || get_page_template_slug( $post->ID ) !== 'page-builder.php' ) {
+			if ( !quest_is_pb_template() ) {
 				return;
 			}
 
+			do_action( 'quest_pb_header_css' );
+
 			$css      = "\n/* Hover Icons */\n";
-			$sections = get_post_meta( $post->ID, 'pt_pb_sections', true );
+			$sections = PT_PageBuilder_Helper::decode_pb_metadata( get_post_meta( $post->ID, 'pt_pb_sections', true ) );
 
 			foreach ( $sections as $key => $section ) {
-				$css .= self::BuildSectionCss( $section );
+				$css .= self::build_section_css( $section );
 				if ( ! is_numeric( $key ) || ! array_key_exists( 'row', $section ) || empty( $section['row'] ) ) {
 					continue;
 				}
@@ -157,16 +176,16 @@ if ( ! class_exists( 'Quest_Customize' ) ):
 							continue;
 						}
 
-						if( is_array( $col['module'] ) && !array_key_exists('id', $col['module'] ) ) {
+						if ( is_array( $col['module'] ) && ! array_key_exists( 'id', $col['module'] ) ) {
 							foreach ( $col['module'] as $l => $module ) {
-								if ( $module['type'] === 'hovericon' ){
-									$css .= self::BuildHoverIconCss( $module );
+								if ( $module['type'] === 'hovericon' ) {
+									$css .= self::build_hovericon_css( $module );
 								}
 								$css .= apply_filters( "pt_pb_css_module_{$module['type']}", '', $module );
 							}
 						} elseif ( isset( $col['module']['type'] ) ) {
-							if( $col['module']['type'] === 'hovericon' ) {
-								$css .= self::BuildHoverIconCss( $col['module'] );
+							if ( $col['module']['type'] === 'hovericon' ) {
+								$css .= self::build_hovericon_css( $col['module'] );
 							}
 
 							$css .= apply_filters( "pt_pb_css_module_{$col['module']['type']}", '', $col['module'] );
@@ -177,21 +196,63 @@ if ( ! class_exists( 'Quest_Customize' ) ):
 			}
 
 			echo $css;
+
 		}
 
-		private static function BuildHoverIconCss( $module ) {
+		public static function body_classes( $classes ) {
+			global $post;
+			if ( quest_is_pb_template() && quest_get_meta( array(), '_quest_pb_header' ) === 'transparent' ) {
+				$classes[] = 'transparent-header';
+			}
+
+			return $classes;
+		}
+
+		public static function pb_header_css() {
+			$color       = quest_get_meta( array(), '_quest_pb_menu' );
+			$hover_color = quest_get_meta( array(), '_quest_pb_menu_hover' );
+			?>
+			@media (min-width: 768px) {
+			.transparent-header .main-header,
+			.transparent-header .main-header a,
+			.transparent-header .main-header .main-navigation .nav > li > a {
+			color: <?php echo $color; ?>;
+			}
+
+			.transparent-header .main-header a:hover,
+			.transparent-header .main-header .main-navigation .nav > li > a:hover,
+			.transparent-header .main-header .main-navigation .nav > li.current-menu-item > a,
+			.transparent-header .main-header .main-navigation .nav > li.current-menu-parent > a {
+			color: <?php echo $hover_color; ?>;
+			}
+
+			.transparent-header .main-header .navbar-toggle a:hover{
+			color: <?php echo $hover_color; ?>!important;
+			}
+			.transparent-header .main-header .navbar-toggle a:hover.fa{
+			color: <?php echo $hover_color; ?>!important;
+			}
+
+			.transparent-header .main-navigation .nav > li.current-menu-item, .main-navigation .nav > li.current-menu-parent{
+			border-color: <?php echo quest_get_meta( array(), '_quest_pb_menu_active' ); ?>!important;
+			}
+			}
+			<?php
+		}
+
+		private static function build_hovericon_css( $module ) {
 			$output = "#{$module['id']}.hover-icon .fa { background-color : {$module['hover_color']}; color: {$module['color']} ; box-shadow: 0 0 0 4px {$module['color']}; } \n";
 			$output .= "#{$module['id']}.hover-icon .fa:hover { background-color : {$module['color']}; color: {$module['hover_color']} ; box-shadow: 0 0 0 8px {$module['color']}; } \n";
 
 			return $output;
 		}
 
-		private static function BuildSectionCss( $section ) {
+		private static function build_section_css( $section ) {
 
 			return "#{$section['id']} h1, #{$section['id']}  h2, #{$section['id']}  h3, #{$section['id']}  h4, #{$section['id']}  h5, #{$section['id']} h6, #{$section['id']} p { color: {$section['text_color']}; } ";
 		}
 
-		public function EnqueueScripts() {
+		public function enqueue_scripts() {
 
 			wp_enqueue_script( 'chosen', get_template_directory_uri() . '/assets/plugins/chosen/chosen.jquery.js', array(
 				'jquery',
@@ -205,7 +266,7 @@ if ( ! class_exists( 'Quest_Customize' ) ):
 			wp_enqueue_style( 'chosen', get_template_directory_uri() . '/assets/plugins/chosen/chosen.min.css' );
 		}
 
-		public function EnqueueFonts() {
+		public function enqueue_fonts() {
 
 			$fonts = array(
 				'typography_global_font_family'         => quest_get_mod( 'typography_global_font_family' ),
@@ -263,7 +324,7 @@ if ( ! class_exists( 'Quest_Customize' ) ):
 
 		}
 
-		public static function PrintCss() {
+		public static function print_css() {
 			global $post;
 			$is_pagebuilder = false;
 			if ( null !== $post && get_page_template_slug( $post->ID ) === 'page-builder.php' ) {
@@ -278,6 +339,14 @@ if ( ! class_exists( 'Quest_Customize' ) ):
 
 			$footer_text = quest_get_mod( 'colors_footer_text' );
 			?>
+
+			.logo{
+				height: <?php echo quest_get_mod( 'layout_header_height' ); ?>px;
+			}
+
+			.main-navigation .nav{
+				line-height: <?php echo quest_get_mod( 'layout_header_menu_height' ); ?>px;
+			}
 
 			/* Theme/Text Colors */
 			.entry-content blockquote,.action-icon.normal,.action, .pagination>.active>a, .pagination .current, .pagination>.active>span, .pagination>.active>a:hover, .pagination>.active>span:hover, .pagination>.active>a:focus, .pagination>.active>span:focus, .main-navigation .nav > li.current-menu-item, .main-navigation .nav > li.current-menu-parent { border-color: <?php
@@ -295,6 +364,8 @@ if ( ! class_exists( 'Quest_Customize' ) ):
 
 			#content textarea, .wpcf7 textarea, #content select, .wpcf7 select, #content input[type="text"], .wpcf7 input[type="text"], #content input[type="password"], .wpcf7 input[type="password"], #content input[type="datetime"], .wpcf7 input[type="datetime"], #content input[type="datetime-local"], .wpcf7 input[type="datetime-local"], #content input[type="date"], .wpcf7 input[type="date"], #content input[type="month"], .wpcf7 input[type="month"], #content input[type="time"], .wpcf7 input[type="time"], #content input[type="week"], .wpcf7 input[type="week"], #content input[type="number"], .wpcf7 input[type="number"], #content input[type="email"], .wpcf7 input[type="email"], #content input[type="url"], .wpcf7 input[type="url"], #content input[type="search"], .wpcf7 input[type="search"], #content input[type="tel"], .wpcf7 input[type="tel"], #content input[type="color"], .wpcf7 input[type="color"], .entry-content blockquote, .action, a .action-icon, .action-icon, .post-grid, .recent-post, #comments .post-comments-form textarea, #comments .post-comments-form input[type=text], #comments #post-comments-form textarea, #comments #post-comments-form input[type=text], #content article.error404 .search input, #menu-item-search form input, .main-sidebar .search input {  background-color: <?php
 			echo quest_get_mod( 'colors_global_alt' ); ?> ;  }
+			#content textarea, .wpcf7 textarea, #content select, .wpcf7 select, #content input[type="text"], .wpcf7 input[type="text"], #content input[type="password"], .wpcf7 input[type="password"], #content input[type="datetime"], .wpcf7 input[type="datetime"], #content input[type="datetime-local"], .wpcf7 input[type="datetime-local"], #content input[type="date"], .wpcf7 input[type="date"], #content input[type="month"], .wpcf7 input[type="month"], #content input[type="time"], .wpcf7 input[type="time"], #content input[type="week"], .wpcf7 input[type="week"], #content input[type="number"], .wpcf7 input[type="number"], #content input[type="email"], .wpcf7 input[type="email"], #content input[type="url"], .wpcf7 input[type="url"], #content input[type="search"], .wpcf7 input[type="search"], #content input[type="tel"], .wpcf7 input[type="tel"], #content input[type="color"], .wpcf7 input[type="color"], .entry-content blockquote, .action, a .action-icon, .action-icon, .post-grid, .recent-post, #comments .post-comments-form textarea, #comments .post-comments-form input[type=text], #comments #post-comments-form textarea, #comments #post-comments-form input[type=text], #content article.error404 .search input, #menu-item-search form input, .main-sidebar .search input {  color: <?php
+			echo quest_get_mod( 'colors_global_alt_text' ); ?> ;  }
 			#content textarea, .wpcf7 textarea, #content select, .wpcf7 select, #content input[type="text"], .wpcf7 input[type="text"], #content input[type="password"], .wpcf7 input[type="password"], #content input[type="datetime"], .wpcf7 input[type="datetime"], #content input[type="datetime-local"], .wpcf7 input[type="datetime-local"], #content input[type="date"], .wpcf7 input[type="date"], #content input[type="month"], .wpcf7 input[type="month"], #content input[type="time"], .wpcf7 input[type="time"], #content input[type="week"], .wpcf7 input[type="week"], #content input[type="number"], .wpcf7 input[type="number"], #content input[type="email"], .wpcf7 input[type="email"], #content input[type="url"], .wpcf7 input[type="url"], #content input[type="search"], .wpcf7 input[type="search"], #content input[type="tel"], .wpcf7 input[type="tel"], #content input[type="color"], .wpcf7 input[type="color"],article.post-normal .post-image-dummy, article.page .post-image-dummy, .post .post-image-dummy, .post-half .post-image-dummy,.post-grid, .recent-post,#comments .post-comments-form textarea, #comments .post-comments-form input[type=text], #comments #post-comments-form textarea, #comments #post-comments-form input[type=text],.entry-content table,h2.section-head,article.post-normal,hr.fancy,#content article.error404 .search input,.main-header,.main-header.mobile .main-navigation .nav li:hover a,.main-header.mobile .main-navigation .nav a,.main-header.mobile .main-navigation .navbar-collapse.collapse,.main-navigation ul > li ul,#menu-item-search .dropdown-menu,#title-container,.post-image .empty-image,.pagination.post-pagination,#comments #reply-title,#comments li,#comments li li,#comments .post-comments-heading h3,#about-author,.main-sidebar .widget_nav_menu li,.main-sidebar .widget_nav_menu li ul.children,.main-sidebar .widget_categories li,.main-sidebar .widget_archive li,.main-sidebar .widget_archive li ul.children,.main-sidebar .widget_pages li,.main-sidebar .widget_pages li ul.children,.main-sidebar .widget_meta li,.main-sidebar .widget_meta li ul.children,.main-sidebar .widget_recent_comments li,.main-sidebar .widget_recent_comments li ul.children,.main-sidebar .widget_rss li,.main-sidebar .widget_rss li ul.children,.main-sidebar .widget_recent_entries li,.main-sidebar .widget_recent_entries li ul.children,.portfolio-grid-alt-bg,.pagination.post-pagination .previous,.gallery-container .gallery-item, #menu-item-search form input{  border-color: <?php
 			echo $border_color; ?> ;}
 			#menu-item-search form .arrow-up:before { border-bottom-color: <?php
@@ -316,9 +387,10 @@ if ( ! class_exists( 'Quest_Customize' ) ):
 			#content { background-color: <?php
 			echo quest_get_mod( 'colors_global_content_bg' ); ?> ; }
 
-			.main-header{ background-color: <?php
-			echo quest_get_mod( 'colors_header_bg' ); ?> ; border-color: <?php
-			echo quest_get_mod( 'colors_header_border' ); ?> ; }
+			.main-header{ 
+				background-color: <?php echo quest_get_mod( 'colors_header_bg' ); ?> ; 
+				border-color: <?php echo quest_get_mod( 'colors_header_border' ); ?> ;
+			}
 			.main-header, .main-header a{ color: <?php
 			echo quest_get_mod( 'colors_header_text' ); ?> ; }
 			.secondary-header{
@@ -359,7 +431,7 @@ if ( ! class_exists( 'Quest_Customize' ) ):
 			background-color: transparent !important;
 			}
 			.main-navigation .nav > li.current-menu-item, .main-navigation .nav > li.current-menu-parent{
-				border-color: transparent !important;
+			border-color: transparent !important;
 			}
 			.main-navigation .nav .dropdown-menu{
 			background-color: transparent !important;
@@ -386,6 +458,8 @@ if ( ! class_exists( 'Quest_Customize' ) ):
 			.copyright{ background-color: <?php
 			echo quest_get_mod( 'colors_footer_sc_bg' ); ?> ; color: <?php
 			echo quest_get_mod( 'colors_footer_sc_text' ); ?> ; }
+			.copyright a{ color: <?php echo quest_get_mod( 'colors_footer_sc_link' ); ?> ; }
+			.copyright a:hover{ color: <?php echo quest_get_mod( 'colors_footer_sc_link_hover' ); ?> ; }
 			.copyright .social-icon-container .social-icon { color: <?php
 			echo quest_get_mod( 'colors_footer_sc_si' ) ?>; }
 			.copyright .social-icon-container .social-icon:hover { color: <?php
@@ -487,7 +561,7 @@ if ( ! class_exists( 'Quest_Customize' ) ):
 			endif;
 
 			$single_page_align = quest_get_mod( 'layout_page_content_align' );
-			if ( !$is_pagebuilder && $single_page_align === 'center' ) : ?>
+			if ( ! $is_pagebuilder && $single_page_align === 'center' ) : ?>
 
 				.page .type-page,.page .type-page h1,.page .type-page h2,.page .type-page h3,.page .type-page h4,.page .type-page h5,.page .type-page h6{
 				text-align: center;
@@ -497,7 +571,7 @@ if ( ! class_exists( 'Quest_Customize' ) ):
 				margin-right: auto;
 				}
 
-			<?php elseif ( !$is_pagebuilder && $single_page_align === 'right' ) : ?>
+			<?php elseif ( ! $is_pagebuilder && $single_page_align === 'right' ) : ?>
 
 				.page .type-page,.page .type-page h1,.page .type-page h2,.page .type-page h3,.page .type-page h4,.page .type-page h5,.page .type-page h6{
 				text-align: right;
@@ -519,4 +593,4 @@ if ( ! class_exists( 'Quest_Customize' ) ):
 	}
 endif;
 
-Quest_Customize::getInstance();
+Quest_Customize::get_instance();

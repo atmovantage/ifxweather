@@ -14,14 +14,18 @@ $quest_defaults = array(
 	'title_tagline_hide_tagline'              => 0,
 	/* Logo */
 	'logo_logo'                               => '',
+	'logo_logo_retina'                        => '',
 	'logo_favicon'                            => '',
 	'sticky_label'                            => 'Featured',
+	'custom_css'                              => '',
 	/************
 	 ** Layout **
 	 *************/
 
 	/* Global */
 	'layout_global_site'                      => 'wide',
+	'layout_header_height'                    => 66,
+	'layout_header_menu_height'				  => 66,
 	'layout_header_search'                    => 1,
 	'layout_header_secondary'                 => 1,
 	'layout_header_secondary-layout'          => 'callout_icons',
@@ -73,6 +77,7 @@ $quest_defaults = array(
 	'colors_global_accent'                    => '#27ae60',
 	'colors_global_accent_shade'              => '#239e57',
 	'colors_global_alt'                       => '#f5f5f5',
+	'colors_global_alt_text'                  => '#333333',
 	'colors_global_border'                    => '#e0e0e0',
 	'colors_global_heading'                   => '#222',
 	'colors_global_text'                      => '#333',
@@ -100,9 +105,9 @@ $quest_defaults = array(
 	'colors_menu_sub_bg'                      => '#f5f5f5',
 	'colors_menu_sub_border'                  => '#e0e0e0',
 	/*Mobile menu*/
-	'colors_menu_mob_bg'	             	=> '#f5f5f5',
-	'colors_menu_mob'		             	=> '#444444',
-	'colors_menu_mob_hover'	             	=> '#222222',
+	'colors_menu_mob_bg'                      => '#f5f5f5',
+	'colors_menu_mob'                         => '#444444',
+	'colors_menu_mob_hover'                   => '#222222',
 	/* Title Container */
 	'colors_title_bg'                         => '#f5f5f5',
 	'colors_title_text'                       => '#333',
@@ -114,6 +119,8 @@ $quest_defaults = array(
 	'colors_footer_border'                    => '#c1c1c1',
 	'colors_footer_sc_bg'                     => '#2B3A42',
 	'colors_footer_sc_text'                   => '#d4d7d9',
+	'colors_footer_sc_link'                   => '#dddddd',
+	'colors_footer_sc_link_hover'             => '#ffffff',
 	'colors_footer_sc_si'                     => '#959ca0',
 	'colors_footer_sc_si_hover'               => '#fff',
 	'colors_footer_sc_si_hover_bg'            => '#27ae60',
@@ -122,8 +129,7 @@ $quest_defaults = array(
 	 ******************/
 
 	/* Font Options */
-	'typography_options_subsets'           	  => array( 'latin' ),
-
+	'typography_options_subsets'              => array( 'latin' ),
 	/* Global */
 	'typography_global_font_family'           => 'Open Sans',
 	'typography_global_font_variant'          => '300',
@@ -264,6 +270,16 @@ $quest_defaults = array(
 			'wide'  => __( 'Wide', 'quest' ),
 			'boxed' => __( 'Boxed', 'quest' )
 		),
+		'layout_header_height'			 => array(
+			'min'	=> 40,
+			'max'	=> 200,
+			'step'	=> 1,
+		),
+		'layout_header_menu_height'			 => array(
+			'min'	=> 40,
+			'max'	=> 200,
+			'step'	=> 1,
+		),
 		'layout_footer_widgets'          => array(
 			1 => '1',
 			2 => '2',
@@ -302,16 +318,16 @@ $quest_defaults = array(
 			'icons_search'   => __( 'Social Icons + Search', 'quest' ),
 			'search_icons'   => __( 'Search + Social Icons', 'quest' )
 		),
-		'typography_options_subsets' => array(
-			'latin'  => __( 'Latin', 'quest' ),
-			'latin-ext' => __( 'Latin Extended', 'quest' ),
-			'greek'  => __( 'Greek', 'quest' ),
-			'greek-ext' => __( 'Greek Extended', 'quest' ),
-			'cyrillic'   => __( 'Cyrillic', 'quest' ),
+		'typography_options_subsets'     => array(
+			'latin'        => __( 'Latin', 'quest' ),
+			'latin-ext'    => __( 'Latin Extended', 'quest' ),
+			'greek'        => __( 'Greek', 'quest' ),
+			'greek-ext'    => __( 'Greek Extended', 'quest' ),
+			'cyrillic'     => __( 'Cyrillic', 'quest' ),
 			'cyrillic-ext' => __( 'Cyrillic Extended', 'quest' ),
-			'vietnamese' => __( 'Vietnamese', 'quest' ),
-			'arabic'   => __( 'Arabic', 'quest' ),
-			'khmer'  => __( 'Khmer', 'quest' ),
+			'vietnamese'   => __( 'Vietnamese', 'quest' ),
+			'arabic'       => __( 'Arabic', 'quest' ),
+			'khmer'        => __( 'Khmer', 'quest' ),
 			'devanagari'   => __( 'Devanagari', 'quest' )
 		)
 

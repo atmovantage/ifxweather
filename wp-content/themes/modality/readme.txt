@@ -3,7 +3,7 @@ Theme URI: http://vpthemes.com/modality/
 Author: Vitaly Pinchev	
 Author URI: http://vpthemes.com
 Description: Modality introducing a very clean and neat design that can be used for any type of website. It comes with great variety of options to customize the look and feel of the theme via Customizer. Theme supports responsive design, customizable home page sections, Google fonts, unlimited colors, animation, automatic image resizing and more. The FontAwesome icon pack delivers Retina Ready icons that look great on an iPad or other HD devices. 4 footer widget columns, scroll to top feature, social links, support for WooCommerce and Contact Form 7 plugins, five post formats and more.
-Version: 1.0.4
+Version: 1.0.5
 
 Modality WordPress Theme, Copyright 2015 Vitaly Pinchev
 Modality is distributed under the terms of the GNU General Public License v2 or later
@@ -41,6 +41,8 @@ The exceptions to this license are as follows:
 
 * The script html5.js is licensed under MIT and GPLv2 license (HTML5 Shiv v3.7.0 Source: https://github.com/aFarkas/html5shiv)
 * The script jquery.flexslider.js is under the GPLv2 license (jQuery FlexSlider v2.4.0 Source: http://www.woothemes.com/flexslider/)
+* The script ideal-image-slider.js is under the GPL-2.0+ license (Ideal Image Slider v1.5.0 Source: https://github.com/gilbitron/Ideal-Image-Slider)
+* The script iis-captions.js is under the GPL-2.0+ license (Ideal Image Slider: Captions Extension v1.0.1 Source: https://github.com/gilbitron/Ideal-Image-Slider/tree/master/extensions/captions)
 * The script unslider.js is under the WTFPL license (UnSlider Source: https://github.com/idiot/unslider)
 * The script imgLiquid.js is dual licensed under MIT and GPL (imgLiquid v0.9.944. Source: https://github.com/karacas/imgLiquid)
 * The script bootstrap.js is under the MIT license (Bootstrap v3.3.5 Source: http://getbootstrap.com)
@@ -52,7 +54,7 @@ The exceptions to this license are as follows:
 * The script stickUp.js is licensed under the GNU General Public License (stickUp v0.5.7 Source: https://github.com/LiranCohen/stickUp)
 * The script owl.carousel.js is licensed under the MIT License (jQuery OwlCarousel v1.3.3 Source: http://www.owlgraphic.com/owlcarousel/)
 * File wp_bootstrap_navwalker.php is licensed under GPL-2.0+ (A custom WordPress nav walker class Version: 2.0.4. Source: https://github.com/twittem/wp-bootstrap-navwalker ) 
-* Scripts: animation.js, custom.js, fromblog.js, scrollup.js, gallery-slides.js, slides.js and sticky.js are the theme's designer personal creations and are free for personal and commercial use.
+* Scripts: animation.js, custom.js, fromblog.js, scrollup.js, gallery-slides.js, slides.js, ideal-slides.js and sticky.js are the theme's designer personal creations and are free for personal and commercial use.
 
 * Font Awesome License
 
@@ -120,3 +122,10 @@ You may remove any copyright references (unless required by third party componen
 
 == 1.0.4 ==
 * Minor CSS fixes
+
+== 1.0.5 ==
+* Added new Image Slider (Ideal Image Slider v1.5.0)
+* Updated Font Awesome files
+* Navigation menu update
+* Minor CSS fixes
+* Updated screenshot.png to 1200x900

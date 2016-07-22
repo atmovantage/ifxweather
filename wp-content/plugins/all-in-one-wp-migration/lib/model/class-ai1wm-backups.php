@@ -40,11 +40,17 @@ class Ai1wm_Backups {
 		);
 
 		foreach ( $iterator as $item ) {
-			if ( $item->isReadable() ) {
+			try {
 				$backups[] = array(
 					'filename' => $item->getFilename(),
 					'mtime'    => $item->getMTime(),
 					'size'     => $item->getSize(),
+				);
+			} catch ( Exception $e ) {
+				$backups[] = array(
+					'filename' => $item->getFilename(),
+					'mtime'    => null,
+					'size'     => null,
 				);
 			}
 		}
