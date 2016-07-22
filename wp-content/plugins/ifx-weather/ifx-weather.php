@@ -372,13 +372,34 @@ function run_ifx_weather() {
 add_action( 'admin_menu', 'ifxwx_admin_menu' );
 
 function ifxwx_admin_menu() {
-	add_menu_page( 'iFx Weather', 'iFx Weather', 'manage_options', 'ifxwx/options.php', 'ifxwx_admin_page', 'dashicons-cloud', 6  );
+	add_menu_page( 'iFx Weather', 'iFx Weather', 'manage_options', 'ifxwx', 'ifxwx_admin_page', 'dashicons-cloud', 6  );
+	add_submenu_page( 'ifxwx','','Overview','manage_options','ifxwx','ifxwx_admin_page');
+	add_submenu_page( 'ifxwx', 'View Forecasts', 'View Forecasts', 'manage_options', 'ifxwx-view-fx.php', 'ifxwx_admin_view_fx' );
+	add_submenu_page( 'ifxwx', 'Add Forecast', 'Add Forecast', 'manage_options', 'ifxwx-add-fx.php', 'ifxwx_admin_add_fx' );
+	add_submenu_page( 'ifxwx', 'Options', 'Options', 'manage_options', 'ifxwx-options.php', 'ifxwx_admin_options' );
 }
 
 function ifxwx_admin_page(){
 	?>
 	<div class="wrap">
-		<h2>iFx Weather</h2>
+		<h2>iFx Weather Overview</h2>
 	</div>
 	<?php
 }
+
+function ifxwx_admin_view_fx(){
+	?>
+	<div class="wrap">
+		<h2>View Forecasts</h2>
+	</div>
+	<?php
+}
+
+function ifxwx_admin_add_fx(){
+	?>
+	<div class="wrap">
+		<h2>Add New Forecast</h2>
+	</div>
+	<?php
+}
+
