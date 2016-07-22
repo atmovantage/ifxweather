@@ -403,3 +403,11 @@ function ifxwx_admin_add_fx(){
 	<?php
 }
 
+function ifxwx_admin_options(){
+	?>
+	<div class="wrap">
+		<h2>iFx Weather Options</h2>
+	</div>
+	<?php
+}
+
