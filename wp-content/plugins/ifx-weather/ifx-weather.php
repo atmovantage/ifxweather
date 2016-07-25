@@ -369,15 +369,73 @@ function run_ifx_weather() {
 ////////////////////////////////////////////////////////////////////////////
 /////////////////////////////END OLD CODE///////////////////////////////////
 
-add_action( 'admin_menu', 'ifxwx_admin_menu' );
+// add_action( 'admin_menu', 'ifxwx_admin_menu' );
 
-function ifxwx_admin_menu() {
-	add_menu_page( 'iFx Weather', 'iFx Weather', 'manage_options', 'ifxwx', 'ifxwx_admin_page', 'dashicons-cloud', 6  );
-	add_submenu_page( 'ifxwx','','Overview','manage_options','ifxwx','ifxwx_admin_page');
-	add_submenu_page( 'ifxwx', 'View Forecasts', 'View Forecasts', 'manage_options', 'ifxwx-view-fx.php', 'ifxwx_admin_view_fx' );
-	add_submenu_page( 'ifxwx', 'Add Forecast', 'Add Forecast', 'manage_options', 'ifxwx-add-fx.php', 'ifxwx_admin_add_fx' );
-	add_submenu_page( 'ifxwx', 'Options', 'Options', 'manage_options', 'ifxwx-options.php', 'ifxwx_admin_options' );
+// function ifxwx_admin_menu() {
+// 	add_menu_page( 'iFx Weather', 'iFx Weather', 'manage_options', 'ifxwx', 'ifxwx_admin_page', 'dashicons-cloud', 6  );
+// 	add_submenu_page( 'ifxwx','','Overview','manage_options','ifxwx','ifxwx_admin_page');
+// 	add_submenu_page( 'ifxwx', 'View Forecasts', 'View Forecasts', 'manage_options', 'ifxwx-view-fx.php', 'ifxwx_admin_view_fx' );
+// 	add_submenu_page( 'ifxwx', 'Add Forecast', 'Add Forecast', 'manage_options', 'ifxwx-add-fx.php', 'ifxwx_admin_add_fx' );
+// 	add_submenu_page( 'ifxwx', 'Options', 'Options', 'manage_options', 'ifxwx-options.php', 'ifxwx_admin_options' );
+// }
+
+
+
+// Register Custom Post Type
+function forecast_post() {
+
+	$labels = array(
+		'name'                  => _x( 'Forecasts', 'Post Type General Name', 'text_domain' ),
+		'singular_name'         => _x( 'Forecast', 'Post Type Singular Name', 'text_domain' ),
+		'menu_name'             => __( 'iFx Weather', 'text_domain' ),
+		'name_admin_bar'        => __( 'Forecast', 'text_domain' ),
+		'archives'              => __( 'Forecast Archives', 'text_domain' ),
+		'parent_item_colon'     => __( 'Parent Forecast:', 'text_domain' ),
+		'all_items'             => __( 'All Forecasts', 'text_domain' ),
+		'add_new_item'          => __( 'Add New Forecast', 'text_domain' ),
+		'add_new'               => __( 'Add New Forecast', 'text_domain' ),
+		'new_item'              => __( 'New Forecast', 'text_domain' ),
+		'edit_item'             => __( 'Edit Forecast', 'text_domain' ),
+		'update_item'           => __( 'Update Forecast', 'text_domain' ),
+		'view_item'             => __( 'View Forecast', 'text_domain' ),
+		'search_items'          => __( 'Search Forecasts', 'text_domain' ),
+		'not_found'             => __( 'Forecast Not found', 'text_domain' ),
+		'not_found_in_trash'    => __( 'Not found in Trash', 'text_domain' ),
+		'featured_image'        => __( 'Forecast Feature Image', 'text_domain' ),
+		'set_featured_image'    => __( 'Set forecast featured image', 'text_domain' ),
+		'remove_featured_image' => __( 'Remove forecast featured image', 'text_domain' ),
+		'use_featured_image'    => __( 'Use as forecast featured image', 'text_domain' ),
+		'insert_into_item'      => __( 'Insert into forecast', 'text_domain' ),
+		'uploaded_to_this_item' => __( 'Uploaded to this forecast', 'text_domain' ),
+		'items_list'            => __( 'Forecasts list', 'text_domain' ),
+		'items_list_navigation' => __( 'Forecasts list navigation', 'text_domain' ),
+		'filter_items_list'     => __( 'Filter forecasts list', 'text_domain' ),
+	);
+	$args = array(
+		'label'                 => __( 'Forecast', 'text_domain' ),
+		'description'           => __( 'Weather forecast', 'text_domain' ),
+		'labels'                => $labels,
+		'supports'              => array( 'title', 'editor', 'author', 'thumbnail', 'custom-fields', 'page-attributes', 'post-formats', ),
+		'taxonomies'            => array( 'category', 'post_tag' ),
+		'hierarchical'          => false,
+		'public'                => true,
+		'menu_icon'             => 'dashicons-cloud',
+		'show_ui'               => true,
+		'show_in_menu'          => true,
+		'show_in_submenu'       => 'ifxwx-add-fx.php',
+		'menu_position'         => 6,
+		'can_export'            => true,
+		'has_archive'           => true,		
+		'exclude_from_search'   => false,
+		'publicly_queryable'    => true,
+		'capability_type'       => 'post',
+	);
+	register_post_type( 'forecast', $args );
+
 }
+add_action( 'init', 'forecast_post', 0 );
+
+
 
 function ifxwx_admin_page(){
 	?>
@@ -400,6 +458,7 @@ function ifxwx_admin_add_fx(){
 	<div class="wrap">
 		<h2>Add New Forecast</h2>
 	</div>
+
 	<?php
 }
 
