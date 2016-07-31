@@ -73,306 +73,45 @@ function run_ifx_weather() {
 
 }
 
-////////////////////////////////////////////////////////////////////////////
-/////////////////////////////BEGIN OLD CODE/////////////////////////////////
-// run_ifx_weather();
+// Register Custom Taxonomy
+function forecast_type() {
 
-// function ifxwx_install () {
-// 	global $wpdb;
-// 	global $jal_db_version;
-
-// 	$table_name = $wpdb->prefix . '3dayforecasts';
-// 	$table_name2 = $wpdb->prefix . '3dayobservations';
+	$labels = array(
+		'name'                       => _x( 'Forecast Types', 'Taxonomy General Name', 'text_domain' ),
+		'singular_name'              => _x( 'Forecast Type', 'Taxonomy Singular Name', 'text_domain' ),
+		'menu_name'                  => __( 'Forecast Types', 'text_domain' ),
+		'all_items'                  => __( 'All Types', 'text_domain' ),
+		'parent_item'                => __( 'Parent Type', 'text_domain' ),
+		'parent_item_colon'          => __( 'Parent Type:', 'text_domain' ),
+		'new_item_name'              => __( 'New Forecast Type', 'text_domain' ),
+		'add_new_item'               => __( 'Add New Forecast Type', 'text_domain' ),
+		'edit_item'                  => __( 'Edit Type', 'text_domain' ),
+		'update_item'                => __( 'Update Type', 'text_domain' ),
+		'view_item'                  => __( 'View Type', 'text_domain' ),
+		'separate_items_with_commas' => __( 'Separate types with commas', 'text_domain' ),
+		'add_or_remove_items'        => __( 'Add or remove types', 'text_domain' ),
+		'choose_from_most_used'      => __( 'Choose from the most used types', 'text_domain' ),
+		'popular_items'              => __( 'Popular Forecast Types', 'text_domain' ),
+		'search_items'               => __( 'Search Forecast Types', 'text_domain' ),
+		'not_found'                  => __( 'Forecast Type Not Found', 'text_domain' ),
+		'no_terms'                   => __( 'No Forecast Types', 'text_domain' ),
+		'items_list'                 => __( 'Forecast Type List', 'text_domain' ),
+		'items_list_navigation'      => __( 'Forecast Type list navigation', 'text_domain' ),
+	);
+	$args = array(
+		'labels'                     => $labels,
+		'hierarchical'               => true,
+		'public'                     => true,
+		'show_ui'                    => true,
+		'show_admin_column'          => true,
+		'show_in_nav_menus'          => true,
+		'show_tagcloud'              => true,
+	);
+	register_taxonomy( 'forecast_type', array( 'Forecast' ), $args );
 	
-// 	$charset_collate = $wpdb->get_charset_collate();
 
-// 	$sql = "CREATE TABLE $table_name (
-// 		id mediumint(9) NOT NULL AUTO_INCREMENT,
-// 		type varchar(5) NOT NULL,
-// 		verified varchar(5) NOT NULL,
-//     forecaster varchar(55) NOT NULL,
-//     station varchar(20),
-//     location varchar(55) NOT NULL,
-// 		date varchar(55) NOT NULL,
-// 		time varchar(55) NOT NULL,
-// 	fx_valid_month smallint(2) NOT NULL,
-// 	fx_valid_day smallint(2) NOT NULL,
-// 	fx_valid_year smallint(4) NOT NULL,
-// 	fx_valid_time varchar(10) NOT NULL,
-// 	col1_title varchar(30),
-// 	col1_icon varchar(400),
-// 	col1_weather varchar(55),
-// 	col1_temp smallint(3),
-// 	col1_highlow varchar(20),
-// 	col1_pop smallint(3),
-// 	col1_precip decimal(3,3),
-// 	col1_hiderain smallint(1),
-// 	col1_snowmin smallint(3),
-// 	col1_snowmax smallint(3),
-// 	col1_windmin smallint(3),
-// 	col1_winmax smallint(3),
-// 	col1_windgust smallint(3),
-// 	col1_winddir varchar(20),
-// 	col1_hidewind smallint(1),
-// 	col1_details varchar(255),
-// 	col2_title varchar(30),
-// 	col2_icon varchar(400),
-// 	col2_weather varchar(55),
-// 	col2_temp smallint(3),
-// 	col2_highlow varchar(20),
-// 	col2_pop smallint(3),
-// 	col2_precip decimal(3,3),
-// 	col2_hiderain smallint(1),
-// 	col2_snowmin smallint(3),
-// 	col2_snowmax smallint(3),
-// 	col2_windmin smallint(3),
-// 	col2_winmax smallint(3),
-// 	col2_windgust smallint(3),
-// 	col2_winddir varchar(20),
-// 	col2_hidewind smallint(1),
-// 	col2_details varchar(255),
-// 	col3_title varchar(30),
-// 	col3_icon varchar(400),
-// 	col3_weather varchar(55),
-// 	col3_temp smallint(3),
-// 	col3_highlow varchar(20),
-// 	col3_pop smallint(3),
-// 	col3_precip decimal(3,3),
-// 	col3_hiderain smallint(1),
-// 	col3_snowmin smallint(3),
-// 	col3_snowmax smallint(3),
-// 	col3_windmin smallint(3),
-// 	col3_winmax smallint(3),
-// 	col3_windgust smallint(3),
-// 	col3_winddir varchar(20),
-// 	col3_hidewind smallint(1),
-// 	col3_details varchar(255),
-// 	col4_title varchar(30),
-// 	col4_icon varchar(400),
-// 	col4_weather varchar(55),
-// 	col4_temp smallint(3),
-// 	col4_highlow varchar(20),
-// 	col4_pop smallint(3),
-// 	col4_precip decimal(3,3),
-// 	col4_hiderain smallint(1),
-// 	col4_snowmin smallint(3),
-// 	col4_snowmax smallint(3),
-// 	col4_windmin smallint(3),
-// 	col4_winmax smallint(3),
-// 	col4_windgust smallint(3),
-// 	col4_winddir varchar(20),
-// 	col4_hidewind smallint(1),
-// 	col4_details varchar(255),
-// 	col5_title varchar(30),
-// 	col5_icon varchar(400),
-// 	col5_weather varchar(55),
-// 	col5_temp smallint(3),
-// 	col5_highlow varchar(20),
-// 	col5_pop smallint(3),
-// 	col5_precip decimal(3,3),
-// 	col5_hiderain smallint(1),
-// 	col5_snowmin smallint(3),
-// 	col5_snowmax smallint(3),
-// 	col5_windmin smallint(3),
-// 	col5_winmax smallint(3),
-// 	col5_windgust smallint(3),
-// 	col5_winddir varchar(20),
-// 	col5_hidewind smallint(1),
-// 	col5_details varchar(255),
-// 	col6_title varchar(30),
-// 	col6_icon varchar(400),
-// 	col6_weather varchar(55),
-// 	col6_temp smallint(3),
-// 	col6_highlow varchar(20),
-// 	col6_pop smallint(3),
-// 	col6_precip decimal(3,3),
-// 	col6_hiderain smallint(1),
-// 	col6_snowmin smallint(3),
-// 	col6_snowmax smallint(3),
-// 	col6_windmin smallint(3),
-// 	col6_winmax smallint(3),
-// 	col6_windgust smallint(3),
-// 	col6_winddir varchar(20),
-// 	col6_hidewind smallint(1),
-// 	col6_details varchar(255),
-// 	temp_unit varchar(11),
-// 	precip_unit varchar(3),
-// 	wind_unit varchar(4),
-// 	colorize_temp varchar(4),
-// 		UNIQUE KEY id (id)
-// 	) $charset_collate;";
-	
-// 	$sql2 = "CREATE TABLE $table_name2 (
-// 		id mediumint(9) NOT NULL AUTO_INCREMENT,
-// 		type varchar(5) NOT NULL,
-// 		verified varchar(5) NOT NULL,
-//     forecaster varchar(55) NOT NULL,
-//     station varchar(20),
-//     location varchar(55) NOT NULL,
-// 		date varchar(55) NOT NULL,
-// 		time varchar(55) NOT NULL,
-// 	col1_date varchar(30),
-// 	col1_time varchar(400),
-// 	col1_weather varchar(55),
-// 	col1_temp smallint(3),
-// 	col1_highlow varchar(20),
-// 	col1_pop smallint(3),
-// 	col1_precip decimal(3,3),
-// 	col1_snow smallint(3),
-// 	col1_windmin smallint(3),
-// 	col1_winmax smallint(3),
-// 	col1_windgust smallint(3),
-// 	col1_winddir varchar(20),
-// 	col2_date varchar(30),
-// 	col2_time varchar(400),
-// 	col2_weather varchar(55),
-// 	col2_temp smallint(3),
-// 	col2_highlow varchar(20),
-// 	col2_pop smallint(3),
-// 	col2_precip decimal(3,3),
-// 	col2_snow smallint(3),
-// 	col2_windmin smallint(3),
-// 	col2_winmax smallint(3),
-// 	col2_windgust smallint(3),
-// 	col2_winddir varchar(20),
-// 	col3_date varchar(30),
-// 	col3_time varchar(400),
-// 	col3_weather varchar(55),
-// 	col3_temp smallint(3),
-// 	col3_highlow varchar(20),
-// 	col3_pop smallint(3),
-// 	col3_precip decimal(3,3),
-// 	col3_snow smallint(3),
-// 	col3_windmin smallint(3),
-// 	col3_winmax smallint(3),
-// 	col3_windgust smallint(3),
-// 	col3_winddir varchar(20),
-// 	col4_date varchar(30),
-// 	col4_time varchar(400),
-// 	col4_weather varchar(55),
-// 	col4_temp smallint(3),
-// 	col4_highlow varchar(20),
-// 	col4_pop smallint(3),
-// 	col4_precip decimal(3,3),
-// 	col4_snow smallint(3),
-// 	col4_windmin smallint(3),
-// 	col4_winmax smallint(3),
-// 	col4_windgust smallint(3),
-// 	col4_winddir varchar(20),
-// 	col5_date varchar(30),
-// 	col5_time varchar(400),
-// 	col5_weather varchar(55),
-// 	col5_temp smallint(3),
-// 	col5_highlow varchar(20),
-// 	col5_pop smallint(3),
-// 	col5_precip decimal(3,3),
-// 	col5_snow smallint(3),
-// 	col5_windmin smallint(3),
-// 	col5_winmax smallint(3),
-// 	col5_windgust smallint(3),
-// 	col5_winddir varchar(20),
-// 	col6_date varchar(30),
-// 	col6_time varchar(400),
-// 	col6_weather varchar(55),
-// 	col6_temp smallint(3),
-// 	col6_highlow varchar(20),
-// 	col6_pop smallint(3),
-// 	col6_precip decimal(3,3),
-// 	col6_snow smallint(3),
-// 	col6_windmin smallint(3),
-// 	col6_winmax smallint(3),
-// 	col6_windgust smallint(3),
-// 	col6_winddir varchar(20),
-// 	temp_unit varchar(11),
-// 	precip_unit varchar(3),
-// 	wind_unit varchar(4),
-// 		UNIQUE KEY id (id)
-// 	) $charset_collate;";
-
-// 	require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
-// 	dbDelta( $sql );
-// 	dbDelta( $sql2 );
-
-// 	add_option( 'jal_db_version', $jal_db_version );
-
-// }
-// 	function ifxwx_install_data() {
-// 	global $wpdb;
-	
-// 	$welcome_forecaster = 'Austin';
-// 	$welcome_station = 'KDXR';
-// 	$welcome_location = 'Danbury, CT';
-// 	$welcome_fx_valid_month = '02';
-// 	$welcome_fx_valid_day = '08';
-// 	$welcome_fx_valid_year = '2016';
-// 	$welcome_fx_valid_time = '5PM - 5AM';
-	
-// 	$table_name = $wpdb->prefix . '3dayforecasts';
-	
-// 	$wpdb->insert( 
-// 		$table_name, 
-// 		array( 
-// 			'forecaster' => $welcome_forecaster, 
-// 			'station' => $welcome_station,
-// 			'location'=> $welcome_location,
-// 			'fx_valid_month' => $welcome_fx_valid_month,
-// 			'fx_valid_day' => $welcome_fx_valid_day,
-// 			'fx_valid_year' => $welcome_fx_valid_year,
-// 			'fx_valid_time' => $welcome_fx_valid_time
-// 		) 
-// 	);
-	
-// 			$welcome_forecaster2 = 'Austin';
-// 	$welcome_station2 = 'KDXR';
-// 	$welcome_location2 = '06776';
-// 	$welcome_date = '2016-04-12';
-// 	$welcome_time = '08:00';
-		
-// 	$table_name2 = $wpdb->prefix . '3dayobservations';
-	
-// 	$wpdb->insert( 
-// 		$table_name2, 
-// 		array( 
-// 			'forecaster' => $welcome_forecaster2, 
-// 			'station' => $welcome_station2,
-// 			'location'=> $welcome_location2,
-// 			'date' => $welcome_date,
-// 			'time' => $welcome_time
-// 		) 
-// 	);
-
-// 		ifxwx_install ();
-// 		/*ifxwx_install_data ();*/
-// 	}
-
-// function test_shortcode() {
-// 	global $wpdb;
-	
-// 	$result = $wpdb->get_results( "SELECT * FROM wp_3dayforecasts ");
-
-// 	ob_start();
-// echo "ID" . " Location" . "<br><br>";
-	
-// foreach($result as $row) {
-
-//  echo $row->id . "  " . $row->location . "<br>";
-
-//  }
-// return ob_get_clean();
-	
-// }
-
-// add_shortcode('listforecasts', 'test_shortcode');
-
-// register_activation_hook( __FILE__, 'ifxwx_install' );
-// register_activation_hook( __FILE__, 'ifxwx_install_data' );
-////////////////////////////////////////////////////////////////////////////
-/////////////////////////////END OLD CODE///////////////////////////////////
-
-// add_action( 'admin_menu', 'ifxwx_admin_menu' );
-
-
-
+}
+add_action( 'init', 'forecast_type', 0 );
 
 
 // Register Custom Post Type
@@ -409,8 +148,8 @@ function forecast_post() {
 		'label'                 => __( 'Forecast', 'text_domain' ),
 		'description'           => __( 'Weather forecast', 'text_domain' ),
 		'labels'                => $labels,
-		'supports'              => array( 'title', 'editor', 'thumbnail', ),
-		'taxonomies'            => array( 'category', 'post_tag' ),
+		'supports'              => array( 'title', 'thumbnail', ),
+		'taxonomies'            => array( 'forecast_type', ),
 		'hierarchical'          => false,
 		'public'                => true,
 		'menu_icon'             => 'dashicons-cloud',
@@ -430,13 +169,9 @@ function forecast_post() {
 }
 add_action( 'init', 'forecast_post', 0 );
 
-add_action('admin_menu', 'ifx_weather_submenu');
 
-function ifx_weather_submenu()
-{
-	add_submenu_page( 'edit.php?post_type=forecast', 'Options', 'Options', 'manage_options', 'ifxwx_options', 'ifxwx_admin_options');
-}
 
+//Begin Day1 Meta Box
 class Day1_Meta_Box {
 
 	public function __construct() {
@@ -577,14 +312,15 @@ class Day1_Meta_Box {
 }
 
 new Day1_Meta_Box;
+//End Day1 Meta Box
 
-// function ifxwx_admin_menu() {
-// 	add_menu_page( 'iFx Weather', 'iFx Weather', 'manage_options', 'ifxwx', 'ifxwx_admin_page', 'dashicons-cloud', 6  );
-// 	add_submenu_page( 'ifxwx','','Overview','manage_options','ifxwx','ifxwx_admin_page');
-// 	add_submenu_page( 'ifxwx', 'View Forecasts', 'View Forecasts', 'manage_options', 'ifxwx-view-fx.php', 'ifxwx_admin_view_fx' );
-// 	add_submenu_page( 'ifxwx', 'Add Forecast', 'Add Forecast', 'manage_options', 'ifxwx-add-fx.php', 'ifxwx_admin_add_fx' );
+//Adding Menu Options to parent iFx Weather menu
+add_action('admin_menu', 'ifx_weather_submenu');
 
-// }
+function ifx_weather_submenu()
+{
+	add_submenu_page( 'edit.php?post_type=forecast', 'Options', 'Options', 'manage_options', 'ifxwx_options', 'ifxwx_admin_options');
+}
 
 function ifxwx_admin_page(){
 	?>
