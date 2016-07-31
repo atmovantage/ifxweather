@@ -73,6 +73,24 @@ function run_ifx_weather() {
 
 }
 
+function get_terms_dropdown($taxonomies, $args){
+	$myterms = get_terms($taxonomies, $args);
+	$output ="<select>";
+	foreach($myterms as $term){
+		$root_url = get_bloginfo('url');
+		$term_taxonomy=$term->taxonomy;
+		$term_slug=$term->slug;
+		$term_name =$term->name;
+		$link = $root_url.'/'.$term_taxonomy.'/'.$term_slug;
+		$output .="<option value='".$link."'>".$term_name."</option>";
+	}
+	$output .="</select>";
+return $output;
+}
+
+$taxonomies = array('forecast_types');
+$args = array('orderby'=>'count','hide_empty'=>true);
+
 // Register Custom Taxonomy
 function forecast_type() {
 
@@ -113,6 +131,28 @@ function forecast_type() {
 }
 add_action( 'init', 'forecast_type', 0 );
 
+function insert_fx_categories() {
+	wp_insert_term(
+		'3 Day Forecast',
+		'forecast_type',
+		array(
+		  'description'	=> 'A forecast duration of 72 hours.',
+		  'slug' 		=> '3-day'
+		)
+	);
+	
+	wp_insert_term(
+		'5 Day Forecast',
+		'forecast_type',
+		array(
+		  'description'	=> 'A forecast duration of 120 hours.',
+		  'slug' 		=> '5-day'
+		)
+	);
+}
+
+add_action( 'init', 'insert_fx_categories' );
+
 
 // Register Custom Post Type
 function forecast_post() {
@@ -148,7 +188,7 @@ function forecast_post() {
 		'label'                 => __( 'Forecast', 'text_domain' ),
 		'description'           => __( 'Weather forecast', 'text_domain' ),
 		'labels'                => $labels,
-		'supports'              => array( 'title', 'thumbnail', ),
+		'supports'              => array( 'title', ),
 		'taxonomies'            => array( 'forecast_type', ),
 		'hierarchical'          => false,
 		'public'                => true,
@@ -172,7 +212,7 @@ add_action( 'init', 'forecast_post', 0 );
 
 
 //Begin Day1 Meta Box
-class Day1_Meta_Box {
+class Day1fx_Metabox {
 
 	public function __construct() {
 
@@ -185,19 +225,19 @@ class Day1_Meta_Box {
 
 	public function init_metabox() {
 
-		add_action( 'add_meta_boxes', array( $this, 'add_metabox'  )        );
-		add_action( 'save_post',      array( $this, 'save_metabox' ), 10, 2 );
+		add_action( 'add_meta_boxes',        array( $this, 'add_metabox' )         );
+		add_action( 'save_post',             array( $this, 'save_metabox' ), 10, 2 );
 
 	}
 
 	public function add_metabox() {
 
 		add_meta_box(
-			'day1_fx',
+			'day1fx',
 			__( 'Day 1 Forecast', 'text_domain' ),
 			array( $this, 'render_metabox' ),
-			'forecast',
-			'advanced',
+			'Forecast',
+			'normal',
 			'default'
 		);
 
@@ -206,60 +246,62 @@ class Day1_Meta_Box {
 	public function render_metabox( $post ) {
 
 		// Add nonce for security and authentication.
-		wp_nonce_field( 'ifxwx_nonce_action', 'ifxwx_nonce' );
+		wp_nonce_field( 'day1fx_nonce_action', 'day1fx_nonce' );
 
 		// Retrieve an existing value from the database.
-		$car_year = get_post_meta( $post->ID, 'car_year', true );
-		$car_mileage = get_post_meta( $post->ID, 'car_mileage', true );
-		$car_cruise_control = get_post_meta( $post->ID, 'car_cruise_control', true );
-		$car_power_windows = get_post_meta( $post->ID, 'car_power_windows', true );
-		$car_sunroof = get_post_meta( $post->ID, 'car_sunroof', true );
+		$day1fx_day1date_ = get_post_meta( $post->ID, 'day1fx_day1date_', true );
+		$day1fx_day1fxhigh_ = get_post_meta( $post->ID, 'day1fx_day1fxhigh_', true );
+		$day1fx_day1fxlow_ = get_post_meta( $post->ID, 'day1fx_day1fxlow_', true );
+		$day1fx_day1wxdesc_ = get_post_meta( $post->ID, 'day1fx_day1wxdesc_', true );
+		$day1fx_day1disc_ = get_post_meta( $post->ID, 'day1fx_day1disc_', true );
 
 		// Set default values.
-		if( empty( $car_year ) ) $car_year = '';
-		if( empty( $car_mileage ) ) $car_mileage = '';
-		if( empty( $car_cruise_control ) ) $car_cruise_control = '';
-		if( empty( $car_power_windows ) ) $car_power_windows = '';
-		if( empty( $car_sunroof ) ) $car_sunroof = '';
+		if( empty( $day1fx_day1date_ ) ) $day1fx_day1date_ = '';
+		if( empty( $day1fx_day1fxhigh_ ) ) $day1fx_day1fxhigh_ = '';
+		if( empty( $day1fx_day1fxlow_ ) ) $day1fx_day1fxlow_ = '';
+		if( empty( $day1fx_day1wxdesc_ ) ) $day1fx_day1wxdesc_ = '';
+		if( empty( $day1fx_day1disc_ ) ) $day1fx_day1disc_ = '';
 
 		// Form fields.
 		echo '<table class="form-table">';
 
 		echo '	<tr>';
-		echo '		<th><label for="car_year" class="car_year_label">' . __( 'Year', 'text_domain' ) . '</label></th>';
+		echo '		<th><label for="day1fx_day1date_" class="day1fx_day1date__label">' . __( 'Date', 'text_domain' ) . '</label></th>';
 		echo '		<td>';
-		echo '			<input type="text" id="car_year" name="car_year" class="car_year_field" placeholder="' . esc_attr__( '', 'text_domain' ) . '" value="' . esc_attr__( $car_year ) . '">';
+		echo '			<input type="date" id="day1fx_day1date_" name="day1fx_day1date_" class="day1fx_day1date__field" placeholder="' . esc_attr__( '', 'text_domain' ) . '" value="' . esc_attr__( $day1fx_day1date_ ) . '">';
+		echo '			<p class="description">' . __( 'Date of the day 1 forecast.', 'text_domain' ) . '</p>';
 		echo '		</td>';
 		echo '	</tr>';
 
 		echo '	<tr>';
-		echo '		<th><label for="car_mileage" class="car_mileage_label">' . __( 'Mileage', 'text_domain' ) . '</label></th>';
+		echo '		<th><label for="day1fx_day1fxhigh_" class="day1fx_day1fxhigh__label">' . __( 'High Temperature', 'text_domain' ) . '</label></th>';
 		echo '		<td>';
-		echo '			<input type="number" id="car_mileage" name="car_mileage" class="car_mileage_field" placeholder="' . esc_attr__( '', 'text_domain' ) . '" value="' . esc_attr__( $car_mileage ) . '">';
+		echo '			<input type="number" id="day1fx_day1fxhigh_" name="day1fx_day1fxhigh_" class="day1fx_day1fxhigh__field" placeholder="' . esc_attr__( '72', 'text_domain' ) . '" value="' . esc_attr__( $day1fx_day1fxhigh_ ) . '">';
+		echo '			<p class="description">' . __( 'High temperature for day 1.', 'text_domain' ) . '</p>';
 		echo '		</td>';
 		echo '	</tr>';
 
 		echo '	<tr>';
-		echo '		<th><label for="car_cruise_control" class="car_cruise_control_label">' . __( 'Cruise Control', 'text_domain' ) . '</label></th>';
+		echo '		<th><label for="day1fx_day1fxlow_" class="day1fx_day1fxlow__label">' . __( 'Low Temperature', 'text_domain' ) . '</label></th>';
 		echo '		<td>';
-		echo '			<input type="checkbox" id="car_cruise_control" name="car_cruise_control" class="car_cruise_control_field" value="' . $car_cruise_control . '" ' . checked( $car_cruise_control, 'checked', false ) . '> ' . __( '', 'text_domain' );
-		echo '			<span class="description">' . __( 'Car has cruise control.', 'text_domain' ) . '</span>';
+		echo '			<input type="number" id="day1fx_day1fxlow_" name="day1fx_day1fxlow_" class="day1fx_day1fxlow__field" placeholder="' . esc_attr__( '', 'text_domain' ) . '" value="' . esc_attr__( $day1fx_day1fxlow_ ) . '">';
+		echo '			<p class="description">' . __( 'Low temperature for day 1.', 'text_domain' ) . '</p>';
 		echo '		</td>';
 		echo '	</tr>';
 
 		echo '	<tr>';
-		echo '		<th><label for="car_power_windows" class="car_power_windows_label">' . __( 'Power Windows', 'text_domain' ) . '</label></th>';
+		echo '		<th><label for="day1fx_day1wxdesc_" class="day1fx_day1wxdesc__label">' . __( 'Weather Description', 'text_domain' ) . '</label></th>';
 		echo '		<td>';
-		echo '			<input type="checkbox" id="car_power_windows" name="car_power_windows" class="car_power_windows_field" value="' . $car_power_windows . '" ' . checked( $car_power_windows, 'checked', false ) . '> ' . __( '', 'text_domain' );
-		echo '			<span class="description">' . __( 'Car has power windows.', 'text_domain' ) . '</span>';
+		get_terms_dropdown($taxonomies, $args);
+		echo '			<p class="description">' . __( 'Description of the weather for day 1.', 'text_domain' ) . '</p>';
 		echo '		</td>';
 		echo '	</tr>';
 
 		echo '	<tr>';
-		echo '		<th><label for="car_sunroof" class="car_sunroof_label">' . __( 'Sunroof', 'text_domain' ) . '</label></th>';
+		echo '		<th><label for="day1fx_day1disc_" class="day1fx_day1disc__label">' . __( 'Discussion', 'text_domain' ) . '</label></th>';
 		echo '		<td>';
-		echo '			<input type="checkbox" id="car_sunroof" name="car_sunroof" class="car_sunroof_field" value="' . $car_sunroof . '" ' . checked( $car_sunroof, 'checked', false ) . '> ' . __( '', 'text_domain' );
-		echo '			<span class="description">' . __( 'Car has sunroof.', 'text_domain' ) . '</span>';
+		wp_editor( $day1fx_day1disc_, 'day1fx_day1disc_', array( 'media_buttons' => true ) );
+		echo '			<p class="description">' . __( 'Discussion about the forecast for day 1.', 'text_domain' ) . '</p>';
 		echo '		</td>';
 		echo '	</tr>';
 
@@ -270,8 +312,8 @@ class Day1_Meta_Box {
 	public function save_metabox( $post_id, $post ) {
 
 		// Add nonce for security and authentication.
-		$nonce_name   = $_POST['ifxwx_nonce'];
-		$nonce_action = 'ifxwx_nonce_action';
+		$nonce_name   = isset( $_POST['day1fx_nonce'] ) ? $_POST['day1fx_nonce'] : '';
+		$nonce_action = 'day1fx_nonce_action';
 
 		// Check if a nonce is set.
 		if ( ! isset( $nonce_name ) )
@@ -294,24 +336,24 @@ class Day1_Meta_Box {
 			return;
 
 		// Sanitize user input.
-		$car_new_year = isset( $_POST[ 'car_year' ] ) ? sanitize_text_field( $_POST[ 'car_year' ] ) : '';
-		$car_new_mileage = isset( $_POST[ 'car_mileage' ] ) ? sanitize_text_field( $_POST[ 'car_mileage' ] ) : '';
-		$car_new_cruise_control = isset( $_POST[ 'car_cruise_control' ] ) ? 'checked' : '';
-		$car_new_power_windows = isset( $_POST[ 'car_power_windows' ] ) ? 'checked' : '';
-		$car_new_sunroof = isset( $_POST[ 'car_sunroof' ] ) ? 'checked' : '';
+		$day1fx_new_day1date_ = isset( $_POST[ 'day1fx_day1date_' ] ) ? sanitize_text_field( $_POST[ 'day1fx_day1date_' ] ) : '';
+		$day1fx_new_day1fxhigh_ = isset( $_POST[ 'day1fx_day1fxhigh_' ] ) ? floatval( $_POST[ 'day1fx_day1fxhigh_' ] ) : '';
+		$day1fx_new_day1fxlow_ = isset( $_POST[ 'day1fx_day1fxlow_' ] ) ? floatval( $_POST[ 'day1fx_day1fxlow_' ] ) : '';
+		$day1fx_new_day1wxdesc_ = isset( $_POST[ 'day1fx_day1wxdesc_' ] ) ? sanitize_text_field( $_POST[ 'day1fx_day1wxdesc_' ] ) : '';
+		$day1fx_new_day1disc_ = isset( $_POST[ 'day1fx_day1disc_' ] ) ? wp_kses_post( $_POST[ 'day1fx_day1disc_' ] ) : '';
 
 		// Update the meta field in the database.
-		update_post_meta( $post_id, 'car_year', $car_new_year );
-		update_post_meta( $post_id, 'car_mileage', $car_new_mileage );
-		update_post_meta( $post_id, 'car_cruise_control', $car_new_cruise_control );
-		update_post_meta( $post_id, 'car_power_windows', $car_new_power_windows );
-		update_post_meta( $post_id, 'car_sunroof', $car_new_sunroof );
+		update_post_meta( $post_id, 'day1fx_day1date_', $day1fx_new_day1date_ );
+		update_post_meta( $post_id, 'day1fx_day1fxhigh_', $day1fx_new_day1fxhigh_ );
+		update_post_meta( $post_id, 'day1fx_day1fxlow_', $day1fx_new_day1fxlow_ );
+		update_post_meta( $post_id, 'day1fx_day1wxdesc_', $day1fx_new_day1wxdesc_ );
+		update_post_meta( $post_id, 'day1fx_day1disc_', $day1fx_new_day1disc_ );
 
 	}
 
 }
 
-new Day1_Meta_Box;
+new Day1fx_Metabox;
 //End Day1 Meta Box
 
 //Adding Menu Options to parent iFx Weather menu
@@ -321,6 +363,9 @@ function ifx_weather_submenu()
 {
 	add_submenu_page( 'edit.php?post_type=forecast', 'Options', 'Options', 'manage_options', 'ifxwx_options', 'ifxwx_admin_options');
 }
+
+
+
 
 function ifxwx_admin_page(){
 	?>
