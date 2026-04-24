@@ -68,8 +68,8 @@ class Plugin_Name {
 	 */
 	public function __construct() {
 
-		$this->plugin_name = 'plugin-name';
-		$this->version = '1.0.0';
+		$this->plugin_name = 'ifx-weather';
+		$this->version = defined( 'IFX_WEATHER_VERSION' ) ? IFX_WEATHER_VERSION : '1.1.0';
 
 		$this->load_dependencies();
 		$this->set_locale();

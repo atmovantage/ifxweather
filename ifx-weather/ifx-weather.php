@@ -16,14 +16,21 @@
  * Plugin Name:       iFx Weather
  * Plugin URI:        http://www.ifxweather.com
  * Description:       Create your own weather forecast. Plugin stores all weather forecasts in a database to be recalled anytime, verified and scored for accuracy.
- * Version:           1.0.1
+ * Version:           1.1.0
+ * Requires at least: 6.6
+ * Requires PHP:      8.1
+ * Tested up to:      6.8
  * Author:            Austin's Atmosphere
  * Author URI:        http://www.austinsatmosphere.com/
  * License:           GPL-2.0+
- * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
+ * License URI:       https://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       ifx-weather
  * Domain Path:       /languages
  */
+
+if ( ! defined( 'IFX_WEATHER_VERSION' ) ) {
+	define( 'IFX_WEATHER_VERSION', '1.1.0' );
+}
 
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {
@@ -74,7 +81,7 @@ function run_plugin_name() {
 }
 run_plugin_name();
 
-function ifxwx_install () {
+function ifxwx_install() {
 	global $wpdb;
 	
 	$table_name = $wpdb->prefix . "3dayforecasts";
@@ -97,14 +104,14 @@ function ifxwx_install () {
 	col1_highlow varchar(4),
 	col1_pop tinyint(3) DEFAULT '0',
 	col1_precip tinyint(5) DEFAULT '0',
-	col1_hiderain tinyint(1) DEFAULT '',
+	col1_hiderain tinyint(1) DEFAULT '0',
 	col1_snowmin tinyint(3) DEFAULT '0',
 	col1_snowmax tinyint(3) DEFAULT '0',
 	col1_windmin tinyint(3) DEFAULT '0',
 	col1_winmax tinyint(3) DEFAULT '0',
 	col1_windgust tinyint(3) DEFAULT '0',
 	col1_winddir varchar(20) DEFAULT 'North',
-	col1_hidewind tinyint(1) DEFAULT '',
+	col1_hidewind tinyint(1) DEFAULT '0',
 	col1_details varchar(255) DEFAULT '',
 	col2_title varchar(30) DEFAULT 'Column 2',
 	col2_icon varchar(200),
@@ -113,14 +120,14 @@ function ifxwx_install () {
 	col2_highlow varchar(4),
 	col2_pop tinyint(3) DEFAULT '0',
 	col2_precip tinyint(5) DEFAULT '0',
-	col2_hiderain tinyint(1) DEFAULT '',
+	col2_hiderain tinyint(1) DEFAULT '0',
 	col2_snowmin tinyint(3) DEFAULT '0',
 	col2_snowmax tinyint(3) DEFAULT '0',
 	col2_windmin tinyint(3) DEFAULT '0',
 	col2_winmax tinyint(3) DEFAULT '0',
 	col2_windgust tinyint(3) DEFAULT '0',
 	col2_winddir varchar(20) DEFAULT 'North',
-	col2_hidewind tinyint(1) DEFAULT '',
+	col2_hidewind tinyint(1) DEFAULT '0',
 	col2_details varchar(255) DEFAULT '',
 	col3_title varchar(30) DEFAULT 'Column 3',
 	col3_icon varchar(200),
@@ -129,14 +136,14 @@ function ifxwx_install () {
 	col3_highlow varchar(4),
 	col3_pop tinyint(3) DEFAULT '0',
 	col3_precip tinyint(5) DEFAULT '0',
-	col3_hiderain tinyint(1) DEFAULT '',
+	col3_hiderain tinyint(1) DEFAULT '0',
 	col3_snowmin tinyint(3) DEFAULT '0',
 	col3_snowmax tinyint(3) DEFAULT '0',
 	col3_windmin tinyint(3) DEFAULT '0',
 	col3_winmax tinyint(3) DEFAULT '0',
 	col3_windgust tinyint(3) DEFAULT '0',
 	col3_winddir varchar(20) DEFAULT 'North',
-	col3_hidewind tinyint(1) DEFAULT '',
+	col3_hidewind tinyint(1) DEFAULT '0',
 	col3_details varchar(255) DEFAULT '',
 	col4_title varchar(30) DEFAULT 'Column 4',
 	col4_icon varchar(200),
@@ -145,14 +152,14 @@ function ifxwx_install () {
 	col4_highlow varchar(4),
 	col4_pop tinyint(3) DEFAULT '0',
 	col4_precip tinyint(5) DEFAULT '0',
-	col4_hiderain tinyint(1) DEFAULT '',
+	col4_hiderain tinyint(1) DEFAULT '0',
 	col4_snowmin tinyint(3) DEFAULT '0',
 	col4_snowmax tinyint(3) DEFAULT '0',
 	col4_windmin tinyint(3) DEFAULT '0',
 	col4_winmax tinyint(3) DEFAULT '0',
 	col4_windgust tinyint(3) DEFAULT '0',
 	col4_winddir varchar(20) DEFAULT 'North',
-	col4_hidewind tinyint(1) DEFAULT '',
+	col4_hidewind tinyint(1) DEFAULT '0',
 	col4_details varchar(255) DEFAULT '',
 	col5_title varchar(30) DEFAULT 'Column 5',
 	col5_icon varchar(200),
@@ -161,14 +168,14 @@ function ifxwx_install () {
 	col5_highlow varchar(4),
 	col5_pop tinyint(3) DEFAULT '0',
 	col5_precip tinyint(5) DEFAULT '0',
-	col5_hiderain tinyint(1) DEFAULT '',
+	col5_hiderain tinyint(1) DEFAULT '0',
 	col5_snowmin tinyint(3) DEFAULT '0',
 	col5_snowmax tinyint(3) DEFAULT '0',
 	col5_windmin tinyint(3) DEFAULT '0',
 	col5_winmax tinyint(3) DEFAULT '0',
 	col5_windgust tinyint(3) DEFAULT '0',
 	col5_winddir varchar(20) DEFAULT 'North',
-	col5_hidewind tinyint(1) DEFAULT '',
+	col5_hidewind tinyint(1) DEFAULT '0',
 	col5_details varchar(255) DEFAULT '',
 	col6_title varchar(30) DEFAULT 'Column 6',
 	col6_icon varchar(200),
@@ -177,14 +184,14 @@ function ifxwx_install () {
 	col6_highlow varchar(4),
 	col6_pop tinyint(3) DEFAULT '0',
 	col6_precip tinyint(5) DEFAULT '0',
-	col6_hiderain tinyint(1) DEFAULT '',
+	col6_hiderain tinyint(1) DEFAULT '0',
 	col6_snowmin tinyint(3) DEFAULT '0',
 	col6_snowmax tinyint(3) DEFAULT '0',
 	col6_windmin tinyint(3) DEFAULT '0',
 	col6_winmax tinyint(3) DEFAULT '0',
 	col6_windgust tinyint(3) DEFAULT '0',
 	col6_winddir varchar(20) DEFAULT 'North',
-	col6_hidewind tinyint(1) DEFAULT '',
+	col6_hidewind tinyint(1) DEFAULT '0',
 	col6_details varchar(255) DEFAULT '',
 	temp_unit varchar(11) DEFAULT 'fahrenheit',
 	precip_unit varchar(3) DEFAULT 'in.',
@@ -194,10 +201,10 @@ function ifxwx_install () {
 ) $charset_collate;";
 	
 	require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
-	dbDELTA( $sql );
+	dbDelta( $sql );
 	
 }
-	function ifxwx_install_data() {
+function ifxwx_install_data() {
 	global $wpdb;
 	
 	$welcome_forecaster = 'Austin';
@@ -210,9 +217,9 @@ function ifxwx_install () {
 	
 	$table_name = $wpdb->prefix . '3dayforecasts';
 	
-	$wpdb->insert( 
-		$table_name, 
-		array( 
+	$wpdb->insert(
+		$table_name,
+		array(
 			/*'time' => current_time( 'mysql' ),*/ 
 			'forecaster' => $welcome_forecaster, 
 			'station' => $welcome_station,
@@ -221,11 +228,11 @@ function ifxwx_install () {
 			'fx_valid_day' => $welcome_fx_valid_day,
 			'fx_valid_year' => $welcome_fx_valid_year,
 			'fx_valid_time' => $welcome_fx_valid_time
-		) 
+		),
+		array( '%s', '%s', '%s', '%d', '%d', '%d', '%s' )
 	);
 }
 
 register_activation_hook( __FILE__, 'ifxwx_install' );
 register_activation_hook( __FILE__, 'ifxwx_install_data' );
 	
-
